@@ -1,0 +1,844 @@
+# Linear Regression on a small SMART data set
+
+## BRFSS and SMART 
+
+The Centers for Disease Control analyzes Behavioral Risk Factor Surveillance System (BRFSS) survey data for specific metropolitan and micropolitan statistical areas (MMSAs) in a program called the [Selected Metropolitan/Micropolitan Area Risk Trends of BRFSS](https://www.cdc.gov/brfss/smart/Smart_data.htm) (SMART BRFSS.)
+
+In this work, we will focus on [data from the 2016 SMART](https://www.cdc.gov/brfss/smart/smart_2016.html), and in particular on data from the Cleveland-Elyria, OH, Metropolitan Statistical Area. The purpose of this survey is to provide localized health information that can help public health practitioners identify local emerging health problems, plan and evaluate local responses, and efficiently allocate resources to specific needs.
+
+### Key resources
+
+- the full data are available in the form of the 2016 SMART BRFSS MMSA Data, found in a zipped [SAS Transport Format](https://www.cdc.gov/brfss/smart/2016/MMSA2016_XPT.zip) file. The data were released in August 2017.
+- the [MMSA Variable Layout PDF](https://www.cdc.gov/brfss/smart/2016/mmsa_varlayout_16.pdf) which simply lists the variables included in the data file
+- the [Calculated Variables PDF](https://www.cdc.gov/brfss/annual_data/2016/pdf/2016_calculated_variables_version4.pdf) which describes the risk factors by data variable names - there is also an [online summary matrix of these calculated variables](https://www.cdc.gov/brfss/annual_data/2016/Summary_Matrix_16.html), as well.
+- the lengthy [2016 Survey Questions PDF](https://www.cdc.gov/brfss/questionnaires/pdf-ques/2016_BRFSS_Questionnaire_FINAL.pdf) which lists all questions asked as part of the BRFSS in 2016
+- the enormous [Codebook for the 2016 BRFSS Survey PDF](https://www.cdc.gov/brfss/annual_data/2016/pdf/codebook16_llcp.pdf) which identifies the variables by name for us.
+
+Later this term, we'll use all of those resources to help construct a more complete data set than we'll study today. I'll also demonstrate how I built the `smartcle1` data set that we'll use in this Chapter.
+
+## The `smartcle1` data: Cookbook
+
+The `smartcle1.csv` data file available on the Data and Code page of [our website](https://github.com/THOMASELOVE/2019-432) describes information on `r ncol(smartcle1)` variables for `r nrow(smartcle1)` respondents to the BRFSS 2016, who live in the Cleveland-Elyria, OH, Metropolitan Statistical Area. The variables in the `smartcle1.csv` file are listed below, along with (in some cases) the BRFSS items that generate these responses.
+
+Variable | Description
+---------: | --------------------------------------------------------
+`SEQNO` | respondent identification number (all begin with 2016)
+`physhealth` | Now thinking about your physical health, which includes physical illness and injury, for how many days during the past 30 days was your physical health not good?
+`menthealth` | Now thinking about your mental health, which includes stress, depression, and problems with emotions, for how many days during the past 30 days was your mental health not good?
+`poorhealth` | During the past 30 days, for about how many days did poor physical or mental health keep you from doing your usual activities, such as self-care, work, or recreation?
+`genhealth` | Would you say that in general, your health is ... (five categories: Excellent, Very Good, Good, Fair or Poor)
+`bmi` | Body mass index, in kg/m^2^
+`female` | Sex, 1 = female, 0 = male
+`internet30` | Have you used the internet in the past 30 days? (1 = yes, 0 = no)
+`exerany` | During the past month, other than your regular job, did you participate in any physical activities or exercises such as running, calisthenics, golf, gardening, or walking for exercise? (1 = yes, 0 = no)
+`sleephrs` | On average, how many hours of sleep do you get in a 24-hour period?
+`alcdays` | How many days during the past 30 days did you have at least one drink of any alcoholic beverage such as beer, wine, a malt beverage or liquor?
+
+```{r smartcle1_structure}
+str(smartcle1)
+```
+
+## `smartcle2`: Omitting Missing Observations: Complete-Case Analyses
+
+For the purpose of fitting our first few models, we will eliminate the missingness problem, and look only at the *complete cases* in our `smartcle1` data. We will discuss methods for imputing missing data later in these Notes.
+
+To inspect the missingness in our data, we might consider using the `skim` function from the `skimr` package. We'll exclude the respondent identifier code (`SEQNO`) from this summary as uninteresting. 
+
+```{r}
+skim_with(numeric = list(hist = NULL), integer = list(hist = NULL))
+## above line eliminates the sparkline histograms
+## it can be commented out when working in the console,
+## but I need it to produce the Notes without errors right now
+
+smartcle1 %>% 
+    skim(-SEQNO)
+```
+
+Now, we'll create a new tibble called `smartcle2` which contains every variable except `poorhealth`, and which includes all respondents with complete data on the variables (other than `poorhealth`). We'll store those observations with complete data in the `smartcle2` tibble.
+
+```{r create_smartcle2}
+smartcle2 <- smartcle1 %>% 
+    select(-poorhealth) %>%
+    filter(complete.cases(.))
+
+smartcle2
+```
+
+Note that there are only `r nrow(smartcle2)` respondents with **complete** data on the `r ncol(smartcle2)` variables (excluding `poorhealth`) in the `smartcle2` tibble, as compared to our original `smartcle1` data which described `r nrow(smartcle1)` respondents and `r ncol(smartcle1)` variables, but with lots of missing data.
+
+## Summarizing the `smartcle2` data numerically
+
+### The New Toy: The `skim` function
+
+```{r}
+skim(smartcle2, -SEQNO)
+```
+
+### The usual `summary` for a data frame
+
+Of course, we can use the usual `summary` to get some basic information about the data.
+
+```{r}
+summary(smartcle2)
+```
+
+### The `describe` function in `Hmisc`
+
+Or we can use the `describe` function from the `Hmisc` package.
+
+```{r}
+Hmisc::describe(select(smartcle2, bmi, genhealth, female))
+```
+
+## Counting as exploratory data analysis
+
+Counting things can be amazingly useful. 
+
+### How many respondents had exercised in the past 30 days? Did this vary by sex?
+
+```{r c2_eda_exerany_female_smartcle2}
+smartcle2 %>% count(female, exerany) %>% mutate(percent = 100*n / sum(n))
+```
+
+so we know now that 42.3% of the subjects in our data were women who exercised. Suppose that instead we want to find the percentage of exercisers within each sex...
+
+```{r c2_eda_female_exerany_percentages_smartcle2}
+smartcle2 %>%
+    count(female, exerany) %>%
+    group_by(female) %>%
+    mutate(prob = 100*n / sum(n)) 
+```
+
+and now we know that 82.8% of the males exercised at least once in the last 30 days, as compared to 72.3% of the females.
+
+### What's the distribution of `sleephrs`?
+
+We can count quantitative variables with discrete sets of possible values, like `sleephrs`, which is captured as an integer (that must fall between 0 and 24.)
+
+```{r c2_eda_sleephrs}
+smartcle2 %>% count(sleephrs)
+```
+
+Of course, a natural summary of a quantitative variable like this would be graphical.
+
+```{r c2_histogram_sleephrs_smartcle2}
+ggplot(smartcle2, aes(sleephrs)) +
+    geom_histogram(binwidth = 1, fill = "dodgerblue", col = "darkred")
+```
+
+### What's the distribution of `BMI`?
+
+```{r c2_histogram_bmi_smartcle2}
+ggplot(smartcle2, aes(bmi)) +
+    geom_histogram(bins = 30, col = "white")
+```
+
+### How many of the respondents have a BMI below 30?
+
+```{r eda_bmilt30_smartcle2}
+smartcle2 %>% count(bmi < 30) %>% mutate(proportion = n / sum(n))
+```
+
+### How many of the respondents who have a BMI < 30 exercised?
+
+```{r eda_bmilt30_exerany_smartcle2}
+smartcle2 %>% count(exerany, bmi < 30) %>%
+    group_by(exerany) %>%
+    mutate(percent = 100*n/sum(n))
+```
+
+### Is obesity associated with sex, in these data?
+
+```{r eda_bmilt30_female_smartcle2}
+smartcle2 %>% count(female, bmi < 30) %>%
+    group_by(female) %>%
+    mutate(percent = 100*n/sum(n))
+```
+
+### Comparing `sleephrs` summaries by obesity status
+
+Can we compare the `sleephrs` means, medians and 75^th^ percentiles for respondents whose BMI is below 30 to the respondents whose BMI is not?
+
+```{r}
+smartcle2 %>%
+    group_by(bmi < 30) %>%
+    summarize(mean(sleephrs), median(sleephrs), 
+              q75 = quantile(sleephrs, 0.75))
+```
+
+### The `skim` function within a pipe
+
+The **skim** function works within pipes and with the other `tidyverse` functions.
+
+```{r}
+smartcle2 %>%
+    group_by(exerany) %>%
+    skim(bmi, sleephrs)
+```
+
+## First Modeling Attempt: Can `bmi` predict `physhealth`?
+
+We'll start with an effort to predict `physhealth` using `bmi`. A natural graph would be a scatterplot.
+
+```{r scatter_physhealth_bmi_1}
+ggplot(data = smartcle2, aes(x = bmi, y = physhealth)) +
+    geom_point()
+```
+
+A good question to ask ourselves here might be: "In what BMI range can we make a reasonable prediction of `physhealth`?"
+
+Now, we might take the plot above and add a simple linear model ...
+
+```{r c2_scatter_physhealth_bmi_2}
+ggplot(data = smartcle2, aes(x = bmi, y = physhealth)) +
+    geom_point() +
+    geom_smooth(method = "lm", se = FALSE)
+```
+
+which shows the same least squares regression model that we can fit with the `lm` command.
+
+### Fitting a Simple Regression Model
+
+```{r c2_lm_physhealth_bmi_1}
+model_A <- lm(physhealth ~ bmi, data = smartcle2)
+
+model_A
+summary(model_A)
+confint(model_A, level = 0.95)
+```
+
+The model coefficients can be obtained by printing the model object, and the `summary` function provides several useful descriptions of the model's residuals, its statistical significance, and quality of fit.
+
+### Model Summary for a Simple (One-Predictor) Regression
+
+The fitted model predicts `physhealth` with the equation -1.45 + 0.195*`bmi`, as we can read off from the model coefficients.
+
+Each of the 896 respondents included in the `smartcle2` data makes a contribution to this model. 
+
+#### Residuals
+
+Suppose Harry is one of the people in that group, and Harry's data is `bmi` = 20, and `physhealth` = 3.
+
+- Harry's *observed* value of `physhealth` is just the value we have in the data for them, in this case, observed `physhealth` = 3 for Harry.
+- Harry's *fitted* or *predicted* `physhealth` value is the result of calculating -1.45 + 0.195*`bmi` for Harry. So, if Harry's BMI was 20, then Harry's predicted `physhealth` value is -1.45 + (0.195)(20) = 2.45.
+- The *residual* for Harry is then his *observed* outcome minus his *fitted* outcome, so Harry has a residual of 3 - 2.45 = 0.55.
+- Graphically, a residual represents vertical distance between the observed point and the fitted regression line. 
+- Points above the regression line will have positive residuals, and points below the regression line will have negative residuals. Points on the line have zero residuals.
+
+The residuals are summarized at the top of the `summary` output for linear model.
+
+- The mean residual will always be zero in an ordinary least squares model, but a five number summary of the residuals is provided by the summary, as is an estimated standard deviation of the residuals (called here the Residual standard error.)
+- In the `smartcle2` data, the minimum residual was -9.17, so for one subject, the observed value was 9.17 days smaller than the predicted value. This means that the prediction was 9.17 days too large for that subject.
+- Similarly, the maximum residual was 28.07 days, so for one subject the prediction was 28.07 days too small. Not a strong performance.
+- In a least squares model, the residuals are assumed to follow a Normal distribution, with mean zero, and standard deviation (for the `smartcle2` data) of about 8.6 days. Thus, by the definition of a Normal distribution, we'd expect 
+- about 68% of the residuals to be between -8.6 and +8.6 days,
+- about 95% of the residuals to be between -17.2 and +17.2 days,
+- about all (99.7%) of the residuals to be between -25.8 and +25.8 days.
+
+#### Coefficients section
+
+The `summary` for a linear model shows Estimates, Standard Errors, t values and *p* values for each coefficient fit.
+
+- The Estimates are the point estimates of the intercept and slope of `bmi` in our model.
+- In this case, our estimated slope is 0.195, which implies that if Harry's BMI is 20 and Sally's BMI is 21, we predict that Sally's `physhealth` will be 0.195 days larger than Harry's.
+- The Standard Errors are also provided for each estimate. We can create rough 95% confidence intervals by adding and subtracting two standard errors from each coefficient, or we can get a slightly more accurate answer with the `confint` function.
+- Here, the 95% confidence interval for the slope of `bmi` is estimated to be (0.11, 0.28). This is a good measure of the uncertainty in the slope that is captured by our model. We are 95% confident in the process of building this interval, but this doesn't mean we're 95% sure that the true slope is actually in that interval.
+
+Also available are a *t* value (just the Estimate divided by the Standard Error) and the appropriate *p* value for testing the null hypothesis that the true value of the coefficient is 0 against a two-tailed alternative.
+
+- If a slope coefficient is statistically significantly different from 0, this implies that 0 will not be part of the uncertainty interval obtained through `confint`.
+- If the slope was zero, it would suggest that `bmi` would add no predictive value to the model. But that's unlikely here.
+
+If the `bmi` slope coefficient is associated with a small *p* value, as in the case of our `model_A`, it suggests that the model including `bmi` is statistically significantly better at predicting `physhealth` than the model without `bmi`.
+
+- Without `bmi` our `model_A` would become an *intercept-only* model, in this case, which would predict the mean `physhealth` for everyone, regardless of any other information.
+
+#### Model Fit Summaries
+
+The `summary` of a linear model also displays:
+
+- The residual standard error and associated degrees of freedom for the residuals.
+- For a simple (one-predictor) least regression like this, the residual degrees of freedom will be the sample size minus 2.
+- The multiple R-squared (or coefficient of determination)
+- This is interpreted as the proportion of variation in the outcome (`physhealth`) accounted for by the model, and will always fall between 0 and 1 as a result.
+- Our model_A accounts for a mere 2% of the variation in `physhealth`.
+- The Adjusted R-squared value "adjusts" for the size of our model in terms of the number of coefficients included in the model.
+- The adjusted R-squared will always be less than the Multiple R-squared. 
+- We still hope to find models with relatively large adjusted R^2^ values.
+- In particular, we hope to find models where the adjusted R^2^ isn't substantially less than the Multiple R-squared.
+- The adjusted R-squared is usually a better estimate of likely performance of our model in new data than is the Multiple R-squared.
+- The adjusted R-squared result is no longer interpretable as a proportion of anything - in fact, it can fall below 0.
+- We can obtain the adjusted R^2^ from the raw R^2^, the number of observations *N* and the number of predictors *p* included in the model, as follows:
+    
+$$
+R^2_{adj} = 1 - \frac{(1 - R^2)(N - 1)}{N - p - 1},
+$$
+
+- The F statistic and *p* value from a global ANOVA test of the model.
+    - Obtaining a statistically significant result here is usually pretty straightforward, since the comparison is between our model, and a model which simply predicts the mean value of the outcome for everyone.
+    - In a simple (one-predictor) linear regression like this, the t statistic for the slope is just the square root of the F statistic, and the resulting *p* values for the slope's t test and for the global F test will be identical.
+- To see the complete ANOVA F test for this model, we can run `anova(model_A)`.
+
+```{r c2_anova_lm_physhealth_bmi_1}
+anova(model_A)
+```
+
+### Using the `broom` package
+
+The `broom` package has three functions of particular use in a linear regression model:
+
+#### The `tidy` function
+
+`tidy` builds a data frame/tibble containing information about the coefficients in the model, their standard errors, t statistics and *p* values.
+
+```{r broom_tools_chapter2_model_A_tidy}
+tidy(model_A)
+```
+
+#### The `glance` function
+
+glance` builds a data frame/tibble containing summary statistics about the model, including
+
+- the (raw) multiple R^2^ and adjusted R^2
+- `sigma` which is the residual standard error
+- the F `statistic`, `p.value` model `df` and `df.residual` associated with the global ANOVA test, plus
+- several statistics that will be useful in comparing models down the line:
+- the model's log likelihood function value, `logLik`
+- the model's Akaike's Information Criterion value, `AIC`
+- the model's Bayesian Information Criterion value, `BIC`
+- and the model's `deviance` statistic
+
+```{r broom_tools_chapter2_model_A_glance}
+glance(model_A)
+```
+
+#### The `augment` function
+
+`augment` builds a data frame/tibble which adds fitted values, residuals and other diagnostic summaries that describe each observation to the original data used to fit the model, and this includes 
+
+- `.fitted` and `.resid`, the fitted and residual values, in addition to
+- `.hat`, the leverage value for this observation
+- `.cooksd`, the Cook's distance measure of *influence* for this observation
+- `.stdresid`, the standardized residual (think of this as a z-score - a measure of the residual divided by its associated standard deviation `.sigma`)
+- and `se.fit` which will help us generate prediction intervals for the model downstream
+
+Note that each of the new columns begins with `.` to avoid overwriting any data.
+
+```{r broom_tools_chapter2_model_A_augment}
+head(augment(model_A))
+```
+
+For more on the `broom` package, you may want to look at [this vignette](https://cran.r-project.org/web/packages/broom/vignettes/broom.html).
+
+### How does the model do? (Residuals vs. Fitted Values)
+
+- Remember that the R^2^ value was about 2%.
+
+```{r chapter2_first_resid_plot_model_A}
+plot(model_A, which = 1)
+```
+
+This is a plot of residuals vs. fitted values. The goal here is for this plot to look like a random scatter of points, perhaps like a "fuzzy football", and that's **not** what we have. Why?
+    
+If you prefer, here's a `ggplot2` version of a similar plot, now looking at standardized residuals instead of raw residuals, and adding a loess smooth and a linear fit to the result.
+
+```{r chapter2_ggplot_first_resid_plot_model_A}
+ggplot(augment(model_A), aes(x = .fitted, y = .std.resid)) +
+    geom_point() +
+    geom_smooth(method = "lm", se = FALSE, col = "red", linetype = "dashed") +
+    geom_smooth(method = "loess", se = FALSE, col = "navy") +
+    theme_bw()
+```
+
+The problem we're having here becomes, I think, a little more obvious if we look at what we're predicting. Does `physhealth` look like a good candidate for a linear model?
+
+```{r histogram_of_physhealth_smartcle2}
+ggplot(smartcle2, aes(x = physhealth)) +
+geom_histogram(bins = 30, fill = "dodgerblue", color = "royalblue")
+```
+
+```{r distribution_of_physhealth_smartcle2_counts}
+smartcle2 %>% count(physhealth == 0, physhealth == 30)
+```
+
+No matter what model we fit, if we are predicting `physhealth`, and most of the data are values of 0 and 30, we have limited variation in our outcome, and so our linear model will be somewhat questionable just on that basis.
+
+A normal Q-Q plot of the standardized residuals for our `model_A` shows this problem, too.
+
+```{r chapter2_second_resid_plot_model_A}
+plot(model_A, which = 2)
+```
+
+We're going to need a method to deal with this sort of outcome, that has both a floor and a ceiling. We'll get there eventually, but linear regression alone doesn't look promising.
+
+All right, so that didn't go anywhere great. Let's try again, with a new outcome.
+
+## A New Small Study: Predicting BMI
+
+We'll begin by investigating the problem of predicting `bmi`, at first with just three regression inputs: `sex`, `exerany` and `sleephrs`, in our new `smartcle2` data set. 
+
+- The outcome of interest is `bmi`.
+- Inputs to the regression model are:
+    - `female` = 1 if the subject is female, and 0 if they are male
+    - `exerany` = 1 if the subject exercised in the past 30 days, and 0 if they didn't
+    - `sleephrs` = hours slept in a typical 24-hour period (treated as quantitative)
+
+### Does `female` predict `bmi` well?
+
+#### Graphical Assessment
+
+```{r c2_sex_bmi_plot1}
+ggplot(smartcle2, aes(x = female, y = bmi)) +
+    geom_point()
+```
+
+Not so helpful. We should probably specify that `female` is a factor, and try another plotting approach.
+
+```{r c2_sex_bmi_plot2}
+ggplot(smartcle2, aes(x = factor(female), y = bmi)) +
+    geom_boxplot()
+```
+
+The median BMI looks a little higher for males. Let's see if a model reflects that.
+
+## `c2_m1`: A simple t-test model
+
+```{r c2_sex-bmi_m1}
+c2_m1 <- lm(bmi ~ female, data = smartcle2)
+c2_m1
+summary(c2_m1)
+confint(c2_m1)
+```
+
+The model suggests, based on these 896 subjects, that 
+
+- our best prediction for males is BMI = 28.36 kg/m^2^, and 
+- our best prediction for females is BMI = 28.36 - 0.85 = 27.51 kg/m^2^.
+- the mean difference between females and males is -0.85 kg/m^2^ in BMI
+- a 95% confidence (uncertainty) interval for that mean female - male difference in BMI ranges from -1.69 to -0.01
+- the model accounts for 0.4% of the variation in BMI, so that knowing the respondent's sex does very little to reduce the size of the prediction errors as compared to an intercept only model that would predict the overall mean (regardless of sex) for all subjects.
+- the model makes some enormous errors, with one subject being predicted to have a BMI 38 points lower than his/her actual BMI.
+
+Note that this simple regression model just gives us the t-test.
+
+```{r c2_sex-bmi_m1_asttest}
+t.test(bmi ~ female, var.equal = TRUE, data = smartcle2)
+```
+
+## `c2_m2`: Adding another predictor (two-way ANOVA without interaction)
+
+When we add in the information about `exerany` to our original model, we might first picture the data. We could look at separate histograms,
+
+```{r c2_smartcle2_plot_bmi_hist_by_female_exerany}
+ggplot(smartcle2, aes(x = bmi)) +
+    geom_histogram(bins = 30) +
+    facet_grid(female ~ exerany, labeller = label_both)
+```
+
+or maybe boxplots?
+
+```{r c2_smartcle2_plot_bmi_box_by_female_exerany}
+ggplot(smartcle2, aes(x = factor(female), y = bmi)) +
+    geom_boxplot() +
+    facet_wrap(~ exerany, labeller = label_both)
+```
+
+```{r c2_smartcle2_plot_bmi_points_by_female_exerany}
+ggplot(smartcle2, aes(x = female, y = bmi))+
+    geom_point(size = 3, alpha = 0.2) +
+    theme_bw() +
+    facet_wrap(~ exerany, labeller = label_both)
+```
+
+OK. Let's try fitting a model.
+
+```{r c2_sex-exerany-bmi_m2}
+c2_m2 <- lm(bmi ~ female + exerany, data = smartcle2)
+c2_m2
+```
+
+This new model predicts only four predicted values:
+
+- `bmi` = 30.334 if the subject is male and did not exercise (so `female` = 0 and `exerany` = 0)
+- `bmi` = 30.334 - 1.095 = 29.239 if the subject is female and did not exercise (`female` = 1 and `exerany` = 0)
+- `bmi` = 30.334 - 2.384 = 27.950 if the subject is male and exercised (so `female` = 0 and `exerany` = 1), and, finally
+- `bmi` = 30.334 - 1.095 - 2.384 = 26.855 if the subject is female and exercised (so both `female` and `exerany` = 1).
+
+For those who did not exercise, the model is:
+
+- `bmi` = 30.334 - 1.095 `female`
+
+and for those who did exercise, the model is:
+
+- `bmi` = 27.95 - 1.095 `female`
+
+Only the intercept of the `bmi-female` model changes depending on `exerany`.
+
+```{r c2_sex-exerany-bmi_m2_summaries}
+summary(c2_m2)
+confint(c2_m2)
+```
+
+The slopes of both `female` and `exerany` have confidence intervals that are completely below zero, indicating that both `female` sex and `exerany` appear to be associated with reductions in `bmi`.
+
+The R^2^ value suggests that just under 3% of the variation in `bmi` is accounted for by this ANOVA model.
+
+In fact, this regression (on two binary indicator variables) is simply a two-way ANOVA model without an interaction term.
+
+```{r anova_for_c2_m2}
+anova(c2_m2)
+```
+
+
+## `c2_m3`: Adding the interaction term (Two-way ANOVA with interaction)
+
+Suppose we want to let the effect of `female` vary depending on the `exerany` status. Then we need to incorporate an interaction term in our model.
+
+```{r c2_sex-exerany-bmi_m3}
+c2_m3 <- lm(bmi ~ female * exerany, data = smartcle2)
+c2_m3
+```
+
+So, for example, for a male who exercises, this model predicts
+
+- `bmi` = 30.136 - 0.810 (0) - 2.145 (1) - 0.359 (0)(1) = 30.136 - 2.145 = 27.991
+
+And for a female who exercises, the model predicts
+
+- `bmi` = 30.136 - 0.810 (1) - 2.145 (1) - 0.359 (1)(1) = 30.136 - 0.810 - 2.145 - 0.359 = 26.822
+
+For those who did not exercise, the model is:
+
+- `bmi` = 30.136 - 0.81 `female`
+
+But for those who did exercise, the model is:
+
+- `bmi` = (30.136 - 2.145) + (-0.810 + (-0.359)) `female`, or ,,,
+- `bmi` = 27.991 - 1.169 `female`
+
+Now, both the slope and the intercept of the `bmi-female` model change depending on `exerany`.
+
+```{r c2_sex-exerany-bmi_m3_summaries}
+summary(c2_m3)
+confint(c2_m3)
+```
+
+In fact, this regression (on two binary indicator variables and a product term) is simply a two-way ANOVA model with an interaction term.
+
+```{r anova_for_c2_m3}
+anova(c2_m3)
+```
+
+The interaction term doesn't change very much here. Its uncertainty interval includes zero, and the overall model still accounts for just under 3% of the variation in `bmi`. 
+
+## `c2_m4`: Using `female` and `sleephrs` in a model for `bmi`
+
+```{r graph_to_set_up_c2_m4}
+ggplot(smartcle2, aes(x = sleephrs, y = bmi, color = factor(female))) +
+    geom_point() + 
+    guides(col = FALSE) +
+    geom_smooth(method = "lm", se = FALSE) +
+    facet_wrap(~ female, labeller = label_both) 
+```
+
+Does the difference in slopes of `bmi` and `sleephrs` for males and females appear to be substantial and important?
+
+```{r fit_c2_m4}
+c2_m4 <- lm(bmi ~ female * sleephrs, data = smartcle2)
+
+summary(c2_m4)
+```
+
+Does it seem as though the addition of `sleephrs` has improved our model substantially over a model with `female` alone (which, you recall, was `c2_m1`)?
+
+Since the `c2_m4` model contains the `c2_m1` model's predictors as a subset and the outcome is the same for each model, we consider the models *nested* and have some extra tools available to compare them.
+
+- I might start by looking at the basic summaries for each model.
+
+```{r ch2_compare_glance_m4_to_m1_m4results}
+glance(c2_m4)
+```
+
+```{r ch2_compare_glance_m4_to_m1_m1results}
+glance(c2_m1)
+```
+
+- The R^2^ is twice as large for the model with `sleephrs`, but still very tiny.
+- The *p* value for the global ANOVA test is actually less significant in `c2_m4` than in `c2_m1`.
+- Smaller AIC and smaller BIC statistics are more desirable. Here, there's little to choose from, but `c2_m1` is a little better on each standard.
+- We might also consider a significance test by looking at an ANOVA model comparison. This is only appropriate because `c2_m1` is nested in `c2_m4`.
+    
+```{r ch2_compare_anova_m4_to_m1}
+anova(c2_m4, c2_m1)
+```
+
+The addition of the `sleephrs` term picked up 143 in the sum of squares column, at a cost of two degrees of freedom, yielding a *p* value of 0.166, suggesting that this isn't a significant improvement over the model that just did a t-test on `female`.
+
+## Making Predictions with a Linear Regression Model
+
+Recall model 4, which yields predictions for body mass index on the basis of the main effects of sex (`female`) and hours of sleep (`sleephrs`) and their interaction. 
+
+```{r}
+c2_m4
+```
+
+### Fitting an Individual Prediction and 95% Prediction Interval
+
+What do we predict for the `bmi` of a subject who is `female` and gets 8 hours of sleep per night?
+
+```{r}
+c2_new1 <- data_frame(female = 1, sleephrs = 8)
+predict(c2_m4, newdata = c2_new1, interval = "prediction", level = 0.95)
+```
+
+The predicted `bmi` for this new subject is 27.61. The prediction interval shows the bounds of a 95% uncertainty interval for a predicted `bmi` for an individual female subject who gets 8 hours of sleep on average per evening. From the `predict` function applied to a linear model, we can get the prediction intervals for any new data points in this manner.
+
+### Confidence Interval for an Average Prediction
+
+- What do we predict for the **average body mass index of a population of subjects** who are female and sleep for 8 hours?
+
+```{r predict with ci using m4}
+predict(c2_m4, newdata = c2_new1, interval = "confidence", level = 0.95)
+```
+
+- How does this result compare to the prediction interval?
+
+### Fitting Multiple Individual Predictions to New Data
+
+- How does our prediction change for a respondent if they instead get 7, or 9 hours of sleep? What if they are male, instead of female?
+
+```{r predict again with pi using m4}
+c2_new2 <- data_frame(subjectid = 1001:1006, female = c(1, 1, 1, 0, 0, 0), sleephrs = c(7, 8, 9, 7, 8, 9))
+pred2 <- predict(c2_m4, newdata = c2_new2, interval = "prediction", level = 0.95) %>% tbl_df
+
+result2 <- bind_cols(c2_new2, pred2)
+result2
+```
+
+The `result2` tibble contains predictions for each scenario. 
+
+- Which has a bigger impact on these predictions and prediction intervals? A one category change in `female` or a one hour change in `sleephrs`?
+
+### Simulation to represent predictive uncertainty in Model 4
+
+Suppose we want to predict the `bmi` of a female subject who sleeps for eight hours per night. As we have seen, we can do this automatically for a linear model like this one, using the `predict` function applied to the linear model, but a simulation prediction can also be done. Recall the detail of `c2_m4`:
+
+```{r tidy_c2_m4_again}
+c2_m4
+glance(c2_m4)
+```
+
+We see that the residual standard error for our `bmi` predictions with this model is 6.31. 
+
+For a female respondent sleeping eight hours, recall that our point estimate (predicted value) of `bmi` is 27.21
+
+```{r}
+predict(c2_m4, newdata = c2_new1, interval = "prediction", level = 0.95)
+```
+
+The standard deviation is 6.31, so we could summarize the predictive distribution with a command that tells R to draw 1000 random numbers from a normal distribution with mean 27.21 and standard deviation 6.31. Let's summarize that and get a quick picture.
+
+```{r}
+set.seed(432094)
+pred.sim <- rnorm(1000, 27.21, 6.31)
+hist(pred.sim, col = "royalblue")
+
+mean(pred.sim)
+quantile(pred.sim, c(0.025, 0.975))
+```
+
+How do these results compare to the prediction interval of (14.81, 39.61) that we generated earlier?
+
+## Centering the model
+
+Our model `c2_m4` has four predictors (the constant, `sleephrs`, `female` and their interaction) but just two inputs (`female` and `sleephrs`.) If we **center** the quantitative input `sleephrs` before building the model, we get a more interpretable interaction term.
+
+```{r}
+smartcle2_c <- smartcle2 %>%
+    mutate(sleephrs_c = sleephrs - mean(sleephrs))
+
+c2_m4_c <- lm(bmi ~ female * sleephrs_c, data = smartcle2_c)
+
+summary(c2_m4_c)
+```
+
+What has changed as compared to the original `c2_m4`?
+
+- Our original model was `bmi` = 27.26 + 2.53 `female` + 0.16 `sleephrs` - 0.48 `female` x `sleephrs`
+- Our new model is `bmi` = 28.37 - 0.84 `female` + 0.16 centered `sleephrs` - 0.48 `female` x centered `sleephrs`.
+
+So our new model on centered data is:
+
+- 28.37 + 0.16 centered `sleephrs_c` for male subjects, and
+- (28.37 - 0.84) + (0.16 - 0.48) centered `sleephrs_c`, or 27.53 - 0.32 centered `sleephrs_c` for female subjects.
+
+In our new (centered `sleephrs_c`) model, 
+
+- the main effect of `female` now corresponds to a predictive difference (female - male) in `bmi` with `sleephrs` at its mean value, 7.02 hours,
+- the intercept term is now the predicted `bmi` for a male respondent who sleeps an average number of hours, and
+- the product term corresponds to the change in the slope of centered `sleephrs_c` on `bmi` for a female rather than a male subject, while
+- the residual standard deviation and the R-squared values remain unchanged from the model before centering.
+
+### Plot of Model 4 on Centered `sleephrs`: `c2_m4_c`
+
+```{r}
+ggplot(smartcle2_c, aes(x = sleephrs_c, y = bmi, group = female, col = factor(female))) +
+    geom_point(alpha = 0.5, size = 2) +
+    geom_smooth(method = "lm", se = FALSE) +
+    guides(color = FALSE) +
+    labs(x = "Sleep Hours, centered", y = "Body Mass Index",
+         title = "Model `c2_m4` on centered data") +
+    facet_wrap(~ female, labeller = label_both)
+```
+
+## Rescaling an input by subtracting the mean and dividing by 2 standard deviations
+
+Centering helped us interpret the main effects in the regression, but it still leaves a scaling problem. 
+
+- The `female` coefficient estimate is much larger than that of `sleephrs`, but this is misleading, considering that we are comparing the complete change in one variable (sex = female or not) to a 1-hour change in average sleep.
+- @GelmanHill2007 recommend all continuous predictors be scaled by dividing by 2 standard deviations, so that:
+    + a 1-unit change in the rescaled predictor corresponds to a change from 1 standard deviation below the mean, to 1 standard deviation above.
+    + an unscaled binary (1/0) predictor with 50% probability of occurring will be exactly comparable to a rescaled continuous predictor done in this way.
+
+```{r c2_rescale_sleephrs_smartcle2}
+smartcle2_rescale <- smartcle2 %>%
+    mutate(sleephrs_z = (sleephrs - mean(sleephrs))/(2*sd(sleephrs)))
+```
+
+### Refitting model `c2_m4` to the rescaled data
+
+```{r}
+c2_m4_z <- lm(bmi ~ female * sleephrs_z, data = smartcle2_rescale)
+
+summary(c2_m4_z)
+```
+
+### Interpreting the model on rescaled data
+
+What has changed as compared to the original `c2_m4`?
+
+- Our original model was `bmi` = 27.26 + 2.53 `female` + 0.16 `sleephrs` - 0.48 `female` x `sleephrs`
+- Our model on centered `sleephrs` was `bmi` = 28.37 - 0.84 `female` + 0.16 centered `sleephrs_c` - 0.48 `female` x centered `sleephrs_c`.
+- Our new model on rescaled `sleephrs` is `bmi` = 28.37 - 0.84 `female` + 0.46 rescaled `sleephrs_z` - 1.42 `female` x rescaled `sleephrs_z`.
+
+So our rescaled model is:
+
+- 28.37 + 0.46 rescaled `sleephrs_z` for male subjects, and
+- (28.37 - 0.84) + (0.46 - 1.42) rescaled `sleephrs_z`, or 27.53 - 0.96 rescaled `sleephrs_z` for female subjects.
+
+In this new rescaled (`sleephrs_z`) model, then,
+
+- the main effect of `female`, -0.84, still corresponds to a predictive difference (female - male) in `bmi` with `sleephrs` at its mean value, 7.02 hours,
+- the intercept term is still the predicted `bmi` for a male respondent who sleeps an average number of hours, and
+- the residual standard deviation and the R-squared values remain unchanged,
+
+as before, but now we also have that:
+
+- the coefficient of `sleephrs_z` indicates the predictive difference in `bmi` associated with a change in `sleephrs` of 2 standard deviations (from one standard deviation below the mean of 7.02 to one standard deviation above 7.02.) 
+    + Since the standard deviation of `sleephrs` is 1.48, this corresponds to a change from 5.54 hours per night to 8.50 hours per night.
+- the coefficient of the product term (-1.42) corresponds to the change in the coefficient of `sleephrs_z` for females as compared to males.
+
+### Plot of model on rescaled data
+
+```{r}
+ggplot(smartcle2_rescale, aes(x = sleephrs_z, y = bmi, 
+                              group = female, col = factor(female))) +
+    geom_point(alpha = 0.5) +
+    geom_smooth(method = "lm", size = 1.5) +
+    scale_color_discrete(name = "Is subject female?") +
+    labs(x = "Sleep Hours, standardized (2 sd)", y = "Body Mass Index",
+         title = "Model `c2_m4_z` on rescaled data")
+```
+
+## `c2_m5`: What if we add more variables?
+
+We can boost our R^2^ a bit, to over 5%, by adding in two new variables, related to whether or not the subject (in the past 30 days) used the internet, and on how many days the subject drank alcoholic beverages.
+
+```{r fit_c2_m5}
+c2_m5 <- lm(bmi ~ female + exerany + sleephrs + internet30 + alcdays,
+         data = smartcle2)
+summary(c2_m5)
+```
+
+1. Here's the ANOVA for this model. What can we study with this? 
+
+```{r anova_c2_m5}
+anova(c2_m5)
+```
+
+2. Consider the revised output below. Now what can we study?
+
+```{r anova_c2_m5_reorder}
+anova(lm(bmi ~ exerany + internet30 + alcdays + female + sleephrs,
+         data = smartcle2))
+```
+
+3. What does the output below let us conclude?
+
+```{r anova_compare_c2_m5_to_smaller_model}
+anova(lm(bmi ~ exerany + internet30 + alcdays + female + sleephrs, 
+         data = smartcle2),
+      lm(bmi ~ exerany + female + alcdays, 
+         data = smartcle2))
+```
+
+4. What does it mean for the models to be "nested"?
+
+## `c2_m6`: Would adding self-reported health help?
+
+And we can do even a bit better than that by adding in a multi-categorical measure: self-reported general health.
+
+```{r fit_c2_m6}
+c2_m6 <- lm(bmi ~ female + exerany + sleephrs + internet30 + alcdays + genhealth,
+         data = smartcle2)
+summary(c2_m6)
+```
+
+1. If Harry and Marty have the same values of `female`, `exerany`, `sleephrs`, `internet30` and `alcdays`, but Harry rates his health as Good, and Marty rates his as Fair, then what is the difference in the predictions? Who is predicted to have a larger BMI, and by how much?
+
+2. What does this normal probability plot of the residuals suggest?
+
+```{r c2_m6_residuals_normality}
+plot(c2_m6, which = 2)
+```
+
+## `c2_m7`: What if we added the `menthealth` variable?
+
+```{r fit_c2_m7}
+c2_m7 <- lm(bmi ~ female + exerany + sleephrs + internet30 + alcdays + 
+                genhealth + physhealth + menthealth,
+         data = smartcle2)
+
+summary(c2_m7)
+```
+
+## Key Regression Assumptions for Building Effective Prediction Models
+
+1. Validity - the data you are analyzing should map to the research question you are trying to answer.
+    + The outcome should accurately reflect the phenomenon of interest.
+    + The model should include all relevant predictors. (It can be difficult to decide which predictors are necessary, and what to do with predictors that have large standard errors.)
+    + The model should generalize to all of the cases to which it will be applied.
+    + Can the available data answer our question reliably?
+2. Additivity and linearity - most important assumption of a regression model is that its deterministic component is a linear function of the predictors. We often think about transformations in this setting.
+3. Independence of errors - errors from the prediction line are independent of each other
+4. Equal variance of errors - if this is violated, we can more efficiently estimate parameters using *weighted least squares* approaches, where each point is weighted inversely proportional to its variance, but this doesn't affect the coefficients much, if at all.
+5. Normality of errors - not generally important for estimating the regression line
+
+### Checking Assumptions in model `c2_m7`
+
+1. How does the assumption of linearity behind this model look?
+
+```{r residual_plot1_c2_m7}
+plot(c2_m7, which = 1)
+```
+
+We see no strong signs of serious non-linearity here. There's no obvious curve in the plot, for example. 
+
+2. What can we conclude from the plot below?
+
+```{r residual_plot5_c2_m7}
+plot(c2_m7, which = 5)
+```
+
+This plot can help us identify points with large standardized residuals, large leverage values, and large influence on the model (as indicated by large values of Cook's distance.) In this case, I see no signs of any points used in the model with especially large influence, although there are some poorly fitted points (with especially large standardized residuals.)
+

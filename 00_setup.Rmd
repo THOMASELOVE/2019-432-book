@@ -24,7 +24,15 @@ library(broom)
 library(tidyverse)
 ```
 
-# Data used in these notes {-}
+```{r special_functions}
+skim_with(numeric = list(hist = NULL), 
+          integer = list(hist = NULL), 
+          ts = list(line_graph = NULL))
+
+specify_decimal <- function(x, k) format(round(x, k), nsmall=k)
+```
+
+## Data used in these notes {-}
 
 Here, we'll load in the data sets used in these notes.
 
@@ -45,12 +53,5 @@ hem <- read.csv("data/hem.csv") %>% tbl_df
 leukem <- read.csv("data/leukem.csv") %>% tbl_df
 ```
 
-# Special Functions used in these notes {-}
 
-```{r special_functions}
-specify_decimal <- function(x, k) format(round(x, k), nsmall=k)
-skim_with(numeric = list(hist = NULL), 
-          integer = list(hist = NULL), 
-          ts = list(line_graph = NULL))
-```
 

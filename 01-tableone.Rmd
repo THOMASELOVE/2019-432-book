@@ -45,7 +45,7 @@ knitr::include_graphics("images/Berkhemer-snip4notes.png")
 
 ## Simulated `fakestroke` data
 
-Consider the simulated data, available on the Data and Code page of [our course website](https://github.com/THOMASELOVE/432-2018) in the `fakestroke.csv` file, which I built to let us mirror the Table 1 for MR CLEAN [@Berkhemer2015]. The `fakestroke.csv` file contains the following 18 variables for 500 patients.
+Consider the simulated data, available on the Data and Code page of [our course website](https://github.com/THOMASELOVE/2019-432) in the `fakestroke.csv` file, which I built to let us mirror the Table 1 for MR CLEAN [@Berkhemer2015]. The `fakestroke.csv` file contains the following 18 variables for 500 patients.
 
 Variable |	Description
 ----------: | -----------------------------------------
@@ -236,7 +236,7 @@ My source for the data and the following explanatory paragraph is page 307 from 
 
 ## The `bloodbrain.csv` file
 
-Consider the data, available on the Data and Code page of [our course website](https://github.com/THOMASELOVE/432-2018) in the `bloodbrain.csv` file, which includes the following variables:
+Consider the data, available on the Data and Code page of [our course website](https://github.com/THOMASELOVE/2019-432) in the `bloodbrain.csv` file, which includes the following variables:
 
 Variable | Description
 -------: | --------------------------------------------
