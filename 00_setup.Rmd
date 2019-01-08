@@ -1,0 +1,56 @@
+# R Packages used in these notes {-}
+
+Here, we'll load in the packages used in these notes.
+
+```{r load_packages, message = FALSE, warning = FALSE}
+library(tableone)
+library(skimr)
+library(ggridges)
+library(magrittr)
+library(pander)
+library(arm)
+library(survival)
+library(OIsurv)
+library(survminer)
+library(rms)
+library(leaps)
+library(lars)
+library(Epi)
+library(pROC)
+library(ROCR)
+library(simputation)
+library(modelr)
+library(broom)
+library(tidyverse)
+```
+
+# Data used in these notes {-}
+
+Here, we'll load in the data sets used in these notes.
+
+```{r load_data, message = FALSE, warning = FALSE}
+fakestroke <- read.csv("data/fakestroke.csv") %>% tbl_df
+bloodbrain <- read.csv("data/bloodbrain.csv") %>% tbl_df
+smartcle1 <- read.csv("data/smartcle1.csv") %>% tbl_df
+bonding <- read.csv("data/bonding.csv") %>% tbl_df
+cortisol <- read.csv("data/cortisol.csv") %>% tbl_df
+emphysema <- read.csv("data/emphysema.csv") %>% tbl_df
+prost <- read.csv("data/prost.csv") %>% tbl_df
+pollution <- read.csv("data/pollution.csv") %>% tbl_df
+resect <- read.csv("data/resect.csv") %>% tbl_df
+colscr <- read.csv("data/screening.csv") %>% tbl_df
+colscr2 <- read.csv("data/screening2.csv") %>% tbl_df
+authorship <- read_csv("data/authorship.csv") 
+hem <- read.csv("data/hem.csv") %>% tbl_df
+leukem <- read.csv("data/leukem.csv") %>% tbl_df
+```
+
+# Special Functions used in these notes {-}
+
+```{r special_functions}
+specify_decimal <- function(x, k) format(round(x, k), nsmall=k)
+skim_with(numeric = list(hist = NULL), 
+          integer = list(hist = NULL), 
+          ts = list(line_graph = NULL))
+```
+
