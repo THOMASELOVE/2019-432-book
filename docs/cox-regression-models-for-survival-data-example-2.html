@@ -50,67 +50,41 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
 </head>
@@ -961,7 +935,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 23</span> Cox Regression Models for Survival Data: Example 2</h1>
 <div id="a-second-example-the-leukem-data" class="section level2">
 <h2><span class="header-section-number">23.1</span> A Second Example: The <code>leukem</code> data</h2>
-<pre class="sourceCode r"><code class="sourceCode r">leukem</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">leukem</code></pre></div>
 <pre><code># A tibble: 51 x 8
       id   age pblasts  pinf  plab maxtemp months alive
    &lt;int&gt; &lt;int&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;   &lt;dbl&gt;  &lt;int&gt; &lt;int&gt;
@@ -987,7 +961,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>months</code>, which is Survival time from diagnosis (in months)</li>
 <li><code>alive</code>, which indicates Status as of the end of the study (1 = alive and thus censored, 0 = dead)</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(leukem)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(leukem)</code></pre></div>
 <pre><code>Observations: 51
 Variables: 8
 $ id      &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,...
@@ -1002,8 +976,8 @@ $ alive   &lt;int&gt; 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, ...<
 <h3><span class="header-section-number">23.1.1</span> Creating our response: A survival time object</h3>
 <p>Regardless of how we’re going to fit a survival model, we start by creating a <em>survival time</em> object that combines the information in <code>months</code> (the survival times, possibly censored) and <code>alive</code> (the censoring indicator) into a single variable we’ll call <code>stime</code> in this example.</p>
 <p>The function below correctly registers the survival time, and censors subjects who are alive at the end of the study (we need to indicate those whose times are known, and they are identified by <code>alive == 0</code>). All other subjects are alive for at least as long as we observe them, but their exact survival times are <em>right-censored</em>.</p>
-<pre class="sourceCode r"><code class="sourceCode r">stime &lt;-<span class="st"> </span><span class="kw">Surv</span>(leukem<span class="op">$</span>months, leukem<span class="op">$</span>alive <span class="op">==</span><span class="st"> </span><span class="dv">0</span>)
-stime</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">stime &lt;-<span class="st"> </span><span class="kw">Surv</span>(leukem<span class="op">$</span>months, leukem<span class="op">$</span>alive <span class="op">==</span><span class="st"> </span><span class="dv">0</span>)
+stime</code></pre></div>
 <pre><code> [1] 18  31+ 31  31  36   1   9  39+ 20+  4  45+ 36  12   8   1  15  24 
 [18]  2  33  29+  7   0   1   2  12   9   1   1   9   5  27+  1  13   1 
 [35]  5   1   3   4   1  18   1   2   1   8   3   4  14   3  13  13   1 </code></pre>
@@ -1022,10 +996,10 @@ stime</code></pre>
 <div id="model-a-coxph-model-for-survival-time-using-age-at-diagnosis" class="section level2">
 <h2><span class="header-section-number">23.2</span> Model A: <code>coxph</code> Model for Survival Time using <code>age</code> at diagnosis</h2>
 <p>We’ll start by using <code>age</code> at diagnosis to predict our survival object (survival time, accounting for censoring).</p>
-<pre class="sourceCode r"><code class="sourceCode r">modA &lt;-<span class="st"> </span><span class="kw">coxph</span>(<span class="kw">Surv</span>(months, alive<span class="op">==</span><span class="dv">0</span>) <span class="op">~</span><span class="st"> </span>age, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">modA &lt;-<span class="st"> </span><span class="kw">coxph</span>(<span class="kw">Surv</span>(months, alive<span class="op">==</span><span class="dv">0</span>) <span class="op">~</span><span class="st"> </span>age, 
               <span class="dt">data=</span>leukem, <span class="dt">model=</span><span class="ot">TRUE</span>)
 
-<span class="kw">summary</span>(modA)</code></pre>
+<span class="kw">summary</span>(modA)</code></pre></div>
 <pre><code>Call:
 coxph(formula = Surv(months, alive == 0) ~ age, data = leukem, 
     model = TRUE)
@@ -1064,7 +1038,7 @@ Score (logrank) test = 12.29  on 1 df,   p=5e-04</code></pre>
 <li>The likelihood ratio test compares the entire model to the null model (intercept-only). Again, run an ANOVA (technically an analysis of deviance) to get more details on the likelihood-ratio test.</li>
 </ul></li>
 </ol>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(modA)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(modA)</code></pre></div>
 <pre><code>Analysis of Deviance Table
  Cox model: response is Surv(months, alive == 0)
 Terms added sequentially (first to last)
@@ -1076,30 +1050,30 @@ age  -137.02 11.849  1   0.000577 ***
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <div id="plotting-the-survival-curve-implied-by-model-a" class="section level3">
 <h3><span class="header-section-number">23.2.1</span> Plotting the Survival Curve implied by Model A</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">survfit</span>(modA), <span class="dt">ylab=</span><span class="st">&quot;Probability of Survival&quot;</span>,
-     <span class="dt">xlab=</span><span class="st">&quot;Months in Study&quot;</span>, <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;black&quot;</span>, <span class="st">&quot;black&quot;</span>))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">survfit</span>(modA), <span class="dt">ylab=</span><span class="st">&quot;Probability of Survival&quot;</span>,
+     <span class="dt">xlab=</span><span class="st">&quot;Months in Study&quot;</span>, <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;black&quot;</span>, <span class="st">&quot;black&quot;</span>))</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/surv_leukem_modelA_plot-1.png" width="672" /></p>
 </div>
 <div id="testing-the-proportional-hazards-assumption" class="section level3">
 <h3><span class="header-section-number">23.2.2</span> Testing the Proportional Hazards Assumption</h3>
 <p>As we’ve noted, the key assumption in a Cox model is that the hazards are <strong>proportional</strong>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cox.zph</span>(modA)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cox.zph</span>(modA)</code></pre></div>
 <pre><code>      rho chisq     p
 age 0.147 0.791 0.374</code></pre>
 <p>A significant result here would indicate a problem with the proportional hazards assumption - again, not the case here. We can also plot the results:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">cox.zph</span>(modA))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">cox.zph</span>(modA))</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/surv_leukem_modelA_zphplot-1.png" width="672" /></p>
 <p>We’re looking for the smooth curve to be fairly level across the time horizon here, as opposed to substantially increasing or decreasing in level as time passes.</p>
 </div>
 </div>
 <div id="building-model-a-with-cph-for-the-leukem-data" class="section level2">
 <h2><span class="header-section-number">23.3</span> Building Model A with <code>cph</code> for the <code>leukem</code> data</h2>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">units</span>(leukem<span class="op">$</span>months) &lt;-<span class="st"> &quot;month&quot;</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">units</span>(leukem<span class="op">$</span>months) &lt;-<span class="st"> &quot;month&quot;</span>
 d &lt;-<span class="st"> </span><span class="kw">datadist</span>(leukem)
 <span class="kw">options</span>(<span class="dt">datadist=</span><span class="st">&quot;d&quot;</span>)
 modA_cph &lt;-<span class="st"> </span><span class="kw">cph</span>(<span class="kw">Surv</span>(months, alive<span class="op">==</span><span class="dv">0</span>) <span class="op">~</span><span class="st"> </span>age, <span class="dt">data=</span>leukem, 
-              <span class="dt">x=</span><span class="ot">TRUE</span>, <span class="dt">y=</span><span class="ot">TRUE</span>, <span class="dt">surv=</span><span class="ot">TRUE</span>, <span class="dt">time.inc=</span><span class="dv">12</span>)</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">modA_cph</code></pre>
+              <span class="dt">x=</span><span class="ot">TRUE</span>, <span class="dt">y=</span><span class="ot">TRUE</span>, <span class="dt">surv=</span><span class="ot">TRUE</span>, <span class="dt">time.inc=</span><span class="dv">12</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">modA_cph</code></pre></div>
 <pre><code>Cox Proportional Hazards Model
  
  cph(formula = Surv(months, alive == 0) ~ age, data = leukem, 
@@ -1116,37 +1090,37 @@ modA_cph &lt;-<span class="st"> </span><span class="kw">cph</span>(<span class="
      Coef   S.E.   Wald Z Pr(&gt;|Z|)
  age 0.0324 0.0095 3.40   0.0007  
  </code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">coef</span>(modA_cph)) <span class="co"># hazard ratio estimate</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">coef</span>(modA_cph)) <span class="co"># hazard ratio estimate</span></code></pre></div>
 <pre><code>     age 
 1.032923 </code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">confint</span>(modA_cph)) <span class="co"># hazard ratio 95% CI</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">confint</span>(modA_cph)) <span class="co"># hazard ratio 95% CI</span></code></pre></div>
 <pre><code>       2.5 %   97.5 %
 age 1.013826 1.052379</code></pre>
 <div id="plotting-the-age-effect-implied-by-our-model." class="section level3">
 <h3><span class="header-section-number">23.3.1</span> Plotting the <code>age</code> effect implied by our model.</h3>
 <p>We can plot the <code>age</code> effect implied by the model, using <code>ggplot2</code>, as follows…</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="kw">Predict</span>(modA_cph, age))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="kw">Predict</span>(modA_cph, age))</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/surv_leukem_modelA_cph_ggplot-1.png" width="672" /></p>
 </div>
 <div id="survival-plots-kaplan-meier-of-the-age-effect" class="section level3">
 <h3><span class="header-section-number">23.3.2</span> Survival Plots (Kaplan-Meier) of the <code>age</code> effect</h3>
 <p>The first survival plot I’ll show displays 95% confidence intervals for the probability of survival at the median <code>age</code> at diagnosis in the sample, which turns out to be 50 years, with numbers of patients still at risk indicated every 12 months of time in the study. We can substitute in <strong>conf = <code>bars</code></strong> to get a different flavor for this sort of plot.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">survplot</span>(modA_cph, <span class="dt">age=</span><span class="kw">median</span>(leukem<span class="op">$</span>age), <span class="dt">conf.int=</span>.<span class="dv">95</span>, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">survplot</span>(modA_cph, <span class="dt">age=</span><span class="kw">median</span>(leukem<span class="op">$</span>age), <span class="dt">conf.int=</span>.<span class="dv">95</span>, 
          <span class="dt">col=</span><span class="st">&#39;blue&#39;</span>, <span class="dt">time.inc=</span><span class="dv">12</span>, <span class="dt">n.risk=</span><span class="ot">TRUE</span>,
          <span class="dt">conf=</span><span class="st">&#39;bands&#39;</span>, <span class="dt">type=</span><span class="st">&quot;kaplan-meier&quot;</span>, 
-         <span class="dt">xlab=</span><span class="st">&quot;Study Survival Time in Months&quot;</span>)</code></pre>
+         <span class="dt">xlab=</span><span class="st">&quot;Study Survival Time in Months&quot;</span>)</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/surv_leukem_modelA_cph_survplot1-1.png" width="672" /></p>
 <p>Or we can generate a survival plot that shows survival probabilities over time across a range of values for <code>age</code> at diagnosis, as follows…</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">survplot</span>(modA_cph, <span class="dt">levels.only=</span><span class="ot">TRUE</span>, <span class="dt">time.inc=</span><span class="dv">12</span>, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">survplot</span>(modA_cph, <span class="dt">levels.only=</span><span class="ot">TRUE</span>, <span class="dt">time.inc=</span><span class="dv">12</span>, 
          <span class="dt">type=</span><span class="st">&quot;kaplan-meier&quot;</span>, 
-         <span class="dt">xlab=</span><span class="st">&quot;Study Survival Time in Months&quot;</span>)</code></pre>
+         <span class="dt">xlab=</span><span class="st">&quot;Study Survival Time in Months&quot;</span>)</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/surv_leukem_modelA_cph_survplot2-1.png" width="672" /></p>
 <p>This plot shows a series of modeled survival probabilities, for five different diagnosis <code>age</code> levels, as identified by the labels. Generally we see that the younger the subject is at diagnosis, the longer their survival time in the study.</p>
 </div>
 <div id="anova-test-for-the-cph-built-model-for-leukem" class="section level3">
 <h3><span class="header-section-number">23.3.3</span> ANOVA test for the <code>cph</code>-built model for <code>leukem</code></h3>
 <p>We can run a likelihood-ratio (drop in deviance) test of the significance of the <code>age</code> effect…</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(modA_cph)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(modA_cph)</code></pre></div>
 <pre><code>                Wald Statistics          Response: Surv(months, alive == 0) 
 
  Factor     Chi-Square d.f. P    
@@ -1156,19 +1130,19 @@ age 1.013826 1.052379</code></pre>
 <div id="summarizing-the-effect-sizes-from-moda_cph" class="section level3">
 <h3><span class="header-section-number">23.3.4</span> Summarizing the Effect Sizes from <code>modA_cph</code></h3>
 <p>We can generate the usual summaries of effect size in this context, too.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(modA_cph)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(modA_cph)</code></pre></div>
 <pre><code>             Effects              Response : Surv(months, alive == 0) 
 
  Factor        Low High Diff. Effect S.E.    Lower 0.95 Upper 0.95
  age           35  61   26    0.8422 0.24755 0.35701    1.3274    
   Hazard Ratio 35  61   26    2.3215      NA 1.42910    3.7712    </code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">summary</span>(modA_cph))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">summary</span>(modA_cph))</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/surv_leukem_modelA_cph_summaryandeffects-1.png" width="672" /></p>
 <p>As with all <code>rms</code> package effect estimates, this quantitative predictor (<code>age</code>) yields an effect comparing <code>age</code> at the 25th percentile of the sample (<code>age</code> = 35) to <code>age</code> at the 75th percentile (<code>age</code> = 61). So the hazard ratio is 2.32, with 95% CI (1.43, 3.77) for the effect of moving 26 years. Our <code>coxph</code> version of this same model showed a hazard ratio for the effect of moving just a single year.</p>
 </div>
 <div id="validating-the-cox-model-summary-statistics" class="section level3">
 <h3><span class="header-section-number">23.3.5</span> Validating the Cox Model Summary Statistics</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">432410</span>); <span class="kw">validate</span>(modA_cph)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">432410</span>); <span class="kw">validate</span>(modA_cph)</code></pre></div>
 <pre><code>      index.orig training   test optimism index.corrected  n
 Dxy       0.3007   0.3060 0.3007   0.0053          0.2954 40
 R2        0.2081   0.2078 0.2081  -0.0003          0.2084 40
@@ -1182,15 +1156,15 @@ g         0.6210   0.6189 0.6210  -0.0021          0.6231 40</code></pre>
 <div id="looking-for-influential-points" class="section level3">
 <h3><span class="header-section-number">23.3.6</span> Looking for Influential Points</h3>
 <p>This plot shows the influence of each point, in terms of DFBETA - the impact on the coefficient of <code>age</code> in the model were that specific point to be removed from the data set. We can also identify the row numbers of the largest (positive and negative) DFBETAs.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">residuals</span>(modA_cph, <span class="dt">type=</span><span class="st">&quot;dfbeta&quot;</span>, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">residuals</span>(modA_cph, <span class="dt">type=</span><span class="st">&quot;dfbeta&quot;</span>, 
                <span class="dt">collapse =</span> leukem<span class="op">$</span>id) <span class="op">~</span><span class="st"> </span>
 <span class="st">       </span>leukem<span class="op">$</span>id, <span class="dt">main=</span><span class="st">&quot;Index Plot of DFBETA for Age&quot;</span>, 
-     <span class="dt">type=</span><span class="st">&quot;h&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;DFBETA in modelA_cph&quot;</span>)</code></pre>
+     <span class="dt">type=</span><span class="st">&quot;h&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;DFBETA in modelA_cph&quot;</span>)</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/surv_leukem_modelA_cph_influential_points-1.png" width="672" /></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">which.max</span>(<span class="kw">residuals</span>(modA_cph, <span class="dt">type=</span><span class="st">&quot;dfbeta&quot;</span>))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">which.max</span>(<span class="kw">residuals</span>(modA_cph, <span class="dt">type=</span><span class="st">&quot;dfbeta&quot;</span>))</code></pre></div>
 <pre><code>8 
 8 </code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">which.min</span>(<span class="kw">residuals</span>(modA_cph, <span class="dt">type=</span><span class="st">&quot;dfbeta&quot;</span>))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">which.min</span>(<span class="kw">residuals</span>(modA_cph, <span class="dt">type=</span><span class="st">&quot;dfbeta&quot;</span>))</code></pre></div>
 <pre><code>50 
 50 </code></pre>
 <p>The DFBETAs look very small here. Changes in the <span class="math inline">\(\beta\)</span> estimates as large as 0.002 don’t have a meaningful impact in this case, so I don’t see anything particularly influential.</p>
@@ -1198,10 +1172,10 @@ g         0.6210   0.6189 0.6210  -0.0021          0.6231 40</code></pre>
 <div id="checking-the-proportional-hazards-assumption" class="section level3">
 <h3><span class="header-section-number">23.3.7</span> Checking the Proportional Hazards Assumption</h3>
 <p>As before, we can check the proportional hazards assumption with a test, or plot.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cox.zph</span>(modA_cph)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cox.zph</span>(modA_cph)</code></pre></div>
 <pre><code>      rho chisq     p
 age 0.147 0.791 0.374</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">cox.zph</span>(modA_cph))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">cox.zph</span>(modA_cph))</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/surv_leukem_modelA_cph_proportional_hazards_assumption-1.png" width="672" /></p>
 <p>Still no serious signs of trouble, of course. We’ll see what happens when we fit a bigger model.</p>
 </div>
@@ -1209,9 +1183,9 @@ age 0.147 0.791 0.374</code></pre>
 <div id="model-b-fitting-a-5-predictor-model-with-coxph" class="section level2">
 <h2><span class="header-section-number">23.4</span> Model B: Fitting a 5-Predictor Model with <code>coxph</code></h2>
 <p>Next, we use the <code>coxph</code> function from the <code>survival</code> package to apply a Cox regression model to predict the survival time using the main effects of the five predictors: <code>age</code>, <code>pblasts</code>, <code>pinf</code>, <code>plab</code> and <code>maxtemp</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r">modB &lt;-<span class="st"> </span><span class="kw">coxph</span>(<span class="kw">Surv</span>(months, alive<span class="op">==</span><span class="dv">0</span>) <span class="op">~</span><span class="st"> </span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">modB &lt;-<span class="st"> </span><span class="kw">coxph</span>(<span class="kw">Surv</span>(months, alive<span class="op">==</span><span class="dv">0</span>) <span class="op">~</span><span class="st"> </span>
 <span class="st">          </span>age <span class="op">+</span><span class="st"> </span>pblasts <span class="op">+</span><span class="st"> </span>pinf <span class="op">+</span><span class="st"> </span>plab <span class="op">+</span><span class="st"> </span>maxtemp, <span class="dt">data=</span>leukem)
-modB</code></pre>
+modB</code></pre></div>
 <pre><code>Call:
 coxph(formula = Surv(months, alive == 0) ~ age + pblasts + pinf + 
     plab + maxtemp, data = leukem)
@@ -1228,7 +1202,7 @@ n= 51, number of events= 45 </code></pre>
 <p>The Wald tests suggest that <code>age</code> and perhaps <code>plab</code> are the only terms which appear to be significant after accounting for the other predictors in the model.</p>
 <div id="interpreting-the-results-from-model-b" class="section level3">
 <h3><span class="header-section-number">23.4.1</span> Interpreting the Results from Model B</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(modB)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(modB)</code></pre></div>
 <pre><code>Call:
 coxph(formula = Surv(months, alive == 0) ~ age + pblasts + pinf + 
     plab + maxtemp, data = leukem)
@@ -1257,7 +1231,7 @@ Likelihood ratio test= 18.48  on 5 df,   p=0.002
 Wald test            = 17.62  on 5 df,   p=0.003
 Score (logrank) test = 18.96  on 5 df,   p=0.002</code></pre>
 <p>Again, it appears that only <code>age</code> has a statistically significant effect, as last predictor in.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(modB)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(modB)</code></pre></div>
 <pre><code>Analysis of Deviance Table
  Cox model: response is Surv(months, alive == 0)
 Terms added sequentially (first to last)
@@ -1275,20 +1249,20 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 </div>
 <div id="plotting-the-survival-curve-implied-by-model-b" class="section level3">
 <h3><span class="header-section-number">23.4.2</span> Plotting the Survival Curve implied by Model B</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">survfit</span>(modB), <span class="dt">ylab=</span><span class="st">&quot;Probability of Survival&quot;</span>, 
-     <span class="dt">xlab=</span><span class="st">&quot;Months in Study&quot;</span>, <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;black&quot;</span>, <span class="st">&quot;black&quot;</span>))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">survfit</span>(modB), <span class="dt">ylab=</span><span class="st">&quot;Probability of Survival&quot;</span>, 
+     <span class="dt">xlab=</span><span class="st">&quot;Months in Study&quot;</span>, <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;black&quot;</span>, <span class="st">&quot;black&quot;</span>))</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/c23_modelB_survfit_plot-1.png" width="672" /></p>
 <p>The crosses in the plot indicate censoring points, while the drops indicate people who have died, and are thus no longer at risk.</p>
 </div>
 <div id="plotting-the-cumulative-hazard-implied-by-model-b" class="section level3">
 <h3><span class="header-section-number">23.4.3</span> Plotting the Cumulative Hazard implied by Model B</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">survfit</span>(modB, <span class="dt">type=</span><span class="st">&quot;fleming&quot;</span>), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;black&quot;</span>, <span class="st">&quot;black&quot;</span>), 
-     <span class="dt">fun=</span><span class="st">&quot;cumhaz&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Cumulative Hazard&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Months in Study&quot;</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">survfit</span>(modB, <span class="dt">type=</span><span class="st">&quot;fleming&quot;</span>), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;black&quot;</span>, <span class="st">&quot;black&quot;</span>), 
+     <span class="dt">fun=</span><span class="st">&quot;cumhaz&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Cumulative Hazard&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Months in Study&quot;</span>)</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/c23_modelB_cumhaz_plot-1.png" width="672" /></p>
 </div>
 <div id="testing-the-proportional-hazards-assumption-1" class="section level3">
 <h3><span class="header-section-number">23.4.4</span> Testing the Proportional Hazards Assumption</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cox.zph</span>(modB, <span class="dt">transform=</span><span class="st">&quot;km&quot;</span>, <span class="dt">global=</span><span class="ot">TRUE</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cox.zph</span>(modB, <span class="dt">transform=</span><span class="st">&quot;km&quot;</span>, <span class="dt">global=</span><span class="ot">TRUE</span>)</code></pre></div>
 <pre><code>            rho chisq     p
 age      0.1875 1.408 0.235
 pblasts -0.1036 0.412 0.521
@@ -1297,13 +1271,13 @@ plab     0.1810 1.784 0.182
 maxtemp -0.2182 2.278 0.131
 GLOBAL       NA 8.852 0.115</code></pre>
 <p>Note that we get a global test, and a separate test for each predictor. None show significant problems. We can plot the scaled Schoenfeld residuals directly with <code>ggcoxzph</code> from the <code>survminer</code> package.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggcoxzph</span>(<span class="kw">cox.zph</span>(modB))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggcoxzph</span>(<span class="kw">cox.zph</span>(modB))</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/c23_zph_plot_modelB-1.png" width="672" /></p>
 </div>
 <div id="assessing-collinearity" class="section level3">
 <h3><span class="header-section-number">23.4.5</span> Assessing Collinearity</h3>
 <p>Perhaps we have some collinearity here, which might imply that we could sensibly fit a smaller model, which would be appealing anyway, with only 45 actual events - we should probably be sticking to a model with no more than 2 or perhaps as many as 3 coefficients to be estimated.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">vif</span>(modB)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">vif</span>(modB)</code></pre></div>
 <pre><code>     age  pblasts     pinf     plab  maxtemp 
 1.081775 3.029862 3.000944 1.035400 1.045249 </code></pre>
 <p>The variance inflation factors don’t look enormous - it may be that removing one of these variables will help make the others look more significant. Let’s consider a stepwise variable selection algorithm to see what results…</p>
@@ -1314,7 +1288,7 @@ GLOBAL       NA 8.852 0.115</code></pre>
 </div>
 <div id="model-b2-a-stepwise-reduction-of-model-b" class="section level2">
 <h2><span class="header-section-number">23.5</span> Model B2: A Stepwise Reduction of Model B</h2>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">step</span>(modB)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">step</span>(modB)</code></pre></div>
 <pre><code>Start:  AIC=277.4
 Surv(months, alive == 0) ~ age + pblasts + pinf + plab + maxtemp
 
@@ -1356,8 +1330,8 @@ plab -0.057558  0.944067  0.038476 -1.496 0.134662
 Likelihood ratio test=16.25  on 3 df, p=0.001008
 n= 51, number of events= 45 </code></pre>
 <p>The stepwise procedure lands on a model with three predictors. How does this result look, practically?</p>
-<pre class="sourceCode r"><code class="sourceCode r">modB2 &lt;-<span class="st"> </span><span class="kw">coxph</span>(<span class="kw">Surv</span>(months, alive<span class="op">==</span><span class="dv">0</span>) <span class="op">~</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>pinf <span class="op">+</span><span class="st"> </span>plab, <span class="dt">data=</span>leukem)
-<span class="kw">summary</span>(modB2)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">modB2 &lt;-<span class="st"> </span><span class="kw">coxph</span>(<span class="kw">Surv</span>(months, alive<span class="op">==</span><span class="dv">0</span>) <span class="op">~</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>pinf <span class="op">+</span><span class="st"> </span>plab, <span class="dt">data=</span>leukem)
+<span class="kw">summary</span>(modB2)</code></pre></div>
 <pre><code>Call:
 coxph(formula = Surv(months, alive == 0) ~ age + pinf + plab, 
     data = leukem)
@@ -1383,34 +1357,34 @@ Wald test            = 15.28  on 3 df,   p=0.002
 Score (logrank) test = 16.21  on 3 df,   p=0.001</code></pre>
 <div id="the-survival-curve-implied-by-model-b2" class="section level3">
 <h3><span class="header-section-number">23.5.1</span> The Survival Curve implied by Model B2</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">survfit</span>(modB2), <span class="dt">ylab=</span><span class="st">&quot;Probability of Survival&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Months in Study&quot;</span>, 
-     <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;black&quot;</span>, <span class="st">&quot;black&quot;</span>))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">survfit</span>(modB2), <span class="dt">ylab=</span><span class="st">&quot;Probability of Survival&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Months in Study&quot;</span>, 
+     <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;black&quot;</span>, <span class="st">&quot;black&quot;</span>))</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/c23_modelB2_survivalcurves-1.png" width="672" /></p>
 </div>
 <div id="checking-proportional-hazards-for-model-b2" class="section level3">
 <h3><span class="header-section-number">23.5.2</span> Checking Proportional Hazards for Model B2</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cox.zph</span>(modB2, <span class="dt">transform=</span><span class="st">&quot;km&quot;</span>, <span class="dt">global=</span><span class="ot">TRUE</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cox.zph</span>(modB2, <span class="dt">transform=</span><span class="st">&quot;km&quot;</span>, <span class="dt">global=</span><span class="ot">TRUE</span>)</code></pre></div>
 <pre><code>          rho chisq      p
 age     0.170  1.12 0.2892
 pinf   -0.257  3.25 0.0713
 plab    0.183  1.87 0.1715
 GLOBAL     NA  6.35 0.0957</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggcoxzph</span>(<span class="kw">cox.zph</span>(modB2))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggcoxzph</span>(<span class="kw">cox.zph</span>(modB2))</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/c23_modelB2_testzph-1.png" width="672" /></p>
 </div>
 </div>
 <div id="model-c-using-a-spearman-plot-to-pick-a-model" class="section level2">
 <h2><span class="header-section-number">23.6</span> Model C: Using a Spearman Plot to pick a model</h2>
 <p>If we want to use the <strong>Spearman</strong> <span class="math inline">\(\rho^2\)</span> plot to consider how we might perhaps incorporate non-linear terms describing any or all of the five potential predictors (<code>age</code>, <code>pblasts</code>, <code>pinf</code>, <code>plab</code> and <code>maxtemp</code>) for survival time, we need to do so on the raw <code>months</code> variable, rather than the survival object (<code>stime = Surv(months, alive==0))</code> which accounts for censoring…</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">spearman2</span>(months <span class="op">~</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>pblasts <span class="op">+</span><span class="st"> </span>pinf <span class="op">+</span><span class="st"> </span>plab <span class="op">+</span><span class="st"> </span>maxtemp, <span class="dt">data=</span>leukem))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">spearman2</span>(months <span class="op">~</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>pblasts <span class="op">+</span><span class="st"> </span>pinf <span class="op">+</span><span class="st"> </span>plab <span class="op">+</span><span class="st"> </span>maxtemp, <span class="dt">data=</span>leukem))</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/c23_months_spearman2_plot-1.png" width="672" /></p>
 <p>Recognizing that we can probably only fit a small model safely (since we observe only 45 actual [uncensored] survival times) I will consider a non-linear term in <code>age</code> (specifically a restricted cubic spline with 3 knots), along with linear terms for <code>plab</code> and <code>maxtemp</code>. I’m mostly just looking for a new model to study for this example.</p>
 <div id="fitting-model-c" class="section level3">
 <h3><span class="header-section-number">23.6.1</span> Fitting Model C</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># still have datadist set up for leukem</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># still have datadist set up for leukem</span>
 modC &lt;-<span class="st"> </span><span class="kw">cph</span>(<span class="kw">Surv</span>(months, alive<span class="op">==</span><span class="dv">0</span>) <span class="op">~</span><span class="st"> </span><span class="kw">rcs</span>(age, <span class="dv">3</span>) <span class="op">+</span><span class="st"> </span>plab <span class="op">+</span><span class="st"> </span>maxtemp, 
             <span class="dt">data=</span>leukem, <span class="dt">x=</span><span class="ot">TRUE</span>, <span class="dt">y=</span><span class="ot">TRUE</span>, <span class="dt">surv=</span><span class="ot">TRUE</span>, <span class="dt">time.inc=</span><span class="dv">12</span>)
-modC</code></pre>
+modC</code></pre></div>
 <pre><code>Cox Proportional Hazards Model
  
  cph(formula = Surv(months, alive == 0) ~ rcs(age, 3) + plab + 
@@ -1434,7 +1408,7 @@ modC</code></pre>
 </div>
 <div id="anova-for-model-c" class="section level3">
 <h3><span class="header-section-number">23.6.2</span> ANOVA for Model C</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(modC)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(modC)</code></pre></div>
 <pre><code>                Wald Statistics          Response: Surv(months, alive == 0) 
 
  Factor     Chi-Square d.f. P     
@@ -1446,7 +1420,7 @@ modC</code></pre>
 </div>
 <div id="summarizing-model-c-effect-sizes" class="section level3">
 <h3><span class="header-section-number">23.6.3</span> Summarizing Model C Effect Sizes</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(modC)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(modC)</code></pre></div>
 <pre><code>             Effects              Response : Surv(months, alive == 0) 
 
  Factor        Low  High  Diff. Effect   S.E.    Lower 0.95 Upper 0.95
@@ -1456,60 +1430,60 @@ modC</code></pre>
   Hazard Ratio  6.5  13.5  7.0   0.59744      NA  0.35411   1.0080000 
  maxtemp       98.6 100.5  1.9   0.33979 0.21758 -0.08666   0.7662400 
   Hazard Ratio 98.6 100.5  1.9   1.40470      NA  0.91699   2.1517000 </code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">summary</span>(modC))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">summary</span>(modC))</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/c23_modelC_summaries-1.png" width="672" /></p>
 </div>
 <div id="plotting-the-diagnosis-age-effect-in-model-c" class="section level3">
 <h3><span class="header-section-number">23.6.4</span> Plotting the diagnosis <code>age</code> effect in Model C</h3>
 <p>Of course, we’re no longer assuming that the log relative hazard is linear in <code>age</code>, once we include a restricted cubic spline for <code>age</code> in our Model C. So our hazard ratio and confidence intervals for <code>age</code> are a bit trickier to understand.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">coef</span>(modC))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">coef</span>(modC))</code></pre></div>
 <pre><code>      age      age&#39;      plab   maxtemp 
 1.0837479 0.9390008 0.9290553 1.1958265 </code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">confint</span>(modC))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">confint</span>(modC))</code></pre></div>
 <pre><code>            2.5 %   97.5 %
 age     1.0252687 1.145563
 age&#39;    0.8798328 1.002148
 plab    0.8621662 1.001134
 maxtemp 0.9554141 1.496734</code></pre>
 <p>We can use <code>ggplot</code> and the <code>Predict</code> function to produce plots of the log Relative Hazard associated with any of our predictors, while holding the others constant at their medians. The effects of <code>maxtemp</code> and <code>plab</code> in our Model C are linear in the log Relative Hazard, but <code>age</code>, thanks to our use of a restricted cubic spline with 3 knots, shows a single bend.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="kw">Predict</span>(modC, age))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="kw">Predict</span>(modC, age))</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/c23_modelC_predictions_plot-1.png" width="672" /></p>
 </div>
 <div id="survival-plot-associated-with-model-c" class="section level3">
 <h3><span class="header-section-number">23.6.5</span> Survival Plot associated with Model C</h3>
 <p>Let’s look at a survival plot associated with Model C for a subject with median values of our three predictors.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">survplot</span>(modC, <span class="dt">age=</span><span class="kw">median</span>(leukem<span class="op">$</span>age), <span class="dt">conf.int=</span><span class="fl">0.95</span>, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">survplot</span>(modC, <span class="dt">age=</span><span class="kw">median</span>(leukem<span class="op">$</span>age), <span class="dt">conf.int=</span><span class="fl">0.95</span>, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>, 
          <span class="dt">time.inc=</span><span class="dv">12</span>, <span class="dt">n.risk=</span><span class="ot">TRUE</span>, <span class="dt">conf=</span><span class="st">&#39;bands&#39;</span>,
-         <span class="dt">xlab=</span><span class="st">&quot;Study Time in Months&quot;</span>)</code></pre>
+         <span class="dt">xlab=</span><span class="st">&quot;Study Time in Months&quot;</span>)</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/c23_survplot_medians-1.png" width="672" /></p>
 <p>As before, we could fit such a plot to compare results across multiple <code>age</code> values, if desired.</p>
 </div>
 <div id="checking-the-proportional-hazards-assumption-1" class="section level3">
 <h3><span class="header-section-number">23.6.6</span> Checking the Proportional Hazards Assumption</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cox.zph</span>(modC, <span class="dt">transform=</span><span class="st">&quot;km&quot;</span>, <span class="dt">global=</span><span class="ot">TRUE</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cox.zph</span>(modC, <span class="dt">transform=</span><span class="st">&quot;km&quot;</span>, <span class="dt">global=</span><span class="ot">TRUE</span>)</code></pre></div>
 <pre><code>           rho chisq      p
 age     -0.113 0.593 0.4411
 age&#39;     0.181 1.643 0.1999
 plab     0.214 2.559 0.1097
 maxtemp -0.229 2.787 0.0951
 GLOBAL      NA 5.974 0.2011</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggcoxzph</span>(<span class="kw">cox.zph</span>(modC))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggcoxzph</span>(<span class="kw">cox.zph</span>(modC))</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/c23_modelC_zph_check-1.png" width="672" /></p>
 </div>
 <div id="model-c-nomogram" class="section level3">
 <h3><span class="header-section-number">23.6.7</span> Model C Nomogram</h3>
-<pre class="sourceCode r"><code class="sourceCode r">sv &lt;-<span class="st"> </span><span class="kw">Survival</span>(modC)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sv &lt;-<span class="st"> </span><span class="kw">Survival</span>(modC)
 surv12 &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">sv</span>(<span class="dv">12</span>, <span class="dt">lp=</span>x)
 surv24 &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">sv</span>(<span class="dv">24</span>, <span class="dt">lp=</span>x)
 
 <span class="kw">plot</span>(<span class="kw">nomogram</span>(modC, <span class="dt">fun=</span><span class="kw">list</span>(surv12, surv24), 
-              <span class="dt">funlabel=</span><span class="kw">c</span>(<span class="st">&#39;12-month survival&#39;</span>, <span class="st">&#39;24-month survival&#39;</span>)))</code></pre>
+              <span class="dt">funlabel=</span><span class="kw">c</span>(<span class="st">&#39;12-month survival&#39;</span>, <span class="st">&#39;24-month survival&#39;</span>)))</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/c23_modelC_nomogram-1.png" width="672" /></p>
 </div>
 <div id="validating-model-cs-summary-statistics" class="section level3">
 <h3><span class="header-section-number">23.6.8</span> Validating Model C’s Summary Statistics</h3>
 <p>We can validate the model for Somers’ <span class="math inline">\(D_{xy}\)</span>, which is the rank correlation between the predicted log hazard and observed survival time, and for slope shrinkage.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">43234</span>); <span class="kw">validate</span>(modC, <span class="dt">B=</span><span class="dv">100</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">43234</span>); <span class="kw">validate</span>(modC, <span class="dt">B=</span><span class="dv">100</span>)</code></pre></div>
 <pre><code>      index.orig training   test optimism index.corrected   n
 Dxy       0.4385   0.4847 0.4194   0.0652          0.3732 100
 R2        0.3222   0.3802 0.2874   0.0928          0.2294 100
@@ -1524,11 +1498,10 @@ g         0.9466   1.0919 0.8573   0.2346          0.7119 100</code></pre>
 <p>Finally, we validate the model for calibration accuracy in predicting the probability of surviving one year.</p>
 <p>Quoting Harrell (page 529, RMS second edition):</p>
 <blockquote>
-<p>The bootstrap is used to estimate the optimism in how well predicted [one]-year survival from the final Cox model tracks flexible smooth estimates, without any binning of predicted survival probabilities or assuming proportional
-hazards.</p>
+<p>The bootstrap is used to estimate the optimism in how well predicted [one]-year survival from the final Cox model tracks flexible smooth estimates, without any binning of predicted survival probabilities or assuming proportional hazards.</p>
 </blockquote>
 <p>The <code>u</code> variable specifies the length of time at which we look at the calibration. I’ve specified the <code>units</code> earlier to be months.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">43233</span>); <span class="kw">plot</span>(rms<span class="op">::</span><span class="kw">calibrate</span>(modC, <span class="dt">B =</span> <span class="dv">10</span>, <span class="dt">u =</span> <span class="dv">12</span>))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">43233</span>); <span class="kw">plot</span>(rms<span class="op">::</span><span class="kw">calibrate</span>(modC, <span class="dt">B =</span> <span class="dv">10</span>, <span class="dt">u =</span> <span class="dv">12</span>))</code></pre></div>
 <pre><code>Using Cox survival estimates at 12 months</code></pre>
 <p><img src="2019-432-book_files/figure-html/c23_modelC_calibrate-1.png" width="672" /></p>
 <p>The model seems neither especially well calibrated nor especially poorly so - looking at the comparison of the blue curve to the gray, our predictions basically aren’t aggressive enough - more people are surviving to a year in our low predicted probability of 12 month survival group, and fewer people are surviving on the high end of the x-axis than should be the case.</p>
@@ -1592,7 +1565,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "true";
+    var src = "";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');

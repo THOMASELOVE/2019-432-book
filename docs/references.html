@@ -50,67 +50,41 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
 </head>
@@ -962,10 +936,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div id="refs" class="references">
 <div>
-<p>Barnett, Peggy A., Simon Roman-Golstein, Fred Ramsey, and others. 1995. “Differential Permeability and Quantitative Mr Imaging of a Human Lung Carcinoma Brain Xenograft in the Nude Rat.” <em>American Journal of Pathology</em> 146(2): 436–49. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1869863/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1869863/</a>.</p>
+<p>Barnett, Peggy A., Simon Roman-Golstein, Fred Ramsey, and others. 1995. “Differential Permeability and Quantitative Mr Imaging of a Human Lung Carcinoma Brain Xenograft in the Nude Rat.” <em>American Journal of Pathology</em> 146(2): 436–49. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1869863/" class="uri">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1869863/</a>.</p>
 </div>
 <div>
-<p>Berkhemer, Olvert A., Puck S. S. Fransen, Debbie Buemer, and others. 2015. “A Randomized Trial of Intraarterial Treatment for Acute Ischemic Stroke.” <em>New England Journal of Medicine</em> 372: 11–20. <a href="http://www.nejm.org/doi/full/10.1056/NEJMoa1411587">http://www.nejm.org/doi/full/10.1056/NEJMoa1411587</a>.</p>
+<p>Berkhemer, Olvert A., Puck S. S. Fransen, Debbie Buemer, and others. 2015. “A Randomized Trial of Intraarterial Treatment for Acute Ischemic Stroke.” <em>New England Journal of Medicine</em> 372: 11–20. <a href="http://www.nejm.org/doi/full/10.1056/NEJMoa1411587" class="uri">http://www.nejm.org/doi/full/10.1056/NEJMoa1411587</a>.</p>
 </div>
 <div>
 <p>Faraway, Julian J. 2006. <em>Extending the Linear Model with R</em>. Boca Raton, FL: CRC Press.</p>
@@ -980,19 +954,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Harrell, Frank E. 2001. <em>Regression Modeling Strategies</em>. New York: Springer.</p>
 </div>
 <div>
-<p>———. 2018. <em>Regression Modeling Strategies Course Notes</em>. <a href="http://www.fharrell.com/#links">http://www.fharrell.com/#links</a>.</p>
+<p>———. 2018. <em>Regression Modeling Strategies Course Notes</em>. <a href="http://www.fharrell.com/#links" class="uri">http://www.fharrell.com/#links</a>.</p>
 </div>
 <div>
 <p>Hastie, Trevor, Robert Tibshriani, and Jerome H. Frideman. 2001. <em>The Elements of Statistical Learning</em>. New York: Springer.</p>
 </div>
 <div>
-<p>Hurvich, Clifford M., and Chih-Ling Tsai. 1989. “Regression and Time Series Model Selection in Small Samples.” <em>Biometrika</em> 76: 297–307. <a href="https://www.stat.berkeley.edu/~binyu/summer08/Hurvich.AICc.pdf">https://www.stat.berkeley.edu/~binyu/summer08/Hurvich.AICc.pdf</a>.</p>
+<p>Hurvich, Clifford M., and Chih-Ling Tsai. 1989. “Regression and Time Series Model Selection in Small Samples.” <em>Biometrika</em> 76: 297–307. <a href="https://www.stat.berkeley.edu/~binyu/summer08/Hurvich.AICc.pdf" class="uri">https://www.stat.berkeley.edu/~binyu/summer08/Hurvich.AICc.pdf</a>.</p>
 </div>
 <div>
-<p>Kim, Hae-Young. 2014. “Statistical Notes for Clinical Researchers: Two-Way Analysis of Variance (Anova) - Exploring Possible Interaction Between Factors.” <em>Restorative Dentistry &amp; Endodontics</em> 39(2): 143–47. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3978106/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3978106/</a>.</p>
+<p>Kim, Hae-Young. 2014. “Statistical Notes for Clinical Researchers: Two-Way Analysis of Variance (Anova) - Exploring Possible Interaction Between Factors.” <em>Restorative Dentistry &amp; Endodontics</em> 39(2): 143–47. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3978106/" class="uri">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3978106/</a>.</p>
 </div>
 <div>
-<p>Leeb, Hannes, and Benedikt M. Potscher. 2005. “Model Selection and Inference: Facts and Fiction.” <em>Econometric Theory</em> 21(1): 21–59. <a href="https://www.jstor.org/stable/3533623">https://www.jstor.org/stable/3533623</a>.</p>
+<p>Leeb, Hannes, and Benedikt M. Potscher. 2005. “Model Selection and Inference: Facts and Fiction.” <em>Econometric Theory</em> 21(1): 21–59. <a href="https://www.jstor.org/stable/3533623" class="uri">https://www.jstor.org/stable/3533623</a>.</p>
 </div>
 <div>
 <p>Long, J. Scott. 1997. <em>Regression Models for Categorical and Limited Dependent Variables</em>. Thousand Oaks, CA: Sage Publications.</p>
@@ -1013,16 +987,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Rosenbaum, Paul R. 2017. <em>Observation and Experiment: An Introduction to Causal Inference</em>. Cambridge, MA: Harvard University Press.</p>
 </div>
 <div>
-<p>Roy, Denis, Mario Talajic, Stanley Nattel, and others. 2008. “Rhythm Control Versus Rate Control for Atrial Fibrillation and Heart Failure.” <em>New England Journal of Medicine</em> 358: 2667–77. <a href="http://www.nejm.org/doi/full/10.1056/NEJMoa0708789">http://www.nejm.org/doi/full/10.1056/NEJMoa0708789</a>.</p>
+<p>Roy, Denis, Mario Talajic, Stanley Nattel, and others. 2008. “Rhythm Control Versus Rate Control for Atrial Fibrillation and Heart Failure.” <em>New England Journal of Medicine</em> 358: 2667–77. <a href="http://www.nejm.org/doi/full/10.1056/NEJMoa0708789" class="uri">http://www.nejm.org/doi/full/10.1056/NEJMoa0708789</a>.</p>
 </div>
 <div>
-<p>Stamey, J.N. Kabalin, T.A., and others. 1989. “Prostate Specific Antigen in the Diagnosis and Treatment of Adenocarcinoma of the Prostate: II. Radical Prostatectomy Treated Patients.” <em>Journal of Urology</em> 141(5): 1076–83. <a href="https://www.ncbi.nlm.nih.gov/pubmed/2468795">https://www.ncbi.nlm.nih.gov/pubmed/2468795</a>.</p>
+<p>Stamey, J.N. Kabalin, T.A., and others. 1989. “Prostate Specific Antigen in the Diagnosis and Treatment of Adenocarcinoma of the Prostate: II. Radical Prostatectomy Treated Patients.” <em>Journal of Urology</em> 141(5): 1076–83. <a href="https://www.ncbi.nlm.nih.gov/pubmed/2468795" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/2468795</a>.</p>
 </div>
 <div>
-<p>Tolaney, Sara M, William T. Barry, T. Dang Chau, and others. 2015. “Adjuvant Paclitaxel and Trastuzumab for Node-Negative, Her2-Positive Breast Cancer.” <em>New England Journal of Medicine</em> 372: 134–41. <a href="http://www.nejm.org/doi/full/10.1056/NEJMoa1406281">http://www.nejm.org/doi/full/10.1056/NEJMoa1406281</a>.</p>
+<p>Tolaney, Sara M, William T. Barry, T. Dang Chau, and others. 2015. “Adjuvant Paclitaxel and Trastuzumab for Node-Negative, Her2-Positive Breast Cancer.” <em>New England Journal of Medicine</em> 372: 134–41. <a href="http://www.nejm.org/doi/full/10.1056/NEJMoa1406281" class="uri">http://www.nejm.org/doi/full/10.1056/NEJMoa1406281</a>.</p>
 </div>
 <div>
-<p>Vittinghoff, Eric, David V. Glidden, Stephen C. Shiboski, and Charles E. McCulloch. 2012. <em>Regression Methods in Biostatistics: Linear, Logistic, Survival, and Repeated Measures Models</em>. Second Edition. Springer-Verlag, Inc. <a href="http://www.biostat.ucsf.edu/vgsm/">http://www.biostat.ucsf.edu/vgsm/</a>.</p>
+<p>Vittinghoff, Eric, David V. Glidden, Stephen C. Shiboski, and Charles E. McCulloch. 2012. <em>Regression Methods in Biostatistics: Linear, Logistic, Survival, and Repeated Measures Models</em>. Second Edition. Springer-Verlag, Inc. <a href="http://www.biostat.ucsf.edu/vgsm/" class="uri">http://www.biostat.ucsf.edu/vgsm/</a>.</p>
 </div>
 </div>
 </div>
@@ -1108,7 +1082,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "true";
+    var src = "";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');

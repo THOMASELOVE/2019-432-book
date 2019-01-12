@@ -58,7 +58,7 @@ For example:
 - Quartic: $y = \beta_0 + \beta_1 x + \beta_2 x^2 + \beta_3 x^3 + \beta_4 x^4$
 - Quintic: $y = \beta_0 + \beta_1 x + \beta_2 x^2 + \beta_3 x^3 + \beta_4 x^4 + \beta_5 x^5$
 
-Fitting such a model creates a **polynomial regression*.
+Fitting such a model creates a **polynomial regression**.
 
 ### The raw quadratic model
 

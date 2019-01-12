@@ -50,67 +50,41 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
 </head>
@@ -961,7 +935,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 7</span> Stepwise Variable Selection</h1>
 <div id="strategy-for-model-selection" class="section level2">
 <h2><span class="header-section-number">7.1</span> Strategy for Model Selection</h2>
-<p><span class="citation">Ramsey and Schafer (<a href="#ref-RamseySchafer2002">2002</a>)</span> suggest a strategy for dealing with many potential explanatory variables should include the following elements:</p>
+<p><span class="citation">F. L. Ramsey and Schafer (<a href="#ref-RamseySchafer2002">2002</a>)</span> suggest a strategy for dealing with many potential explanatory variables should include the following elements:</p>
 <ol style="list-style-type: decimal">
 <li>Identify the key objectives.</li>
 <li>Screen the available variables, deciding on a list that is sensitive to the objectives and excludes obvious redundancies.</li>
@@ -998,10 +972,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="a-kitchen-sink-model-model-c5_prost_ks" class="section level2">
 <h2><span class="header-section-number">7.2</span> A “Kitchen Sink” Model (Model <code>c5_prost_ks</code>)</h2>
 <p>Suppose that we now consider a model for the <code>prost</code> data we have been working with, which includes main effects (and, in this case, only the main effects) of all eight candidate predictors for <code>lpsa</code>, as follows.</p>
-<pre class="sourceCode r"><code class="sourceCode r">c5_prost_ks &lt;-<span class="st"> </span><span class="kw">lm</span>(lpsa <span class="op">~</span><span class="st"> </span>lcavol <span class="op">+</span><span class="st"> </span>lweight <span class="op">+</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>bph_f <span class="op">+</span><span class="st"> </span>svi_f <span class="op">+</span><span class="st"> </span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">c5_prost_ks &lt;-<span class="st"> </span><span class="kw">lm</span>(lpsa <span class="op">~</span><span class="st"> </span>lcavol <span class="op">+</span><span class="st"> </span>lweight <span class="op">+</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>bph_f <span class="op">+</span><span class="st"> </span>svi_f <span class="op">+</span><span class="st"> </span>
 <span class="st">                </span>lcp <span class="op">+</span><span class="st"> </span>gleason_f <span class="op">+</span><span class="st"> </span>pgg45, <span class="dt">data =</span> prost)
 
-<span class="kw">tidy</span>(c5_prost_ks)</code></pre>
+<span class="kw">tidy</span>(c5_prost_ks)</code></pre></div>
 <pre><code># A tibble: 11 x 5
    term        estimate std.error statistic      p.value
    &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt;
@@ -1016,7 +990,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  9 gleason_f7   0.221     0.343       0.643 0.522       
 10 gleason_f6  -0.0531    0.430      -0.123 0.902       
 11 pgg45        0.00398   0.00415     0.961 0.339       </code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glance</span>(c5_prost_ks)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glance</span>(c5_prost_ks)</code></pre></div>
 <pre><code># A tibble: 1 x 11
   r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC
       &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -1058,11 +1032,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Specify forward selection only</li>
 <li>R defaults to using AIC as its stepwise criterion</li>
 </ol>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">with</span>(prost, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">with</span>(prost, 
      <span class="kw">step</span>(<span class="kw">lm</span>(lpsa <span class="op">~</span><span class="st"> </span><span class="dv">1</span>), 
      <span class="dt">scope=</span>(<span class="op">~</span><span class="st"> </span>lcavol <span class="op">+</span><span class="st"> </span>lweight <span class="op">+</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>bph_f <span class="op">+</span><span class="st"> </span>svi_f <span class="op">+</span><span class="st"> </span>
 <span class="st">                </span>lcp <span class="op">+</span><span class="st"> </span>gleason_f <span class="op">+</span><span class="st"> </span>pgg45), 
-     <span class="dt">direction=</span><span class="st">&quot;forward&quot;</span>))</code></pre>
+     <span class="dt">direction=</span><span class="st">&quot;forward&quot;</span>))</code></pre></div>
 <pre><code>Start:  AIC=28.84
 lpsa ~ 1
 
@@ -1120,21 +1094,21 @@ Coefficients:
 (Intercept)       lcavol      lweight     svi_fYes  
     -0.7772       0.5259       0.6618       0.6657  </code></pre>
 <p>The resulting model, arrived at after three forward selection steps, includes <code>lcavol</code>, <code>lweight</code> and <code>svi_f</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r">model.fs &lt;-<span class="st"> </span><span class="kw">lm</span>(lpsa <span class="op">~</span><span class="st"> </span>lcavol <span class="op">+</span><span class="st"> </span>lweight <span class="op">+</span><span class="st"> </span>svi_f, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">model.fs &lt;-<span class="st"> </span><span class="kw">lm</span>(lpsa <span class="op">~</span><span class="st"> </span>lcavol <span class="op">+</span><span class="st"> </span>lweight <span class="op">+</span><span class="st"> </span>svi_f, 
                <span class="dt">data=</span>prost)
-<span class="kw">summary</span>(model.fs)<span class="op">$</span>adj.r.squared</code></pre>
+<span class="kw">summary</span>(model.fs)<span class="op">$</span>adj.r.squared</code></pre></div>
 <pre><code>[1] 0.6242063</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">extractAIC</span>(model.fs)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">extractAIC</span>(model.fs)</code></pre></div>
 <pre><code>[1]   4.00000 -63.17744</code></pre>
 <p>The adjusted R<sup>2</sup> value for this model is 0.624, and the AIC value used by the stepwise procedure is -63.18, on 4 effective degrees of freedom.</p>
 </div>
 <div id="backward-elimination-using-the-step-function" class="section level2">
 <h2><span class="header-section-number">7.5</span> Backward Elimination using the <code>step</code> function</h2>
 <p>In this case, the backward elimination approach, using reduction in AIC for a criterion, comes to the same conclusion about the “best” model.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">with</span>(prost, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">with</span>(prost, 
      <span class="kw">step</span>(<span class="kw">lm</span>(lpsa <span class="op">~</span><span class="st"> </span>lcavol <span class="op">+</span><span class="st"> </span>lweight <span class="op">+</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>bph_f <span class="op">+</span><span class="st"> </span>
 <span class="st">                 </span>svi_f <span class="op">+</span><span class="st"> </span>lcp <span class="op">+</span><span class="st"> </span>gleason_f <span class="op">+</span><span class="st"> </span>pgg45), 
-          <span class="dt">direction=</span><span class="st">&quot;backward&quot;</span>))</code></pre>
+          <span class="dt">direction=</span><span class="st">&quot;backward&quot;</span>))</code></pre></div>
 <pre><code>Start:  AIC=-61.4
 lpsa ~ lcavol + lweight + age + bph_f + svi_f + lcp + gleason_f + 
     pgg45
@@ -1211,17 +1185,16 @@ Coefficients:
 <div id="demonstration-of-the-allen-cady-approach" class="section level3">
 <h3><span class="header-section-number">7.6.1</span> Demonstration of the Allen-Cady approach</h3>
 <p>Suppose, for the moment that we decided to fit a model for the log of <code>psa</code> and we decided (before we saw the data) that we would:</p>
-<p>lcavol + lweight + svi_f +
-age + bph_f + gleason_f + lcp + pgg45</p>
+<p>lcavol + lweight + svi_f + age + bph_f + gleason_f + lcp + pgg45</p>
 <ul>
 <li>force the <code>gleason_f</code> variable to be in the model, due to prior information about its importance,</li>
 <li>and then rated the importance of the other variables as <code>lcavol</code> (most important), then <code>svi_f</code> then <code>age</code>, and then <code>bph_f</code>, then <code>lweight</code> and <code>lcp</code> followed by <code>pgg45</code> (least important)</li>
 </ul>
 <p>When we are willing to do this sorting before collecting (or analyzing) the data, then we can do Allen-Cady backwards elimination using the <code>drop1</code> command in R.</p>
 <p><strong>Step 1.</strong> Fit the full model, then see if removing <code>pgg45</code> improves AIC…</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">with</span>(prost, <span class="kw">drop1</span>(<span class="kw">lm</span>(lpsa <span class="op">~</span><span class="st"> </span>gleason_f <span class="op">+</span><span class="st"> </span>lcavol <span class="op">+</span><span class="st"> </span>svi_f <span class="op">+</span><span class="st"> </span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">with</span>(prost, <span class="kw">drop1</span>(<span class="kw">lm</span>(lpsa <span class="op">~</span><span class="st"> </span>gleason_f <span class="op">+</span><span class="st"> </span>lcavol <span class="op">+</span><span class="st"> </span>svi_f <span class="op">+</span><span class="st"> </span>
 <span class="st">              </span>age <span class="op">+</span><span class="st"> </span>bph_f <span class="op">+</span><span class="st"> </span>lweight <span class="op">+</span><span class="st"> </span>lcp <span class="op">+</span><span class="st"> </span>pgg45),
-              <span class="dt">scope =</span> (<span class="op">~</span><span class="st"> </span>pgg45)))</code></pre>
+              <span class="dt">scope =</span> (<span class="op">~</span><span class="st"> </span>pgg45)))</code></pre></div>
 <pre><code>Single term deletions
 
 Model:
@@ -1232,9 +1205,9 @@ lpsa ~ gleason_f + lcavol + svi_f + age + bph_f + lweight + lcp +
 pgg45   1   0.44085 41.498 -62.359</code></pre>
 <p>Since -62.3 is smaller (i.e. more negative) than -61.4, we delete <code>pgg45</code> and move on to assess whether we can remove the variable we deemed next least important (<code>lcp</code>)</p>
 <p><strong>Step 2.</strong> Let’s see if removing <code>lcp</code> from this model improves AIC…</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">with</span>(prost, <span class="kw">drop1</span>(<span class="kw">lm</span>(lpsa <span class="op">~</span><span class="st"> </span>gleason_f <span class="op">+</span><span class="st"> </span>lcavol <span class="op">+</span><span class="st"> </span>svi_f <span class="op">+</span><span class="st"> </span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">with</span>(prost, <span class="kw">drop1</span>(<span class="kw">lm</span>(lpsa <span class="op">~</span><span class="st"> </span>gleason_f <span class="op">+</span><span class="st"> </span>lcavol <span class="op">+</span><span class="st"> </span>svi_f <span class="op">+</span><span class="st"> </span>
 <span class="st">              </span>age <span class="op">+</span><span class="st"> </span>bph_f <span class="op">+</span><span class="st"> </span>lweight  <span class="op">+</span><span class="st"> </span>lcp),
-              <span class="dt">scope =</span> (<span class="op">~</span><span class="st"> </span>lcp)))</code></pre>
+              <span class="dt">scope =</span> (<span class="op">~</span><span class="st"> </span>lcp)))</code></pre></div>
 <pre><code>Single term deletions
 
 Model:
@@ -1244,9 +1217,9 @@ lpsa ~ gleason_f + lcavol + svi_f + age + bph_f + lweight + lcp
 lcp     1   0.56767 42.066 -63.041</code></pre>
 <p>Again, since -63.0 is smaller than -62.4, we delete <code>lcp</code> and next assess whether we should delete <code>lweight</code>.</p>
 <p><strong>Step 3.</strong> Does removing <code>lweight</code> from this model improves AIC…</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">with</span>(prost, <span class="kw">drop1</span>(<span class="kw">lm</span>(lpsa <span class="op">~</span><span class="st"> </span>gleason_f <span class="op">+</span><span class="st"> </span>lcavol <span class="op">+</span><span class="st"> </span>svi_f <span class="op">+</span><span class="st"> </span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">with</span>(prost, <span class="kw">drop1</span>(<span class="kw">lm</span>(lpsa <span class="op">~</span><span class="st"> </span>gleason_f <span class="op">+</span><span class="st"> </span>lcavol <span class="op">+</span><span class="st"> </span>svi_f <span class="op">+</span><span class="st"> </span>
 <span class="st">              </span>age <span class="op">+</span><span class="st"> </span>bph_f <span class="op">+</span><span class="st"> </span>lweight),
-              <span class="dt">scope =</span> (<span class="op">~</span><span class="st"> </span>lweight)))</code></pre>
+              <span class="dt">scope =</span> (<span class="op">~</span><span class="st"> </span>lweight)))</code></pre></div>
 <pre><code>Single term deletions
 
 Model:
@@ -1284,18 +1257,18 @@ lweight  1     5.678 47.744 -52.760</code></pre>
 <div id="in-sample-testing-and-summaries" class="section level3">
 <h3><span class="header-section-number">7.7.1</span> In-Sample Testing and Summaries</h3>
 <p>Since these models are nested in each other, let’s look at the summary statistics (like R<sup>2</sup>, and AIC) and also run an ANOVA-based comparison of these nested models to each other and to the model with the intercept alone, and the kitchen sink model with all available predictors.</p>
-<pre class="sourceCode r"><code class="sourceCode r">prost_m_int &lt;-<span class="st"> </span><span class="kw">lm</span>(lpsa <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data =</span> prost)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">prost_m_int &lt;-<span class="st"> </span><span class="kw">lm</span>(lpsa <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data =</span> prost)
 prost_m_fw &lt;-<span class="st"> </span><span class="kw">lm</span>(lpsa <span class="op">~</span><span class="st"> </span>lcavol <span class="op">+</span><span class="st"> </span>lweight <span class="op">+</span><span class="st"> </span>svi_f, <span class="dt">data =</span> prost)
 prost_m_bw &lt;-<span class="st"> </span><span class="kw">lm</span>(lpsa <span class="op">~</span><span class="st"> </span>lcavol <span class="op">+</span><span class="st"> </span>lweight <span class="op">+</span><span class="st"> </span>svi_f <span class="op">+</span><span class="st"> </span>
 <span class="st">              </span>age <span class="op">+</span><span class="st"> </span>bph_f <span class="op">+</span><span class="st"> </span>gleason_f, <span class="dt">data =</span> prost)
 prost_m_ac &lt;-<span class="st"> </span><span class="kw">lm</span>(lpsa <span class="op">~</span><span class="st"> </span>lcavol <span class="op">+</span><span class="st"> </span>lweight <span class="op">+</span><span class="st"> </span>svi_f <span class="op">+</span><span class="st"> </span>
 <span class="st">              </span>age <span class="op">+</span><span class="st"> </span>bph_f <span class="op">+</span><span class="st"> </span>gleason_f <span class="op">+</span><span class="st"> </span>lcp, <span class="dt">data =</span> prost)
 prost_m_ks &lt;-<span class="st"> </span><span class="kw">lm</span>(lpsa <span class="op">~</span><span class="st"> </span>lcavol <span class="op">+</span><span class="st"> </span>lweight <span class="op">+</span><span class="st"> </span>svi_f <span class="op">+</span><span class="st"> </span>
-<span class="st">              </span>age <span class="op">+</span><span class="st"> </span>bph_f <span class="op">+</span><span class="st"> </span>gleason_f <span class="op">+</span><span class="st"> </span>lcp <span class="op">+</span><span class="st"> </span>pgg45, <span class="dt">data =</span> prost)</code></pre>
+<span class="st">              </span>age <span class="op">+</span><span class="st"> </span>bph_f <span class="op">+</span><span class="st"> </span>gleason_f <span class="op">+</span><span class="st"> </span>lcp <span class="op">+</span><span class="st"> </span>pgg45, <span class="dt">data =</span> prost)</code></pre></div>
 <div id="model-fit-summaries-in-sample-from-glance" class="section level4">
 <h4><span class="header-section-number">7.7.1.1</span> Model Fit Summaries (in-sample) from <code>glance</code></h4>
 <p>Here are the models, at a <code>glance</code> from the <code>broom</code> package.</p>
-<pre class="sourceCode r"><code class="sourceCode r">prost_sum &lt;-<span class="st"> </span><span class="kw">bind_rows</span>(<span class="kw">glance</span>(prost_m_int), <span class="kw">glance</span>(prost_m_fw),
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">prost_sum &lt;-<span class="st"> </span><span class="kw">bind_rows</span>(<span class="kw">glance</span>(prost_m_int), <span class="kw">glance</span>(prost_m_fw),
                        <span class="kw">glance</span>(prost_m_bw), <span class="kw">glance</span>(prost_m_ac), 
                        <span class="kw">glance</span>(prost_m_ks)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">round</span>(., <span class="dv">3</span>)
 prost_sum<span class="op">$</span>names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;intercept&quot;</span>, <span class="st">&quot;lcavol + lweight + svi&quot;</span>, 
@@ -1303,7 +1276,7 @@ prost_sum<span class="op">$</span>names &lt;-<span class="st"> </span><span clas
 prost_sum &lt;-<span class="st"> </span>prost_sum <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">select</span>(names, r.squared, adj.r.squared, AIC, BIC, sigma, df, df.residual)
 
-prost_sum</code></pre>
+prost_sum</code></pre></div>
 <pre><code># A tibble: 5 x 8
   names         r.squared adj.r.squared   AIC   BIC sigma    df df.residual
   &lt;chr&gt;             &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;       &lt;dbl&gt;
@@ -1322,7 +1295,7 @@ prost_sum</code></pre>
 <div id="model-testing-via-anova-in-sample" class="section level4">
 <h4><span class="header-section-number">7.7.1.2</span> Model Testing via ANOVA (in-sample)</h4>
 <p>To obtain ANOVA-based test results, we’ll run…</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(prost_m_int, prost_m_fw, prost_m_bw, prost_m_ac, prost_m_ks)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(prost_m_int, prost_m_fw, prost_m_bw, prost_m_ac, prost_m_ks)</code></pre></div>
 <pre><code>Analysis of Variance Table
 
 Model 1: lpsa ~ 1
@@ -1364,7 +1337,7 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <li>the six predictor model obtained by the Allen-Cady approach, adding <code>gleason_f</code> to the previous model.</li>
 </ul>
 <p>Here’s the 5-fold validation work (and resulting RMSE and MAE estimates) for the three-predictor model.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">43201012</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">43201012</span>)
 
 prost3_models &lt;-<span class="st"> </span>prost <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">crossv_kfold</span>(<span class="dt">k =</span> <span class="dv">5</span>) <span class="op">%&gt;%</span>
@@ -1376,13 +1349,13 @@ prost3_preds &lt;-<span class="st"> </span>prost3_models <span class="op">%&gt;%
 
 prost3_preds <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">summarize</span>(<span class="dt">RMSE_prost3 =</span> <span class="kw">sqrt</span>(<span class="kw">mean</span>((lpsa <span class="op">-</span><span class="st"> </span>.fitted) <span class="op">^</span><span class="dv">2</span>)),
-              <span class="dt">MAE_prost3 =</span> <span class="kw">mean</span>(<span class="kw">abs</span>(lpsa <span class="op">-</span><span class="st"> </span>.fitted)))</code></pre>
+              <span class="dt">MAE_prost3 =</span> <span class="kw">mean</span>(<span class="kw">abs</span>(lpsa <span class="op">-</span><span class="st"> </span>.fitted)))</code></pre></div>
 <pre><code># A tibble: 1 x 2
   RMSE_prost3 MAE_prost3
         &lt;dbl&gt;      &lt;dbl&gt;
 1       0.745      0.587</code></pre>
 <p>Now, we’ll generate the RMSE and MAE estimates for the five-predictor model.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">43206879</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">43206879</span>)
 
 prost5_models &lt;-<span class="st"> </span>prost <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">crossv_kfold</span>(<span class="dt">k =</span> <span class="dv">5</span>) <span class="op">%&gt;%</span>
@@ -1394,13 +1367,13 @@ prost5_preds &lt;-<span class="st"> </span>prost5_models <span class="op">%&gt;%
 
 prost5_preds <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">summarize</span>(<span class="dt">RMSE_prost5 =</span> <span class="kw">sqrt</span>(<span class="kw">mean</span>((lpsa <span class="op">-</span><span class="st"> </span>.fitted) <span class="op">^</span><span class="dv">2</span>)),
-              <span class="dt">MAE_prost5 =</span> <span class="kw">mean</span>(<span class="kw">abs</span>(lpsa <span class="op">-</span><span class="st"> </span>.fitted)))</code></pre>
+              <span class="dt">MAE_prost5 =</span> <span class="kw">mean</span>(<span class="kw">abs</span>(lpsa <span class="op">-</span><span class="st"> </span>.fitted)))</code></pre></div>
 <pre><code># A tibble: 1 x 2
   RMSE_prost5 MAE_prost5
         &lt;dbl&gt;      &lt;dbl&gt;
 1       0.750      0.581</code></pre>
 <p>And at last, we’ll generate the RMSE and MAE estimates for the six-predictor model.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">43236198</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">43236198</span>)
 
 prost6_models &lt;-<span class="st"> </span>prost <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">crossv_kfold</span>(<span class="dt">k =</span> <span class="dv">5</span>) <span class="op">%&gt;%</span>
@@ -1412,7 +1385,7 @@ prost6_preds &lt;-<span class="st"> </span>prost6_models <span class="op">%&gt;%
 
 prost6_preds <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">summarize</span>(<span class="dt">RMSE_prost6 =</span> <span class="kw">sqrt</span>(<span class="kw">mean</span>((lpsa <span class="op">-</span><span class="st"> </span>.fitted) <span class="op">^</span><span class="dv">2</span>)),
-              <span class="dt">MAE_prost6 =</span> <span class="kw">mean</span>(<span class="kw">abs</span>(lpsa <span class="op">-</span><span class="st"> </span>.fitted)))</code></pre>
+              <span class="dt">MAE_prost6 =</span> <span class="kw">mean</span>(<span class="kw">abs</span>(lpsa <span class="op">-</span><span class="st"> </span>.fitted)))</code></pre></div>
 <pre><code># A tibble: 1 x 2
   RMSE_prost6 MAE_prost6
         &lt;dbl&gt;      &lt;dbl&gt;
@@ -1429,10 +1402,10 @@ prost6_preds <span class="op">%&gt;%</span>
 <p>Ramsey, Fred L., and Daniel W. Schafer. 2002. <em>The Statistical Sleuth: A Course in Methods of Data Analysis</em>. Second Edition. Pacific Grove, CA: Duxbury.</p>
 </div>
 <div id="ref-Leeb2005">
-<p>Leeb, Hannes, and Benedikt M. Potscher. 2005. “Model Selection and Inference: Facts and Fiction.” <em>Econometric Theory</em> 21(1): 21–59. <a href="https://www.jstor.org/stable/3533623">https://www.jstor.org/stable/3533623</a>.</p>
+<p>Leeb, Hannes, and Benedikt M. Potscher. 2005. “Model Selection and Inference: Facts and Fiction.” <em>Econometric Theory</em> 21(1): 21–59. <a href="https://www.jstor.org/stable/3533623" class="uri">https://www.jstor.org/stable/3533623</a>.</p>
 </div>
 <div id="ref-Vittinghoff2012">
-<p>Vittinghoff, Eric, David V. Glidden, Stephen C. Shiboski, and Charles E. McCulloch. 2012. <em>Regression Methods in Biostatistics: Linear, Logistic, Survival, and Repeated Measures Models</em>. Second Edition. Springer-Verlag, Inc. <a href="http://www.biostat.ucsf.edu/vgsm/">http://www.biostat.ucsf.edu/vgsm/</a>.</p>
+<p>Vittinghoff, Eric, David V. Glidden, Stephen C. Shiboski, and Charles E. McCulloch. 2012. <em>Regression Methods in Biostatistics: Linear, Logistic, Survival, and Repeated Measures Models</em>. Second Edition. Springer-Verlag, Inc. <a href="http://www.biostat.ucsf.edu/vgsm/" class="uri">http://www.biostat.ucsf.edu/vgsm/</a>.</p>
 </div>
 </div>
             </section>
@@ -1491,7 +1464,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "true";
+    var src = "";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');

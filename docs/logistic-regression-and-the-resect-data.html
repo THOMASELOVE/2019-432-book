@@ -50,67 +50,41 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
 </head>
@@ -970,13 +944,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>intubated</code> = whether intubation was required at the end of surgery (1 = yes, 0 = no), and</li>
 <li><code>died</code> = the patient’s death status (1 = dead, 0 = alive).</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r">resect <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(died) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">skim</span>(<span class="op">-</span>id)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">resect <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(died) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">skim</span>(<span class="op">-</span>id)</code></pre></div>
 <pre><code>Skim summary statistics
  n obs: 134 
  n variables: 6 
  group variables: died 
 
--- Variable type:integer --------------------------------------------------------
+-- Variable type:integer -----------------------------------------------------
  died  variable missing complete   n   mean    sd p0 p25 p50 p75 p100
     0       age       0      117 117 48.05  16.01  8  36  51  62   80
     0 intubated       0      117 117  0.068  0.25  0   0   0   0    1
@@ -985,7 +959,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     1 intubated       0       17  17  0.65   0.49  0   0   1   1    1
     1     prior       0       17  17  0.35   0.49  0   0   0   1    1
 
--- Variable type:numeric --------------------------------------------------------
+-- Variable type:numeric -----------------------------------------------------
  died  variable missing complete   n mean   sd p0 p25 p50 p75 p100
     0 resection       0      117 117 2.82 1.21  1 2   2.5 3.5    6
     1 resection       0       17  17 3.97 1     2 3.5 4   4.5    6</code></pre>
@@ -1023,10 +997,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="logistic-regression-using-glm" class="section level2">
 <h2><span class="header-section-number">13.3</span> Logistic Regression using <code>glm</code></h2>
 <p>We’ll begin by attempting to predict death based on the extent of the resection.</p>
-<pre class="sourceCode r"><code class="sourceCode r">res_modA &lt;-<span class="st"> </span><span class="kw">glm</span>(died <span class="op">~</span><span class="st"> </span>resection, <span class="dt">data=</span>resect, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">res_modA &lt;-<span class="st"> </span><span class="kw">glm</span>(died <span class="op">~</span><span class="st"> </span>resection, <span class="dt">data=</span>resect, 
                <span class="dt">family=</span><span class="st">&quot;binomial&quot;</span>(<span class="dt">link=</span><span class="st">&quot;logit&quot;</span>))
 
-res_modA</code></pre>
+res_modA</code></pre></div>
 <pre><code>
 Call:  glm(formula = died ~ resection, family = binomial(link = &quot;logit&quot;), 
     data = resect)
@@ -1039,8 +1013,8 @@ Degrees of Freedom: 133 Total (i.e. Null);  132 Residual
 Null Deviance:      101.9 
 Residual Deviance: 89.49    AIC: 93.49</code></pre>
 <p>Note that the <code>logit</code> link is the default approach with the <code>binomial</code> family, so we could also have used:</p>
-<pre class="sourceCode r"><code class="sourceCode r">res_modA &lt;-<span class="st"> </span><span class="kw">glm</span>(died <span class="op">~</span><span class="st"> </span>resection, <span class="dt">data =</span> resect, 
-                <span class="dt">family =</span> <span class="st">&quot;binomial&quot;</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">res_modA &lt;-<span class="st"> </span><span class="kw">glm</span>(died <span class="op">~</span><span class="st"> </span>resection, <span class="dt">data =</span> resect, 
+                <span class="dt">family =</span> <span class="st">&quot;binomial&quot;</span>)</code></pre></div>
 <p>which yields the same model.</p>
 <div id="interpreting-the-coefficients-of-a-logistic-regression-model-1" class="section level3">
 <h3><span class="header-section-number">13.3.1</span> Interpreting the Coefficients of a Logistic Regression Model</h3>
@@ -1073,14 +1047,14 @@ Pr(died = 1) = \frac{e^{\beta_0 + \beta_1 x}}{1 + {e^{\beta_0 + \beta_1 x}}} = \
 <li>The default predictions are on the scale of the log odds. These predictions are also available through the <code>type = &quot;link&quot;</code> command within the <code>predict</code> function for a generalized linear model like logistic regression.</li>
 <li>Here are the predicted log odds of death for a subject (Sally) with a 4 cm resection and a subject (Harry) who had a 5 cm resection.</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">predict</span>(res_modA, <span class="dt">newdata =</span> <span class="kw">data_frame</span>(<span class="dt">resection =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">5</span>)))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">predict</span>(res_modA, <span class="dt">newdata =</span> <span class="kw">data_frame</span>(<span class="dt">resection =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">5</span>)))</code></pre></div>
 <pre><code>         1          2 
 -1.4669912 -0.7253027 </code></pre>
 <ul>
 <li>We can also obtain predictions for each subject on the original response (here, probability) scale, backing out of the logit link.</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">predict</span>(res_modA, <span class="dt">newdata =</span> <span class="kw">data_frame</span>(<span class="dt">resection =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">5</span>)), 
-        <span class="dt">type =</span> <span class="st">&quot;response&quot;</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">predict</span>(res_modA, <span class="dt">newdata =</span> <span class="kw">data_frame</span>(<span class="dt">resection =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">5</span>)), 
+        <span class="dt">type =</span> <span class="st">&quot;response&quot;</span>)</code></pre></div>
 <pre><code>        1         2 
 0.1874004 0.3262264 </code></pre>
 <p>So the predicted probability of death is 0.187 for Sally, the subject with a 4 cm resection, and 0.326 for Harry, the subject with a 5 cm resection.</p>
@@ -1088,7 +1062,7 @@ Pr(died = 1) = \frac{e^{\beta_0 + \beta_1 x}}{1 + {e^{\beta_0 + \beta_1 x}}} = \
 <div id="odds-ratio-interpretation-of-coefficients" class="section level3">
 <h3><span class="header-section-number">13.3.3</span> Odds Ratio interpretation of Coefficients</h3>
 <p>Often, we will exponentiate the estimated slope coefficients of a logistic regression model to help us understand the impact of changing a predictor on the odds of our outcome.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">coef</span>(res_modA))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">coef</span>(res_modA))</code></pre></div>
 <pre><code>(Intercept)   resection 
  0.01186995  2.09947754 </code></pre>
 <p>To interpret this finding, suppose we have two subjects, Harry and Sally. Harry had a resection that was 1 cm larger than Sally. This estimated coefficient suggests that the estimated odds for death associated with Harry is 2.099 times larger than the odds for death associated with Sally. In general, the odds ratio comparing two subjects who differ by 1 cm on the resection length is 2.099.</p>
@@ -1115,7 +1089,7 @@ OR = \frac{Odds(Harry died)}{Odds(Sally died)} = \frac{0.4842}{0.2307} = 2.099
 </div>
 <div id="interpreting-the-rest-of-the-model-output-from-glm" class="section level3">
 <h3><span class="header-section-number">13.3.4</span> Interpreting the rest of the model output from <code>glm</code></h3>
-<pre class="sourceCode r"><code class="sourceCode r">res_modA</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">res_modA</code></pre></div>
 <pre><code>
 Call:  glm(formula = died ~ resection, family = &quot;binomial&quot;, data = resect)
 
@@ -1133,8 +1107,7 @@ Residual Deviance: 89.49    AIC: 93.49</code></pre>
 <li>Recall that we had <em>n</em> = 134 subjects in the data. The “Null” model includes only an intercept term (which uses 1 df) and we thus have <em>n</em> - 1 (here 133) degrees of freedom available for estimation.</li>
 <li>In our <code>res_modA</code> model, a logistic regression is fit including a single slope (resection) and an intercept term. Each uses up one degree of freedom to build an estimate, so we have <em>n</em> - 2 = 134 - 2 = 132 residual df remaining.</li>
 </ul></li>
-<li>The AIC or Akaike Information Criterion (lower values are better) is also provided. This is helpful if we’re
-comparing multiple models for the same outcome.</li>
+<li>The AIC or Akaike Information Criterion (lower values are better) is also provided. This is helpful if we’re comparing multiple models for the same outcome.</li>
 </ul>
 </div>
 <div id="deviance-and-comparing-our-model-to-the-null-model" class="section level3">
@@ -1148,7 +1121,7 @@ comparing multiple models for the same outcome.</li>
 <li>We can see this comparison more directly by running <code>anova</code> on our model:</li>
 </ul></li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(res_modA)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(res_modA)</code></pre></div>
 <pre><code>Analysis of Deviance Table
 
 Model: binomial, link: logit
@@ -1161,7 +1134,7 @@ Terms added sequentially (first to last)
 NULL                        133    101.943
 resection  1    12.45       132     89.493</code></pre>
 <p>To complete a deviance test and obtain a <em>p</em> value, we can run the following code to estimate the probability that a chi-square distribution with a single degree of freedom would exhibit an improvement in deviance as large as 12.45.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pchisq</span>(<span class="fl">12.45</span>, <span class="dv">1</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pchisq</span>(<span class="fl">12.45</span>, <span class="dv">1</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</code></pre></div>
 <pre><code>[1] 0.0004179918</code></pre>
 <p>The <em>p</em> value for the deviance test here is about 0.0004. But, again, this isn’t a test of whether the model is any good - it assumes the model is true, and then tests some consequences.</p>
 <ul>
@@ -1172,7 +1145,7 @@ resection  1    12.45       132     89.493</code></pre>
 <div id="using-glance-with-a-logistic-regression-model" class="section level3">
 <h3><span class="header-section-number">13.3.6</span> Using <code>glance</code> with a logistic regression model</h3>
 <p>We can use the <code>glance</code> function from the <code>broom</code> package to obtain the null and residual deviance and degrees of freedom. Note that the deviance for our model is related to the log likelihood by -2*<code>logLik</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glance</span>(res_modA)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glance</span>(res_modA)</code></pre></div>
 <pre><code># A tibble: 1 x 7
   null.deviance df.null logLik   AIC   BIC deviance df.residual
           &lt;dbl&gt;   &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;       &lt;int&gt;
@@ -1184,7 +1157,7 @@ resection  1    12.45       132     89.493</code></pre>
 <div id="interpreting-the-model-summary" class="section level2">
 <h2><span class="header-section-number">13.4</span> Interpreting the Model Summary</h2>
 <p>Let’s get a more detailed summary of our <code>res_modA</code> model, including 95% confidence intervals for the coefficients:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(res_modA)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(res_modA)</code></pre></div>
 <pre><code>
 Call:
 glm(formula = died ~ resection, family = &quot;binomial&quot;, data = resect)
@@ -1207,7 +1180,7 @@ Residual deviance:  89.493  on 132  degrees of freedom
 AIC: 93.493
 
 Number of Fisher Scoring iterations: 5</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(res_modA, <span class="dt">level =</span> <span class="fl">0.95</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(res_modA, <span class="dt">level =</span> <span class="fl">0.95</span>)</code></pre></div>
 <pre><code>Waiting for profiling to be done...</code></pre>
 <pre><code>                2.5 %    97.5 %
 (Intercept) -6.344472 -2.855856
@@ -1239,18 +1212,15 @@ resection    0.322898  1.208311</code></pre>
 <h3><span class="header-section-number">13.4.2</span> Confidence Intervals for the Coefficients</h3>
 <p>As in linear regression, we can obtain 95% confidence intervals (to get other levels, change the <code>level</code> parameter in <code>confint</code>) for the intercept and slope coefficients.</p>
 <p>Here, we see, for example, that the coefficient of <code>resection</code> has a point estimate of 0.7417, and a confidence interval of (0.3229, 1.208). Since this is on the logit scale, it’s not that interpretable, but we will often exponentiate the model and its confidence interval to obtain a more interpretable result on the odds ratio scale.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">coef</span>(res_modA))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">coef</span>(res_modA))</code></pre></div>
 <pre><code>(Intercept)   resection 
  0.01186995  2.09947754 </code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">confint</span>(res_modA))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">confint</span>(res_modA))</code></pre></div>
 <pre><code>Waiting for profiling to be done...</code></pre>
 <pre><code>                  2.5 %     97.5 %
 (Intercept) 0.001756429 0.05750655
 resection   1.381124459 3.34782604</code></pre>
-<p>From this output, we can estimate the odds ratio for death associated with a 1 cm increase in resection size is 2.099, with a 95% CI of (1.38, 3.35).
-- If the odds ratio was 1, it would indicate that the odds of death did not change based on the change in resection size.
-- Here, it’s clear that the estimated odds of death will be larger (odds &gt; 1) for subjects with larger resection sizes. Larger odds of death also indicate larger probabilities of death. This confidence interval indicates that with 95% confidence, we conclude that increases in resection size are associated with statistically detectable increases in the odds of death.
-- If the odds ratio was less than 1 (remember that it cannot be less than 0) that would mean that subjects with larger resection sizes were associated with smaller estimated odds of death.</p>
+<p>From this output, we can estimate the odds ratio for death associated with a 1 cm increase in resection size is 2.099, with a 95% CI of (1.38, 3.35). - If the odds ratio was 1, it would indicate that the odds of death did not change based on the change in resection size. - Here, it’s clear that the estimated odds of death will be larger (odds &gt; 1) for subjects with larger resection sizes. Larger odds of death also indicate larger probabilities of death. This confidence interval indicates that with 95% confidence, we conclude that increases in resection size are associated with statistically detectable increases in the odds of death. - If the odds ratio was less than 1 (remember that it cannot be less than 0) that would mean that subjects with larger resection sizes were associated with smaller estimated odds of death.</p>
 </div>
 <div id="deviance-residuals" class="section level3">
 <h3><span class="header-section-number">13.4.3</span> Deviance Residuals</h3>
@@ -1281,9 +1251,9 @@ d_i = s_i \sqrt{-2 [y_i log \hat{\pi_i} + (1 - y_i) log(1 - \hat{\pi_i})]},
 </ul>
 <div id="using-augment-to-capture-the-fitted-probabilities" class="section level3">
 <h3><span class="header-section-number">13.5.1</span> Using <code>augment</code> to capture the fitted probabilities</h3>
-<pre class="sourceCode r"><code class="sourceCode r">res_A_aug &lt;-<span class="st"> </span><span class="kw">augment</span>(res_modA, resect, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">res_A_aug &lt;-<span class="st"> </span><span class="kw">augment</span>(res_modA, resect, 
                      <span class="dt">type.predict =</span> <span class="st">&quot;response&quot;</span>)
-<span class="kw">head</span>(res_A_aug)</code></pre>
+<span class="kw">head</span>(res_A_aug)</code></pre></div>
 <pre><code># A tibble: 6 x 13
      id   age prior resection intubated  died .fitted .se.fit .resid
   &lt;int&gt; &lt;int&gt; &lt;int&gt;     &lt;dbl&gt;     &lt;int&gt; &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;
@@ -1299,25 +1269,25 @@ d_i = s_i \sqrt{-2 [y_i log \hat{\pi_i} + (1 - y_i) log(1 - \hat{\pi_i})]},
 </div>
 <div id="plotting-a-logistic-regression-models-fitted-values" class="section level3">
 <h3><span class="header-section-number">13.5.2</span> Plotting a Logistic Regression Model’s Fitted Values</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(res_A_aug, <span class="kw">aes</span>(<span class="dt">x =</span> resection, <span class="dt">y =</span> died)) <span class="op">+</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(res_A_aug, <span class="kw">aes</span>(<span class="dt">x =</span> resection, <span class="dt">y =</span> died)) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_jitter</span>(<span class="dt">height =</span> <span class="fl">0.05</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">x =</span> resection, <span class="dt">y =</span> .fitted), 
               <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>) <span class="op">+</span>
-<span class="st">    </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Logistic Regression from Model res_modA&quot;</span>)</code></pre>
+<span class="st">    </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Logistic Regression from Model res_modA&quot;</span>)</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-165-1.png" width="672" /></p>
 </div>
 <div id="plotting-a-simple-logistic-model-using-binomial_smooth" class="section level3">
 <h3><span class="header-section-number">13.5.3</span> Plotting a Simple Logistic Model using <code>binomial_smooth</code></h3>
-<pre class="sourceCode r"><code class="sourceCode r">binomial_smooth &lt;-<span class="st"> </span><span class="cf">function</span>(...) {
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">binomial_smooth &lt;-<span class="st"> </span><span class="cf">function</span>(...) {
   <span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;glm&quot;</span>, 
               <span class="dt">method.args =</span> <span class="kw">list</span>(<span class="dt">family =</span> <span class="st">&quot;binomial&quot;</span>), ...)
 }
 
 <span class="kw">ggplot</span>(resect, <span class="kw">aes</span>(<span class="dt">x =</span> resection, <span class="dt">y =</span> died)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_jitter</span>(<span class="dt">height =</span> <span class="fl">0.05</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">binomial_smooth</span>() <span class="op">+</span><span class="st"> </span><span class="co">## ...smooth(se=FALSE) to leave out interval</span>
+<span class="st">  </span><span class="kw">binomial_smooth</span>() <span class="op">+</span><span class="st"> </span>## ...smooth(se=FALSE) to leave out interval
 <span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Logistic Regression from Model A&quot;</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">theme_bw</span>()</code></pre>
+<span class="st">  </span><span class="kw">theme_bw</span>()</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-166-1.png" width="672" /></p>
 <p>As expected, we see an increase in the model probability of death as the extent of the resection grows larger.</p>
 </div>
@@ -1326,24 +1296,24 @@ d_i = s_i \sqrt{-2 [y_i log \hat{\pi_i} + (1 - y_i) log(1 - \hat{\pi_i})]},
 <h2><span class="header-section-number">13.6</span> How well does Model A classify subjects?</h2>
 <p>A natural question to ask is how well does our model classify patients in terms of likelihood of death.</p>
 <p>We could specify a particular rule, for example: if the predicted probability of death is 0.5 or greater, then predict “Died”.</p>
-<pre class="sourceCode r"><code class="sourceCode r">res_A_aug<span class="op">$</span>rule<span class="fl">.5</span> &lt;-<span class="st"> </span><span class="kw">ifelse</span>(res_A_aug<span class="op">$</span>.fitted <span class="op">&gt;=</span><span class="st"> </span><span class="fl">0.5</span>, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">res_A_aug<span class="op">$</span>rule.<span class="dv">5</span> &lt;-<span class="st"> </span><span class="kw">ifelse</span>(res_A_aug<span class="op">$</span>.fitted <span class="op">&gt;=</span><span class="st"> </span><span class="fl">0.5</span>, 
                        <span class="st">&quot;Predict Died&quot;</span>, <span class="st">&quot;Predict Alive&quot;</span>)
 
-<span class="kw">table</span>(res_A_aug<span class="op">$</span>rule<span class="fl">.5</span>, res_A_aug<span class="op">$</span>died)</code></pre>
+<span class="kw">table</span>(res_A_aug<span class="op">$</span>rule.<span class="dv">5</span>, res_A_aug<span class="op">$</span>died)</code></pre></div>
 <pre><code>               
                   0   1
   Predict Alive 114  16
   Predict Died    3   1</code></pre>
 <p>And perhaps build the linked table of row probabilities which tells us, for example, that 87.69% of the patients predicted by the model to be alive actually did survive.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="dv">100</span><span class="op">*</span><span class="kw">prop.table</span>(
-    <span class="kw">table</span>(res_A_aug<span class="op">$</span>rule<span class="fl">.5</span>, res_A_aug<span class="op">$</span>died), <span class="dv">1</span>), <span class="dv">2</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="dv">100</span><span class="op">*</span><span class="kw">prop.table</span>(
+    <span class="kw">table</span>(res_A_aug<span class="op">$</span>rule.<span class="dv">5</span>, res_A_aug<span class="op">$</span>died), <span class="dv">1</span>), <span class="dv">2</span>)</code></pre></div>
 <pre><code>               
                     0     1
   Predict Alive 87.69 12.31
   Predict Died  75.00 25.00</code></pre>
 <p>Or the table of column probabilities which tell us, for example, that 97.44% of those who actually survived were predicted by the model to be alive.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="dv">100</span><span class="op">*</span><span class="kw">prop.table</span>(
-    <span class="kw">table</span>(res_A_aug<span class="op">$</span>rule<span class="fl">.5</span>, res_A_aug<span class="op">$</span>died), <span class="dv">2</span>), <span class="dv">2</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="dv">100</span><span class="op">*</span><span class="kw">prop.table</span>(
+    <span class="kw">table</span>(res_A_aug<span class="op">$</span>rule.<span class="dv">5</span>, res_A_aug<span class="op">$</span>died), <span class="dv">2</span>), <span class="dv">2</span>)</code></pre></div>
 <pre><code>               
                     0     1
   Predict Alive 97.44 94.12
@@ -1376,7 +1346,7 @@ FPF(R) = Pr(resection &gt; R | subject did not die)
 <h3><span class="header-section-number">13.7.1</span> Interpreting the Area under the ROC curve</h3>
 <p>The AUC or Area under the ROC curve is the amount of space underneath the ROC curve. Often referred to as the c statistic, the AUC represents the quality of your TPR and FPR overall in a single number. The C statistic ranges from 0 to 1, with C = 0.5 for a prediction that is no better than random guessing, and C = 1 for a perfect prediction model.</p>
 <p>Next, I’ll build a simulation to demonstrate several possible ROC curves in the sections that follow.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">432999</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">432999</span>)
 sim.temp &lt;-<span class="st"> </span><span class="kw">data_frame</span>(<span class="dt">x =</span> <span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">200</span>), 
                        <span class="dt">prob =</span> <span class="kw">exp</span>(x)<span class="op">/</span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="kw">exp</span>(x)), 
                        <span class="dt">y =</span> <span class="kw">as.numeric</span>(<span class="dv">1</span> <span class="op">*</span><span class="st"> </span><span class="kw">runif</span>(<span class="dv">200</span>) <span class="op">&lt;</span><span class="st"> </span>prob))
@@ -1386,12 +1356,12 @@ sim.temp &lt;-<span class="st"> </span>sim.temp <span class="op">%&gt;%</span>
            <span class="dt">p_perfect =</span> y, 
            <span class="dt">p_bad =</span> <span class="kw">exp</span>(<span class="op">-</span><span class="dv">2</span><span class="op">*</span>x) <span class="op">/</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="kw">exp</span>(<span class="op">-</span><span class="dv">2</span><span class="op">*</span>x)),
            <span class="dt">p_ok =</span> prob <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span><span class="op">-</span>y)<span class="op">*</span><span class="kw">runif</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="fl">0.05</span>),
-           <span class="dt">p_good =</span> prob <span class="op">+</span><span class="st"> </span>y<span class="op">*</span><span class="kw">runif</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="fl">0.27</span>))</code></pre>
+           <span class="dt">p_good =</span> prob <span class="op">+</span><span class="st"> </span>y<span class="op">*</span><span class="kw">runif</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="fl">0.27</span>))</code></pre></div>
 <div id="what-if-we-are-guessing" class="section level4">
 <h4><span class="header-section-number">13.7.1.1</span> What if we are guessing?</h4>
 <p>If we’re guessing completely at random, then the model should correctly classify a subject (as died or not died) about 50% of the time, so the TPR and FPR will be equal. This yields a diagonal line in the ROC curve, and an area under the curve (C statistic) of 0.5.</p>
 <p>There are several ways to do this on the web, but I’ll show this one, which has some bizarre code, but that’s a function of using a package called <code>ROCR</code> to do the work. It comes from <a href="http://blog.yhat.com/posts/roc-curves.html">this link</a></p>
-<pre class="sourceCode r"><code class="sourceCode r">pred_guess &lt;-<span class="st"> </span><span class="kw">prediction</span>(sim.temp<span class="op">$</span>p_guess, sim.temp<span class="op">$</span>y)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pred_guess &lt;-<span class="st"> </span><span class="kw">prediction</span>(sim.temp<span class="op">$</span>p_guess, sim.temp<span class="op">$</span>y)
 perf_guess &lt;-<span class="st"> </span><span class="kw">performance</span>(pred_guess, <span class="dt">measure =</span> <span class="st">&quot;tpr&quot;</span>, <span class="dt">x.measure =</span> <span class="st">&quot;fpr&quot;</span>)
 auc_guess &lt;-<span class="st"> </span><span class="kw">performance</span>(pred_guess, <span class="dt">measure=</span><span class="st">&quot;auc&quot;</span>)
 
@@ -1404,13 +1374,13 @@ roc_guess &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span
 <span class="st">    </span><span class="kw">geom_ribbon</span>(<span class="dt">alpha=</span><span class="fl">0.2</span>, <span class="dt">fill =</span> <span class="st">&quot;blue&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y=</span>tpr), <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="kw">paste0</span>(<span class="st">&quot;Guessing: ROC Curve w/ AUC=&quot;</span>, auc_guess)) <span class="op">+</span>
-<span class="st">    </span><span class="kw">theme_bw</span>()</code></pre>
+<span class="st">    </span><span class="kw">theme_bw</span>()</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-171-1.png" width="672" /></p>
 </div>
 <div id="what-if-we-classify-things-perfectly" class="section level4">
 <h4><span class="header-section-number">13.7.1.2</span> What if we classify things perfectly?</h4>
 <p>If we’re classifying subjects perfectly, then we have a TPR of 1 and an FPR of 0. That yields an ROC curve that looks like the upper and left edges of a box. If our model correctly classifies a subject (as died or not died) 100% of the time, the area under the curve (c statistic) will be 1.0. We’ll add in the diagonal line here (in a dashed black line) to show how this model compares to random guessing.</p>
-<pre class="sourceCode r"><code class="sourceCode r">pred_perf &lt;-<span class="st"> </span><span class="kw">prediction</span>(sim.temp<span class="op">$</span>p_perfect, sim.temp<span class="op">$</span>y)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pred_perf &lt;-<span class="st"> </span><span class="kw">prediction</span>(sim.temp<span class="op">$</span>p_perfect, sim.temp<span class="op">$</span>y)
 perf_perf &lt;-<span class="st"> </span><span class="kw">performance</span>(pred_perf, <span class="dt">measure =</span> <span class="st">&quot;tpr&quot;</span>, <span class="dt">x.measure =</span> <span class="st">&quot;fpr&quot;</span>)
 auc_perf &lt;-<span class="st"> </span><span class="kw">performance</span>(pred_perf, <span class="dt">measure=</span><span class="st">&quot;auc&quot;</span>)
 
@@ -1424,13 +1394,13 @@ roc_perf &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span 
 <span class="st">    </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y=</span>tpr), <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_abline</span>(<span class="dt">intercept =</span> <span class="dv">0</span>, <span class="dt">slope =</span> <span class="dv">1</span>, <span class="dt">lty =</span> <span class="st">&quot;dashed&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="kw">paste0</span>(<span class="st">&quot;Perfect Prediction: ROC Curve w/ AUC=&quot;</span>, auc_perf)) <span class="op">+</span>
-<span class="st">    </span><span class="kw">theme_bw</span>()</code></pre>
+<span class="st">    </span><span class="kw">theme_bw</span>()</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-172-1.png" width="672" /></p>
 </div>
 <div id="what-does-worse-than-guessing-look-like" class="section level4">
 <h4><span class="header-section-number">13.7.1.3</span> What does “worse than guessing” look like?</h4>
 <p>A bad classifier will appear below and to the right of the diagonal line we’d see if we were completely guessing. Such a model will have a c statistic below 0.5, and will be valueless.</p>
-<pre class="sourceCode r"><code class="sourceCode r">pred_bad &lt;-<span class="st"> </span><span class="kw">prediction</span>(sim.temp<span class="op">$</span>p_bad, sim.temp<span class="op">$</span>y)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pred_bad &lt;-<span class="st"> </span><span class="kw">prediction</span>(sim.temp<span class="op">$</span>p_bad, sim.temp<span class="op">$</span>y)
 perf_bad &lt;-<span class="st"> </span><span class="kw">performance</span>(pred_bad, <span class="dt">measure =</span> <span class="st">&quot;tpr&quot;</span>, <span class="dt">x.measure =</span> <span class="st">&quot;fpr&quot;</span>)
 auc_bad &lt;-<span class="st"> </span><span class="kw">performance</span>(pred_bad, <span class="dt">measure=</span><span class="st">&quot;auc&quot;</span>)
 
@@ -1444,13 +1414,13 @@ roc_bad &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span c
 <span class="st">    </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y=</span>tpr), <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_abline</span>(<span class="dt">intercept =</span> <span class="dv">0</span>, <span class="dt">slope =</span> <span class="dv">1</span>, <span class="dt">lty =</span> <span class="st">&quot;dashed&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="kw">paste0</span>(<span class="st">&quot;A Bad Model: ROC Curve w/ AUC=&quot;</span>, auc_bad)) <span class="op">+</span>
-<span class="st">    </span><span class="kw">theme_bw</span>()</code></pre>
+<span class="st">    </span><span class="kw">theme_bw</span>()</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-173-1.png" width="672" /></p>
 </div>
 <div id="what-does-better-than-guessing-look-like" class="section level4">
 <h4><span class="header-section-number">13.7.1.4</span> What does “better than guessing” look like?</h4>
 <p>An “OK” classifier will appear above and to the left of the diagonal line we’d see if we were completely guessing. Such a model will have a c statistic above 0.5, and might have some value. The plot below shows a very fairly poor model, but at least it’s better than guessing.</p>
-<pre class="sourceCode r"><code class="sourceCode r">pred_ok &lt;-<span class="st"> </span><span class="kw">prediction</span>(sim.temp<span class="op">$</span>p_ok, sim.temp<span class="op">$</span>y)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pred_ok &lt;-<span class="st"> </span><span class="kw">prediction</span>(sim.temp<span class="op">$</span>p_ok, sim.temp<span class="op">$</span>y)
 perf_ok &lt;-<span class="st"> </span><span class="kw">performance</span>(pred_ok, <span class="dt">measure =</span> <span class="st">&quot;tpr&quot;</span>, <span class="dt">x.measure =</span> <span class="st">&quot;fpr&quot;</span>)
 auc_ok &lt;-<span class="st"> </span><span class="kw">performance</span>(pred_ok, <span class="dt">measure=</span><span class="st">&quot;auc&quot;</span>)
 
@@ -1464,13 +1434,13 @@ roc_ok &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span cl
 <span class="st">    </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y=</span>tpr), <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_abline</span>(<span class="dt">intercept =</span> <span class="dv">0</span>, <span class="dt">slope =</span> <span class="dv">1</span>, <span class="dt">lty =</span> <span class="st">&quot;dashed&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="kw">paste0</span>(<span class="st">&quot;A Mediocre Model: ROC Curve w/ AUC=&quot;</span>, auc_ok)) <span class="op">+</span>
-<span class="st">    </span><span class="kw">theme_bw</span>()</code></pre>
+<span class="st">    </span><span class="kw">theme_bw</span>()</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-174-1.png" width="672" /></p>
 <p>Sometimes people grasp for a rough guide as to the accuracy of a model’s predictions based on the area under the ROC curve. A common thought is to assess the C statistic much like you would a class grade.</p>
-<table>
+<table style="width:81%;">
 <colgroup>
-<col width="19%" />
-<col width="80%" />
+<col width="16%" />
+<col width="63%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -1509,7 +1479,7 @@ roc_ok &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span cl
 <div id="what-does-pretty-good-look-like" class="section level4">
 <h4><span class="header-section-number">13.7.1.5</span> What does “pretty good” look like?</h4>
 <p>A strong and good classifier will appear above and to the left of the diagonal line we’d see if we were completely guessing, often with a nice curve that is continually increasing and appears to be pulled up towards the top left. Such a model will have a c statistic well above 0.5, but not as large as 1. The plot below shows a stronger model, which appears substantially better than guessing.</p>
-<pre class="sourceCode r"><code class="sourceCode r">pred_good &lt;-<span class="st"> </span><span class="kw">prediction</span>(sim.temp<span class="op">$</span>p_good, sim.temp<span class="op">$</span>y)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pred_good &lt;-<span class="st"> </span><span class="kw">prediction</span>(sim.temp<span class="op">$</span>p_good, sim.temp<span class="op">$</span>y)
 perf_good &lt;-<span class="st"> </span><span class="kw">performance</span>(pred_good, <span class="dt">measure =</span> <span class="st">&quot;tpr&quot;</span>, <span class="dt">x.measure =</span> <span class="st">&quot;fpr&quot;</span>)
 auc_good &lt;-<span class="st"> </span><span class="kw">performance</span>(pred_good, <span class="dt">measure=</span><span class="st">&quot;auc&quot;</span>)
 
@@ -1523,7 +1493,7 @@ roc_good &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span 
 <span class="st">    </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y=</span>tpr), <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_abline</span>(<span class="dt">intercept =</span> <span class="dv">0</span>, <span class="dt">slope =</span> <span class="dv">1</span>, <span class="dt">lty =</span> <span class="st">&quot;dashed&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="kw">paste0</span>(<span class="st">&quot;A Pretty Good Model: ROC Curve w/ AUC=&quot;</span>, auc_good)) <span class="op">+</span>
-<span class="st">    </span><span class="kw">theme_bw</span>()</code></pre>
+<span class="st">    </span><span class="kw">theme_bw</span>()</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-175-1.png" width="672" /></p>
 </div>
 </div>
@@ -1531,7 +1501,7 @@ roc_good &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span 
 <div id="the-roc-plot-for-res_moda" class="section level2">
 <h2><span class="header-section-number">13.8</span> The ROC Plot for <code>res_modA</code></h2>
 <p>Let me show you the ROC curve for our <code>res_modA</code> model.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## requires ROCR package</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## requires ROCR package
 prob &lt;-<span class="st"> </span><span class="kw">predict</span>(res_modA, resect, <span class="dt">type=</span><span class="st">&quot;response&quot;</span>)
 pred &lt;-<span class="st"> </span><span class="kw">prediction</span>(prob, resect<span class="op">$</span>died)
 perf &lt;-<span class="st"> </span><span class="kw">performance</span>(pred, <span class="dt">measure =</span> <span class="st">&quot;tpr&quot;</span>, <span class="dt">x.measure =</span> <span class="st">&quot;fpr&quot;</span>)
@@ -1547,18 +1517,18 @@ roc.data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span 
 <span class="st">    </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y=</span>tpr), <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_abline</span>(<span class="dt">intercept =</span> <span class="dv">0</span>, <span class="dt">slope =</span> <span class="dv">1</span>, <span class="dt">lty =</span> <span class="st">&quot;dashed&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="kw">paste0</span>(<span class="st">&quot;ROC Curve w/ AUC=&quot;</span>, auc)) <span class="op">+</span>
-<span class="st">    </span><span class="kw">theme_bw</span>()</code></pre>
+<span class="st">    </span><span class="kw">theme_bw</span>()</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-176-1.png" width="672" /></p>
 <p>Based on the C statistic (AUC = 0.771) this would rank somewhere near the high end of a “fair” predictive model by this standard, not quite to the level of a “good” model.</p>
 <div id="another-way-to-plot-the-roc-curve" class="section level3">
 <h3><span class="header-section-number">13.8.1</span> Another way to plot the ROC Curve</h3>
 <p>If we’ve loaded the <code>pROC</code> package, we can also use the following (admittedly simpler) approach to plot the ROC curve, without <code>ggplot2</code>, and to obtain the C statistic, and a 95% confidence interval around that C statistic.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## requires pROC package</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## requires pROC package
 roc.modA &lt;-<span class="st"> </span>
 <span class="st">    </span><span class="kw">roc</span>(resect<span class="op">$</span>died <span class="op">~</span><span class="st"> </span><span class="kw">predict</span>(res_modA, <span class="dt">type=</span><span class="st">&quot;response&quot;</span>),
         <span class="dt">ci =</span> <span class="ot">TRUE</span>)
 
-roc.modA</code></pre>
+roc.modA</code></pre></div>
 <pre><code>
 Call:
 roc.formula(formula = resect$died ~ predict(res_modA, type = &quot;response&quot;),     ci = TRUE)
@@ -1566,7 +1536,7 @@ roc.formula(formula = resect$died ~ predict(res_modA, type = &quot;response&quot
 Data: predict(res_modA, type = &quot;response&quot;) in 117 controls (resect$died 0) &lt; 17 cases (resect$died 1).
 Area under the curve: 0.7707
 95% CI: 0.67-0.8715 (DeLong)</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(roc.modA)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(roc.modA)</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-177-1.png" width="672" /></p>
 </div>
 </div>
@@ -1583,16 +1553,16 @@ Area under the curve: 0.7707
 </ul>
 <p>The usual residual plots are available in R for a logistic regression model, but most of them are irrelevant in the logistic regression setting. The residuals shouldn’t follow a standard Normal distribution, and they will not show constant variance over the range of the predictor variables, so plots looking into those issues aren’t helpful.</p>
 <p>The only plot from the standard set that we’ll look at in many settings is plot 5, which helps us assess influence (via Cook’s distance contours), and a measure related to leverage (how unusual an observation is in terms of the predictors) and standardized Pearson residuals.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(res_modA, <span class="dt">which =</span> <span class="dv">5</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(res_modA, <span class="dt">which =</span> <span class="dv">5</span>)</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-178-1.png" width="672" /></p>
 <p>In this case, I don’t see any highly influential points, as no points fall outside of the Cook’s distance (0.5 or 1) contours.</p>
 </div>
 <div id="model-b-a-kitchen-sink-logistic-regression-model" class="section level2">
 <h2><span class="header-section-number">13.10</span> Model B: A “Kitchen Sink” Logistic Regression Model</h2>
-<pre class="sourceCode r"><code class="sourceCode r">res_modB &lt;-<span class="st"> </span><span class="kw">glm</span>(died <span class="op">~</span><span class="st"> </span>resection <span class="op">+</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>prior <span class="op">+</span><span class="st"> </span>intubated,
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">res_modB &lt;-<span class="st"> </span><span class="kw">glm</span>(died <span class="op">~</span><span class="st"> </span>resection <span class="op">+</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>prior <span class="op">+</span><span class="st"> </span>intubated,
                <span class="dt">data =</span> resect, <span class="dt">family =</span> binomial)
 
-res_modB</code></pre>
+res_modB</code></pre></div>
 <pre><code>
 Call:  glm(formula = died ~ resection + age + prior + intubated, family = binomial, 
     data = resect)
@@ -1606,7 +1576,7 @@ Null Deviance:      101.9
 Residual Deviance: 67.36    AIC: 77.36</code></pre>
 <div id="comparing-model-a-to-model-b" class="section level3">
 <h3><span class="header-section-number">13.10.1</span> Comparing Model A to Model B</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(res_modA, res_modB)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(res_modA, res_modB)</code></pre></div>
 <pre><code>Analysis of Deviance Table
 
 Model 1: died ~ resection
@@ -1615,12 +1585,12 @@ Model 2: died ~ resection + age + prior + intubated
 1       132     89.493            
 2       129     67.359  3   22.134</code></pre>
 <p>The addition of <code>age</code>, <code>prior</code> and <code>intubated</code> reduces the lack of fit by 22.134 points, at a cost of 3 degrees of freedom.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glance</span>(res_modA)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glance</span>(res_modA)</code></pre></div>
 <pre><code># A tibble: 1 x 7
   null.deviance df.null logLik   AIC   BIC deviance df.residual
           &lt;dbl&gt;   &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;       &lt;int&gt;
 1          102.     133  -44.7  93.5  99.3     89.5         132</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glance</span>(res_modB)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glance</span>(res_modB)</code></pre></div>
 <pre><code># A tibble: 1 x 7
   null.deviance df.null logLik   AIC   BIC deviance df.residual
           &lt;dbl&gt;   &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;       &lt;int&gt;
@@ -1629,7 +1599,7 @@ Model 2: died ~ resection + age + prior + intubated
 </div>
 <div id="interpreting-model-b" class="section level3">
 <h3><span class="header-section-number">13.10.2</span> Interpreting Model B</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(res_modB)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(res_modB)</code></pre></div>
 <pre><code>
 Call:
 glm(formula = died ~ resection + age + prior + intubated, family = binomial, 
@@ -1658,10 +1628,10 @@ AIC: 77.359
 Number of Fisher Scoring iterations: 6</code></pre>
 <p>It appears that the <code>intubated</code> predictor adds significant value to the model, by the Wald test.</p>
 <p>Let’s focus on the impact of these variables through odds ratios.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">coef</span>(res_modB))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">coef</span>(res_modB))</code></pre></div>
 <pre><code> (Intercept)    resection          age        prior    intubated 
  0.005782692  1.844504859  1.001173503  2.258476846 16.623153519 </code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">confint</span>(res_modB))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">confint</span>(res_modB))</code></pre></div>
 <pre><code>Waiting for profiling to be done...</code></pre>
 <pre><code>                   2.5 %     97.5 %
 (Intercept) 0.0002408626  0.0837263
@@ -1682,9 +1652,9 @@ intubated   4.7473282453 64.6456919</code></pre>
 <p>Let’s think about plotting the fitted values from our model, in terms of probabilities.</p>
 <div id="using-augment-to-capture-the-fitted-probabilities-1" class="section level3">
 <h3><span class="header-section-number">13.11.1</span> Using <code>augment</code> to capture the fitted probabilities</h3>
-<pre class="sourceCode r"><code class="sourceCode r">res_B_aug &lt;-<span class="st"> </span><span class="kw">augment</span>(res_modB, resect, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">res_B_aug &lt;-<span class="st"> </span><span class="kw">augment</span>(res_modB, resect, 
                      <span class="dt">type.predict =</span> <span class="st">&quot;response&quot;</span>)
-<span class="kw">head</span>(res_B_aug)</code></pre>
+<span class="kw">head</span>(res_B_aug)</code></pre></div>
 <pre><code># A tibble: 6 x 13
      id   age prior resection intubated  died .fitted .se.fit .resid   .hat
   &lt;int&gt; &lt;int&gt; &lt;int&gt;     &lt;dbl&gt;     &lt;int&gt; &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
@@ -1698,16 +1668,16 @@ intubated   4.7473282453 64.6456919</code></pre>
 </div>
 <div id="plotting-model-b-fits-by-observed-mortality" class="section level3">
 <h3><span class="header-section-number">13.11.2</span> Plotting Model B Fits by Observed Mortality</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(res_B_aug, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">factor</span>(died), <span class="dt">y =</span> .fitted, <span class="dt">col =</span> <span class="kw">factor</span>(died))) <span class="op">+</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(res_B_aug, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">factor</span>(died), <span class="dt">y =</span> .fitted, <span class="dt">col =</span> <span class="kw">factor</span>(died))) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_boxplot</span>() <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_jitter</span>(<span class="dt">width =</span> <span class="fl">0.1</span>) <span class="op">+</span><span class="st"> </span>
-<span class="st">    </span><span class="kw">guides</span>(<span class="dt">col =</span> <span class="ot">FALSE</span>)</code></pre>
+<span class="st">    </span><span class="kw">guides</span>(<span class="dt">col =</span> <span class="ot">FALSE</span>)</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-185-1.png" width="672" /></p>
 <p>Certainly it appears as though most of our predicted probabilities (of death) for the subjects who actually survived are quite small, but not all of them. We also have at least 6 big “misses” among the 17 subjects who actually died.</p>
 </div>
 <div id="the-roc-curve-for-model-b" class="section level3">
 <h3><span class="header-section-number">13.11.3</span> The ROC curve for Model B</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## requires ROCR package</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## requires ROCR package
 prob &lt;-<span class="st"> </span><span class="kw">predict</span>(res_modB, resect, <span class="dt">type=</span><span class="st">&quot;response&quot;</span>)
 pred &lt;-<span class="st"> </span><span class="kw">prediction</span>(prob, resect<span class="op">$</span>died)
 perf &lt;-<span class="st"> </span><span class="kw">performance</span>(pred, <span class="dt">measure =</span> <span class="st">&quot;tpr&quot;</span>, <span class="dt">x.measure =</span> <span class="st">&quot;fpr&quot;</span>)
@@ -1723,13 +1693,13 @@ roc.data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span 
 <span class="st">    </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y=</span>tpr), <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_abline</span>(<span class="dt">intercept =</span> <span class="dv">0</span>, <span class="dt">slope =</span> <span class="dv">1</span>, <span class="dt">lty =</span> <span class="st">&quot;dashed&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="kw">paste0</span>(<span class="st">&quot;Model B: ROC Curve w/ AUC=&quot;</span>, auc)) <span class="op">+</span>
-<span class="st">    </span><span class="kw">theme_bw</span>()</code></pre>
+<span class="st">    </span><span class="kw">theme_bw</span>()</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-186-1.png" width="672" /></p>
 <p>The area under the curve (C-statistic) is 0.86, which certainly looks like a more discriminating fit than model A with resection alone.</p>
 </div>
 <div id="residuals-leverage-and-influence" class="section level3">
 <h3><span class="header-section-number">13.11.4</span> Residuals, Leverage and Influence</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(res_modB, <span class="dt">which =</span> <span class="dv">5</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(res_modB, <span class="dt">which =</span> <span class="dv">5</span>)</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-187-1.png" width="672" /></p>
 <p>Again, we see no signs of deeply influential points in this model.</p>
 </div>
@@ -1738,11 +1708,11 @@ roc.data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span 
 <h2><span class="header-section-number">13.12</span> Logistic Regression using <code>lrm</code></h2>
 <p>To obtain the Nagelkerke <span class="math inline">\(R^2\)</span> and the C statistic, as well as some other summaries, I’ll now demonstrate the use of <code>lrm</code> from the <code>rms</code> package to fit a logistic regression model.</p>
 <p>We’ll return to the original model, predicting death using resection size alone.</p>
-<pre class="sourceCode r"><code class="sourceCode r">dd &lt;-<span class="st"> </span><span class="kw">datadist</span>(resect)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dd &lt;-<span class="st"> </span><span class="kw">datadist</span>(resect)
 <span class="kw">options</span>(<span class="dt">datadist=</span><span class="st">&quot;dd&quot;</span>)
 
 res_modC &lt;-<span class="st"> </span><span class="kw">lrm</span>(died <span class="op">~</span><span class="st"> </span>resection, <span class="dt">data=</span>resect, <span class="dt">x=</span><span class="ot">TRUE</span>, <span class="dt">y=</span><span class="ot">TRUE</span>)
-res_modC</code></pre>
+res_modC</code></pre></div>
 <pre><code>Logistic Regression Model
  
  lrm(formula = died ~ resection, data = resect, x = TRUE, y = TRUE)
@@ -1798,7 +1768,7 @@ res_modC</code></pre>
 </ul>
 <p>We’ve seen the ROC curve for this model before, when we looked at model <code>res_modA</code> fitted using <code>glm</code> in the previous chapter. But, just for completeness, I’ll include it.</p>
 <p><strong>Note.</strong> I change the initial <code>predict</code> call from <code>type = &quot;response&quot;</code> for a <code>glm</code> fit to <code>type = &quot;fitted&quot;</code> in a <code>lrm</code> fit. Otherwise, this is the same approach.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## requires ROCR package</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## requires ROCR package
 prob &lt;-<span class="st"> </span><span class="kw">predict</span>(res_modC, resect, <span class="dt">type=</span><span class="st">&quot;fitted&quot;</span>)
 pred &lt;-<span class="st"> </span><span class="kw">prediction</span>(prob, resect<span class="op">$</span>died)
 perf &lt;-<span class="st"> </span><span class="kw">performance</span>(pred, <span class="dt">measure =</span> <span class="st">&quot;tpr&quot;</span>, <span class="dt">x.measure =</span> <span class="st">&quot;fpr&quot;</span>)
@@ -1814,7 +1784,7 @@ roc.data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span 
 <span class="st">    </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y=</span>tpr), <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_abline</span>(<span class="dt">intercept =</span> <span class="dv">0</span>, <span class="dt">slope =</span> <span class="dv">1</span>, <span class="dt">lty =</span> <span class="st">&quot;dashed&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="kw">paste0</span>(<span class="st">&quot;Model C: ROC Curve w/ AUC=&quot;</span>, auc)) <span class="op">+</span>
-<span class="st">    </span><span class="kw">theme_bw</span>()</code></pre>
+<span class="st">    </span><span class="kw">theme_bw</span>()</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-189-1.png" width="672" /></p>
 </div>
 <div id="the-c-statistic-and-somers-d" class="section level3">
@@ -1833,8 +1803,8 @@ roc.data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span 
 <div id="validating-the-logistic-regression-model-summary-statistics" class="section level3">
 <h3><span class="header-section-number">13.12.4</span> Validating the Logistic Regression Model Summary Statistics</h3>
 <p>Like other regression-fitting tools in <code>rms</code>, the <code>lrm</code> function has a special <code>validate</code> tool to help perform resampling validation of a model, with or without backwards step-wise variable selection. Here, we’ll validate our model’s summary statistics using 100 bootstrap replications.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">432001</span>) 
-<span class="kw">validate</span>(res_modC, <span class="dt">B =</span> <span class="dv">100</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">432001</span>) 
+<span class="kw">validate</span>(res_modC, <span class="dt">B =</span> <span class="dv">100</span>)</code></pre></div>
 <pre><code>          index.orig training    test optimism index.corrected   n
 Dxy           0.5415   0.5325  0.5415  -0.0090          0.5505 100
 R2            0.1666   0.1664  0.1666  -0.0002          0.1668 100
@@ -1852,9 +1822,9 @@ gp            0.1101   0.1082  0.1101  -0.0019          0.1119 100</code></pre>
 <div id="plotting-the-summary-of-the-lrm-approach" class="section level3">
 <h3><span class="header-section-number">13.12.5</span> Plotting the Summary of the <code>lrm</code> approach</h3>
 <p>The <code>summary</code> function applied to an <code>lrm</code> fit shows the effect size comparing the 25<sup>th</sup> to the 75<sup>th</sup> percentile of resection.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">summary</span>(res_modC))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">summary</span>(res_modC))</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-191-1.png" width="672" /></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(res_modC)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(res_modC)</code></pre></div>
 <pre><code>             Effects              Response : died 
 
  Factor      Low High Diff. Effect S.E.    Lower 0.95 Upper 0.95
@@ -1865,15 +1835,15 @@ gp            0.1101   0.1082  0.1101  -0.0019          0.1119 100</code></pre>
 <div id="plot-in-sample-predictions-for-model-c" class="section level3">
 <h3><span class="header-section-number">13.12.6</span> Plot In-Sample Predictions for Model C</h3>
 <p>Here we plot the effect of <code>resection</code> (and 95% confidence intervals) across the range of observed values of <code>resection</code> on the log odds of death. Note the linear effect of <code>resection</code> size on the log odds scale.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="kw">Predict</span>(res_modC))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="kw">Predict</span>(res_modC))</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-192-1.png" width="672" /></p>
 <p>By applying the <code>plogis</code> function within the <code>Predict</code> command, we can plot the effect of <code>resection</code> on the estimated probability of death. Note the non-linear effect on this probability in this logistic regression model.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="kw">Predict</span>(res_modC, <span class="dt">fun =</span> plogis)) <span class="op">+</span><span class="st"> </span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="kw">Predict</span>(res_modC, <span class="dt">fun =</span> plogis)) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Predicted probability from Model C&quot;</span>,
-         <span class="dt">title =</span> <span class="st">&quot;Model C with the resect data&quot;</span>)</code></pre>
+         <span class="dt">title =</span> <span class="st">&quot;Model C with the resect data&quot;</span>)</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-193-1.png" width="672" /></p>
 <p>The <code>Predict</code> function itself provides the raw material being captured in this plot.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(<span class="kw">Predict</span>(res_modC, <span class="dt">fun =</span> plogis))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(<span class="kw">Predict</span>(res_modC, <span class="dt">fun =</span> plogis))</code></pre></div>
 <pre><code>            resection       yhat       lower      upper .predictor.
 resection.1  1.000000 0.02431476 0.006636502 0.08505223   resection
 resection.2  1.020101 0.02467096 0.006789313 0.08559056   resection
@@ -1888,7 +1858,7 @@ Limits are 0.95 confidence limits</code></pre>
 </div>
 <div id="anova-from-the-lrm-approach" class="section level3">
 <h3><span class="header-section-number">13.12.7</span> ANOVA from the <code>lrm</code> approach</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(res_modC)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(res_modC)</code></pre></div>
 <pre><code>                Wald Statistics          Response: died 
 
  Factor     Chi-Square d.f. P    
@@ -1899,14 +1869,14 @@ Limits are 0.95 confidence limits</code></pre>
 <div id="are-any-points-particularly-influential" class="section level3">
 <h3><span class="header-section-number">13.12.8</span> Are any points particularly influential?</h3>
 <p>I’ll use a cutoff for <code>dfbeta</code> here of 0.3, instead of the default 0.2, because I want to focus on truly influential points. Note that we have to use the data frame version of <code>resect</code> as <code>show.influence</code> isn’t tibble-friendly.</p>
-<pre class="sourceCode r"><code class="sourceCode r">inf.C &lt;-<span class="st"> </span><span class="kw">which.influence</span>(res_modC, <span class="dt">cutoff=</span><span class="fl">0.3</span>)
-inf.C</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">inf.C &lt;-<span class="st"> </span><span class="kw">which.influence</span>(res_modC, <span class="dt">cutoff=</span><span class="fl">0.3</span>)
+inf.C</code></pre></div>
 <pre><code>$Intercept
 [1] &quot;84&quot;  &quot;128&quot;
 
 $resection
 [1] &quot;84&quot;</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">show.influence</span>(<span class="dt">object =</span> inf.C, <span class="dt">dframe =</span> <span class="kw">data.frame</span>(resect))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">show.influence</span>(<span class="dt">object =</span> inf.C, <span class="dt">dframe =</span> <span class="kw">data.frame</span>(resect))</code></pre></div>
 <pre><code>    Count resection
 84      2      *2.0
 128     1       2.5</code></pre>
@@ -1915,9 +1885,9 @@ $resection
 <div id="a-nomogram-for-model-c" class="section level3">
 <h3><span class="header-section-number">13.12.9</span> A Nomogram for Model C</h3>
 <p>We use the <code>plogis</code> function within a nomogram call to get R to produce fitted probabilities (of our outcome, <code>died</code>) in this case.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">nomogram</span>(res_modC, <span class="dt">fun=</span>plogis, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">nomogram</span>(res_modC, <span class="dt">fun=</span>plogis, 
               <span class="dt">fun.at=</span><span class="kw">c</span>(<span class="fl">0.05</span>, <span class="kw">seq</span>(<span class="fl">0.1</span>, <span class="fl">0.9</span>, <span class="dt">by =</span> <span class="fl">0.1</span>), <span class="fl">0.95</span>), 
-              <span class="dt">funlabel=</span><span class="st">&quot;Pr(died)&quot;</span>))</code></pre>
+              <span class="dt">funlabel=</span><span class="st">&quot;Pr(died)&quot;</span>))</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-197-1.png" width="672" /></p>
 <p>Since there’s no non-linearity in the right hand side of our simple logistic regression model, the nomogram is straightforward. We calculate the points based on the resection by traveling up, and then travel down in a straight vertical line from total points through the linear (log odds) predictor straight to a fitted probability. Note that fitted probabilities above 0.5 are not possible within the range of observed <code>resection</code> values in this case.</p>
 </div>
@@ -1928,23 +1898,23 @@ $resection
 <div id="spearman-rho2-plot" class="section level3">
 <h3><span class="header-section-number">13.13.1</span> Spearman <span class="math inline">\(\rho^2\)</span> Plot</h3>
 <p>Let’s start by considering the limited use of non-linear terms for predictors that look important in a Spearman <span class="math inline">\(\rho^2\)</span> plot.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">spearman2</span>(died <span class="op">~</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>prior <span class="op">+</span><span class="st"> </span>resection <span class="op">+</span><span class="st"> </span>intubated, <span class="dt">data=</span>resect))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">spearman2</span>(died <span class="op">~</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>prior <span class="op">+</span><span class="st"> </span>resection <span class="op">+</span><span class="st"> </span>intubated, <span class="dt">data=</span>resect))</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-198-1.png" width="672" /></p>
 <p>The most important variable appears to be whether intubation was required, so I’ll include <code>intubated</code>’s interaction with the linear effect of the next most (apparently) important variable, <code>resection</code>, and also a cubic spline for <code>resection</code>, with three knots. Since <code>prior</code> and <code>age</code> look less important, I’ll simply add them as linear terms.</p>
 </div>
 <div id="fitting-model-d-using-lrm" class="section level3">
 <h3><span class="header-section-number">13.13.2</span> Fitting Model D using <code>lrm</code></h3>
 <p>Note the use of <code>%ia%</code> here. This insures that only the linear part of the <code>resection</code> term will be used in the interaction with <code>intubated</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r">dd &lt;-<span class="st"> </span><span class="kw">datadist</span>(resect)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dd &lt;-<span class="st"> </span><span class="kw">datadist</span>(resect)
 <span class="kw">options</span>(<span class="dt">datadist=</span><span class="st">&quot;dd&quot;</span>)
 
 res_modD &lt;-<span class="st"> </span><span class="kw">lrm</span>(died <span class="op">~</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>prior <span class="op">+</span><span class="st"> </span><span class="kw">rcs</span>(resection, <span class="dv">3</span>) <span class="op">+</span>
 <span class="st">                 </span>intubated <span class="op">+</span><span class="st"> </span>intubated <span class="op">%ia%</span><span class="st"> </span>resection, 
-               <span class="dt">data=</span>resect, <span class="dt">x=</span><span class="ot">TRUE</span>, <span class="dt">y=</span><span class="ot">TRUE</span>)</code></pre>
+               <span class="dt">data=</span>resect, <span class="dt">x=</span><span class="ot">TRUE</span>, <span class="dt">y=</span><span class="ot">TRUE</span>)</code></pre></div>
 </div>
 <div id="assessing-model-d-using-lrms-tools" class="section level3">
 <h3><span class="header-section-number">13.13.3</span> Assessing Model D using <code>lrm</code>’s tools</h3>
-<pre class="sourceCode r"><code class="sourceCode r">res_modD</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">res_modD</code></pre></div>
 <pre><code>Logistic Regression Model
  
  lrm(formula = died ~ age + prior + rcs(resection, 3) + intubated + 
@@ -1975,7 +1945,7 @@ res_modD &lt;-<span class="st"> </span><span class="kw">lrm</span>(died <span cl
 </div>
 <div id="anova-and-wald-tests-for-model-d" class="section level3">
 <h3><span class="header-section-number">13.13.4</span> ANOVA and Wald Tests for Model D</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(res_modD)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(res_modD)</code></pre></div>
 <pre><code>                Wald Statistics          Response: died 
 
  Factor                                               Chi-Square d.f.
@@ -2004,9 +1974,9 @@ res_modD &lt;-<span class="st"> </span><span class="kw">lrm</span>(died <span cl
 </div>
 <div id="effect-sizes-in-model-d" class="section level3">
 <h3><span class="header-section-number">13.13.5</span> Effect Sizes in Model D</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">summary</span>(res_modD))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">summary</span>(res_modD))</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-202-1.png" width="672" /></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(res_modD)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(res_modD)</code></pre></div>
 <pre><code>             Effects              Response : died 
 
  Factor      Low High Diff. Effect      S.E.    Lower 0.95 Upper 0.95
@@ -2025,16 +1995,16 @@ Adjusted to: resection=2.5 intubated=0  </code></pre>
 <div id="plot-in-sample-predictions-for-model-d" class="section level3">
 <h3><span class="header-section-number">13.13.6</span> Plot In-Sample Predictions for Model D</h3>
 <p>Here are plots of the effects across the range of each predictor (holding the others constant) on the log odds scale. Note the non-linear effect of resection implied by the use of a spline there.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="kw">Predict</span>(res_modD))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="kw">Predict</span>(res_modD))</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-203-1.png" width="672" /></p>
-<p>We can also capture and plot these results on the probability scale, as follows<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="kw">Predict</span>(res_modD, <span class="dt">fun =</span> plogis))</code></pre>
+<p>We can also capture and plot these results on the probability scale, as follows<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="kw">Predict</span>(res_modD, <span class="dt">fun =</span> plogis))</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-204-1.png" width="672" /></p>
 </div>
 <div id="plotting-the-roc-curve-for-model-d" class="section level3">
 <h3><span class="header-section-number">13.13.7</span> Plotting the ROC curve for Model D</h3>
 <p>Again, remember to use <code>type = &quot;fitted&quot;</code> with a <code>lrm</code> fit.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## requires ROCR package</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## requires ROCR package
 prob &lt;-<span class="st"> </span><span class="kw">predict</span>(res_modD, resect, <span class="dt">type=</span><span class="st">&quot;fitted&quot;</span>)
 pred &lt;-<span class="st"> </span><span class="kw">prediction</span>(prob, resect<span class="op">$</span>died)
 perf &lt;-<span class="st"> </span><span class="kw">performance</span>(pred, <span class="dt">measure =</span> <span class="st">&quot;tpr&quot;</span>, <span class="dt">x.measure =</span> <span class="st">&quot;fpr&quot;</span>)
@@ -2050,15 +2020,15 @@ roc.data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span 
 <span class="st">    </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y=</span>tpr), <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_abline</span>(<span class="dt">intercept =</span> <span class="dv">0</span>, <span class="dt">slope =</span> <span class="dv">1</span>, <span class="dt">lty =</span> <span class="st">&quot;dashed&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="kw">paste0</span>(<span class="st">&quot;ROC Curve w/ AUC=&quot;</span>, auc)) <span class="op">+</span>
-<span class="st">    </span><span class="kw">theme_bw</span>()</code></pre>
+<span class="st">    </span><span class="kw">theme_bw</span>()</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-205-1.png" width="672" /></p>
 <p>The AUC fitted with <code>ROCR</code> (0.883) is slightly different than what <code>lrm</code> has told us (0.880), and this also happens if we use the <code>pROC</code> approach, demonstrated below.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## requires pROC package</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## requires pROC package
 roc.modD &lt;-<span class="st"> </span>
 <span class="st">    </span><span class="kw">roc</span>(resect<span class="op">$</span>died <span class="op">~</span><span class="st"> </span><span class="kw">predict</span>(res_modD, <span class="dt">type=</span><span class="st">&quot;fitted&quot;</span>),
         <span class="dt">ci =</span> <span class="ot">TRUE</span>)
 
-roc.modD</code></pre>
+roc.modD</code></pre></div>
 <pre><code>
 Call:
 roc.formula(formula = resect$died ~ predict(res_modD, type = &quot;fitted&quot;),     ci = TRUE)
@@ -2066,13 +2036,13 @@ roc.formula(formula = resect$died ~ predict(res_modD, type = &quot;fitted&quot;)
 Data: predict(res_modD, type = &quot;fitted&quot;) in 117 controls (resect$died 0) &lt; 17 cases (resect$died 1).
 Area under the curve: 0.8826
 95% CI: 0.7952-0.97 (DeLong)</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(roc.modD)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(roc.modD)</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-206-1.png" width="672" /></p>
 </div>
 <div id="validation-of-model-d-summaries" class="section level3">
 <h3><span class="header-section-number">13.13.8</span> Validation of Model D summaries</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">432002</span>)
-<span class="kw">validate</span>(res_modD, <span class="dt">B =</span> <span class="dv">100</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">432002</span>)
+<span class="kw">validate</span>(res_modD, <span class="dt">B =</span> <span class="dv">100</span>)</code></pre></div>
 <pre><code>
 Divergence or singularity in 6 samples</code></pre>
 <pre><code>          index.orig training    test optimism index.corrected  n
@@ -2094,9 +2064,9 @@ gp            0.1720   0.1777  0.1591   0.0186          0.1534 94</code></pre>
 <h2><span class="header-section-number">13.14</span> Model E: Fitting a Reduced Model in light of Model D</h2>
 <p>Can you suggest a reduced model (using a subset of the independent variables in model D) that adequately predicts survival?</p>
 <p>Based on the anova for model D and the Spearman rho-squared plot, it appears that a two-predictor model using intubation and resection may be sufficient. Neither of the other potential predictors shows a statistically detectable effect in its Wald test.</p>
-<pre class="sourceCode r"><code class="sourceCode r">res_modE &lt;-<span class="st"> </span><span class="kw">lrm</span>(died <span class="op">~</span><span class="st"> </span>intubated <span class="op">+</span><span class="st"> </span>resection, <span class="dt">data=</span>resect, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">res_modE &lt;-<span class="st"> </span><span class="kw">lrm</span>(died <span class="op">~</span><span class="st"> </span>intubated <span class="op">+</span><span class="st"> </span>resection, <span class="dt">data=</span>resect, 
                 <span class="dt">x=</span><span class="ot">TRUE</span>, <span class="dt">y=</span><span class="ot">TRUE</span>)
-res_modE</code></pre>
+res_modE</code></pre></div>
 <pre><code>Logistic Regression Model
  
  lrm(formula = died ~ intubated + resection, data = resect, x = TRUE, 
@@ -2124,7 +2094,7 @@ res_modE</code></pre>
 <p>We can use the <code>ilogit</code> function within the <code>faraway</code> package to help plot this.</p>
 <div id="a-plot-comparing-the-two-intubation-groups" class="section level3">
 <h3><span class="header-section-number">13.14.1</span> A Plot comparing the two intubation groups</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(resect, <span class="kw">aes</span>(<span class="dt">x =</span> resection, <span class="dt">y =</span> died, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(resect, <span class="kw">aes</span>(<span class="dt">x =</span> resection, <span class="dt">y =</span> died, 
                    <span class="dt">col =</span> <span class="kw">factor</span>(intubated))) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">scale_color_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>)) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_jitter</span>(<span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">height =</span> <span class="fl">0.1</span>) <span class="op">+</span>
@@ -2140,24 +2110,24 @@ res_modE</code></pre>
               <span class="dt">col=</span><span class="st">&quot;red&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Extent of Resection (in cm.)&quot;</span>,
          <span class="dt">y =</span> <span class="st">&quot;Death (1,0) and estimated probability of death&quot;</span>,
-         <span class="dt">title =</span> <span class="st">&quot;resect data, Model E&quot;</span>)</code></pre>
+         <span class="dt">title =</span> <span class="st">&quot;resect data, Model E&quot;</span>)</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-209-1.png" width="672" /></p>
 <p>The effect of <code>intubation</code> appears to be very large, compared to the resection size effect.</p>
 </div>
 <div id="nomogram-for-model-e" class="section level3">
 <h3><span class="header-section-number">13.14.2</span> Nomogram for Model E</h3>
 <p>A nomogram of the model would help, too.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">nomogram</span>(res_modE, <span class="dt">fun=</span>plogis, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">nomogram</span>(res_modE, <span class="dt">fun=</span>plogis, 
               <span class="dt">fun.at=</span><span class="kw">c</span>(<span class="fl">0.05</span>, <span class="kw">seq</span>(<span class="fl">0.1</span>, <span class="fl">0.9</span>, <span class="dt">by=</span><span class="fl">0.1</span>), <span class="fl">0.95</span>), 
-              <span class="dt">funlabel=</span><span class="st">&quot;Pr(died)&quot;</span>))</code></pre>
+              <span class="dt">funlabel=</span><span class="st">&quot;Pr(died)&quot;</span>))</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-210-1.png" width="672" /></p>
 <p>Again, we see that the effect of intubation is enormous, compared to the effect of resection. Another way to see this is to plot the effect sizes directly.</p>
 </div>
 <div id="effect-sizes-from-model-e" class="section level3">
 <h3><span class="header-section-number">13.14.3</span> Effect Sizes from Model E</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">summary</span>(res_modE))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">summary</span>(res_modE))</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/model%20c%20effect%20plot-1.png" width="672" /></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(res_modE)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(res_modE)</code></pre></div>
 <pre><code>             Effects              Response : died 
 
  Factor      Low High Diff. Effect  S.E.    Lower 0.95 Upper 0.95
@@ -2169,15 +2139,15 @@ res_modE</code></pre>
 <div id="plot-in-sample-predictions-for-model-e" class="section level3">
 <h3><span class="header-section-number">13.14.4</span> Plot In-Sample Predictions for Model E</h3>
 <p>Here are plots of the effects across the range of each predictor (holding the other constant) on the log odds scale.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="kw">Predict</span>(res_modE))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="kw">Predict</span>(res_modE))</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-211-1.png" width="672" /></p>
 <p>We can also capture and plot these results on the probability scale, as follows.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="kw">Predict</span>(res_modE, <span class="dt">fun =</span> plogis))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="kw">Predict</span>(res_modE, <span class="dt">fun =</span> plogis))</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-212-1.png" width="672" /></p>
 </div>
 <div id="anova-for-model-e" class="section level3">
 <h3><span class="header-section-number">13.14.5</span> ANOVA for Model E</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(res_modE)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(res_modE)</code></pre></div>
 <pre><code>                Wald Statistics          Response: died 
 
  Factor     Chi-Square d.f. P     
@@ -2187,7 +2157,7 @@ res_modE</code></pre>
 </div>
 <div id="validation-of-model-e" class="section level3">
 <h3><span class="header-section-number">13.14.6</span> Validation of Model E</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">validate</span>(res_modE, <span class="dt">method=</span><span class="st">&quot;boot&quot;</span>, <span class="dt">B=</span><span class="dv">40</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">validate</span>(res_modE, <span class="dt">method=</span><span class="st">&quot;boot&quot;</span>, <span class="dt">B=</span><span class="dv">40</span>)</code></pre></div>
 <pre><code>          index.orig training   test optimism index.corrected  n
 Dxy           0.7340   0.7044 0.7328  -0.0284          0.7624 40
 R2            0.4128   0.4007 0.4038  -0.0031          0.4159 40
@@ -2205,25 +2175,25 @@ gp            0.1597   0.1563 0.1565  -0.0002          0.1599 40</code></pre>
 <div id="do-any-points-seem-particularly-influential" class="section level3">
 <h3><span class="header-section-number">13.14.7</span> Do any points seem particularly influential?</h3>
 <p>As a last step, I’ll look at influence, and residuals, associated with model E.</p>
-<pre class="sourceCode r"><code class="sourceCode r">inf.E &lt;-<span class="st"> </span><span class="kw">which.influence</span>(res_modE, <span class="dt">cutoff=</span><span class="fl">0.3</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">inf.E &lt;-<span class="st"> </span><span class="kw">which.influence</span>(res_modE, <span class="dt">cutoff=</span><span class="fl">0.3</span>)
 
-inf.E</code></pre>
+inf.E</code></pre></div>
 <pre><code>$Intercept
 [1] &quot;84&quot; &quot;94&quot;
 
 $resection
 [1] &quot;84&quot; &quot;94&quot;</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">show.influence</span>(inf.E, <span class="dt">dframe =</span> <span class="kw">data.frame</span>(resect))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">show.influence</span>(inf.E, <span class="dt">dframe =</span> <span class="kw">data.frame</span>(resect))</code></pre></div>
 <pre><code>   Count resection
 84     2        *2
 94     2        *6</code></pre>
 </div>
 <div id="fitting-model-e-using-glm-to-get-plots-about-influence" class="section level3">
 <h3><span class="header-section-number">13.14.8</span> Fitting Model E using <code>glm</code> to get plots about influence</h3>
-<pre class="sourceCode r"><code class="sourceCode r">res_modEglm &lt;-<span class="st"> </span><span class="kw">glm</span>(died <span class="op">~</span><span class="st"> </span>intubated <span class="op">+</span><span class="st"> </span>resection, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">res_modEglm &lt;-<span class="st"> </span><span class="kw">glm</span>(died <span class="op">~</span><span class="st"> </span>intubated <span class="op">+</span><span class="st"> </span>resection, 
                   <span class="dt">data=</span>resect, <span class="dt">family=</span><span class="st">&quot;binomial&quot;</span>)
 <span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))
-<span class="kw">plot</span>(res_modEglm, <span class="dt">which=</span><span class="kw">c</span>(<span class="dv">4</span><span class="op">:</span><span class="dv">5</span>))</code></pre>
+<span class="kw">plot</span>(res_modEglm, <span class="dt">which=</span><span class="kw">c</span>(<span class="dv">4</span><span class="op">:</span><span class="dv">5</span>))</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-216-1.png" width="672" /></p>
 <p>Using this <code>glm</code> residuals approach, we again see that points 84 and 94 have the largest influence on our model E.</p>
 </div>
@@ -2231,12 +2201,12 @@ $resection
 <div id="concordance-comparing-model-c-d-and-es-predictions" class="section level2">
 <h2><span class="header-section-number">13.15</span> Concordance: Comparing Model C, D and E’s predictions</h2>
 <p>To start, we’ll gather the predictions fomade by each model (C, D and E) on the probability scale, in one place. Sadly, <code>augment</code> from <code>broom</code> doesn’t work well with <code>lrm</code> fits, so we have to do this on our own.</p>
-<pre class="sourceCode r"><code class="sourceCode r">resect_preds &lt;-<span class="st"> </span>resect <span class="op">%&gt;%</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">resect_preds &lt;-<span class="st"> </span>resect <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">C =</span> <span class="kw">predict</span>(res_modC, <span class="dt">type =</span> <span class="st">&quot;fitted&quot;</span>),
            <span class="dt">D =</span> <span class="kw">predict</span>(res_modD, <span class="dt">type =</span> <span class="st">&quot;fitted&quot;</span>),
            <span class="dt">E =</span> <span class="kw">predict</span>(res_modE, <span class="dt">type =</span> <span class="st">&quot;fitted&quot;</span>))
 
-<span class="kw">head</span>(resect_preds)</code></pre>
+<span class="kw">head</span>(resect_preds)</code></pre></div>
 <pre><code># A tibble: 6 x 9
      id   age prior resection intubated  died      C      D      E
   &lt;int&gt; &lt;int&gt; &lt;int&gt;     &lt;dbl&gt;     &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
@@ -2247,11 +2217,11 @@ $resection
 5     5    28     0       6           1     1 0.504  0.711  0.819 
 6     6    52     0       3           0     0 0.0990 0.0737 0.0477</code></pre>
 <p>And now, we’ll use the <code>gather</code> command to arrange the models and predicted probabilities in a more useful manner for plotting.</p>
-<pre class="sourceCode r"><code class="sourceCode r">res_p &lt;-<span class="st"> </span>resect_preds <span class="op">%&gt;%</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">res_p &lt;-<span class="st"> </span>resect_preds <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">gather</span>(<span class="st">&quot;model&quot;</span>, <span class="st">&quot;prediction&quot;</span>, <span class="dv">7</span><span class="op">:</span><span class="dv">9</span>) <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">select</span>(id, died, model, prediction)
 
-<span class="kw">head</span>(res_p)</code></pre>
+<span class="kw">head</span>(res_p)</code></pre></div>
 <pre><code># A tibble: 6 x 4
      id  died model prediction
   &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;dbl&gt;
@@ -2262,7 +2232,7 @@ $resection
 5     5     1 C         0.504 
 6     6     0 C         0.0990</code></pre>
 <p>Here’s the resulting plot.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(res_p, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">factor</span>(died), <span class="dt">y =</span> prediction, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(res_p, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">factor</span>(died), <span class="dt">y =</span> prediction, 
                   <span class="dt">group =</span> model, <span class="dt">col =</span> model)) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_jitter</span>(<span class="dt">width =</span> <span class="fl">0.25</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="fl">0.5</span>) <span class="op">+</span>
@@ -2271,13 +2241,13 @@ $resection
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Comparing Predictions for our Three Models&quot;</span>,
          <span class="dt">subtitle =</span> <span class="st">&quot;A graphical view of concordance&quot;</span>,
          <span class="dt">x =</span> <span class="st">&quot;Actual mortality status (1 = died)&quot;</span>,
-         <span class="dt">y =</span> <span class="st">&quot;Predicted probability of death&quot;</span>)</code></pre>
+         <span class="dt">y =</span> <span class="st">&quot;Predicted probability of death&quot;</span>)</code></pre></div>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-219-1.png" width="672" /></p>
 <p>We could specify a particular rule, for example: if the predicted probability of death is 0.5 or greater, then predict “Died”.</p>
-<pre class="sourceCode r"><code class="sourceCode r">res_p<span class="op">$</span>rule<span class="fl">.5</span> &lt;-<span class="st"> </span><span class="kw">ifelse</span>(res_p<span class="op">$</span>prediction <span class="op">&gt;=</span><span class="st"> </span><span class="fl">0.5</span>, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">res_p<span class="op">$</span>rule.<span class="dv">5</span> &lt;-<span class="st"> </span><span class="kw">ifelse</span>(res_p<span class="op">$</span>prediction <span class="op">&gt;=</span><span class="st"> </span><span class="fl">0.5</span>, 
                        <span class="st">&quot;Predict Died&quot;</span>, <span class="st">&quot;Predict Alive&quot;</span>)
 
-<span class="kw">ftable</span>(<span class="kw">table</span>(res_p<span class="op">$</span>model, res_p<span class="op">$</span>rule<span class="fl">.5</span>, res_p<span class="op">$</span>died))</code></pre>
+<span class="kw">ftable</span>(<span class="kw">table</span>(res_p<span class="op">$</span>model, res_p<span class="op">$</span>rule.<span class="dv">5</span>, res_p<span class="op">$</span>died))</code></pre></div>
 <pre><code>                   0   1
                         
 C Predict Alive  114  16
@@ -2287,9 +2257,9 @@ D Predict Alive  113   7
 E Predict Alive  114   8
   Predict Died     3   9</code></pre>
 <p>And perhaps build the linked table of row probabilities…</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="dv">100</span><span class="op">*</span><span class="kw">prop.table</span>(
-    <span class="kw">ftable</span>(<span class="kw">table</span>(res_p<span class="op">$</span>model, res_p<span class="op">$</span>rule<span class="fl">.5</span>, res_p<span class="op">$</span>died))
-    ,<span class="dv">1</span>),<span class="dv">2</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="dv">100</span><span class="op">*</span><span class="kw">prop.table</span>(
+    <span class="kw">ftable</span>(<span class="kw">table</span>(res_p<span class="op">$</span>model, res_p<span class="op">$</span>rule.<span class="dv">5</span>, res_p<span class="op">$</span>died))
+    ,<span class="dv">1</span>),<span class="dv">2</span>)</code></pre></div>
 <pre><code>                     0     1
                             
 C Predict Alive  87.69 12.31
@@ -2326,7 +2296,7 @@ E Predict Alive  93.44  6.56
 <div class="footnotes">
 <hr />
 <ol start="9">
-<li id="fn9"><p>Although I’ve yet to figure out how to get the y axis relabeled properly without simply dumping the Predict results into a new tibble and starting over with creating the plots.<a href="logistic-regression-and-the-resect-data.html#fnref9" class="footnote-back">↩</a></p></li>
+<li id="fn9"><p>Although I’ve yet to figure out how to get the y axis relabeled properly without simply dumping the Predict results into a new tibble and starting over with creating the plots.<a href="logistic-regression-and-the-resect-data.html#fnref9">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -2385,7 +2355,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "true";
+    var src = "";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
