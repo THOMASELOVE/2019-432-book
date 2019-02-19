@@ -1203,11 +1203,11 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
  n obs: 97 
  n variables: 10 
 
--- Variable type:integer -----------------------------------------------------
+-- Variable type:integer --------------------------------------
  variable missing complete  n mean   sd p0 p25 p50 p75 p100
       svi       0       97 97 0.22 0.41  0   0   0   0    1
 
--- Variable type:numeric -----------------------------------------------------
+-- Variable type:numeric --------------------------------------
    variable missing complete  n     mean     sd       p0      p25    p50
     .cooksd       0       97 97  0.011   0.02    6.9e-06  0.00078 0.0035
     .fitted       0       97 97  2.48    0.88    0.75     1.84    2.4   
@@ -1379,7 +1379,7 @@ prost_predictions &lt;-<span class="st"> </span>prost_models <span class="op">%&
  n obs: 97 
  n variables: 16 
 
--- Variable type:numeric -----------------------------------------------------
+-- Variable type:numeric --------------------------------------
  variable missing complete  n mean   sd    p0  p25  p50  p75 p100
      lpsa       0       97 97 2.48 1.15 -0.43 1.73 2.59 3.06 5.58</code></pre>
 <p>If we like, we could transform the predictions and observed values back to the scale of PSA (unlogged) and then calculate and display errors, as follows:</p>
@@ -1397,7 +1397,7 @@ prost_predictions &lt;-<span class="st"> </span>prost_models <span class="op">%&
  n obs: 97 
  n variables: 16 
 
--- Variable type:numeric -----------------------------------------------------
+-- Variable type:numeric --------------------------------------
  variable missing complete  n  mean    sd   p0  p25   p50   p75   p100
       psa       0       97 97 23.74 40.83 0.65 5.65 13.35 21.25 265.85</code></pre>
 <p>We’ll return to the notion of cross-validation again, but for now, let’s consider the problem of considering adding more predictors to our model, and then making sensible selections as to which predictors actually should be incorporated.</p>

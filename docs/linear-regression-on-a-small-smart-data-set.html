@@ -1039,13 +1039,13 @@ smartcle1 <span class="op">%&gt;%</span><span class="st"> </span>
  n obs: 1036 
  n variables: 11 
 
--- Variable type:factor ------------------------------------------------------
+-- Variable type:factor ---------------------------------------
   variable missing complete    n n_unique
  genhealth       3     1033 1036        5
                              top_counts ordered
  2_V: 350, 3_G: 344, 1_E: 173, 4_F: 122   FALSE
 
--- Variable type:integer -----------------------------------------------------
+-- Variable type:integer --------------------------------------
    variable missing complete    n mean   sd p0 p25 p50 p75 p100
     alcdays      46      990 1036 4.65 8.05  0   0   1   4   30
     exerany       3     1033 1036 0.76 0.43  0   1   1   1    1
@@ -1056,7 +1056,7 @@ smartcle1 <span class="op">%&gt;%</span><span class="st"> </span>
  poorhealth     543      493 1036 4.07 8.09  0   0   0   3   30
    sleephrs       8     1028 1036 7.02 1.53  1   6   7   8   20
 
--- Variable type:numeric -----------------------------------------------------
+-- Variable type:numeric --------------------------------------
  variable missing complete    n  mean   sd    p0  p25   p50   p75  p100
       bmi      84      952 1036 27.89 6.47 12.71 23.7 26.68 30.53 66.06</code></pre>
 <p>Now, we’ll create a new tibble called <code>smartcle2</code> which contains every variable except <code>poorhealth</code>, and which includes all respondents with complete data on the variables (other than <code>poorhealth</code>). We’ll store those observations with complete data in the <code>smartcle2</code> tibble.</p>
@@ -1091,13 +1091,13 @@ smartcle2</code></pre></div>
  n obs: 896 
  n variables: 10 
 
--- Variable type:factor ------------------------------------------------------
+-- Variable type:factor ---------------------------------------
   variable missing complete   n n_unique
  genhealth       0      896 896        5
                              top_counts ordered
  2_V: 306, 3_G: 295, 1_E: 155, 4_F: 102   FALSE
 
--- Variable type:integer -----------------------------------------------------
+-- Variable type:integer --------------------------------------
    variable missing complete   n mean   sd p0 p25 p50 p75 p100
     alcdays       0      896 896 4.83 8.14  0   0   1   5   30
     exerany       0      896 896 0.77 0.42  0   1   1   1    1
@@ -1107,7 +1107,7 @@ smartcle2</code></pre></div>
  physhealth       0      896 896 3.99 8.64  0   0   0   2   30
    sleephrs       0      896 896 7.02 1.48  1   6   7   8   20
 
--- Variable type:numeric -----------------------------------------------------
+-- Variable type:numeric --------------------------------------
  variable missing complete   n  mean   sd    p0  p25  p50   p75  p100
       bmi       0      896 896 27.87 6.33 12.71 23.7 26.8 30.53 66.06</code></pre>
 </div>
@@ -1289,12 +1289,12 @@ female
  n variables: 10 
  group variables: exerany 
 
--- Variable type:integer -----------------------------------------------------
+-- Variable type:integer --------------------------------------
  exerany variable missing complete   n mean   sd p0 p25 p50 p75 p100
        0 sleephrs       0      209 209 7    1.85  1   6   7   8   20
        1 sleephrs       0      687 687 7.03 1.34  1   6   7   8   16
 
--- Variable type:numeric -----------------------------------------------------
+-- Variable type:numeric --------------------------------------
  exerany variable missing complete   n  mean   sd    p0   p25   p50   p75
        0      bmi       0      209 209 29.57 7.46 18    24.11 28.49 33.13
        1      bmi       0      687 687 27.35 5.84 12.71 23.7  26.52 29.81
