@@ -63,7 +63,7 @@ plot(TukeyHSD(aov(lm(strength ~ resin, data = bonding))))
 
 ## A Two-Way ANOVA: Looking at Two Factors
 
-Now, we'll now add consideration of the `light` source into our study. We can look at the distribution of the `strength` values at the combinations of both `light` and `resin`, with a plot like this one...
+Now, we'll now add consideration of the `light` source into our study. We can look at the distribution of the `strength` values at the combinations of both `light` and `resin`, with a plot like this one.
 
 ```{r c3_bonding_points_plot}
 ggplot(bonding, aes(x = resin, y = strength, color = light)) +
@@ -145,7 +145,7 @@ In this case, the interaction:
 
 - is evident in the means plot, and
 - is highly statistically significant, and
-- accounts for a sizeable fraction (27%) of the overall variation
+- accounts for a sizable fraction (27%) of the overall variation
 
 $$ 
 \eta^2_{interaction} = \frac{\mbox{SS(resin:light)}}{SS(Total)}

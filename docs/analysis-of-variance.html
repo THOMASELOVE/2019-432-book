@@ -1024,7 +1024,7 @@ D-C  6.920  0.9961324 12.843868 0.0154615</code></pre>
 </div>
 <div id="a-two-way-anova-looking-at-two-factors" class="section level2">
 <h2><span class="header-section-number">3.3</span> A Two-Way ANOVA: Looking at Two Factors</h2>
-<p>Now, we’ll now add consideration of the <code>light</code> source into our study. We can look at the distribution of the <code>strength</code> values at the combinations of both <code>light</code> and <code>resin</code>, with a plot like this one…</p>
+<p>Now, we’ll now add consideration of the <code>light</code> source into our study. We can look at the distribution of the <code>strength</code> values at the combinations of both <code>light</code> and <code>resin</code>, with a plot like this one.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(bonding, <span class="kw">aes</span>(<span class="dt">x =</span> resin, <span class="dt">y =</span> strength, <span class="dt">color =</span> light)) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>light) <span class="op">+</span>
@@ -1160,7 +1160,7 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <ul>
 <li>is evident in the means plot, and</li>
 <li>is highly statistically significant, and</li>
-<li>accounts for a sizeable fraction (27%) of the overall variation</li>
+<li>accounts for a sizable fraction (27%) of the overall variation</li>
 </ul>
 <p><span class="math display">\[ 
 \eta^2_{interaction} = \frac{\mbox{SS(resin:light)}}{SS(Total)}

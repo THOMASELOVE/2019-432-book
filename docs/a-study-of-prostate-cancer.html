@@ -1091,7 +1091,8 @@ F-statistic: 42.92 on 3 and 93 DF,  p-value: &lt; 2.2e-16</code></pre>
 3 svi            0.601     0.358      1.68  9.67e- 2
 4 lcavol_c:svi   0.0648    0.266      0.243 8.08e- 1</code></pre>
 <p>This makes it much easier to pull out individual elements of the model fit.</p>
-<p>For example, to specify the coefficient for <code>svi</code>, rounded to three decimal places, I could use <code>tidy(c5_prost_A) %&gt;% filter(term == &quot;svi&quot;) %&gt;% select(estimate) %&gt;% round(., 3)</code></p>
+<p>For example, to specify the coefficient for <strong>svi</strong>, rounded to three decimal places, I could use</p>
+<pre><code>tidy(c5_prost_A) %&gt;% filter(term == &quot;svi&quot;) %&gt;% select(estimate) %&gt;% round(., 3)</code></pre>
 <ul>
 <li>The result is 0.601.</li>
 <li>If you look at the Markdown file, you’ll see that the number shown in the bullet point above this one was generated using inline R code, and the function specified above.</li>
@@ -1102,11 +1103,9 @@ F-statistic: 42.92 on 3 and 93 DF,  p-value: &lt; 2.2e-16</code></pre>
 <ol style="list-style-type: decimal">
 <li>The intercept, 2.33, for the model is the predicted value of <code>lpsa</code> when <code>lcavol</code> is at its average and there is no seminal vesicle invasion (e.g. <code>svi</code> = 0).</li>
 <li>The coefficient for <code>lcavol_c</code>, 0.59, is the predicted change in <code>lpsa</code> associated with a one unit increase in <code>lcavol</code> (or <code>lcavol_c</code>) when there is no seminal vesicle invasion.</li>
-<li>The coefficient for <code>svi</code>, [90m# A tibble: 1 x 1[39m, estimate, [3m[90m<dbl>[39m[23m, [90m1[39m 0.6, is the predicted change in <code>lpsa</code> associated with having no <code>svi</code> to having an <code>svi</code> while the <code>lcavol</code> remains at its average.</li>
+<li>The coefficient for <code>svi</code>, 0.6, is the predicted change in <code>lpsa</code> associated with having no <code>svi</code> to having an <code>svi</code> while the <code>lcavol</code> remains at its average.</li>
 <li>The coefficient for <code>lcavol_c:svi</code>, the product term, which is 0.06, is the difference in the slope of <code>lcavol_c</code> for a subject with <code>svi</code> as compared to one with no <code>svi</code>.</li>
 </ol>
-<p><em>Note</em>: If you look at the R Markdown, you’ll notice that in bullet point 3, I didn’t use <code>round</code> to round off the estimate (as I did in the other three bullets), but instead a special function I specified at the start of the R Markdown file called <code>specify_decimal()</code> which uses the <code>format</code> function. This forces, in this case, the trailing zero in the two decimal representation of the <code>svi</code> coefficient to be shown. The special function, again, is:</p>
-<p><code>specify_decimal &lt;- function(x, k) format(round(x, k), nsmall=k)</code></p>
 </div>
 </div>
 <div id="exploring-model-c5_prost_a" class="section level2">

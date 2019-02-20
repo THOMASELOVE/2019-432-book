@@ -78,7 +78,11 @@ tidy(c5_prost_A)
 
 This makes it much easier to pull out individual elements of the model fit.
 
-For example, to specify the coefficient for `svi`, rounded to three decimal places, I could use `tidy(c5_prost_A) %>% filter(term == "svi") %>% select(estimate) %>% round(., 3)`
+For example, to specify the coefficient for **svi**, rounded to three decimal places, I could use
+
+```
+tidy(c5_prost_A) %>% filter(term == "svi") %>% select(estimate) %>% round(., 3)
+```
 
 - The result is `r tidy(c5_prost_A) %>% filter(term == "svi") %>% select(estimate) %>% round(., 3)`.
 - If you look at the Markdown file, you'll see that the number shown in the bullet point above this one was generated using inline R code, and the function specified above.
@@ -87,12 +91,8 @@ For example, to specify the coefficient for `svi`, rounded to three decimal plac
 
 1. The intercept, `r tidy(c5_prost_A) %>% filter(term == "(Intercept)") %>% select(estimate) %>% round(., 2)`, for the model is the predicted value of `lpsa` when `lcavol` is at its average and there is no seminal vesicle invasion (e.g. `svi` = 0).
 2. The coefficient for `lcavol_c`, `r tidy(c5_prost_A) %>% filter(term == "lcavol_c") %>% select(estimate) %>% round(., 2)`, is the predicted change in `lpsa` associated with a one unit increase in `lcavol` (or `lcavol_c`) when there is no seminal vesicle invasion.
-3. The coefficient for `svi`, `r tidy(c5_prost_A) %>% filter(term == "svi") %>% select(estimate) %>% specify_decimal(., 2)`, is the predicted change in `lpsa` associated with having no `svi` to having an `svi` while the `lcavol` remains at its average.
+3. The coefficient for `svi`, `r tidy(c5_prost_A) %>% filter(term == "svi") %>% select(estimate) %>% round(., 2)`, is the predicted change in `lpsa` associated with having no `svi` to having an `svi` while the `lcavol` remains at its average.
 4. The coefficient for `lcavol_c:svi`, the product term, which is `r tidy(c5_prost_A) %>% filter(term == "lcavol_c:svi") %>% select(estimate) %>% round(., 2)`, is the difference in the slope of `lcavol_c` for a subject with `svi` as compared to one with no `svi`. 
-
-*Note*: If you look at the R Markdown, you'll notice that in bullet point 3, I didn't use `round` to round off the estimate (as I did in the other three bullets), but instead a special function I specified at the start of the R Markdown file called `specify_decimal()` which uses the `format` function. This forces, in this case, the trailing zero in the two decimal representation of the `svi` coefficient to be shown. The special function, again, is:
-
-`specify_decimal <- function(x, k) format(round(x, k), nsmall=k)`
 
 ## Exploring Model `c5_prost_A`
 
