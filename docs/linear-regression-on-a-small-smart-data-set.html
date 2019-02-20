@@ -1844,10 +1844,8 @@ Coefficients:
 <div id="fitting-an-individual-prediction-and-95-prediction-interval" class="section level3">
 <h3><span class="header-section-number">2.12.1</span> Fitting an Individual Prediction and 95% Prediction Interval</h3>
 <p>What do we predict for the <code>bmi</code> of a subject who is <code>female</code> and gets 8 hours of sleep per night?</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">c2_new1 &lt;-<span class="st"> </span><span class="kw">data_frame</span>(<span class="dt">female =</span> <span class="dv">1</span>, <span class="dt">sleephrs =</span> <span class="dv">8</span>)</code></pre></div>
-<pre><code>Warning: `data_frame()` is deprecated, use `tibble()`.
-This warning is displayed once per session.</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">predict</span>(c2_m4, <span class="dt">newdata =</span> c2_new1, <span class="dt">interval =</span> <span class="st">&quot;prediction&quot;</span>, <span class="dt">level =</span> <span class="fl">0.95</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">c2_new1 &lt;-<span class="st"> </span><span class="kw">data_frame</span>(<span class="dt">female =</span> <span class="dv">1</span>, <span class="dt">sleephrs =</span> <span class="dv">8</span>)
+<span class="kw">predict</span>(c2_m4, <span class="dt">newdata =</span> c2_new1, <span class="dt">interval =</span> <span class="st">&quot;prediction&quot;</span>, <span class="dt">level =</span> <span class="fl">0.95</span>)</code></pre></div>
 <pre><code>       fit     lwr     upr
 1 27.21065 14.8107 39.6106</code></pre>
 <p>The predicted <code>bmi</code> for this new subject is 27.61. The prediction interval shows the bounds of a 95% uncertainty interval for a predicted <code>bmi</code> for an individual female subject who gets 8 hours of sleep on average per evening. From the <code>predict</code> function applied to a linear model, we can get the prediction intervals for any new data points in this manner.</p>
@@ -2301,7 +2299,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["2019-432-book.pdf", "2019-432-book.epub"],
 "toc": {
 "collapse": "subsection"
 }

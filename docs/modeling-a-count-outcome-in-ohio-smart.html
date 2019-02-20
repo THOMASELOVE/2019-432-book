@@ -948,55 +948,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <div id="preliminaries" class="section level2">
 <h2><span class="header-section-number">18.1</span> Preliminaries</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(boot)</code></pre></div>
-<pre><code>
-Attaching package: &#39;boot&#39;</code></pre>
-<pre><code>The following object is masked from &#39;package:lattice&#39;:
-
-    melanoma</code></pre>
-<pre><code>The following object is masked from &#39;package:survival&#39;:
-
-    aml</code></pre>
-<pre><code>The following object is masked from &#39;package:arm&#39;:
-
-    logit</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(lmtest)</code></pre></div>
-<pre><code>Loading required package: zoo</code></pre>
-<pre><code>
-Attaching package: &#39;zoo&#39;</code></pre>
-<pre><code>The following objects are masked from &#39;package:base&#39;:
-
-    as.Date, as.Date.numeric</code></pre>
-<pre><code>
-Attaching package: &#39;lmtest&#39;</code></pre>
-<pre><code>The following object is masked from &#39;package:rms&#39;:
-
-    lrtest</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(sandwich)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(boot)
+<span class="kw">library</span>(lmtest)
+<span class="kw">library</span>(sandwich)
 <span class="kw">library</span>(countreg)
 <span class="kw">library</span>(VGAM)</code></pre></div>
-<pre><code>Loading required package: stats4</code></pre>
-<pre><code>Loading required package: splines</code></pre>
-<pre><code>
-Attaching package: &#39;VGAM&#39;</code></pre>
-<pre><code>The following objects are masked from &#39;package:countreg&#39;:
-
-    dzipois, pzipois, qzipois, rzipois</code></pre>
-<pre><code>The following object is masked from &#39;package:lmtest&#39;:
-
-    lrtest</code></pre>
-<pre><code>The following objects are masked from &#39;package:boot&#39;:
-
-    logit, simplex</code></pre>
-<pre><code>The following object is masked from &#39;package:tidyr&#39;:
-
-    fill</code></pre>
-<pre><code>The following objects are masked from &#39;package:rms&#39;:
-
-    calibrate, lrtest</code></pre>
-<pre><code>The following object is masked from &#39;package:arm&#39;:
-
-    logit</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart_oh &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/smart_ohio.csv&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>tbl_df</code></pre></div>
 </div>
 <div id="a-subset-of-the-ohio-smart-data" class="section level2">
@@ -2392,17 +2348,6 @@ exp &lt;-<span class="st"> </span><span class="kw">sum</span>(<span class="kw">d
 </ul>
 <p>The <code>pscl</code> package is used here, which can conflict with the <code>countreg</code> package we used to fit rootograms. That’s why I’m loading it here.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(pscl)</code></pre></div>
-<pre><code>Classes and Methods for R developed in the
-Political Science Computational Laboratory
-Department of Political Science
-Stanford University
-Simon Jackman
-hurdle and zeroinfl functions by Achim Zeileis</code></pre>
-<pre><code>
-Attaching package: &#39;pscl&#39;</code></pre>
-<pre><code>The following objects are masked from &#39;package:countreg&#39;:
-
-    hurdle, hurdle.control, hurdletest, zeroinfl, zeroinfl.control</code></pre>
 <p>To run the zero-inflated Poisson model, we use the following:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mod_zip1 &lt;-<span class="st"> </span><span class="kw">zeroinfl</span>(physhealth <span class="op">~</span><span class="st"> </span>bmi_c <span class="op">+</span><span class="st"> </span>smoke100, 
                      <span class="dt">data =</span> sm_oh_A_young)
@@ -3656,7 +3601,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["2019-432-book.pdf", "2019-432-book.epub"],
 "toc": {
 "collapse": "subsection"
 }

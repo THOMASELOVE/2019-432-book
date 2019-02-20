@@ -935,13 +935,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">Chapter 19</span> Modeling an Ordinal Categorical Outcome in Ohio SMART</h1>
 <div id="preliminaries-1" class="section level2">
 <h2><span class="header-section-number">19.1</span> Preliminaries</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(gmodels)</code></pre></div>
-<pre><code>
-Attaching package: &#39;gmodels&#39;</code></pre>
-<pre><code>The following object is masked from &#39;package:pROC&#39;:
-
-    ci</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(nnet)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(gmodels)
+<span class="kw">library</span>(nnet)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart_oh &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/smart_ohio.csv&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>tbl_df</code></pre></div>
 </div>
 <div id="a-subset-of-the-ohio-smart-data-1" class="section level2">
@@ -2030,7 +2025,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["2019-432-book.pdf", "2019-432-book.epub"],
 "toc": {
 "collapse": "subsection"
 }
