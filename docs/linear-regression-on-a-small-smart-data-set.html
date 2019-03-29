@@ -50,41 +50,67 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 </head>
@@ -154,7 +180,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.6.1" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#fitting-a-simple-regression-model"><i class="fa fa-check"></i><b>2.6.1</b> Fitting a Simple Regression Model</a></li>
 <li class="chapter" data-level="2.6.2" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#model-summary-for-a-simple-one-predictor-regression"><i class="fa fa-check"></i><b>2.6.2</b> Model Summary for a Simple (One-Predictor) Regression</a></li>
 <li class="chapter" data-level="2.6.3" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#using-the-broom-package"><i class="fa fa-check"></i><b>2.6.3</b> Using the <code>broom</code> package</a></li>
-<li class="chapter" data-level="2.6.4" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#how-does-the-model-do-residuals-vs.fitted-values"><i class="fa fa-check"></i><b>2.6.4</b> How does the model do? (Residuals vs. Fitted Values)</a></li>
+<li class="chapter" data-level="2.6.4" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#how-does-the-model-do-residuals-vs.-fitted-values"><i class="fa fa-check"></i><b>2.6.4</b> How does the model do? (Residuals vs. Fitted Values)</a></li>
 </ul></li>
 <li class="chapter" data-level="2.7" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#a-new-small-study-predicting-bmi"><i class="fa fa-check"></i><b>2.7</b> A New Small Study: Predicting BMI</a><ul>
 <li class="chapter" data-level="2.7.1" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#does-female-predict-bmi-well"><i class="fa fa-check"></i><b>2.7.1</b> Does <code>female</code> predict <code>bmi</code> well?</a></li>
@@ -952,10 +978,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="the-smartcle1-data-cookbook" class="section level2">
 <h2><span class="header-section-number">2.2</span> The <code>smartcle1</code> data: Cookbook</h2>
 <p>The <code>smartcle1.csv</code> data file available on the Data and Code page of <a href="https://github.com/THOMASELOVE/2019-432">our website</a> describes information on 11 variables for 1036 respondents to the BRFSS 2016, who live in the Cleveland-Elyria, OH, Metropolitan Statistical Area. The variables in the <code>smartcle1.csv</code> file are listed below, along with (in some cases) the BRFSS items that generate these responses.</p>
-<table style="width:94%;">
+<table>
 <colgroup>
 <col width="15%" />
-<col width="79%" />
+<col width="84%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -1010,7 +1036,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </tr>
 </tbody>
 </table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(smartcle1)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(smartcle1)</code></pre>
 <pre><code>Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:   1036 obs. of  11 variables:
  $ SEQNO     : num  2.02e+09 2.02e+09 2.02e+09 2.02e+09 2.02e+09 ...
  $ physhealth: int  0 0 1 0 5 4 2 2 0 0 ...
@@ -1028,24 +1054,24 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">2.3</span> <code>smartcle2</code>: Omitting Missing Observations: Complete-Case Analyses</h2>
 <p>For the purpose of fitting our first few models, we will eliminate the missingness problem, and look only at the <em>complete cases</em> in our <code>smartcle1</code> data. We will discuss methods for imputing missing data later in these Notes.</p>
 <p>To inspect the missingness in our data, we might consider using the <code>skim</code> function from the <code>skimr</code> package. We’ll exclude the respondent identifier code (<code>SEQNO</code>) from this summary as uninteresting.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">skim_with</span>(<span class="dt">numeric =</span> <span class="kw">list</span>(<span class="dt">hist =</span> <span class="ot">NULL</span>), <span class="dt">integer =</span> <span class="kw">list</span>(<span class="dt">hist =</span> <span class="ot">NULL</span>))
-## above line eliminates the sparkline histograms
-## it can be commented out when working in the console,
-## but I need it to produce the Notes without errors right now
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">skim_with</span>(<span class="dt">numeric =</span> <span class="kw">list</span>(<span class="dt">hist =</span> <span class="ot">NULL</span>), <span class="dt">integer =</span> <span class="kw">list</span>(<span class="dt">hist =</span> <span class="ot">NULL</span>))
+<span class="co">## above line eliminates the sparkline histograms</span>
+<span class="co">## it can be commented out when working in the console,</span>
+<span class="co">## but I need it to produce the Notes without errors right now</span>
 
 smartcle1 <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">    </span><span class="kw">skim</span>(<span class="op">-</span>SEQNO)</code></pre></div>
+<span class="st">    </span><span class="kw">skim</span>(<span class="op">-</span>SEQNO)</code></pre>
 <pre><code>Skim summary statistics
  n obs: 1036 
  n variables: 11 
 
--- Variable type:factor ---------------------------------------
+-- Variable type:factor -----------------------------------------------------------
   variable missing complete    n n_unique
  genhealth       3     1033 1036        5
                              top_counts ordered
  2_V: 350, 3_G: 344, 1_E: 173, 4_F: 122   FALSE
 
--- Variable type:integer --------------------------------------
+-- Variable type:integer ----------------------------------------------------------
    variable missing complete    n mean   sd p0 p25 p50 p75 p100
     alcdays      46      990 1036 4.65 8.05  0   0   1   4   30
     exerany       3     1033 1036 0.76 0.43  0   1   1   1    1
@@ -1056,15 +1082,15 @@ smartcle1 <span class="op">%&gt;%</span><span class="st"> </span>
  poorhealth     543      493 1036 4.07 8.09  0   0   0   3   30
    sleephrs       8     1028 1036 7.02 1.53  1   6   7   8   20
 
--- Variable type:numeric --------------------------------------
+-- Variable type:numeric ----------------------------------------------------------
  variable missing complete    n  mean   sd    p0  p25   p50   p75  p100
       bmi      84      952 1036 27.89 6.47 12.71 23.7 26.68 30.53 66.06</code></pre>
 <p>Now, we’ll create a new tibble called <code>smartcle2</code> which contains every variable except <code>poorhealth</code>, and which includes all respondents with complete data on the variables (other than <code>poorhealth</code>). We’ll store those observations with complete data in the <code>smartcle2</code> tibble.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smartcle2 &lt;-<span class="st"> </span>smartcle1 <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smartcle2 &lt;-<span class="st"> </span>smartcle1 <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">select</span>(<span class="op">-</span>poorhealth) <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">filter</span>(<span class="kw">complete.cases</span>(.))
 
-smartcle2</code></pre></div>
+smartcle2</code></pre>
 <pre><code># A tibble: 896 x 10
     SEQNO physhealth menthealth genhealth   bmi female internet30 exerany
     &lt;dbl&gt;      &lt;int&gt;      &lt;int&gt; &lt;fct&gt;     &lt;dbl&gt;  &lt;int&gt;      &lt;int&gt;   &lt;int&gt;
@@ -1086,18 +1112,18 @@ smartcle2</code></pre></div>
 <h2><span class="header-section-number">2.4</span> Summarizing the <code>smartcle2</code> data numerically</h2>
 <div id="the-new-toy-the-skim-function" class="section level3">
 <h3><span class="header-section-number">2.4.1</span> The New Toy: The <code>skim</code> function</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">skim</span>(smartcle2, <span class="op">-</span>SEQNO)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">skim</span>(smartcle2, <span class="op">-</span>SEQNO)</code></pre>
 <pre><code>Skim summary statistics
  n obs: 896 
  n variables: 10 
 
--- Variable type:factor ---------------------------------------
+-- Variable type:factor -----------------------------------------------------------
   variable missing complete   n n_unique
  genhealth       0      896 896        5
                              top_counts ordered
  2_V: 306, 3_G: 295, 1_E: 155, 4_F: 102   FALSE
 
--- Variable type:integer --------------------------------------
+-- Variable type:integer ----------------------------------------------------------
    variable missing complete   n mean   sd p0 p25 p50 p75 p100
     alcdays       0      896 896 4.83 8.14  0   0   1   5   30
     exerany       0      896 896 0.77 0.42  0   1   1   1    1
@@ -1107,14 +1133,14 @@ smartcle2</code></pre></div>
  physhealth       0      896 896 3.99 8.64  0   0   0   2   30
    sleephrs       0      896 896 7.02 1.48  1   6   7   8   20
 
--- Variable type:numeric --------------------------------------
+-- Variable type:numeric ----------------------------------------------------------
  variable missing complete   n  mean   sd    p0  p25  p50   p75  p100
       bmi       0      896 896 27.87 6.33 12.71 23.7 26.8 30.53 66.06</code></pre>
 </div>
 <div id="the-usual-summary-for-a-data-frame" class="section level3">
 <h3><span class="header-section-number">2.4.2</span> The usual <code>summary</code> for a data frame</h3>
 <p>Of course, we can use the usual <code>summary</code> to get some basic information about the data.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(smartcle2)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(smartcle2)</code></pre>
 <pre><code>     SEQNO             physhealth      menthealth           genhealth  
  Min.   :2.016e+09   Min.   : 0.00   Min.   : 0.000   1_Excellent:155  
  1st Qu.:2.016e+09   1st Qu.: 0.00   1st Qu.: 0.000   2_VeryGood :306  
@@ -1140,7 +1166,7 @@ smartcle2</code></pre></div>
 <div id="the-describe-function-in-hmisc" class="section level3">
 <h3><span class="header-section-number">2.4.3</span> The <code>describe</code> function in <code>Hmisc</code></h3>
 <p>Or we can use the <code>describe</code> function from the <code>Hmisc</code> package.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Hmisc<span class="op">::</span><span class="kw">describe</span>(<span class="kw">select</span>(smartcle2, bmi, genhealth, female))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">Hmisc<span class="op">::</span><span class="kw">describe</span>(<span class="kw">select</span>(smartcle2, bmi, genhealth, female))</code></pre>
 <pre><code>select(smartcle2, bmi, genhealth, female) 
 
  3  Variables      896  Observations
@@ -1173,7 +1199,7 @@ female
 <p>Counting things can be amazingly useful.</p>
 <div id="how-many-respondents-had-exercised-in-the-past-30-days-did-this-vary-by-sex" class="section level3">
 <h3><span class="header-section-number">2.5.1</span> How many respondents had exercised in the past 30 days? Did this vary by sex?</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smartcle2 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(female, exerany) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">percent =</span> <span class="dv">100</span><span class="op">*</span>n <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(n))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">smartcle2 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(female, exerany) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">percent =</span> <span class="dv">100</span><span class="op">*</span>n <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(n))</code></pre>
 <pre><code># A tibble: 4 x 4
   female exerany     n percent
    &lt;int&gt;   &lt;int&gt; &lt;int&gt;   &lt;dbl&gt;
@@ -1182,10 +1208,10 @@ female
 3      1       0   145   16.2 
 4      1       1   379   42.3 </code></pre>
 <p>so we know now that 42.3% of the subjects in our data were women who exercised. Suppose that instead we want to find the percentage of exercisers within each sex…</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smartcle2 <span class="op">%&gt;%</span>
+<pre class="sourceCode r"><code class="sourceCode r">smartcle2 <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">count</span>(female, exerany) <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">group_by</span>(female) <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">prob =</span> <span class="dv">100</span><span class="op">*</span>n <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(n)) </code></pre></div>
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">prob =</span> <span class="dv">100</span><span class="op">*</span>n <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(n)) </code></pre>
 <pre><code># A tibble: 4 x 4
 # Groups:   female [2]
   female exerany     n  prob
@@ -1199,7 +1225,7 @@ female
 <div id="whats-the-distribution-of-sleephrs" class="section level3">
 <h3><span class="header-section-number">2.5.2</span> What’s the distribution of <code>sleephrs</code>?</h3>
 <p>We can count quantitative variables with discrete sets of possible values, like <code>sleephrs</code>, which is captured as an integer (that must fall between 0 and 24.)</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smartcle2 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(sleephrs)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">smartcle2 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(sleephrs)</code></pre>
 <pre><code># A tibble: 14 x 2
    sleephrs     n
       &lt;int&gt; &lt;int&gt;
@@ -1218,19 +1244,19 @@ female
 13       16     2
 14       20     1</code></pre>
 <p>Of course, a natural summary of a quantitative variable like this would be graphical.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(smartcle2, <span class="kw">aes</span>(sleephrs)) <span class="op">+</span>
-<span class="st">    </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="dv">1</span>, <span class="dt">fill =</span> <span class="st">&quot;dodgerblue&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;darkred&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(smartcle2, <span class="kw">aes</span>(sleephrs)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="dv">1</span>, <span class="dt">fill =</span> <span class="st">&quot;dodgerblue&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;darkred&quot;</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/c2_histogram_sleephrs_smartcle2-1.png" width="672" /></p>
 </div>
 <div id="whats-the-distribution-of-bmi" class="section level3">
 <h3><span class="header-section-number">2.5.3</span> What’s the distribution of <code>BMI</code>?</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(smartcle2, <span class="kw">aes</span>(bmi)) <span class="op">+</span>
-<span class="st">    </span><span class="kw">geom_histogram</span>(<span class="dt">bins =</span> <span class="dv">30</span>, <span class="dt">col =</span> <span class="st">&quot;white&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(smartcle2, <span class="kw">aes</span>(bmi)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_histogram</span>(<span class="dt">bins =</span> <span class="dv">30</span>, <span class="dt">col =</span> <span class="st">&quot;white&quot;</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/c2_histogram_bmi_smartcle2-1.png" width="672" /></p>
 </div>
 <div id="how-many-of-the-respondents-have-a-bmi-below-30" class="section level3">
 <h3><span class="header-section-number">2.5.4</span> How many of the respondents have a BMI below 30?</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smartcle2 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(bmi <span class="op">&lt;</span><span class="st"> </span><span class="dv">30</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">proportion =</span> n <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(n))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">smartcle2 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(bmi <span class="op">&lt;</span><span class="st"> </span><span class="dv">30</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">proportion =</span> n <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(n))</code></pre>
 <pre><code># A tibble: 2 x 3
   `bmi &lt; 30`     n proportion
   &lt;lgl&gt;      &lt;int&gt;      &lt;dbl&gt;
@@ -1239,9 +1265,9 @@ female
 </div>
 <div id="how-many-of-the-respondents-who-have-a-bmi-30-exercised" class="section level3">
 <h3><span class="header-section-number">2.5.5</span> How many of the respondents who have a BMI &lt; 30 exercised?</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smartcle2 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(exerany, bmi <span class="op">&lt;</span><span class="st"> </span><span class="dv">30</span>) <span class="op">%&gt;%</span>
+<pre class="sourceCode r"><code class="sourceCode r">smartcle2 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(exerany, bmi <span class="op">&lt;</span><span class="st"> </span><span class="dv">30</span>) <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">group_by</span>(exerany) <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">percent =</span> <span class="dv">100</span><span class="op">*</span>n<span class="op">/</span><span class="kw">sum</span>(n))</code></pre></div>
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">percent =</span> <span class="dv">100</span><span class="op">*</span>n<span class="op">/</span><span class="kw">sum</span>(n))</code></pre>
 <pre><code># A tibble: 4 x 4
 # Groups:   exerany [2]
   exerany `bmi &lt; 30`     n percent
@@ -1253,9 +1279,9 @@ female
 </div>
 <div id="is-obesity-associated-with-sex-in-these-data" class="section level3">
 <h3><span class="header-section-number">2.5.6</span> Is obesity associated with sex, in these data?</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smartcle2 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(female, bmi <span class="op">&lt;</span><span class="st"> </span><span class="dv">30</span>) <span class="op">%&gt;%</span>
+<pre class="sourceCode r"><code class="sourceCode r">smartcle2 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(female, bmi <span class="op">&lt;</span><span class="st"> </span><span class="dv">30</span>) <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">group_by</span>(female) <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">percent =</span> <span class="dv">100</span><span class="op">*</span>n<span class="op">/</span><span class="kw">sum</span>(n))</code></pre></div>
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">percent =</span> <span class="dv">100</span><span class="op">*</span>n<span class="op">/</span><span class="kw">sum</span>(n))</code></pre>
 <pre><code># A tibble: 4 x 4
 # Groups:   female [2]
   female `bmi &lt; 30`     n percent
@@ -1268,10 +1294,10 @@ female
 <div id="comparing-sleephrs-summaries-by-obesity-status" class="section level3">
 <h3><span class="header-section-number">2.5.7</span> Comparing <code>sleephrs</code> summaries by obesity status</h3>
 <p>Can we compare the <code>sleephrs</code> means, medians and 75<sup>th</sup> percentiles for respondents whose BMI is below 30 to the respondents whose BMI is not?</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smartcle2 <span class="op">%&gt;%</span>
+<pre class="sourceCode r"><code class="sourceCode r">smartcle2 <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">group_by</span>(bmi <span class="op">&lt;</span><span class="st"> </span><span class="dv">30</span>) <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">summarize</span>(<span class="kw">mean</span>(sleephrs), <span class="kw">median</span>(sleephrs), 
-              <span class="dt">q75 =</span> <span class="kw">quantile</span>(sleephrs, <span class="fl">0.75</span>))</code></pre></div>
+              <span class="dt">q75 =</span> <span class="kw">quantile</span>(sleephrs, <span class="fl">0.75</span>))</code></pre>
 <pre><code># A tibble: 2 x 4
   `bmi &lt; 30` `mean(sleephrs)` `median(sleephrs)`   q75
   &lt;lgl&gt;                 &lt;dbl&gt;              &lt;int&gt; &lt;dbl&gt;
@@ -1281,20 +1307,20 @@ female
 <div id="the-skim-function-within-a-pipe" class="section level3">
 <h3><span class="header-section-number">2.5.8</span> The <code>skim</code> function within a pipe</h3>
 <p>The <strong>skim</strong> function works within pipes and with the other <code>tidyverse</code> functions.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smartcle2 <span class="op">%&gt;%</span>
+<pre class="sourceCode r"><code class="sourceCode r">smartcle2 <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">group_by</span>(exerany) <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">skim</span>(bmi, sleephrs)</code></pre></div>
+<span class="st">    </span><span class="kw">skim</span>(bmi, sleephrs)</code></pre>
 <pre><code>Skim summary statistics
  n obs: 896 
  n variables: 10 
  group variables: exerany 
 
--- Variable type:integer --------------------------------------
+-- Variable type:integer ----------------------------------------------------------
  exerany variable missing complete   n mean   sd p0 p25 p50 p75 p100
        0 sleephrs       0      209 209 7    1.85  1   6   7   8   20
        1 sleephrs       0      687 687 7.03 1.34  1   6   7   8   16
 
--- Variable type:numeric --------------------------------------
+-- Variable type:numeric ----------------------------------------------------------
  exerany variable missing complete   n  mean   sd    p0   p25   p50   p75
        0      bmi       0      209 209 29.57 7.46 18    24.11 28.49 33.13
        1      bmi       0      687 687 27.35 5.84 12.71 23.7  26.52 29.81
@@ -1306,21 +1332,21 @@ female
 <div id="first-modeling-attempt-can-bmi-predict-physhealth" class="section level2">
 <h2><span class="header-section-number">2.6</span> First Modeling Attempt: Can <code>bmi</code> predict <code>physhealth</code>?</h2>
 <p>We’ll start with an effort to predict <code>physhealth</code> using <code>bmi</code>. A natural graph would be a scatterplot.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> smartcle2, <span class="kw">aes</span>(<span class="dt">x =</span> bmi, <span class="dt">y =</span> physhealth)) <span class="op">+</span>
-<span class="st">    </span><span class="kw">geom_point</span>()</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> smartcle2, <span class="kw">aes</span>(<span class="dt">x =</span> bmi, <span class="dt">y =</span> physhealth)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_point</span>()</code></pre>
 <p><img src="2019-432-book_files/figure-html/scatter_physhealth_bmi_1-1.png" width="672" /></p>
 <p>A good question to ask ourselves here might be: “In what BMI range can we make a reasonable prediction of <code>physhealth</code>?”</p>
 <p>Now, we might take the plot above and add a simple linear model …</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> smartcle2, <span class="kw">aes</span>(<span class="dt">x =</span> bmi, <span class="dt">y =</span> physhealth)) <span class="op">+</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> smartcle2, <span class="kw">aes</span>(<span class="dt">x =</span> bmi, <span class="dt">y =</span> physhealth)) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_point</span>() <span class="op">+</span>
-<span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/c2_scatter_physhealth_bmi_2-1.png" width="672" /></p>
 <p>which shows the same least squares regression model that we can fit with the <code>lm</code> command.</p>
 <div id="fitting-a-simple-regression-model" class="section level3">
 <h3><span class="header-section-number">2.6.1</span> Fitting a Simple Regression Model</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">model_A &lt;-<span class="st"> </span><span class="kw">lm</span>(physhealth <span class="op">~</span><span class="st"> </span>bmi, <span class="dt">data =</span> smartcle2)
+<pre class="sourceCode r"><code class="sourceCode r">model_A &lt;-<span class="st"> </span><span class="kw">lm</span>(physhealth <span class="op">~</span><span class="st"> </span>bmi, <span class="dt">data =</span> smartcle2)
 
-model_A</code></pre></div>
+model_A</code></pre>
 <pre><code>
 Call:
 lm(formula = physhealth ~ bmi, data = smartcle2)
@@ -1328,7 +1354,7 @@ lm(formula = physhealth ~ bmi, data = smartcle2)
 Coefficients:
 (Intercept)          bmi  
     -1.4514       0.1953  </code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(model_A)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(model_A)</code></pre>
 <pre><code>
 Call:
 lm(formula = physhealth ~ bmi, data = smartcle2)
@@ -1347,7 +1373,7 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 Residual standard error: 8.556 on 894 degrees of freedom
 Multiple R-squared:  0.02044,   Adjusted R-squared:  0.01934 
 F-statistic: 18.65 on 1 and 894 DF,  p-value: 1.742e-05</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(model_A, <span class="dt">level =</span> <span class="fl">0.95</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(model_A, <span class="dt">level =</span> <span class="fl">0.95</span>)</code></pre>
 <pre><code>                 2.5 %    97.5 %
 (Intercept) -3.9868457 1.0839862
 bmi          0.1065409 0.2840068</code></pre>
@@ -1425,7 +1451,7 @@ R^2_{adj} = 1 - \frac{(1 - R^2)(N - 1)}{N - p - 1},
 </ul></li>
 <li>To see the complete ANOVA F test for this model, we can run <code>anova(model_A)</code>.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(model_A)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(model_A)</code></pre>
 <pre><code>Analysis of Variance Table
 
 Response: physhealth
@@ -1442,7 +1468,7 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <div id="the-tidy-function" class="section level4">
 <h4><span class="header-section-number">2.6.3.1</span> The <code>tidy</code> function</h4>
 <p><code>tidy</code> builds a data frame/tibble containing information about the coefficients in the model, their standard errors, t statistics and <em>p</em> values.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tidy</span>(model_A)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tidy</span>(model_A)</code></pre>
 <pre><code># A tibble: 2 x 5
   term        estimate std.error statistic   p.value
   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
@@ -1462,7 +1488,7 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <li>the model’s Bayesian Information Criterion value, <code>BIC</code></li>
 <li>and the model’s <code>deviance</code> statistic</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glance</span>(model_A)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glance</span>(model_A)</code></pre>
 <pre><code># A tibble: 1 x 11
   r.squared adj.r.squared sigma statistic p.value    df logLik   AIC   BIC
       &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -1480,7 +1506,7 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <li>and <code>se.fit</code> which will help us generate prediction intervals for the model downstream</li>
 </ul>
 <p>Note that each of the new columns begins with <code>.</code> to avoid overwriting any data.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(<span class="kw">augment</span>(model_A))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(<span class="kw">augment</span>(model_A))</code></pre>
 <pre><code># A tibble: 6 x 9
   physhealth   bmi .fitted .se.fit  .resid    .hat .sigma .cooksd
        &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;
@@ -1494,26 +1520,26 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <p>For more on the <code>broom</code> package, you may want to look at <a href="https://cran.r-project.org/web/packages/broom/vignettes/broom.html">this vignette</a>.</p>
 </div>
 </div>
-<div id="how-does-the-model-do-residuals-vs.fitted-values" class="section level3">
+<div id="how-does-the-model-do-residuals-vs.-fitted-values" class="section level3">
 <h3><span class="header-section-number">2.6.4</span> How does the model do? (Residuals vs. Fitted Values)</h3>
 <ul>
 <li>Remember that the R<sup>2</sup> value was about 2%.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(model_A, <span class="dt">which =</span> <span class="dv">1</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(model_A, <span class="dt">which =</span> <span class="dv">1</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/chapter2_first_resid_plot_model_A-1.png" width="672" /></p>
 <p>This is a plot of residuals vs. fitted values. The goal here is for this plot to look like a random scatter of points, perhaps like a “fuzzy football”, and that’s <strong>not</strong> what we have. Why?</p>
 <p>If you prefer, here’s a <code>ggplot2</code> version of a similar plot, now looking at standardized residuals instead of raw residuals, and adding a loess smooth and a linear fit to the result.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="kw">augment</span>(model_A), <span class="kw">aes</span>(<span class="dt">x =</span> .fitted, <span class="dt">y =</span> .std.resid)) <span class="op">+</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="kw">augment</span>(model_A), <span class="kw">aes</span>(<span class="dt">x =</span> .fitted, <span class="dt">y =</span> .std.resid)) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_point</span>() <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>, <span class="dt">col =</span> <span class="st">&quot;navy&quot;</span>) <span class="op">+</span>
-<span class="st">    </span><span class="kw">theme_bw</span>()</code></pre></div>
+<span class="st">    </span><span class="kw">theme_bw</span>()</code></pre>
 <p><img src="2019-432-book_files/figure-html/chapter2_ggplot_first_resid_plot_model_A-1.png" width="672" /></p>
 <p>The problem we’re having here becomes, I think, a little more obvious if we look at what we’re predicting. Does <code>physhealth</code> look like a good candidate for a linear model?</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(smartcle2, <span class="kw">aes</span>(<span class="dt">x =</span> physhealth)) <span class="op">+</span>
-<span class="kw">geom_histogram</span>(<span class="dt">bins =</span> <span class="dv">30</span>, <span class="dt">fill =</span> <span class="st">&quot;dodgerblue&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;royalblue&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(smartcle2, <span class="kw">aes</span>(<span class="dt">x =</span> physhealth)) <span class="op">+</span>
+<span class="kw">geom_histogram</span>(<span class="dt">bins =</span> <span class="dv">30</span>, <span class="dt">fill =</span> <span class="st">&quot;dodgerblue&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;royalblue&quot;</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/histogram_of_physhealth_smartcle2-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smartcle2 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(physhealth <span class="op">==</span><span class="st"> </span><span class="dv">0</span>, physhealth <span class="op">==</span><span class="st"> </span><span class="dv">30</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">smartcle2 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(physhealth <span class="op">==</span><span class="st"> </span><span class="dv">0</span>, physhealth <span class="op">==</span><span class="st"> </span><span class="dv">30</span>)</code></pre>
 <pre><code># A tibble: 3 x 3
   `physhealth == 0` `physhealth == 30`     n
   &lt;lgl&gt;             &lt;lgl&gt;              &lt;int&gt;
@@ -1522,7 +1548,7 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 3 TRUE              FALSE                591</code></pre>
 <p>No matter what model we fit, if we are predicting <code>physhealth</code>, and most of the data are values of 0 and 30, we have limited variation in our outcome, and so our linear model will be somewhat questionable just on that basis.</p>
 <p>A normal Q-Q plot of the standardized residuals for our <code>model_A</code> shows this problem, too.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(model_A, <span class="dt">which =</span> <span class="dv">2</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(model_A, <span class="dt">which =</span> <span class="dv">2</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/chapter2_second_resid_plot_model_A-1.png" width="672" /></p>
 <p>We’re going to need a method to deal with this sort of outcome, that has both a floor and a ceiling. We’ll get there eventually, but linear regression alone doesn’t look promising.</p>
 <p>All right, so that didn’t go anywhere great. Let’s try again, with a new outcome.</p>
@@ -1544,12 +1570,12 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <h3><span class="header-section-number">2.7.1</span> Does <code>female</code> predict <code>bmi</code> well?</h3>
 <div id="graphical-assessment" class="section level4">
 <h4><span class="header-section-number">2.7.1.1</span> Graphical Assessment</h4>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(smartcle2, <span class="kw">aes</span>(<span class="dt">x =</span> female, <span class="dt">y =</span> bmi)) <span class="op">+</span>
-<span class="st">    </span><span class="kw">geom_point</span>()</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(smartcle2, <span class="kw">aes</span>(<span class="dt">x =</span> female, <span class="dt">y =</span> bmi)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_point</span>()</code></pre>
 <p><img src="2019-432-book_files/figure-html/c2_sex_bmi_plot1-1.png" width="672" /></p>
 <p>Not so helpful. We should probably specify that <code>female</code> is a factor, and try another plotting approach.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(smartcle2, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">factor</span>(female), <span class="dt">y =</span> bmi)) <span class="op">+</span>
-<span class="st">    </span><span class="kw">geom_boxplot</span>()</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(smartcle2, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">factor</span>(female), <span class="dt">y =</span> bmi)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_boxplot</span>()</code></pre>
 <p><img src="2019-432-book_files/figure-html/c2_sex_bmi_plot2-1.png" width="672" /></p>
 <p>The median BMI looks a little higher for males. Let’s see if a model reflects that.</p>
 </div>
@@ -1557,8 +1583,8 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 </div>
 <div id="c2_m1-a-simple-t-test-model" class="section level2">
 <h2><span class="header-section-number">2.8</span> <code>c2_m1</code>: A simple t-test model</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">c2_m1 &lt;-<span class="st"> </span><span class="kw">lm</span>(bmi <span class="op">~</span><span class="st"> </span>female, <span class="dt">data =</span> smartcle2)
-c2_m1</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">c2_m1 &lt;-<span class="st"> </span><span class="kw">lm</span>(bmi <span class="op">~</span><span class="st"> </span>female, <span class="dt">data =</span> smartcle2)
+c2_m1</code></pre>
 <pre><code>
 Call:
 lm(formula = bmi ~ female, data = smartcle2)
@@ -1566,7 +1592,7 @@ lm(formula = bmi ~ female, data = smartcle2)
 Coefficients:
 (Intercept)       female  
     28.3600      -0.8457  </code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(c2_m1)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(c2_m1)</code></pre>
 <pre><code>
 Call:
 lm(formula = bmi ~ female, data = smartcle2)
@@ -1585,7 +1611,7 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 Residual standard error: 6.315 on 894 degrees of freedom
 Multiple R-squared:  0.004345,  Adjusted R-squared:  0.003231 
 F-statistic: 3.902 on 1 and 894 DF,  p-value: 0.04855</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(c2_m1)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(c2_m1)</code></pre>
 <pre><code>                2.5 %      97.5 %
 (Intercept) 27.717372 29.00262801
 female      -1.686052 -0.00539878</code></pre>
@@ -1599,7 +1625,7 @@ female      -1.686052 -0.00539878</code></pre>
 <li>the model makes some enormous errors, with one subject being predicted to have a BMI 38 points lower than his/her actual BMI.</li>
 </ul>
 <p>Note that this simple regression model just gives us the t-test.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(bmi <span class="op">~</span><span class="st"> </span>female, <span class="dt">var.equal =</span> <span class="ot">TRUE</span>, <span class="dt">data =</span> smartcle2)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(bmi <span class="op">~</span><span class="st"> </span>female, <span class="dt">var.equal =</span> <span class="ot">TRUE</span>, <span class="dt">data =</span> smartcle2)</code></pre>
 <pre><code>
     Two Sample t-test
 
@@ -1615,23 +1641,23 @@ mean in group 0 mean in group 1
 <div id="c2_m2-adding-another-predictor-two-way-anova-without-interaction" class="section level2">
 <h2><span class="header-section-number">2.9</span> <code>c2_m2</code>: Adding another predictor (two-way ANOVA without interaction)</h2>
 <p>When we add in the information about <code>exerany</code> to our original model, we might first picture the data. We could look at separate histograms,</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(smartcle2, <span class="kw">aes</span>(<span class="dt">x =</span> bmi)) <span class="op">+</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(smartcle2, <span class="kw">aes</span>(<span class="dt">x =</span> bmi)) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_histogram</span>(<span class="dt">bins =</span> <span class="dv">30</span>) <span class="op">+</span>
-<span class="st">    </span><span class="kw">facet_grid</span>(female <span class="op">~</span><span class="st"> </span>exerany, <span class="dt">labeller =</span> label_both)</code></pre></div>
+<span class="st">    </span><span class="kw">facet_grid</span>(female <span class="op">~</span><span class="st"> </span>exerany, <span class="dt">labeller =</span> label_both)</code></pre>
 <p><img src="2019-432-book_files/figure-html/c2_smartcle2_plot_bmi_hist_by_female_exerany-1.png" width="672" /></p>
 <p>or maybe boxplots?</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(smartcle2, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">factor</span>(female), <span class="dt">y =</span> bmi)) <span class="op">+</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(smartcle2, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">factor</span>(female), <span class="dt">y =</span> bmi)) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_boxplot</span>() <span class="op">+</span>
-<span class="st">    </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>exerany, <span class="dt">labeller =</span> label_both)</code></pre></div>
+<span class="st">    </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>exerany, <span class="dt">labeller =</span> label_both)</code></pre>
 <p><img src="2019-432-book_files/figure-html/c2_smartcle2_plot_bmi_box_by_female_exerany-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(smartcle2, <span class="kw">aes</span>(<span class="dt">x =</span> female, <span class="dt">y =</span> bmi))<span class="op">+</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(smartcle2, <span class="kw">aes</span>(<span class="dt">x =</span> female, <span class="dt">y =</span> bmi))<span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">3</span>, <span class="dt">alpha =</span> <span class="fl">0.2</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">theme_bw</span>() <span class="op">+</span>
-<span class="st">    </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>exerany, <span class="dt">labeller =</span> label_both)</code></pre></div>
+<span class="st">    </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>exerany, <span class="dt">labeller =</span> label_both)</code></pre>
 <p><img src="2019-432-book_files/figure-html/c2_smartcle2_plot_bmi_points_by_female_exerany-1.png" width="672" /></p>
 <p>OK. Let’s try fitting a model.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">c2_m2 &lt;-<span class="st"> </span><span class="kw">lm</span>(bmi <span class="op">~</span><span class="st"> </span>female <span class="op">+</span><span class="st"> </span>exerany, <span class="dt">data =</span> smartcle2)
-c2_m2</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">c2_m2 &lt;-<span class="st"> </span><span class="kw">lm</span>(bmi <span class="op">~</span><span class="st"> </span>female <span class="op">+</span><span class="st"> </span>exerany, <span class="dt">data =</span> smartcle2)
+c2_m2</code></pre>
 <pre><code>
 Call:
 lm(formula = bmi ~ female + exerany, data = smartcle2)
@@ -1655,7 +1681,7 @@ Coefficients:
 <li><code>bmi</code> = 27.95 - 1.095 <code>female</code></li>
 </ul>
 <p>Only the intercept of the <code>bmi-female</code> model changes depending on <code>exerany</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(c2_m2)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(c2_m2)</code></pre>
 <pre><code>
 Call:
 lm(formula = bmi ~ female + exerany, data = smartcle2)
@@ -1675,7 +1701,7 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 Residual standard error: 6.239 on 893 degrees of freedom
 Multiple R-squared:  0.02939,   Adjusted R-squared:  0.02722 
 F-statistic: 13.52 on 2 and 893 DF,  p-value: 1.641e-06</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(c2_m2)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(c2_m2)</code></pre>
 <pre><code>                2.5 %     97.5 %
 (Intercept) 29.306846 31.3602182
 female      -1.931629 -0.2588299
@@ -1683,7 +1709,7 @@ exerany     -3.358156 -1.4090777</code></pre>
 <p>The slopes of both <code>female</code> and <code>exerany</code> have confidence intervals that are completely below zero, indicating that both <code>female</code> sex and <code>exerany</code> appear to be associated with reductions in <code>bmi</code>.</p>
 <p>The R<sup>2</sup> value suggests that just under 3% of the variation in <code>bmi</code> is accounted for by this ANOVA model.</p>
 <p>In fact, this regression (on two binary indicator variables) is simply a two-way ANOVA model without an interaction term.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(c2_m2)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(c2_m2)</code></pre>
 <pre><code>Analysis of Variance Table
 
 Response: bmi
@@ -1697,8 +1723,8 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <div id="c2_m3-adding-the-interaction-term-two-way-anova-with-interaction" class="section level2">
 <h2><span class="header-section-number">2.10</span> <code>c2_m3</code>: Adding the interaction term (Two-way ANOVA with interaction)</h2>
 <p>Suppose we want to let the effect of <code>female</code> vary depending on the <code>exerany</code> status. Then we need to incorporate an interaction term in our model.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">c2_m3 &lt;-<span class="st"> </span><span class="kw">lm</span>(bmi <span class="op">~</span><span class="st"> </span>female <span class="op">*</span><span class="st"> </span>exerany, <span class="dt">data =</span> smartcle2)
-c2_m3</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">c2_m3 &lt;-<span class="st"> </span><span class="kw">lm</span>(bmi <span class="op">~</span><span class="st"> </span>female <span class="op">*</span><span class="st"> </span>exerany, <span class="dt">data =</span> smartcle2)
+c2_m3</code></pre>
 <pre><code>
 Call:
 lm(formula = bmi ~ female * exerany, data = smartcle2)
@@ -1724,7 +1750,7 @@ Coefficients:
 <li><code>bmi</code> = 27.991 - 1.169 <code>female</code></li>
 </ul>
 <p>Now, both the slope and the intercept of the <code>bmi-female</code> model change depending on <code>exerany</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(c2_m3)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(c2_m3)</code></pre>
 <pre><code>
 Call:
 lm(formula = bmi ~ female * exerany, data = smartcle2)
@@ -1745,14 +1771,14 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 Residual standard error: 6.242 on 892 degrees of freedom
 Multiple R-squared:  0.02952,   Adjusted R-squared:  0.02625 
 F-statistic: 9.044 on 3 and 892 DF,  p-value: 6.669e-06</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(c2_m3)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(c2_m3)</code></pre>
 <pre><code>                   2.5 %     97.5 %
 (Intercept)    28.604610 31.6672650
 female         -2.648893  1.0280526
 exerany        -3.827886 -0.4620407
 female:exerany -2.423994  1.7055248</code></pre>
 <p>In fact, this regression (on two binary indicator variables and a product term) is simply a two-way ANOVA model with an interaction term.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(c2_m3)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(c2_m3)</code></pre>
 <pre><code>Analysis of Variance Table
 
 Response: bmi
@@ -1767,16 +1793,16 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 </div>
 <div id="c2_m4-using-female-and-sleephrs-in-a-model-for-bmi" class="section level2">
 <h2><span class="header-section-number">2.11</span> <code>c2_m4</code>: Using <code>female</code> and <code>sleephrs</code> in a model for <code>bmi</code></h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(smartcle2, <span class="kw">aes</span>(<span class="dt">x =</span> sleephrs, <span class="dt">y =</span> bmi, <span class="dt">color =</span> <span class="kw">factor</span>(female))) <span class="op">+</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(smartcle2, <span class="kw">aes</span>(<span class="dt">x =</span> sleephrs, <span class="dt">y =</span> bmi, <span class="dt">color =</span> <span class="kw">factor</span>(female))) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">guides</span>(<span class="dt">col =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
-<span class="st">    </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>female, <span class="dt">labeller =</span> label_both) </code></pre></div>
+<span class="st">    </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>female, <span class="dt">labeller =</span> label_both) </code></pre>
 <p><img src="2019-432-book_files/figure-html/graph_to_set_up_c2_m4-1.png" width="672" /></p>
 <p>Does the difference in slopes of <code>bmi</code> and <code>sleephrs</code> for males and females appear to be substantial and important?</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">c2_m4 &lt;-<span class="st"> </span><span class="kw">lm</span>(bmi <span class="op">~</span><span class="st"> </span>female <span class="op">*</span><span class="st"> </span>sleephrs, <span class="dt">data =</span> smartcle2)
+<pre class="sourceCode r"><code class="sourceCode r">c2_m4 &lt;-<span class="st"> </span><span class="kw">lm</span>(bmi <span class="op">~</span><span class="st"> </span>female <span class="op">*</span><span class="st"> </span>sleephrs, <span class="dt">data =</span> smartcle2)
 
-<span class="kw">summary</span>(c2_m4)</code></pre></div>
+<span class="kw">summary</span>(c2_m4)</code></pre>
 <pre><code>
 Call:
 lm(formula = bmi ~ female * sleephrs, data = smartcle2)
@@ -1802,13 +1828,13 @@ F-statistic: 2.501 on 3 and 892 DF,  p-value: 0.05818</code></pre>
 <ul>
 <li>I might start by looking at the basic summaries for each model.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glance</span>(c2_m4)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glance</span>(c2_m4)</code></pre>
 <pre><code># A tibble: 1 x 11
   r.squared adj.r.squared sigma statistic p.value    df logLik   AIC   BIC
       &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
 1   0.00834       0.00501  6.31      2.50  0.0582     4 -2920. 5850. 5874.
 # ... with 2 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glance</span>(c2_m1)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glance</span>(c2_m1)</code></pre>
 <pre><code># A tibble: 1 x 11
   r.squared adj.r.squared sigma statistic p.value    df logLik   AIC   BIC
       &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -1820,7 +1846,7 @@ F-statistic: 2.501 on 3 and 892 DF,  p-value: 0.05818</code></pre>
 <li>Smaller AIC and smaller BIC statistics are more desirable. Here, there’s little to choose from, but <code>c2_m1</code> is a little better on each standard.</li>
 <li>We might also consider a significance test by looking at an ANOVA model comparison. This is only appropriate because <code>c2_m1</code> is nested in <code>c2_m4</code>.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(c2_m4, c2_m1)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(c2_m4, c2_m1)</code></pre>
 <pre><code>Analysis of Variance Table
 
 Model 1: bmi ~ female * sleephrs
@@ -1833,7 +1859,7 @@ Model 2: bmi ~ female
 <div id="making-predictions-with-a-linear-regression-model" class="section level2">
 <h2><span class="header-section-number">2.12</span> Making Predictions with a Linear Regression Model</h2>
 <p>Recall model 4, which yields predictions for body mass index on the basis of the main effects of sex (<code>female</code>) and hours of sleep (<code>sleephrs</code>) and their interaction.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">c2_m4</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">c2_m4</code></pre>
 <pre><code>
 Call:
 lm(formula = bmi ~ female * sleephrs, data = smartcle2)
@@ -1844,8 +1870,8 @@ Coefficients:
 <div id="fitting-an-individual-prediction-and-95-prediction-interval" class="section level3">
 <h3><span class="header-section-number">2.12.1</span> Fitting an Individual Prediction and 95% Prediction Interval</h3>
 <p>What do we predict for the <code>bmi</code> of a subject who is <code>female</code> and gets 8 hours of sleep per night?</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">c2_new1 &lt;-<span class="st"> </span><span class="kw">data_frame</span>(<span class="dt">female =</span> <span class="dv">1</span>, <span class="dt">sleephrs =</span> <span class="dv">8</span>)
-<span class="kw">predict</span>(c2_m4, <span class="dt">newdata =</span> c2_new1, <span class="dt">interval =</span> <span class="st">&quot;prediction&quot;</span>, <span class="dt">level =</span> <span class="fl">0.95</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">c2_new1 &lt;-<span class="st"> </span><span class="kw">data_frame</span>(<span class="dt">female =</span> <span class="dv">1</span>, <span class="dt">sleephrs =</span> <span class="dv">8</span>)
+<span class="kw">predict</span>(c2_m4, <span class="dt">newdata =</span> c2_new1, <span class="dt">interval =</span> <span class="st">&quot;prediction&quot;</span>, <span class="dt">level =</span> <span class="fl">0.95</span>)</code></pre>
 <pre><code>       fit     lwr     upr
 1 27.21065 14.8107 39.6106</code></pre>
 <p>The predicted <code>bmi</code> for this new subject is 27.61. The prediction interval shows the bounds of a 95% uncertainty interval for a predicted <code>bmi</code> for an individual female subject who gets 8 hours of sleep on average per evening. From the <code>predict</code> function applied to a linear model, we can get the prediction intervals for any new data points in this manner.</p>
@@ -1855,7 +1881,7 @@ Coefficients:
 <ul>
 <li>What do we predict for the <strong>average body mass index of a population of subjects</strong> who are female and sleep for 8 hours?</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">predict</span>(c2_m4, <span class="dt">newdata =</span> c2_new1, <span class="dt">interval =</span> <span class="st">&quot;confidence&quot;</span>, <span class="dt">level =</span> <span class="fl">0.95</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">predict</span>(c2_m4, <span class="dt">newdata =</span> c2_new1, <span class="dt">interval =</span> <span class="st">&quot;confidence&quot;</span>, <span class="dt">level =</span> <span class="fl">0.95</span>)</code></pre>
 <pre><code>       fit      lwr      upr
 1 27.21065 26.57328 27.84801</code></pre>
 <ul>
@@ -1867,11 +1893,11 @@ Coefficients:
 <ul>
 <li>How does our prediction change for a respondent if they instead get 7, or 9 hours of sleep? What if they are male, instead of female?</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">c2_new2 &lt;-<span class="st"> </span><span class="kw">data_frame</span>(<span class="dt">subjectid =</span> <span class="dv">1001</span><span class="op">:</span><span class="dv">1006</span>, <span class="dt">female =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), <span class="dt">sleephrs =</span> <span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>))
+<pre class="sourceCode r"><code class="sourceCode r">c2_new2 &lt;-<span class="st"> </span><span class="kw">data_frame</span>(<span class="dt">subjectid =</span> <span class="dv">1001</span><span class="op">:</span><span class="dv">1006</span>, <span class="dt">female =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), <span class="dt">sleephrs =</span> <span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>))
 pred2 &lt;-<span class="st"> </span><span class="kw">predict</span>(c2_m4, <span class="dt">newdata =</span> c2_new2, <span class="dt">interval =</span> <span class="st">&quot;prediction&quot;</span>, <span class="dt">level =</span> <span class="fl">0.95</span>) <span class="op">%&gt;%</span><span class="st"> </span>tbl_df
 
 result2 &lt;-<span class="st"> </span><span class="kw">bind_cols</span>(c2_new2, pred2)
-result2</code></pre></div>
+result2</code></pre>
 <pre><code># A tibble: 6 x 6
   subjectid female sleephrs   fit   lwr   upr
       &lt;int&gt;  &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -1889,7 +1915,7 @@ result2</code></pre></div>
 <div id="simulation-to-represent-predictive-uncertainty-in-model-4" class="section level3">
 <h3><span class="header-section-number">2.12.4</span> Simulation to represent predictive uncertainty in Model 4</h3>
 <p>Suppose we want to predict the <code>bmi</code> of a female subject who sleeps for eight hours per night. As we have seen, we can do this automatically for a linear model like this one, using the <code>predict</code> function applied to the linear model, but a simulation prediction can also be done. Recall the detail of <code>c2_m4</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">c2_m4</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">c2_m4</code></pre>
 <pre><code>
 Call:
 lm(formula = bmi ~ female * sleephrs, data = smartcle2)
@@ -1897,7 +1923,7 @@ lm(formula = bmi ~ female * sleephrs, data = smartcle2)
 Coefficients:
     (Intercept)           female         sleephrs  female:sleephrs  
         27.2661           2.5263           0.1569          -0.4797  </code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glance</span>(c2_m4)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glance</span>(c2_m4)</code></pre>
 <pre><code># A tibble: 1 x 11
   r.squared adj.r.squared sigma statistic p.value    df logLik   AIC   BIC
       &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -1905,17 +1931,17 @@ Coefficients:
 # ... with 2 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;</code></pre>
 <p>We see that the residual standard error for our <code>bmi</code> predictions with this model is 6.31.</p>
 <p>For a female respondent sleeping eight hours, recall that our point estimate (predicted value) of <code>bmi</code> is 27.21</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">predict</span>(c2_m4, <span class="dt">newdata =</span> c2_new1, <span class="dt">interval =</span> <span class="st">&quot;prediction&quot;</span>, <span class="dt">level =</span> <span class="fl">0.95</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">predict</span>(c2_m4, <span class="dt">newdata =</span> c2_new1, <span class="dt">interval =</span> <span class="st">&quot;prediction&quot;</span>, <span class="dt">level =</span> <span class="fl">0.95</span>)</code></pre>
 <pre><code>       fit     lwr     upr
 1 27.21065 14.8107 39.6106</code></pre>
 <p>The standard deviation is 6.31, so we could summarize the predictive distribution with a command that tells R to draw 1000 random numbers from a normal distribution with mean 27.21 and standard deviation 6.31. Let’s summarize that and get a quick picture.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">432094</span>)
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">432094</span>)
 pred.sim &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">1000</span>, <span class="fl">27.21</span>, <span class="fl">6.31</span>)
-<span class="kw">hist</span>(pred.sim, <span class="dt">col =</span> <span class="st">&quot;royalblue&quot;</span>)</code></pre></div>
+<span class="kw">hist</span>(pred.sim, <span class="dt">col =</span> <span class="st">&quot;royalblue&quot;</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(pred.sim)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(pred.sim)</code></pre>
 <pre><code>[1] 27.41856</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">quantile</span>(pred.sim, <span class="kw">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">quantile</span>(pred.sim, <span class="kw">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>))</code></pre>
 <pre><code>    2.5%    97.5% 
 14.48487 40.16778 </code></pre>
 <p>How do these results compare to the prediction interval of (14.81, 39.61) that we generated earlier?</p>
@@ -1924,12 +1950,12 @@ pred.sim &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class
 <div id="centering-the-model" class="section level2">
 <h2><span class="header-section-number">2.13</span> Centering the model</h2>
 <p>Our model <code>c2_m4</code> has four predictors (the constant, <code>sleephrs</code>, <code>female</code> and their interaction) but just two inputs (<code>female</code> and <code>sleephrs</code>.) If we <strong>center</strong> the quantitative input <code>sleephrs</code> before building the model, we get a more interpretable interaction term.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smartcle2_c &lt;-<span class="st"> </span>smartcle2 <span class="op">%&gt;%</span>
+<pre class="sourceCode r"><code class="sourceCode r">smartcle2_c &lt;-<span class="st"> </span>smartcle2 <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">sleephrs_c =</span> sleephrs <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(sleephrs))
 
 c2_m4_c &lt;-<span class="st"> </span><span class="kw">lm</span>(bmi <span class="op">~</span><span class="st"> </span>female <span class="op">*</span><span class="st"> </span>sleephrs_c, <span class="dt">data =</span> smartcle2_c)
 
-<span class="kw">summary</span>(c2_m4_c)</code></pre></div>
+<span class="kw">summary</span>(c2_m4_c)</code></pre>
 <pre><code>
 Call:
 lm(formula = bmi ~ female * sleephrs_c, data = smartcle2_c)
@@ -1969,13 +1995,13 @@ F-statistic: 2.501 on 3 and 892 DF,  p-value: 0.05818</code></pre>
 </ul>
 <div id="plot-of-model-4-on-centered-sleephrs-c2_m4_c" class="section level3">
 <h3><span class="header-section-number">2.13.1</span> Plot of Model 4 on Centered <code>sleephrs</code>: <code>c2_m4_c</code></h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(smartcle2_c, <span class="kw">aes</span>(<span class="dt">x =</span> sleephrs_c, <span class="dt">y =</span> bmi, <span class="dt">group =</span> female, <span class="dt">col =</span> <span class="kw">factor</span>(female))) <span class="op">+</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(smartcle2_c, <span class="kw">aes</span>(<span class="dt">x =</span> sleephrs_c, <span class="dt">y =</span> bmi, <span class="dt">group =</span> female, <span class="dt">col =</span> <span class="kw">factor</span>(female))) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>, <span class="dt">size =</span> <span class="dv">2</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">guides</span>(<span class="dt">color =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Sleep Hours, centered&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Body Mass Index&quot;</span>,
          <span class="dt">title =</span> <span class="st">&quot;Model `c2_m4` on centered data&quot;</span>) <span class="op">+</span>
-<span class="st">    </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>female, <span class="dt">labeller =</span> label_both)</code></pre></div>
+<span class="st">    </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>female, <span class="dt">labeller =</span> label_both)</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 </div>
 </div>
@@ -1990,13 +2016,13 @@ F-statistic: 2.501 on 3 and 892 DF,  p-value: 0.05818</code></pre>
 <li>an unscaled binary (1/0) predictor with 50% probability of occurring will be exactly comparable to a rescaled continuous predictor done in this way.</li>
 </ul></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smartcle2_rescale &lt;-<span class="st"> </span>smartcle2 <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">sleephrs_z =</span> (sleephrs <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(sleephrs))<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span><span class="kw">sd</span>(sleephrs)))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">smartcle2_rescale &lt;-<span class="st"> </span>smartcle2 <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">sleephrs_z =</span> (sleephrs <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(sleephrs))<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span><span class="kw">sd</span>(sleephrs)))</code></pre>
 <div id="refitting-model-c2_m4-to-the-rescaled-data" class="section level3">
 <h3><span class="header-section-number">2.14.1</span> Refitting model <code>c2_m4</code> to the rescaled data</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">c2_m4_z &lt;-<span class="st"> </span><span class="kw">lm</span>(bmi <span class="op">~</span><span class="st"> </span>female <span class="op">*</span><span class="st"> </span>sleephrs_z, <span class="dt">data =</span> smartcle2_rescale)
+<pre class="sourceCode r"><code class="sourceCode r">c2_m4_z &lt;-<span class="st"> </span><span class="kw">lm</span>(bmi <span class="op">~</span><span class="st"> </span>female <span class="op">*</span><span class="st"> </span>sleephrs_z, <span class="dt">data =</span> smartcle2_rescale)
 
-<span class="kw">summary</span>(c2_m4_z)</code></pre></div>
+<span class="kw">summary</span>(c2_m4_z)</code></pre>
 <pre><code>
 Call:
 lm(formula = bmi ~ female * sleephrs_z, data = smartcle2_rescale)
@@ -2048,22 +2074,22 @@ F-statistic: 2.501 on 3 and 892 DF,  p-value: 0.05818</code></pre>
 </div>
 <div id="plot-of-model-on-rescaled-data" class="section level3">
 <h3><span class="header-section-number">2.14.3</span> Plot of model on rescaled data</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(smartcle2_rescale, <span class="kw">aes</span>(<span class="dt">x =</span> sleephrs_z, <span class="dt">y =</span> bmi, 
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(smartcle2_rescale, <span class="kw">aes</span>(<span class="dt">x =</span> sleephrs_z, <span class="dt">y =</span> bmi, 
                               <span class="dt">group =</span> female, <span class="dt">col =</span> <span class="kw">factor</span>(female))) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">size =</span> <span class="fl">1.5</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">scale_color_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Is subject female?&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Sleep Hours, standardized (2 sd)&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Body Mass Index&quot;</span>,
-         <span class="dt">title =</span> <span class="st">&quot;Model `c2_m4_z` on rescaled data&quot;</span>)</code></pre></div>
+         <span class="dt">title =</span> <span class="st">&quot;Model `c2_m4_z` on rescaled data&quot;</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 </div>
 </div>
 <div id="c2_m5-what-if-we-add-more-variables" class="section level2">
 <h2><span class="header-section-number">2.15</span> <code>c2_m5</code>: What if we add more variables?</h2>
 <p>We can boost our R<sup>2</sup> a bit, to over 5%, by adding in two new variables, related to whether or not the subject (in the past 30 days) used the internet, and on how many days the subject drank alcoholic beverages.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">c2_m5 &lt;-<span class="st"> </span><span class="kw">lm</span>(bmi <span class="op">~</span><span class="st"> </span>female <span class="op">+</span><span class="st"> </span>exerany <span class="op">+</span><span class="st"> </span>sleephrs <span class="op">+</span><span class="st"> </span>internet30 <span class="op">+</span><span class="st"> </span>alcdays,
+<pre class="sourceCode r"><code class="sourceCode r">c2_m5 &lt;-<span class="st"> </span><span class="kw">lm</span>(bmi <span class="op">~</span><span class="st"> </span>female <span class="op">+</span><span class="st"> </span>exerany <span class="op">+</span><span class="st"> </span>sleephrs <span class="op">+</span><span class="st"> </span>internet30 <span class="op">+</span><span class="st"> </span>alcdays,
          <span class="dt">data =</span> smartcle2)
-<span class="kw">summary</span>(c2_m5)</code></pre></div>
+<span class="kw">summary</span>(c2_m5)</code></pre>
 <pre><code>
 Call:
 lm(formula = bmi ~ female + exerany + sleephrs + internet30 + 
@@ -2090,7 +2116,7 @@ F-statistic: 9.879 on 5 and 890 DF,  p-value: 3.304e-09</code></pre>
 <ol style="list-style-type: decimal">
 <li>Here’s the ANOVA for this model. What can we study with this?</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(c2_m5)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(c2_m5)</code></pre>
 <pre><code>Analysis of Variance Table
 
 Response: bmi
@@ -2106,8 +2132,8 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <ol start="2" style="list-style-type: decimal">
 <li>Consider the revised output below. Now what can we study?</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(<span class="kw">lm</span>(bmi <span class="op">~</span><span class="st"> </span>exerany <span class="op">+</span><span class="st"> </span>internet30 <span class="op">+</span><span class="st"> </span>alcdays <span class="op">+</span><span class="st"> </span>female <span class="op">+</span><span class="st"> </span>sleephrs,
-         <span class="dt">data =</span> smartcle2))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(<span class="kw">lm</span>(bmi <span class="op">~</span><span class="st"> </span>exerany <span class="op">+</span><span class="st"> </span>internet30 <span class="op">+</span><span class="st"> </span>alcdays <span class="op">+</span><span class="st"> </span>female <span class="op">+</span><span class="st"> </span>sleephrs,
+         <span class="dt">data =</span> smartcle2))</code></pre>
 <pre><code>Analysis of Variance Table
 
 Response: bmi
@@ -2123,10 +2149,10 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <ol start="3" style="list-style-type: decimal">
 <li>What does the output below let us conclude?</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(<span class="kw">lm</span>(bmi <span class="op">~</span><span class="st"> </span>exerany <span class="op">+</span><span class="st"> </span>internet30 <span class="op">+</span><span class="st"> </span>alcdays <span class="op">+</span><span class="st"> </span>female <span class="op">+</span><span class="st"> </span>sleephrs, 
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(<span class="kw">lm</span>(bmi <span class="op">~</span><span class="st"> </span>exerany <span class="op">+</span><span class="st"> </span>internet30 <span class="op">+</span><span class="st"> </span>alcdays <span class="op">+</span><span class="st"> </span>female <span class="op">+</span><span class="st"> </span>sleephrs, 
          <span class="dt">data =</span> smartcle2),
       <span class="kw">lm</span>(bmi <span class="op">~</span><span class="st"> </span>exerany <span class="op">+</span><span class="st"> </span>female <span class="op">+</span><span class="st"> </span>alcdays, 
-         <span class="dt">data =</span> smartcle2))</code></pre></div>
+         <span class="dt">data =</span> smartcle2))</code></pre>
 <pre><code>Analysis of Variance Table
 
 Model 1: bmi ~ exerany + internet30 + alcdays + female + sleephrs
@@ -2143,9 +2169,9 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <div id="c2_m6-would-adding-self-reported-health-help" class="section level2">
 <h2><span class="header-section-number">2.16</span> <code>c2_m6</code>: Would adding self-reported health help?</h2>
 <p>And we can do even a bit better than that by adding in a multi-categorical measure: self-reported general health.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">c2_m6 &lt;-<span class="st"> </span><span class="kw">lm</span>(bmi <span class="op">~</span><span class="st"> </span>female <span class="op">+</span><span class="st"> </span>exerany <span class="op">+</span><span class="st"> </span>sleephrs <span class="op">+</span><span class="st"> </span>internet30 <span class="op">+</span><span class="st"> </span>alcdays <span class="op">+</span><span class="st"> </span>genhealth,
+<pre class="sourceCode r"><code class="sourceCode r">c2_m6 &lt;-<span class="st"> </span><span class="kw">lm</span>(bmi <span class="op">~</span><span class="st"> </span>female <span class="op">+</span><span class="st"> </span>exerany <span class="op">+</span><span class="st"> </span>sleephrs <span class="op">+</span><span class="st"> </span>internet30 <span class="op">+</span><span class="st"> </span>alcdays <span class="op">+</span><span class="st"> </span>genhealth,
          <span class="dt">data =</span> smartcle2)
-<span class="kw">summary</span>(c2_m6)</code></pre></div>
+<span class="kw">summary</span>(c2_m6)</code></pre>
 <pre><code>
 Call:
 lm(formula = bmi ~ female + exerany + sleephrs + internet30 + 
@@ -2177,16 +2203,16 @@ F-statistic: 12.35 on 9 and 886 DF,  p-value: &lt; 2.2e-16</code></pre>
 <li><p>If Harry and Marty have the same values of <code>female</code>, <code>exerany</code>, <code>sleephrs</code>, <code>internet30</code> and <code>alcdays</code>, but Harry rates his health as Good, and Marty rates his as Fair, then what is the difference in the predictions? Who is predicted to have a larger BMI, and by how much?</p></li>
 <li><p>What does this normal probability plot of the residuals suggest?</p></li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(c2_m6, <span class="dt">which =</span> <span class="dv">2</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(c2_m6, <span class="dt">which =</span> <span class="dv">2</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/c2_m6_residuals_normality-1.png" width="672" /></p>
 </div>
 <div id="c2_m7-what-if-we-added-the-menthealth-variable" class="section level2">
 <h2><span class="header-section-number">2.17</span> <code>c2_m7</code>: What if we added the <code>menthealth</code> variable?</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">c2_m7 &lt;-<span class="st"> </span><span class="kw">lm</span>(bmi <span class="op">~</span><span class="st"> </span>female <span class="op">+</span><span class="st"> </span>exerany <span class="op">+</span><span class="st"> </span>sleephrs <span class="op">+</span><span class="st"> </span>internet30 <span class="op">+</span><span class="st"> </span>alcdays <span class="op">+</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">c2_m7 &lt;-<span class="st"> </span><span class="kw">lm</span>(bmi <span class="op">~</span><span class="st"> </span>female <span class="op">+</span><span class="st"> </span>exerany <span class="op">+</span><span class="st"> </span>sleephrs <span class="op">+</span><span class="st"> </span>internet30 <span class="op">+</span><span class="st"> </span>alcdays <span class="op">+</span><span class="st"> </span>
 <span class="st">                </span>genhealth <span class="op">+</span><span class="st"> </span>physhealth <span class="op">+</span><span class="st"> </span>menthealth,
          <span class="dt">data =</span> smartcle2)
 
-<span class="kw">summary</span>(c2_m7)</code></pre></div>
+<span class="kw">summary</span>(c2_m7)</code></pre>
 <pre><code>
 Call:
 lm(formula = bmi ~ female + exerany + sleephrs + internet30 + 
@@ -2237,13 +2263,13 @@ F-statistic: 11.16 on 11 and 884 DF,  p-value: &lt; 2.2e-16</code></pre>
 <ol style="list-style-type: decimal">
 <li>How does the assumption of linearity behind this model look?</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(c2_m7, <span class="dt">which =</span> <span class="dv">1</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(c2_m7, <span class="dt">which =</span> <span class="dv">1</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/residual_plot1_c2_m7-1.png" width="672" /></p>
 <p>We see no strong signs of serious non-linearity here. There’s no obvious curve in the plot, for example.</p>
 <ol start="2" style="list-style-type: decimal">
 <li>What can we conclude from the plot below?</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(c2_m7, <span class="dt">which =</span> <span class="dv">5</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(c2_m7, <span class="dt">which =</span> <span class="dv">5</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/residual_plot5_c2_m7-1.png" width="672" /></p>
 <p>This plot can help us identify points with large standardized residuals, large leverage values, and large influence on the model (as indicated by large values of Cook’s distance.) In this case, I see no signs of any points used in the model with especially large influence, although there are some poorly fitted points (with especially large standardized residuals.)</p>
 
@@ -2312,7 +2338,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');

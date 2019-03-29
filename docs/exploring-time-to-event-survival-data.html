@@ -50,41 +50,67 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 </head>
@@ -154,7 +180,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.6.1" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#fitting-a-simple-regression-model"><i class="fa fa-check"></i><b>2.6.1</b> Fitting a Simple Regression Model</a></li>
 <li class="chapter" data-level="2.6.2" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#model-summary-for-a-simple-one-predictor-regression"><i class="fa fa-check"></i><b>2.6.2</b> Model Summary for a Simple (One-Predictor) Regression</a></li>
 <li class="chapter" data-level="2.6.3" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#using-the-broom-package"><i class="fa fa-check"></i><b>2.6.3</b> Using the <code>broom</code> package</a></li>
-<li class="chapter" data-level="2.6.4" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#how-does-the-model-do-residuals-vs.fitted-values"><i class="fa fa-check"></i><b>2.6.4</b> How does the model do? (Residuals vs. Fitted Values)</a></li>
+<li class="chapter" data-level="2.6.4" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#how-does-the-model-do-residuals-vs.-fitted-values"><i class="fa fa-check"></i><b>2.6.4</b> How does the model do? (Residuals vs. Fitted Values)</a></li>
 </ul></li>
 <li class="chapter" data-level="2.7" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#a-new-small-study-predicting-bmi"><i class="fa fa-check"></i><b>2.7</b> A New Small Study: Predicting BMI</a><ul>
 <li class="chapter" data-level="2.7.1" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#does-female-predict-bmi-well"><i class="fa fa-check"></i><b>2.7.1</b> Does <code>female</code> predict <code>bmi</code> well?</a></li>
@@ -968,12 +994,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>The primary problems with survival data are <em>non-normality</em> and <em>censoring</em>…</p>
 <ol style="list-style-type: decimal">
 <li>Survival data are quantitative, but not symmetrically distributed. They will often appear positively skewed, with a few people surviving a very long time compared with the majority; so assuming a normal distribution will not be reasonable.</li>
-<li>At the completion of the study, some patients may not have reached the endpoint of interest (death, relapse, etc.). Consequently, the exact survival times are not known.</li>
-</ol>
+<li><p>At the completion of the study, some patients may not have reached the endpoint of interest (death, relapse, etc.). Consequently, the exact survival times are not known.</p>
 <ul>
 <li>All that is known is that the survival times are greater than the amount of time the individual has been in the study.</li>
 <li>The survival times of these individuals are said to be <strong>censored</strong> (precisely, they are right-censored).</li>
-</ul>
+</ul></li>
+</ol>
 <div id="the-survival-function-st" class="section level3">
 <h3><span class="header-section-number">21.2.1</span> The Survival Function, <span class="math inline">\(S(t)\)</span></h3>
 <p>The <strong>survival function</strong>, <span class="math inline">\(S(t)\)</span> (sometimes called the survivor function) is the probability that the survival time, <span class="math inline">\(T\)</span>, is greater than or equal to a particular time, <span class="math inline">\(t\)</span>.</p>
@@ -1031,13 +1057,13 @@ t_{(1)} \leq t_{(2)} \leq t_{(3)} \leq ... t_{(n)}
 </div>
 <div id="a-first-example-recurrent-lobar-intracerebral-hemorrhage" class="section level2">
 <h2><span class="header-section-number">21.3</span> A First Example: Recurrent Lobar Intracerebral Hemorrhage</h2>
-<p>O’Donnell et al. (2000) studied the effect of the apolipoprotein E gene on the risk of recurrent lobar intracerebral hemorrhage in 70 patients who survived such a hemorrhage<a href="#fn21" class="footnoteRef" id="fnref21"><sup>21</sup></a>. Patients in the study are classified by:</p>
+<p>O’Donnell et al. (2000) studied the effect of the apolipoprotein E gene on the risk of recurrent lobar intracerebral hemorrhage in 70 patients who survived such a hemorrhage<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>. Patients in the study are classified by:</p>
 <ul>
 <li><code>time</code> = follow-up time, in months</li>
 <li><code>recur</code> = indicator of whether or not they had a recurrent event (1 = subject had a recurrence, 0 subject did not have a recurrence), and</li>
 <li><code>genotype</code> = the subject’s apolipoprotein E genotype (0 = Homozygous <span class="math inline">\(\epsilon3/\epsilon3\)</span> and 1 = At least one <span class="math inline">\(\epsilon2\)</span> or <span class="math inline">\(\epsilon4\)</span> allele)</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">hem <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">head</span>(.,<span class="dv">4</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">hem <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">head</span>(.,<span class="dv">4</span>)</code></pre>
 <pre><code># A tibble: 4 x 4
      id genotype  time recur
   &lt;int&gt;    &lt;int&gt; &lt;dbl&gt; &lt;int&gt;
@@ -1045,18 +1071,18 @@ t_{(1)} \leq t_{(2)} \leq t_{(3)} \leq ... t_{(n)}
 2     2        0 1.05      0
 3     3        1 1.38      0
 4     4        1 1.41      1</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(hem<span class="op">$</span>recur)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(hem<span class="op">$</span>recur)</code></pre>
 <pre><code>
  0  1 
 52 18 </code></pre>
 <p>We have 70 patients at the start, and observe 18 events (rest are censored.)</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">hem <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(recur) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">skim</span>(time)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">hem <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(recur) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">skim</span>(time)</code></pre>
 <pre><code>Skim summary statistics
  n obs: 70 
  n variables: 4 
  group variables: recur 
 
--- Variable type:numeric --------------------------------------
+-- Variable type:numeric ----------------------------------------------------------
  recur variable missing complete  n  mean    sd   p0   p25   p50   p75
      0     time       0       52 52 25.51 14.68 1.05 14.41 23.01 38.64
      1     time       0       18 18 14.99 13.89 0.23  3.37 10.92 24.85
@@ -1066,9 +1092,9 @@ t_{(1)} \leq t_{(2)} \leq t_{(3)} \leq ... t_{(n)}
 <p>The median survival time looks like 23 weeks in the patients who do not exhibit a recurrence, but only 11 weeks in those who do.</p>
 <div id="building-a-survival-object" class="section level3">
 <h3><span class="header-section-number">21.3.1</span> Building a Survival Object</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">hemsurv &lt;-<span class="st"> </span><span class="kw">Surv</span>(<span class="dt">time =</span> hem<span class="op">$</span>time, <span class="dt">event =</span> hem<span class="op">$</span>recur)
+<pre class="sourceCode r"><code class="sourceCode r">hemsurv &lt;-<span class="st"> </span><span class="kw">Surv</span>(<span class="dt">time =</span> hem<span class="op">$</span>time, <span class="dt">event =</span> hem<span class="op">$</span>recur)
 
-<span class="kw">head</span>(hemsurv, <span class="dv">4</span>)</code></pre></div>
+<span class="kw">head</span>(hemsurv, <span class="dv">4</span>)</code></pre>
 <pre><code>[1] 0.2299795  1.0513350+ 1.3798770+ 1.4127311 </code></pre>
 <p>This object both displays the survival time for each subject, and indicates whether or not the subject’s follow-up was <em>censored</em> before a recurrent event occurred. Survival times with a <code>+</code> sign indicate censoring.</p>
 <ul>
@@ -1080,9 +1106,9 @@ t_{(1)} \leq t_{(2)} \leq t_{(3)} \leq ... t_{(n)}
 <div id="kaplan-meier-estimate-of-the-survival-function" class="section level3">
 <h3><span class="header-section-number">21.3.2</span> Kaplan-Meier Estimate of the Survival Function</h3>
 <p>To build a Kaplan-Meier estimate of the survival function (to account properly for censoring), we take the survival object we have created, and use the <code>survfit</code> function from the <code>survival</code> package.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">hemfit1 &lt;-<span class="st"> </span><span class="kw">survfit</span>(hemsurv <span class="op">~</span><span class="st"> </span><span class="dv">1</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">hemfit1 &lt;-<span class="st"> </span><span class="kw">survfit</span>(hemsurv <span class="op">~</span><span class="st"> </span><span class="dv">1</span>)</code></pre>
 <p>We can look at the <code>hemfit1</code> object directly, although the K-M estimate is usually plotted.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(hemfit1, <span class="dt">print.rmean=</span><span class="ot">TRUE</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(hemfit1, <span class="dt">print.rmean=</span><span class="ot">TRUE</span>)</code></pre>
 <pre><code>Call: survfit(formula = hemsurv ~ 1)
 
          n     events     *rmean *se(rmean)     median    0.95LCL 
@@ -1095,7 +1121,7 @@ t_{(1)} \leq t_{(2)} \leq t_{(3)} \leq ... t_{(n)}
 <li>This is because only 18 of our 70 subjects have a known recurrence-free survival time (the rest are censored), so we don’t actually know what the median survival time will be across our 70 subjects. Apparently, R can produce a lower bound on a 95% confidence interval for the median survival time, but not the actual point estimate.</li>
 </ul>
 <p>We also observe a <strong>restricted mean survival time</strong> estimate. The restricted mean uses as its upper limit the largest observed or censored survival time, which here is a censored value: 53.9 months. So it is the mean survival time, assuming all censored subjects lived hemorrhage-free for 53.9 months.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(hemfit1)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(hemfit1)</code></pre>
 <pre><code>Call: survfit(formula = hemsurv ~ 1)
 
   time n.risk n.event survival std.err lower 95% CI upper 95% CI
@@ -1127,9 +1153,9 @@ t_{(1)} \leq t_{(2)} \leq t_{(3)} \leq ... t_{(n)}
 <div id="the-kaplan-meier-plot-using-base-r" class="section level3">
 <h3><span class="header-section-number">21.3.3</span> The Kaplan-Meier Plot, using Base R</h3>
 <p>Now, let’s plot the Kaplan-Meier estimate, so we can see what is going on.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(hemfit1, <span class="dt">ylab=</span><span class="st">&quot;Pr(Hemorrhage-Free Survival)&quot;</span>,
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(hemfit1, <span class="dt">ylab=</span><span class="st">&quot;Pr(Hemorrhage-Free Survival)&quot;</span>,
      <span class="dt">xlab=</span><span class="st">&quot;Months of Follow-Up&quot;</span>,
-     <span class="dt">main=</span><span class="st">&quot;Kaplan-Meier Plot for hem Data&quot;</span>)</code></pre></div>
+     <span class="dt">main=</span><span class="st">&quot;Kaplan-Meier Plot for hem Data&quot;</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/surv_hem_base_KMplot_no_genotype-1.png" width="672" /></p>
 <p>The solid line indicates estimated hemorrhage-free survival probability. The dotted lines identify pointwise confidence intervals (default 95%).</p>
 <ul>
@@ -1141,7 +1167,7 @@ t_{(1)} \leq t_{(2)} \leq t_{(3)} \leq ... t_{(n)}
 <div id="using-survminer-to-draw-survival-curves" class="section level3">
 <h3><span class="header-section-number">21.3.4</span> Using <code>survminer</code> to draw survival curves</h3>
 <p>Another approach to plotting the Kaplan-Meier estimate comes from <code>ggsurvplot</code>, from the <code>survminer</code> package.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggsurvplot</span>(hemfit1, <span class="dt">data =</span> hem)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggsurvplot</span>(hemfit1, <span class="dt">data =</span> hem)</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-538-1.png" width="672" /></p>
 <p>Again, the solid line indicates estimated hemorrhage-free survival probability. The crosses indicate censoring. The steps down indicate events (recurrences,) and the shading indicates (default 95%) pointwise confidence intervals. By <strong>pointwise</strong> confidence intervals, I mean that these bounds apply only to individual points in the time scale.</p>
 <p>For more on an alternative approach, using <em>simultaneous confidence bands</em>, visit the OpenIntro Statistics <a href="https://www.openintro.org/stat/surv.php">Survival Analysis in R materials, written by David Diez</a>, which are also posted on <a href="https://github.com/THOMASELOVE/432-2018/blob/master/texts/Diez_OpenIntro_survival_analysis_in_R.pdf">our web site</a>.</p>
@@ -1149,12 +1175,12 @@ t_{(1)} \leq t_{(2)} \leq t_{(3)} \leq ... t_{(n)}
 <div id="a-fancy-k-m-plot-with-a-number-at-risk-table" class="section level3">
 <h3><span class="header-section-number">21.3.5</span> A “Fancy” K-M Plot with a number at risk table</h3>
 <p>We can do a lot more with these plots. Following the suggestions at <a href="https://github.com/kassambara/survminer/" class="uri">https://github.com/kassambara/survminer/</a> we can create the following…</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggsurvplot</span>(hemfit1, <span class="dt">data =</span> hem,
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggsurvplot</span>(hemfit1, <span class="dt">data =</span> hem,
    <span class="dt">conf.int =</span> <span class="ot">TRUE</span>, <span class="co"># Add confidence interval</span>
    <span class="dt">risk.table =</span> <span class="ot">TRUE</span>, <span class="co"># Add risk table</span>
    <span class="dt">xlab =</span> <span class="st">&quot;Time in months&quot;</span>, <span class="co"># adjust X axis label</span>
    <span class="dt">break.time.by =</span> <span class="dv">12</span> <span class="co"># add tick every 12 months</span>
-   )</code></pre></div>
+   )</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-539-1.png" width="672" /></p>
 <p>This sort of plot is really designed to work best when we compare multiple groups in terms of their survival. So let’s do that.</p>
 </div>
@@ -1162,8 +1188,8 @@ t_{(1)} \leq t_{(2)} \leq t_{(3)} \leq ... t_{(n)}
 <div id="comparing-survival-across-the-two-genotypes" class="section level2">
 <h2><span class="header-section-number">21.4</span> Comparing Survival Across the Two Genotypes</h2>
 <p>Now, suppose we want to compare the hemorrhage-free survival functions for subjects classified by their apoliprotein E genotype. Working with the same survival object <code>hemsurv</code> we now run the <code>survfit</code> function to compare across the two <code>genotype</code> groups.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">hemfit2 &lt;-<span class="st"> </span><span class="kw">survfit</span>(hemsurv <span class="op">~</span><span class="st"> </span>hem<span class="op">$</span>genotype)
-<span class="kw">print</span>(hemfit2, <span class="dt">print.rmean=</span><span class="ot">TRUE</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">hemfit2 &lt;-<span class="st"> </span><span class="kw">survfit</span>(hemsurv <span class="op">~</span><span class="st"> </span>hem<span class="op">$</span>genotype)
+<span class="kw">print</span>(hemfit2, <span class="dt">print.rmean=</span><span class="ot">TRUE</span>)</code></pre>
 <pre><code>Call: survfit(formula = hemsurv ~ hem$genotype)
 
                 n events *rmean *se(rmean) median 0.95LCL 0.95UCL
@@ -1177,22 +1203,22 @@ hem$genotype=1 38     14   32.7       3.43   37.5    24.9      NA
 <div id="kaplan-meier-survival-function-estimates-by-genotype" class="section level3">
 <h3><span class="header-section-number">21.4.1</span> Kaplan-Meier Survival Function Estimates, by Genotype</h3>
 <p>I find I have to crank the <code>fig.height</code> in Markdown up to at least 6 to get the risk table to show up nicely in this setting.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggsurvplot</span>(hemfit2, <span class="dt">data =</span> hem,
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggsurvplot</span>(hemfit2, <span class="dt">data =</span> hem,
            <span class="dt">conf.int =</span> <span class="ot">TRUE</span>,
            <span class="dt">xlab =</span> <span class="st">&quot;Time in months&quot;</span>,
            <span class="dt">break.time.by =</span> <span class="dv">12</span>,
            <span class="dt">legend.labs =</span> <span class="kw">c</span>(<span class="st">&quot;Homozygous&quot;</span>, <span class="st">&quot;Heterozygous&quot;</span>),
            <span class="dt">risk.table =</span> <span class="ot">TRUE</span>,
            <span class="dt">risk.table.height =</span> <span class="fl">0.25</span>
-           )</code></pre></div>
+           )</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-540-1.png" width="672" /></p>
-<p>It appears that patients who were homozygous for the <span class="math inline">\(\epsilon3\)</span> allele of this gene (i.e. <code>genotype</code> = 0 in the hemorrhage data) had a much better prognosis than others (<code>genotype</code> = 1.)</p>
+<p>It appears that patients who were homozygous for the <span class="math inline">\(\epsilon3\)</span> allele of this gene (i.e. <code>genotype</code> = 0 in the hemorrhage data) had a much better prognosis than others (<code>genotype</code> = 1.)</p>
 </div>
 </div>
 <div id="testing-the-difference-between-two-survival-curves" class="section level2">
 <h2><span class="header-section-number">21.5</span> Testing the difference between two survival curves</h2>
 <p>To obtain a significance test comparing these two survival curves, we turn to a <em>log rank</em> test, which tests the null hypothesis <span class="math inline">\(H_0: S_1(t) = S_2(t)\)</span> for all <span class="math inline">\(t\)</span> where the two exposures have survival functions <span class="math inline">\(S_1(t)\)</span> and <span class="math inline">\(S_2(t)\)</span>. We use the <code>survdiff</code> function to explore this test, which uses a <span class="math inline">\(\chi^2\)</span> statistic to do the testing.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">survdiff</span>(hemsurv <span class="op">~</span><span class="st"> </span>hem<span class="op">$</span>genotype)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">survdiff</span>(hemsurv <span class="op">~</span><span class="st"> </span>hem<span class="op">$</span>genotype)</code></pre>
 <pre><code>Call:
 survdiff(formula = hemsurv ~ hem$genotype)
 
@@ -1208,7 +1234,7 @@ hem$genotype=1 38       14     8.72      3.19      6.28
 <div id="alternative-log-rank-tests" class="section level3">
 <h3><span class="header-section-number">21.5.1</span> Alternative log rank tests</h3>
 <p>An alternative approach to testing is the <em>Peto and Peto modification of the Gehan-Wilcoxon test</em>, which results from adding <code>rho=1</code> to the <code>survdiff</code> function (<code>rho=0</code>, the default, yields the log rank test.)</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">survdiff</span>(hemsurv <span class="op">~</span><span class="st"> </span>hem<span class="op">$</span>genotype, <span class="dt">rho=</span><span class="dv">1</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">survdiff</span>(hemsurv <span class="op">~</span><span class="st"> </span>hem<span class="op">$</span>genotype, <span class="dt">rho=</span><span class="dv">1</span>)</code></pre>
 <pre><code>Call:
 survdiff(formula = hemsurv ~ hem$genotype, rho = 1)
 
@@ -1226,7 +1252,7 @@ hem$genotype=1 38    11.79     7.54      2.39      5.46
 <div id="a-fancy-k-m-plot-with-a-number-at-risk-table-1" class="section level2">
 <h2><span class="header-section-number">21.6</span> A “Fancy” K-M Plot with a number at risk table</h2>
 <p>We can add the log rank test result to our “fancy” K-M plot. Visit <a href="https://github.com/kassambara/survminer/" class="uri">https://github.com/kassambara/survminer/</a> for more options.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggsurvplot</span>(hemfit2, <span class="dt">data =</span> hem, <span class="dt">size =</span> <span class="dv">1</span>,
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggsurvplot</span>(hemfit2, <span class="dt">data =</span> hem, <span class="dt">size =</span> <span class="dv">1</span>,
    <span class="dt">palette =</span> <span class="kw">c</span>(<span class="st">&quot;purple&quot;</span>, <span class="st">&quot;darkgoldenrod&quot;</span>), <span class="co"># custom colors</span>
    <span class="dt">conf.int =</span> <span class="ot">TRUE</span>, <span class="co"># Add confidence interval</span>
    <span class="dt">pval =</span> <span class="ot">TRUE</span>, <span class="co"># Add p-value</span>
@@ -1237,12 +1263,12 @@ hem$genotype=1 38    11.79     7.54      2.39      5.46
    <span class="dt">break.time.by =</span> <span class="dv">12</span>, <span class="co"># break X axis in time intervals</span>
    <span class="dt">legend.labs =</span> <span class="kw">c</span>(<span class="st">&quot;Homozygous&quot;</span>, <span class="st">&quot;Heterozygous&quot;</span>), <span class="co"># labels</span>
    <span class="dt">ggtheme =</span> <span class="kw">theme_bw</span>() <span class="co"># Change ggplot2 theme</span>
-   )</code></pre></div>
+   )</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-541-1.png" width="672" /></p>
 <div id="customizing-the-kaplan-meier-plot-presentation-further" class="section level3">
 <h3><span class="header-section-number">21.6.1</span> Customizing the Kaplan-Meier Plot Presentation Further</h3>
 <p>We can even add a plot of the number of censored subjects at each time point, as well as a median survival pointer (which, of course, we’ve seen that we can’t estimate in one of the groups), and customize the style of the confidence intervals. Again, see <a href="https://github.com/kassambara/survminer/" class="uri">https://github.com/kassambara/survminer/</a> for even more customized results.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggsurvplot</span>(hemfit2,              
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggsurvplot</span>(hemfit2,              
            <span class="dt">data =</span> hem, 
            <span class="dt">palette =</span> <span class="kw">c</span>(<span class="st">&quot;#E7B800&quot;</span>, <span class="st">&quot;#2E9FDF&quot;</span>),
            <span class="dt">risk.table =</span> <span class="ot">TRUE</span>,      
@@ -1259,7 +1285,7 @@ hem$genotype=1 38    11.79     7.54      2.39      5.46
            <span class="dt">conf.int.style =</span> <span class="st">&quot;step&quot;</span>,
            <span class="dt">surv.median.line =</span> <span class="st">&quot;hv&quot;</span>,
            <span class="dt">legend.labs =</span> <span class="kw">c</span>(<span class="st">&quot;Homozygous&quot;</span>, <span class="st">&quot;Heterozygous&quot;</span>)
-        )</code></pre></div>
+        )</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-542-1.png" width="672" /></p>
 </div>
 </div>
@@ -1291,41 +1317,41 @@ hem$genotype=1 38    11.79     7.54      2.39      5.46
 <li>To start, we will take the negative of the log of the Kaplan-Meier survival estimate. That takes care of the first <em>t</em>-1 levels of the eventual estimate.</li>
 <li>To complete the process, we will repeat the final one of those time-specific estimates at the end.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># hemsurv &lt;- Surv(hem$time, hem$recur) </span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># hemsurv &lt;- Surv(hem$time, hem$recur) </span>
 <span class="co"># hemfit1 &lt;- survfit(hemsurv ~ 1)</span>
 H_est1 &lt;-<span class="st"> </span><span class="op">-</span><span class="kw">log</span>(hemfit1<span class="op">$</span>surv)
-H_est1 &lt;-<span class="st"> </span><span class="kw">c</span>(H_est1, <span class="kw">tail</span>(H_est1, <span class="dv">1</span>))</code></pre></div>
+H_est1 &lt;-<span class="st"> </span><span class="kw">c</span>(H_est1, <span class="kw">tail</span>(H_est1, <span class="dv">1</span>))</code></pre>
 <p>Here are the first five, and last five values of the hazard function estimate.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(H_est1,<span class="dv">5</span>) <span class="co"># first 5 values</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(H_est1,<span class="dv">5</span>) <span class="co"># first 5 values</span></code></pre>
 <pre><code>[1] 0.01438874 0.01438874 0.01438874 0.02942661 0.02942661</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tail</span>(H_est1, <span class="dv">5</span>) <span class="co"># last 5</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tail</span>(H_est1, <span class="dv">5</span>) <span class="co"># last 5</span></code></pre>
 <pre><code>[1] 0.5602049 0.5602049 0.5602049 0.5602049 0.5602049</code></pre>
 <p>We can create a little data frame containing the times and hazard estimates, like this:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">haz_hem &lt;-<span class="st"> </span><span class="kw">data_frame</span>(
+<pre class="sourceCode r"><code class="sourceCode r">haz_hem &lt;-<span class="st"> </span><span class="kw">data_frame</span>(
     <span class="dt">time =</span> <span class="kw">c</span>(hemfit1<span class="op">$</span>time, <span class="kw">tail</span>(hemfit1<span class="op">$</span>time, <span class="dv">1</span>)),
     <span class="dt">inverse_KM =</span> H_est1
-)</code></pre></div>
+)</code></pre>
 </div>
 <div id="cumulative-hazard-function-from-inverse-k-m" class="section level3">
 <h3><span class="header-section-number">21.7.2</span> Cumulative Hazard Function from Inverse K-M</h3>
 <p>Since we’ve built the data set of times and hazard values, we can use the <code>geom_step</code> function in <code>ggplot2</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(haz_hem, <span class="kw">aes</span>(<span class="dt">x =</span> time, <span class="dt">y =</span> inverse_KM)) <span class="op">+</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(haz_hem, <span class="kw">aes</span>(<span class="dt">x =</span> time, <span class="dt">y =</span> inverse_KM)) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">geom_step</span>() <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">12</span>, <span class="dv">24</span>, <span class="dv">36</span>, <span class="dv">48</span>)) <span class="op">+</span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Months of Follow-Up&quot;</span>, 
          <span class="dt">y =</span> <span class="st">&quot;Cumulative Hazard&quot;</span>,
-         <span class="dt">title =</span> <span class="st">&quot;Cumulative Hazard Function via Inverse K-M&quot;</span>)</code></pre></div>
+         <span class="dt">title =</span> <span class="st">&quot;Cumulative Hazard Function via Inverse K-M&quot;</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-545-1.png" width="672" /></p>
 </div>
 <div id="the-nelson-aalen-estimator-of-ht" class="section level3">
 <h3><span class="header-section-number">21.7.3</span> The Nelson-Aalen Estimator of <span class="math inline">\(H(t)\)</span></h3>
 <p>An alternative estimate of the cumulative hazard is called the Nelson-Aalen estimate, captured here in <code>H_est2</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">h_st &lt;-<span class="st"> </span>hemfit1<span class="op">$</span>n.event <span class="op">/</span><span class="st"> </span>hemfit1<span class="op">$</span>n.risk
+<pre class="sourceCode r"><code class="sourceCode r">h_st &lt;-<span class="st"> </span>hemfit1<span class="op">$</span>n.event <span class="op">/</span><span class="st"> </span>hemfit1<span class="op">$</span>n.risk
 H_est2 &lt;-<span class="st"> </span><span class="kw">cumsum</span>(h_st)
 H_est2 &lt;-<span class="st"> </span><span class="kw">c</span>(H_est2, <span class="kw">tail</span>(H_est2, <span class="dv">1</span>))
 haz_hem<span class="op">$</span>Nelson_Aalen &lt;-<span class="st"> </span>H_est2
 
-<span class="kw">head</span>(haz_hem)</code></pre></div>
+<span class="kw">head</span>(haz_hem)</code></pre>
 <pre><code># A tibble: 6 x 3
    time inverse_KM Nelson_Aalen
   &lt;dbl&gt;      &lt;dbl&gt;        &lt;dbl&gt;
@@ -1339,11 +1365,11 @@ haz_hem<span class="op">$</span>Nelson_Aalen &lt;-<span class="st"> </span>H_est
 <div id="convert-wide-data-to-long" class="section level3">
 <h3><span class="header-section-number">21.7.4</span> Convert Wide Data to Long</h3>
 <p>In order to easily plot the two hazard function estimates in the same graph, we’ll want to convert these data from wide format to long format, with the <code>gather</code> function.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">haz_hem_comp &lt;-<span class="st"> </span><span class="kw">gather</span>(haz_hem, <span class="dt">key =</span> <span class="st">&quot;method&quot;</span>, 
+<pre class="sourceCode r"><code class="sourceCode r">haz_hem_comp &lt;-<span class="st"> </span><span class="kw">gather</span>(haz_hem, <span class="dt">key =</span> <span class="st">&quot;method&quot;</span>, 
                        <span class="dt">value =</span> <span class="st">&quot;hazardest&quot;</span>, 
                        inverse_KM<span class="op">:</span>Nelson_Aalen)
 
-<span class="kw">head</span>(haz_hem_comp)</code></pre></div>
+<span class="kw">head</span>(haz_hem_comp)</code></pre>
 <pre><code># A tibble: 6 x 3
    time method     hazardest
   &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;
@@ -1356,23 +1382,23 @@ haz_hem<span class="op">$</span>Nelson_Aalen &lt;-<span class="st"> </span>H_est
 </div>
 <div id="plot-comparison-of-hazard-estimates" class="section level3">
 <h3><span class="header-section-number">21.7.5</span> Plot Comparison of Hazard Estimates</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(haz_hem_comp, <span class="kw">aes</span>(<span class="dt">x =</span> time, <span class="dt">y =</span> hazardest, 
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(haz_hem_comp, <span class="kw">aes</span>(<span class="dt">x =</span> time, <span class="dt">y =</span> hazardest, 
                     <span class="dt">col =</span> method)) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">geom_step</span>(<span class="dt">size =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">12</span>, <span class="dv">24</span>, <span class="dv">36</span>, <span class="dv">48</span>)) <span class="op">+</span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Months of Follow-Up&quot;</span>, 
          <span class="dt">y =</span> <span class="st">&quot;Cumulative Hazard&quot;</span>,
          <span class="dt">title =</span> <span class="st">&quot;Cumulative Hazard Function&quot;</span>) <span class="op">+</span><span class="st"> </span>
-<span class="st">    </span><span class="kw">theme_bw</span>()</code></pre></div>
+<span class="st">    </span><span class="kw">theme_bw</span>()</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-547-1.png" width="672" /></p>
 <p>We can see that the two cumulative hazard function estimates are nearly identical in this case. We could instead compare the two functions in faceted plots, if that would be helpful.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(haz_hem_comp, <span class="kw">aes</span>(<span class="dt">x =</span> time, <span class="dt">y =</span> hazardest)) <span class="op">+</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(haz_hem_comp, <span class="kw">aes</span>(<span class="dt">x =</span> time, <span class="dt">y =</span> hazardest)) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">geom_step</span>() <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">12</span>, <span class="dv">24</span>, <span class="dv">36</span>, <span class="dv">48</span>)) <span class="op">+</span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Months of Follow-Up&quot;</span>, 
          <span class="dt">y =</span> <span class="st">&quot;Cumulative Hazard&quot;</span>,
          <span class="dt">title =</span> <span class="st">&quot;Cumulative Hazard Function&quot;</span>) <span class="op">+</span>
-<span class="st">    </span><span class="kw">facet_grid</span>(method <span class="op">~</span><span class="st"> </span>.) <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>()</code></pre></div>
+<span class="st">    </span><span class="kw">facet_grid</span>(method <span class="op">~</span><span class="st"> </span>.) <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>()</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-548-1.png" width="672" /></p>
 <p>Next, we will consider the issue of modeling a survival outcome using Cox proportional hazards regression.</p>
 
@@ -1382,7 +1408,7 @@ haz_hem<span class="op">$</span>Nelson_Aalen &lt;-<span class="st"> </span>H_est
 <div class="footnotes">
 <hr />
 <ol start="21">
-<li id="fn21"><p>These data come from Dupont WD (2002) Statistical Modeling for Biomedical Researchers. New York: Cambridge U. Press, section 6.4.<a href="exploring-time-to-event-survival-data.html#fnref21">↩</a></p></li>
+<li id="fn21"><p>These data come from Dupont WD (2002) Statistical Modeling for Biomedical Researchers. New York: Cambridge U. Press, section 6.4.<a href="exploring-time-to-event-survival-data.html#fnref21" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -1441,7 +1467,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');

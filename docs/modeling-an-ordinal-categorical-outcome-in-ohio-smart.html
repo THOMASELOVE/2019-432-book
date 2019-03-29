@@ -50,41 +50,67 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 </head>
@@ -154,7 +180,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.6.1" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#fitting-a-simple-regression-model"><i class="fa fa-check"></i><b>2.6.1</b> Fitting a Simple Regression Model</a></li>
 <li class="chapter" data-level="2.6.2" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#model-summary-for-a-simple-one-predictor-regression"><i class="fa fa-check"></i><b>2.6.2</b> Model Summary for a Simple (One-Predictor) Regression</a></li>
 <li class="chapter" data-level="2.6.3" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#using-the-broom-package"><i class="fa fa-check"></i><b>2.6.3</b> Using the <code>broom</code> package</a></li>
-<li class="chapter" data-level="2.6.4" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#how-does-the-model-do-residuals-vs.fitted-values"><i class="fa fa-check"></i><b>2.6.4</b> How does the model do? (Residuals vs. Fitted Values)</a></li>
+<li class="chapter" data-level="2.6.4" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#how-does-the-model-do-residuals-vs.-fitted-values"><i class="fa fa-check"></i><b>2.6.4</b> How does the model do? (Residuals vs. Fitted Values)</a></li>
 </ul></li>
 <li class="chapter" data-level="2.7" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#a-new-small-study-predicting-bmi"><i class="fa fa-check"></i><b>2.7</b> A New Small Study: Predicting BMI</a><ul>
 <li class="chapter" data-level="2.7.1" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#does-female-predict-bmi-well"><i class="fa fa-check"></i><b>2.7.1</b> Does <code>female</code> predict <code>bmi</code> well?</a></li>
@@ -935,17 +961,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">Chapter 19</span> Modeling an Ordinal Categorical Outcome in Ohio SMART</h1>
 <div id="preliminaries-1" class="section level2">
 <h2><span class="header-section-number">19.1</span> Preliminaries</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(gmodels)
-<span class="kw">library</span>(nnet)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart_oh &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/smart_ohio.csv&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>tbl_df</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(gmodels)
+<span class="kw">library</span>(nnet)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">smart_oh &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/smart_ohio.csv&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>tbl_df</code></pre>
 </div>
 <div id="a-subset-of-the-ohio-smart-data-1" class="section level2">
 <h2><span class="header-section-number">19.2</span> A subset of the Ohio SMART data</h2>
 <p>Let’s consider the following data. The outcome we’ll study now is <code>genhealth</code>, which has five ordered categories. I’ll include the subset of all observations in <code>smart_oh</code> with complete data on these 7 variables.</p>
-<table style="width:81%;">
+<table>
 <colgroup>
-<col width="13%" />
-<col width="66%" />
+<col width="16%" />
+<col width="83%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -985,16 +1011,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </tbody>
 </table>
 <p>To make my life easier later, I’m going to drop any subjects with missing data on these variables. I’m also going to drop the 11 subjects who have no missing data, but have a listed <code>bmi</code> above 60.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sm1 &lt;-<span class="st"> </span>smart_oh <span class="op">%&gt;%</span>
+<pre class="sourceCode r"><code class="sourceCode r">sm1 &lt;-<span class="st"> </span>smart_oh <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">select</span>(SEQNO, genhealth, physhealth, costprob, sleephrs, 
            incomegroup, bmi) <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">filter</span>(bmi <span class="op">&lt;=</span><span class="st"> </span><span class="dv">60</span>) <span class="op">%&gt;%</span>
-<span class="st">    </span>drop_na</code></pre></div>
+<span class="st">    </span>drop_na</code></pre>
 <p>In total, we have 4721 subjects in the <code>sm1</code> sample.</p>
 <div id="several-ways-of-storing-multi-categorical-data" class="section level3">
 <h3><span class="header-section-number">19.2.1</span> Several Ways of Storing Multi-Categorical data</h3>
 <p>We will store the information in our outcome, <code>genhealth</code> in both a numeric form (<code>gen_n</code>) and an ordered factor (<code>gen_h</code>) with some abbreviated labels) because we’ll have some use for each approach in this material.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sm1 &lt;-<span class="st"> </span>sm1 <span class="op">%&gt;%</span>
+<pre class="sourceCode r"><code class="sourceCode r">sm1 &lt;-<span class="st"> </span>sm1 <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">genh =</span> <span class="kw">fct_recode</span>(genhealth,
                              <span class="st">&quot;1-E&quot;</span> =<span class="st"> &quot;1_Excellent&quot;</span>,
                              <span class="st">&quot;2_VG&quot;</span> =<span class="st"> &quot;2_VeryGood&quot;</span>,
@@ -1004,7 +1030,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
            <span class="dt">genh =</span> <span class="kw">factor</span>(genh, <span class="dt">ordered =</span> <span class="ot">TRUE</span>),
            <span class="dt">gen_n =</span> <span class="kw">as.numeric</span>(genhealth))
 
-sm1 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(genh, gen_n, genhealth)</code></pre></div>
+sm1 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(genh, gen_n, genhealth)</code></pre>
 <pre><code># A tibble: 5 x 4
   genh  gen_n genhealth       n
   &lt;ord&gt; &lt;dbl&gt; &lt;fct&gt;       &lt;int&gt;
@@ -1020,7 +1046,7 @@ sm1 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">coun
 <p>Is income group associated with general health?</p>
 <div id="using-base-table-functions" class="section level3">
 <h3><span class="header-section-number">19.3.1</span> Using base <code>table</code> functions</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">addmargins</span>(<span class="kw">table</span>(sm1<span class="op">$</span>incomegroup, sm1<span class="op">$</span>genh))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">addmargins</span>(<span class="kw">table</span>(sm1<span class="op">$</span>incomegroup, sm1<span class="op">$</span>genh))</code></pre>
 <pre><code>        
           1-E 2_VG  3_G  4_F  5_P  Sum
   0-9K     20   32   55   49   27  183
@@ -1036,12 +1062,12 @@ sm1 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">coun
 <div id="adding-percentages-within-each-row" class="section level4">
 <h4><span class="header-section-number">19.3.1.1</span> Adding percentages within each row</h4>
 <p>Here are the percentages giving each <code>genhealth</code> response within each income group.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">addmargins</span>(
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">addmargins</span>(
     <span class="kw">round</span>(<span class="dv">100</span><span class="op">*</span><span class="kw">prop.table</span>(
         <span class="kw">table</span>(sm1<span class="op">$</span>incomegroup, sm1<span class="op">$</span>genh)
         ,<span class="dv">1</span>)
         ,<span class="dv">1</span>)
-    )</code></pre></div>
+    )</code></pre>
 <pre><code>        
            1-E  2_VG   3_G   4_F   5_P   Sum
   0-9K    10.9  17.5  30.1  26.8  14.8 100.1
@@ -1058,12 +1084,12 @@ sm1 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">coun
 <div id="adding-percentages-within-each-column" class="section level4">
 <h4><span class="header-section-number">19.3.1.2</span> Adding percentages within each column</h4>
 <p>Here are the percentages in each <code>incomegroup</code> within each <code>genhealth</code> response.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">addmargins</span>(
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">addmargins</span>(
     <span class="kw">round</span>(<span class="dv">100</span><span class="op">*</span><span class="kw">prop.table</span>(
         <span class="kw">table</span>(sm1<span class="op">$</span>incomegroup, sm1<span class="op">$</span>genh)
         ,<span class="dv">2</span>)
         ,<span class="dv">1</span>)
-    )</code></pre></div>
+    )</code></pre>
 <pre><code>        
            1-E  2_VG   3_G   4_F   5_P   Sum
   0-9K     2.5   2.0   3.7   8.2  11.2  27.6
@@ -1081,7 +1107,7 @@ sm1 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">coun
 <div id="using-xtabs" class="section level3">
 <h3><span class="header-section-number">19.3.2</span> Using <code>xtabs</code></h3>
 <p>The <code>xtabs</code> function provides a formula method for obtaining cross-tabulations.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">xtabs</span>(<span class="op">~</span><span class="st"> </span>incomegroup <span class="op">+</span><span class="st"> </span>genh, <span class="dt">data =</span> sm1)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">xtabs</span>(<span class="op">~</span><span class="st"> </span>incomegroup <span class="op">+</span><span class="st"> </span>genh, <span class="dt">data =</span> sm1)</code></pre>
 <pre><code>           genh
 incomegroup 1-E 2_VG 3_G 4_F 5_P
      0-9K    20   32  55  49  27
@@ -1096,7 +1122,7 @@ incomegroup 1-E 2_VG 3_G 4_F 5_P
 <div id="storing-a-table-in-a-tibble" class="section level3">
 <h3><span class="header-section-number">19.3.3</span> Storing a table in a tibble</h3>
 <p>We can store the elements of a cross-tabulation in a tibble, like this:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(sm1.tableA &lt;-<span class="st"> </span>sm1 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(incomegroup, genh))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">(sm1.tableA &lt;-<span class="st"> </span>sm1 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(incomegroup, genh))</code></pre>
 <pre><code># A tibble: 40 x 3
    incomegroup genh      n
    &lt;fct&gt;       &lt;ord&gt; &lt;int&gt;
@@ -1112,7 +1138,7 @@ incomegroup 1-E 2_VG 3_G 4_F 5_P
 10 10-14K      5_P      37
 # ... with 30 more rows</code></pre>
 <p>From such a tibble, we can visualize the data in many ways, but we can also return to <code>xtabs</code> and include the frequencies (<code>n</code>) in that setup.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">xtabs</span>(n <span class="op">~</span><span class="st"> </span>incomegroup <span class="op">+</span><span class="st"> </span>genh, <span class="dt">data =</span> sm1.tableA)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">xtabs</span>(n <span class="op">~</span><span class="st"> </span>incomegroup <span class="op">+</span><span class="st"> </span>genh, <span class="dt">data =</span> sm1.tableA)</code></pre>
 <pre><code>           genh
 incomegroup 1-E 2_VG 3_G 4_F 5_P
      0-9K    20   32  55  49  27
@@ -1124,7 +1150,7 @@ incomegroup 1-E 2_VG 3_G 4_F 5_P
      50-74K 151  298 261  46  18
      75K+   404  662 386  94  14</code></pre>
 <p>And, we can get the <span class="math inline">\(\chi^2\)</span> test of independence, with:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(<span class="kw">xtabs</span>(n <span class="op">~</span><span class="st"> </span>incomegroup <span class="op">+</span><span class="st"> </span>genh, <span class="dt">data =</span> sm1.tableA))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(<span class="kw">xtabs</span>(n <span class="op">~</span><span class="st"> </span>incomegroup <span class="op">+</span><span class="st"> </span>genh, <span class="dt">data =</span> sm1.tableA))</code></pre>
 <pre><code>Call: xtabs(formula = n ~ incomegroup + genh, data = sm1.tableA)
 Number of cases in table: 4721 
 Number of factors: 2 
@@ -1134,7 +1160,7 @@ Test for independence of all factors:
 <div id="using-crosstable-from-the-gmodels-package" class="section level3">
 <h3><span class="header-section-number">19.3.4</span> Using <code>CrossTable</code> from the <code>gmodels</code> package</h3>
 <p>The <code>CrossTable</code> function from the <code>gmodels</code> package produces a cross-tabulation with various counts and proportions like people often generate with SPSS and SAS.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">CrossTable</span>(sm1<span class="op">$</span>incomegroup, sm1<span class="op">$</span>genh, <span class="dt">chisq =</span> T)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">CrossTable</span>(sm1<span class="op">$</span>incomegroup, sm1<span class="op">$</span>genh, <span class="dt">chisq =</span> T)</code></pre>
 <pre><code>
  
    Cell Contents
@@ -1221,13 +1247,13 @@ Chi^2 =  763.5307     d.f. =  28     p =  9.671345e-143
 <h2><span class="header-section-number">19.4</span> Graphing Categorical Data</h2>
 <div id="a-bar-chart-for-a-single-variable" class="section level3">
 <h3><span class="header-section-number">19.4.1</span> A Bar Chart for a Single Variable</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(sm1, <span class="kw">aes</span>(<span class="dt">x =</span> genhealth, <span class="dt">fill =</span> genhealth)) <span class="op">+</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(sm1, <span class="kw">aes</span>(<span class="dt">x =</span> genhealth, <span class="dt">fill =</span> genhealth)) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">geom_bar</span>() <span class="op">+</span>
 <span class="st">    </span><span class="kw">scale_fill_brewer</span>(<span class="dt">palette =</span> <span class="st">&quot;Set1&quot;</span>) <span class="op">+</span>
-<span class="st">    </span><span class="kw">guides</span>(<span class="dt">fill =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<span class="st">    </span><span class="kw">guides</span>(<span class="dt">fill =</span> <span class="ot">FALSE</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-480-1.png" width="672" /></p>
 <p>or, you might prefer to plot percentages, perhaps like this:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(sm1, <span class="kw">aes</span>(<span class="dt">x =</span> genhealth, <span class="dt">fill =</span> genhealth)) <span class="op">+</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(sm1, <span class="kw">aes</span>(<span class="dt">x =</span> genhealth, <span class="dt">fill =</span> genhealth)) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">y =</span> (..count..)<span class="op">/</span><span class="kw">sum</span>(..count..))) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">y =</span> (..count..)<span class="op">/</span><span class="kw">sum</span>(..count..), 
                   <span class="dt">label =</span> scales<span class="op">::</span><span class="kw">percent</span>((..count..) <span class="op">/</span><span class="st"> </span>
@@ -1237,14 +1263,14 @@ Chi^2 =  763.5307     d.f. =  28     p =  9.671345e-143
 <span class="st">    </span><span class="kw">scale_y_continuous</span>(<span class="dt">labels =</span> scales<span class="op">::</span>percent) <span class="op">+</span>
 <span class="st">    </span><span class="kw">scale_fill_brewer</span>(<span class="dt">palette =</span> <span class="st">&quot;Dark2&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">guides</span>(<span class="dt">fill =</span> <span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span>
-<span class="st">    </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Percentage&quot;</span>)</code></pre></div>
+<span class="st">    </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Percentage&quot;</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-481-1.png" width="672" /></p>
 <p>Use bar charts, rather than pie charts.</p>
 </div>
 <div id="a-counts-chart-for-a-2-way-cross-tabulation" class="section level3">
 <h3><span class="header-section-number">19.4.2</span> A Counts Chart for a 2-Way Cross-Tabulation</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(sm1, <span class="kw">aes</span>(<span class="dt">x =</span> genhealth, <span class="dt">y =</span> incomegroup)) <span class="op">+</span><span class="st"> </span>
-<span class="st">    </span><span class="kw">geom_count</span>() </code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(sm1, <span class="kw">aes</span>(<span class="dt">x =</span> genhealth, <span class="dt">y =</span> incomegroup)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_count</span>() </code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-482-1.png" width="672" /></p>
 </div>
 </div>
@@ -1254,8 +1280,8 @@ Chi^2 =  763.5307     d.f. =  28     p =  9.671345e-143
 <div id="a-little-eda" class="section level3">
 <h3><span class="header-section-number">19.5.1</span> A little EDA</h3>
 <p>Let’s start with a quick table of summary statistics.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sm1 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(genh) <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">summarize</span>(<span class="kw">n</span>(), <span class="kw">mean</span>(sleephrs), <span class="kw">sd</span>(sleephrs), <span class="kw">median</span>(sleephrs))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">sm1 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(genh) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">summarize</span>(<span class="kw">n</span>(), <span class="kw">mean</span>(sleephrs), <span class="kw">sd</span>(sleephrs), <span class="kw">median</span>(sleephrs))</code></pre>
 <pre><code># A tibble: 5 x 5
   genh  `n()` `mean(sleephrs)` `sd(sleephrs)` `median(sleephrs)`
   &lt;ord&gt; &lt;int&gt;            &lt;dbl&gt;          &lt;dbl&gt;              &lt;dbl&gt;
@@ -1265,11 +1291,11 @@ Chi^2 =  763.5307     d.f. =  28     p =  9.671345e-143
 4 4_F     598             6.64           1.74                  7
 5 5_P     240             6.62           2.53                  6</code></pre>
 <p>To actually see what’s going on, we might build a comparison boxplot, or violin plot. The plot below shows both, together, with the violin plot helping to indicate the discrete nature of the <code>sleephrs</code> data and the boxplot indicating quartiles and outlying values within each <code>genhealth</code> category.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(sm1, <span class="kw">aes</span>(<span class="dt">x =</span> genhealth, <span class="dt">y =</span> sleephrs)) <span class="op">+</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(sm1, <span class="kw">aes</span>(<span class="dt">x =</span> genhealth, <span class="dt">y =</span> sleephrs)) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_violin</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> genhealth), <span class="dt">trim =</span> <span class="ot">TRUE</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">0.2</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">guides</span>(<span class="dt">fill =</span> <span class="ot">FALSE</span>, <span class="dt">color =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
-<span class="st">    </span><span class="kw">theme_bw</span>()</code></pre></div>
+<span class="st">    </span><span class="kw">theme_bw</span>()</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-484-1.png" width="672" /></p>
 </div>
 <div id="describing-the-proportional-odds-cumulative-logit-model" class="section level3">
@@ -1281,10 +1307,10 @@ Chi^2 =  763.5307     d.f. =  28     p =  9.671345e-143
 </ul>
 <p>The model will have four logit equations:</p>
 <ul>
-<li>one estimating the log odds that <code>genh</code> will be less than or equal to 1 (i.e. <code>genhealth</code> = 1_Excellent,)</li>
-<li>one estimating the log odds that <code>genh</code> <span class="math inline">\(\leq\)</span> 2 (i.e. <code>genhealth</code> = 1_Excellent or 2_VeryGood,)</li>
-<li>another estimating the log odds that <code>genh</code> <span class="math inline">\(\leq\)</span> 3 (i.e. <code>genhealth</code> = 1_Excellent, 2_VeryGood or 3_Good,) and, finally,</li>
-<li>one estimating the log odds that <code>genh</code> <span class="math inline">\(\leq\)</span> 4 (i.e. <code>genhealth</code> = 1_Excellent, 2_VeryGood, 3_Good or 4_Fair)</li>
+<li>one estimating the log odds that <code>genh</code> will be less than or equal to 1 (i.e. <code>genhealth</code> = 1_Excellent,)</li>
+<li>one estimating the log odds that <code>genh</code> <span class="math inline">\(\leq\)</span> 2 (i.e. <code>genhealth</code> = 1_Excellent or 2_VeryGood,)</li>
+<li>another estimating the log odds that <code>genh</code> <span class="math inline">\(\leq\)</span> 3 (i.e. <code>genhealth</code> = 1_Excellent, 2_VeryGood or 3_Good,) and, finally,</li>
+<li>one estimating the log odds that <code>genh</code> <span class="math inline">\(\leq\)</span> 4 (i.e. <code>genhealth</code> = 1_Excellent, 2_VeryGood, 3_Good or 4_Fair)</li>
 </ul>
 <p>That’s all we need to estimate the five categories, since Pr(<code>genh</code> <span class="math inline">\(\leq\)</span> 5) = 1, because (5_Poor) is the maximum category for <code>genhealth</code>.</p>
 <p>We’ll have a total of five free parameters when we add in the slope for <code>sleephrs</code>, and I’ll label these parameters as <span class="math inline">\(\zeta_1, \zeta_2, \zeta_3, \zeta_4\)</span> and <span class="math inline">\(\beta_1\)</span>. The <span class="math inline">\(\zeta\)</span>s are read as “zeta” values, and the people who built the <code>polr</code> function use that term.</p>
@@ -1314,10 +1340,10 @@ logit[Pr(genh \leq 4)] = log \frac{Pr(genh \leq 4}{Pr(genh &gt; 4)} = \zeta_4 - 
 <div id="fitting-a-proportional-odds-logistic-regression-with-polr" class="section level3">
 <h3><span class="header-section-number">19.5.3</span> Fitting a Proportional Odds Logistic Regression with <code>polr</code></h3>
 <p>Our model <code>m1</code> will use proportional odds logistic regression (sometimes called an <em>ordered logit</em> model) to predict <code>genh</code> on the basis of <code>sleephrs</code>. The <code>polr</code> function can help us do this. Note that we include <code>Hess = TRUE</code> to retain what is called the <em>Hessian</em> matrix, which lets R calculate standard errors more effectively in <code>summary</code> and other follow-up descriptions of the model.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">m1 &lt;-<span class="st"> </span><span class="kw">polr</span>(genh <span class="op">~</span><span class="st"> </span>sleephrs, 
+<pre class="sourceCode r"><code class="sourceCode r">m1 &lt;-<span class="st"> </span><span class="kw">polr</span>(genh <span class="op">~</span><span class="st"> </span>sleephrs, 
             <span class="dt">data =</span> sm1, <span class="dt">Hess =</span> <span class="ot">TRUE</span>)
 
-<span class="kw">summary</span>(m1)</code></pre></div>
+<span class="kw">summary</span>(m1)</code></pre>
 <pre><code>Call:
 polr(formula = genh ~ sleephrs, data = sm1, Hess = TRUE)
 
@@ -1334,7 +1360,7 @@ Intercepts:
 
 Residual Deviance: 13598.48 
 AIC: 13608.48 </code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(m1)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(m1)</code></pre>
 <pre><code>Waiting for profiling to be done...</code></pre>
 <pre><code>      2.5 %      97.5 % 
 -0.17193705 -0.09522207 </code></pre>
@@ -1379,10 +1405,10 @@ Pr(genh \leq 2) = \frac{exp(\zeta_2 + \beta_1 sleephrs)}{1 + exp(\zeta_2 + \beta
 <div id="making-predictions-for-harry-and-sally-with-predict" class="section level3">
 <h3><span class="header-section-number">19.6.2</span> Making Predictions for Harry (and Sally) with <code>predict</code></h3>
 <p>Suppose Harry sleeps for 6 hours on average, and Sally for 5.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">temp.dat &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">name =</span> <span class="kw">c</span>(<span class="st">&quot;Harry&quot;</span>, <span class="st">&quot;Sally&quot;</span>), 
+<pre class="sourceCode r"><code class="sourceCode r">temp.dat &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">name =</span> <span class="kw">c</span>(<span class="st">&quot;Harry&quot;</span>, <span class="st">&quot;Sally&quot;</span>), 
                        <span class="dt">sleephrs =</span> <span class="kw">c</span>(<span class="dv">6</span>,<span class="dv">5</span>))
 
-<span class="kw">predict</span>(m1, temp.dat, <span class="dt">type =</span> <span class="st">&quot;p&quot;</span>)</code></pre></div>
+<span class="kw">predict</span>(m1, temp.dat, <span class="dt">type =</span> <span class="st">&quot;p&quot;</span>)</code></pre>
 <pre><code>        1-E      2_VG       3_G       4_F        5_P
 1 0.1525552 0.3271236 0.3255890 0.1385406 0.05619160
 2 0.1360859 0.3104153 0.3369786 0.1528152 0.06370498</code></pre>
@@ -1429,13 +1455,13 @@ Pr(genh \leq 2) = \frac{exp(\zeta_2 + \beta_1 sleephrs)}{1 + exp(\zeta_2 + \beta
 <div id="predicting-the-actual-classification-of-genh" class="section level3">
 <h3><span class="header-section-number">19.6.3</span> Predicting the actual classification of <code>genh</code></h3>
 <p>The default prediction approach actually returns the predicted <code>genh</code> classification for Harry and Sally, which is just the classification with the largest predicted probability. Here, for Harry that is Very Good, and for Sally, that’s Good.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">predict</span>(m1, temp.dat)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">predict</span>(m1, temp.dat)</code></pre>
 <pre><code>[1] 2_VG 3_G 
 Levels: 1-E 2_VG 3_G 4_F 5_P</code></pre>
 </div>
 <div id="a-cross-tabuation-of-predictions" class="section level3">
 <h3><span class="header-section-number">19.6.4</span> A Cross-Tabuation of Predictions?</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">addmargins</span>(<span class="kw">table</span>(<span class="kw">predict</span>(m1), sm1<span class="op">$</span>genh))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">addmargins</span>(<span class="kw">table</span>(<span class="kw">predict</span>(m1), sm1<span class="op">$</span>genh))</code></pre>
 <pre><code>      
         1-E 2_VG  3_G  4_F  5_P  Sum
   1-E     2    0    3    1    2    8
@@ -1448,7 +1474,7 @@ Levels: 1-E 2_VG 3_G 4_F 5_P</code></pre>
 </div>
 <div id="the-fitted-model-equations" class="section level3">
 <h3><span class="header-section-number">19.6.5</span> The Fitted Model Equations</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(m1)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(m1)</code></pre>
 <pre><code>Call:
 polr(formula = genh ~ sleephrs, data = sm1, Hess = TRUE)
 
@@ -1473,11 +1499,11 @@ logit[Pr(genh \leq 3)]  =  0.6186 - (-0.1335) sleephrs \\
 logit[Pr(genh \leq 4)] =  2.0202 - (-0.1335) sleephrs 
 \]</span></p>
 <p>Note that we can obtain these pieces separately as follows:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">m1<span class="op">$</span>zeta</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">m1<span class="op">$</span>zeta</code></pre>
 <pre><code>  1-E|2_VG   2_VG|3_G    3_G|4_F    4_F|5_P 
 -2.5156272 -0.8822576  0.6186215  2.0202276 </code></pre>
 <p>shows the boundary intercepts, and</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">m1<span class="op">$</span>coefficients</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">m1<span class="op">$</span>coefficients</code></pre>
 <pre><code> sleephrs 
 -0.133488 </code></pre>
 <p>shows the regression coefficient for <code>sleephrs</code>.</p>
@@ -1497,10 +1523,10 @@ logit[Pr(genh \leq 4)] =  2.0202 - (-0.1335) sleephrs
 <div id="exponentiating-the-slope-coefficient-to-facilitate-interpretation" class="section level3">
 <h3><span class="header-section-number">19.6.7</span> Exponentiating the Slope Coefficient to facilitate Interpretation</h3>
 <p>We can compute the odds ratio associated with <code>sleephrs</code> and its confidence interval as follows…</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">coef</span>(m1))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">coef</span>(m1))</code></pre>
 <pre><code> sleephrs 
 0.8750379 </code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">confint</span>(m1))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">confint</span>(m1))</code></pre>
 <pre><code>Waiting for profiling to be done...</code></pre>
 <pre><code>    2.5 %    97.5 % 
 0.8420322 0.9091710 </code></pre>
@@ -1516,9 +1542,9 @@ logit[Pr(genh \leq 4)] =  2.0202 - (-0.1335) sleephrs
 <div id="comparison-to-a-null-model-4" class="section level3">
 <h3><span class="header-section-number">19.6.8</span> Comparison to a Null Model</h3>
 <p>We can fit a model with intercepts only to test the significance of <code>sleephrs</code> in our model <code>m1</code>, using the <code>anova</code> function.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">m0 &lt;-<span class="st"> </span><span class="kw">polr</span>(genh <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data =</span> sm1)
+<pre class="sourceCode r"><code class="sourceCode r">m0 &lt;-<span class="st"> </span><span class="kw">polr</span>(genh <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data =</span> sm1)
 
-<span class="kw">anova</span>(m1, m0)</code></pre></div>
+<span class="kw">anova</span>(m1, m0)</code></pre>
 <pre><code>Likelihood ratio tests of ordinal regression models
 
 Response: genh
@@ -1526,11 +1552,11 @@ Response: genh
 1        1      4717   13645.70                                   
 2 sleephrs      4716   13598.48 1 vs 2     1 47.22141 6.340373e-12</code></pre>
 <p>We could also compare model <code>m1</code> to the null model <code>m0</code> with AIC or BIC.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">AIC</span>(m1, m0)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">AIC</span>(m1, m0)</code></pre>
 <pre><code>   df      AIC
 m1  5 13608.48
 m0  4 13653.70</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">BIC</span>(m1,m0)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">BIC</span>(m1,m0)</code></pre>
 <pre><code>   df      BIC
 m1  5 13640.78
 m0  4 13679.54</code></pre>
@@ -1539,27 +1565,27 @@ m0  4 13679.54</code></pre>
 <div id="the-assumption-of-proportional-odds" class="section level2">
 <h2><span class="header-section-number">19.7</span> The Assumption of Proportional Odds</h2>
 <p>Let us calculate the odds for all levels of <code>genh</code> if a person gets six hours of sleep. First, we’ll get the probabilities, in another way, to demonstrate how to do so…</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(prob.<span class="dv">6</span> &lt;-<span class="st"> </span><span class="kw">exp</span>(m1<span class="op">$</span>zeta <span class="op">-</span><span class="st"> </span><span class="dv">6</span><span class="op">*</span>m1<span class="op">$</span>coefficients)<span class="op">/</span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="kw">exp</span>(m1<span class="op">$</span>zeta <span class="op">-</span><span class="st"> </span><span class="dv">6</span><span class="op">*</span>m1<span class="op">$</span>coefficients)))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">(prob<span class="fl">.6</span> &lt;-<span class="st"> </span><span class="kw">exp</span>(m1<span class="op">$</span>zeta <span class="op">-</span><span class="st"> </span><span class="dv">6</span><span class="op">*</span>m1<span class="op">$</span>coefficients)<span class="op">/</span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="kw">exp</span>(m1<span class="op">$</span>zeta <span class="op">-</span><span class="st"> </span><span class="dv">6</span><span class="op">*</span>m1<span class="op">$</span>coefficients)))</code></pre>
 <pre><code> 1-E|2_VG  2_VG|3_G   3_G|4_F   4_F|5_P 
 0.1525552 0.4796789 0.8052678 0.9438084 </code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(prob.<span class="dv">5</span> &lt;-<span class="st"> </span><span class="kw">exp</span>(m1<span class="op">$</span>zeta <span class="op">-</span><span class="st"> </span><span class="dv">5</span><span class="op">*</span>m1<span class="op">$</span>coefficients)<span class="op">/</span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="kw">exp</span>(m1<span class="op">$</span>zeta <span class="op">-</span><span class="st"> </span><span class="dv">5</span><span class="op">*</span>m1<span class="op">$</span>coefficients)))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">(prob<span class="fl">.5</span> &lt;-<span class="st"> </span><span class="kw">exp</span>(m1<span class="op">$</span>zeta <span class="op">-</span><span class="st"> </span><span class="dv">5</span><span class="op">*</span>m1<span class="op">$</span>coefficients)<span class="op">/</span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="kw">exp</span>(m1<span class="op">$</span>zeta <span class="op">-</span><span class="st"> </span><span class="dv">5</span><span class="op">*</span>m1<span class="op">$</span>coefficients)))</code></pre>
 <pre><code> 1-E|2_VG  2_VG|3_G   3_G|4_F   4_F|5_P 
 0.1360859 0.4465012 0.7834798 0.9362950 </code></pre>
 <p>Now, we’ll calculate the odds, first for a subject getting six hours of sleep:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dt">odds.6 =</span> prob.<span class="dv">6</span><span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>prob.<span class="dv">6</span>))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">(<span class="dt">odds.6 =</span> prob<span class="fl">.6</span><span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>prob<span class="fl">.6</span>))</code></pre>
 <pre><code>  1-E|2_VG   2_VG|3_G    3_G|4_F    4_F|5_P 
  0.1800179  0.9218900  4.1352580 16.7962532 </code></pre>
 <p>And here are the odds, for a subject getting five hours of sleep:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dt">odds.5 =</span> prob.<span class="dv">5</span><span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>prob.<span class="dv">5</span>))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">(<span class="dt">odds.5 =</span> prob<span class="fl">.5</span><span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>prob<span class="fl">.5</span>))</code></pre>
 <pre><code>  1-E|2_VG   2_VG|3_G    3_G|4_F    4_F|5_P 
  0.1575225  0.8066887  3.6185077 14.6973588 </code></pre>
 <p>Now, let’s take the ratio of the odds for someone who sleeps 6 hours over the odds for someone who sleeps 5.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">odds.<span class="dv">6</span><span class="op">/</span>odds.<span class="dv">5</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">odds<span class="fl">.6</span><span class="op">/</span>odds<span class="fl">.5</span></code></pre>
 <pre><code>1-E|2_VG 2_VG|3_G  3_G|4_F  4_F|5_P 
 1.142808 1.142808 1.142808 1.142808 </code></pre>
 <p>They are all the same. The odds ratios are equal, which means they are proportional. For any level of <code>genh</code>, the estimated odds that a person who sleeps 6 hours has better (lower) <code>genh</code> is about 1.14 times the odds for someone who sleeps 5 hours. Those who sleep more have higher odds of better (lower) <code>genh</code>. Less than 1 means lower odds, and more than 1 means greater odds.</p>
 <p>Now, let’s take the log of the odds ratios:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log</span>(odds.<span class="dv">6</span><span class="op">/</span>odds.<span class="dv">5</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log</span>(odds<span class="fl">.6</span><span class="op">/</span>odds<span class="fl">.5</span>)</code></pre>
 <pre><code>1-E|2_VG 2_VG|3_G  3_G|4_F  4_F|5_P 
 0.133488 0.133488 0.133488 0.133488 </code></pre>
 <p>That should be familiar. It is the slope coefficient in the model summary, without the minus sign. R tacks on a minus sign so that higher levels of predictors correspond to the ordinal outcome falling in the higher end of its scale.</p>
@@ -1568,7 +1594,7 @@ m0  4 13679.54</code></pre>
 <h3><span class="header-section-number">19.7.1</span> Testing the Proportional Odds Assumption</h3>
 <p>One way to test the proportional odds assumption is to compare the fit of the proportional odds logistic regression to a model that does not make that assumption. A natural candidate is a <strong>multinomial logit</strong> model, which is typically used to model unordered multi-categorical outcomes, and fits a slope to each level of the <code>genh</code> outcome in this case, as opposed to the proportional odds logit, which fits only one slope across all levels.</p>
 <p>Since the proportional odds logistic regression model is nested in the multinomial logit, we can perform a likelihood ratio test. To do this, we first fit the multinomial logit model, with the <code>multinom</code> function from the <code>nnet</code> package.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(m1_multi &lt;-<span class="st"> </span><span class="kw">multinom</span>(genh <span class="op">~</span><span class="st"> </span>sleephrs, <span class="dt">data =</span> sm1))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">(m1_multi &lt;-<span class="st"> </span><span class="kw">multinom</span>(genh <span class="op">~</span><span class="st"> </span>sleephrs, <span class="dt">data =</span> sm1))</code></pre>
 <pre><code># weights:  15 (8 variable)
 initial  value 7598.156385 
 iter  10 value 6803.195314
@@ -1587,11 +1613,11 @@ Coefficients:
 Residual Deviance: 13594.36 
 AIC: 13610.36 </code></pre>
 <p>The multinomial logit fits four intercepts and four slopes, for a total of 8 estimated parameters. The proportional odds logit, as we’ve seen, fits four intercepts and one slope, for a total of 5. The difference is 3, and we use that number in the sequence below to build our test of the proportional odds assumption.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">LL_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">logLik</span>(m1)
+<pre class="sourceCode r"><code class="sourceCode r">LL_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">logLik</span>(m1)
 LL_1m &lt;-<span class="st"> </span><span class="kw">logLik</span>(m1_multi)
-(G &lt;-<span class="st"> </span><span class="op">-</span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>(LL_<span class="dv">1</span>[<span class="dv">1</span>] <span class="op">-</span><span class="st"> </span>LL_1m[<span class="dv">1</span>]))</code></pre></div>
+(G &lt;-<span class="st"> </span><span class="dv">-2</span> <span class="op">*</span><span class="st"> </span>(LL_<span class="dv">1</span>[<span class="dv">1</span>] <span class="op">-</span><span class="st"> </span>LL_1m[<span class="dv">1</span>]))</code></pre>
 <pre><code>[1] 4.126867</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pchisq</span>(G, <span class="dv">3</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pchisq</span>(G, <span class="dv">3</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</code></pre>
 <pre><code>[1] 0.2480866</code></pre>
 <p>The <em>p</em> value is fairly large, so it indicates that the proportional odds model fits about as well as the more complex multinomial logit. A non-significant <em>p</em> value here isn’t always the best way to assess the proportional odds assumption, but it does provide some evidence of model adequacy.</p>
 </div>
@@ -1599,11 +1625,11 @@ LL_1m &lt;-<span class="st"> </span><span class="kw">logLik</span>(m1_multi)
 <div id="can-model-m1-be-fit-using-rms-tools" class="section level2">
 <h2><span class="header-section-number">19.8</span> Can model <code>m1</code> be fit using <code>rms</code> tools?</h2>
 <p>Yes.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d &lt;-<span class="st"> </span><span class="kw">datadist</span>(sm1)
+<pre class="sourceCode r"><code class="sourceCode r">d &lt;-<span class="st"> </span><span class="kw">datadist</span>(sm1)
 <span class="kw">options</span>(<span class="dt">datadist =</span> <span class="st">&quot;d&quot;</span>)
 m1_lrm &lt;-<span class="st"> </span><span class="kw">lrm</span>(genh <span class="op">~</span><span class="st"> </span>sleephrs, <span class="dt">data =</span> sm1, <span class="dt">x =</span> T, <span class="dt">y =</span> T)
 
-m1_lrm</code></pre></div>
+m1_lrm</code></pre>
 <pre><code>Logistic Regression Model
  
  lrm(formula = genh ~ sleephrs, data = sm1, x = T, y = T)
@@ -1630,7 +1656,7 @@ m1_lrm</code></pre></div>
  sleephrs -0.1335 0.0196  -6.82 &lt;0.0001 
  </code></pre>
 <p>The model is highly significant (remember the large sample size) but very weak, with a Nagelkerke R<sup>2</sup> of 0.01, and a C statistic of 0.55.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(m1_lrm)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(m1_lrm)</code></pre>
 <pre><code>             Effects              Response : genh 
 
  Factor      Low High Diff. Effect   S.E.     Lower 0.95 Upper 0.95
@@ -1644,8 +1670,8 @@ m1_lrm</code></pre></div>
 <p>Now, we’ll model <code>genh</code> using <code>sleephrs</code>, <code>bmi</code> and <code>costprob</code>.</p>
 <div id="scatterplot-matrix" class="section level3">
 <h3><span class="header-section-number">19.9.1</span> Scatterplot Matrix</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">GGally<span class="op">::</span><span class="kw">ggpairs</span>(sm1 <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">                    </span><span class="kw">select</span>(bmi, sleephrs, costprob, genh))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">GGally<span class="op">::</span><span class="kw">ggpairs</span>(sm1 <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">                    </span><span class="kw">select</span>(bmi, sleephrs, costprob, genh))</code></pre>
 <pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
@@ -1654,9 +1680,9 @@ m1_lrm</code></pre></div>
 </div>
 <div id="our-three-predictor-model-m2" class="section level3">
 <h3><span class="header-section-number">19.9.2</span> Our Three-Predictor Model, <code>m2</code></h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">m2 &lt;-<span class="st"> </span><span class="kw">polr</span>(genh <span class="op">~</span><span class="st"> </span>sleephrs <span class="op">+</span><span class="st"> </span>bmi <span class="op">+</span><span class="st"> </span>costprob, <span class="dt">data =</span> sm1)
+<pre class="sourceCode r"><code class="sourceCode r">m2 &lt;-<span class="st"> </span><span class="kw">polr</span>(genh <span class="op">~</span><span class="st"> </span>sleephrs <span class="op">+</span><span class="st"> </span>bmi <span class="op">+</span><span class="st"> </span>costprob, <span class="dt">data =</span> sm1)
 
-<span class="kw">summary</span>(m2)</code></pre></div>
+<span class="kw">summary</span>(m2)</code></pre>
 <pre><code>
 Re-fitting to get Hessian</code></pre>
 <pre><code>Call:
@@ -1681,7 +1707,7 @@ AIC: 13179.90 </code></pre>
 </div>
 <div id="does-the-three-predictor-model-outperform-m1" class="section level3">
 <h3><span class="header-section-number">19.9.3</span> Does the three-predictor model outperform <code>m1</code>?</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(m1, m2)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(m1, m2)</code></pre>
 <pre><code>Likelihood ratio tests of ordinal regression models
 
 Response: genh
@@ -1692,11 +1718,11 @@ Response: genh
 1        
 2       0</code></pre>
 <p>There is a statistically significant improvement in fit from model 1 to model 2. The AIC and BIC are also better for the three-predictor model than they were for the model with <code>sleephrs</code> alone.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">AIC</span>(m1, m2)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">AIC</span>(m1, m2)</code></pre>
 <pre><code>   df      AIC
 m1  5 13608.48
 m2  7 13179.90</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">BIC</span>(m1, m2)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">BIC</span>(m1, m2)</code></pre>
 <pre><code>   df      BIC
 m1  5 13640.78
 m2  7 13225.12</code></pre>
@@ -1704,11 +1730,11 @@ m2  7 13225.12</code></pre>
 <div id="wald-tests-for-individual-predictors" class="section level3">
 <h3><span class="header-section-number">19.9.4</span> Wald tests for individual predictors</h3>
 <p>To obtain the appropriate Wald tests, we can use <code>lrm</code> to fit the model instead.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d &lt;-<span class="st"> </span><span class="kw">datadist</span>(sm1)
+<pre class="sourceCode r"><code class="sourceCode r">d &lt;-<span class="st"> </span><span class="kw">datadist</span>(sm1)
 <span class="kw">options</span>(<span class="dt">datadist =</span> <span class="st">&quot;d&quot;</span>)
 m2_lrm &lt;-<span class="st"> </span><span class="kw">lrm</span>(genh <span class="op">~</span><span class="st"> </span>sleephrs <span class="op">+</span><span class="st"> </span>bmi <span class="op">+</span><span class="st"> </span>costprob, 
               <span class="dt">data =</span> sm1, <span class="dt">x =</span> T, <span class="dt">y =</span> T)
-m2_lrm</code></pre></div>
+m2_lrm</code></pre>
 <pre><code>Logistic Regression Model
  
  lrm(formula = genh ~ sleephrs + bmi + costprob, data = sm1, x = T, 
@@ -1741,7 +1767,7 @@ m2_lrm</code></pre></div>
 </div>
 <div id="a-cross-tabuation-of-predictions-1" class="section level3">
 <h3><span class="header-section-number">19.9.5</span> A Cross-Tabuation of Predictions?</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">addmargins</span>(<span class="kw">table</span>(<span class="kw">predict</span>(m2), sm1<span class="op">$</span>genh))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">addmargins</span>(<span class="kw">table</span>(<span class="kw">predict</span>(m2), sm1<span class="op">$</span>genh))</code></pre>
 <pre><code>      
         1-E 2_VG  3_G  4_F  5_P  Sum
   1-E     0    0    3    0    1    4
@@ -1763,10 +1789,10 @@ m2_lrm</code></pre></div>
 <li>Increasing <code>costprob</code> from 0 to 1 is associated with an increase (by a factor of 2.17 with 95% CI 1.80, 2.62)) of a higher <code>genh</code> value. Since higher <code>genh</code> values indicate worse health, those with <code>costprob</code> = 1 are modeled to have generally worse health.</li>
 </ul></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">coef</span>(m2))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">coef</span>(m2))</code></pre>
 <pre><code>sleephrs      bmi costprob 
 0.900506 1.083454 2.170910 </code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">confint</span>(m2))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">confint</span>(m2))</code></pre>
 <pre><code>Waiting for profiling to be done...</code></pre>
 <pre><code>
 Re-fitting to get Hessian</code></pre>
@@ -1777,7 +1803,7 @@ costprob 1.801263 2.6174576</code></pre>
 <ul>
 <li>Or by looking at the summary provided by <code>lrm</code>, which like all such summaries produced by <code>rms</code> shows the impact of moving from the 25th to the 75th percentile on all continuous predictors.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(m2_lrm)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(m2_lrm)</code></pre>
 <pre><code>             Effects              Response : genh 
 
  Factor      Low   High Diff. Effect   S.E.     Lower 0.95 Upper 0.95
@@ -1787,7 +1813,7 @@ costprob 1.801263 2.6174576</code></pre>
   Odds Ratio 23.99 31.5 7.51   1.82570       NA  1.71580    1.94270  
  costprob     0.00  1.0 1.00   0.77515 0.095318  0.58833    0.96197  
   Odds Ratio  0.00  1.0 1.00   2.17090       NA  1.80100    2.61680  </code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">summary</span>(m2_lrm))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">summary</span>(m2_lrm))</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-512-1.png" width="672" /></p>
 </div>
 <div id="quality-of-the-model-fit" class="section level3">
@@ -1796,7 +1822,7 @@ costprob 1.801263 2.6174576</code></pre>
 </div>
 <div id="validating-the-summary-statistics-in-m2_lrm" class="section level3">
 <h3><span class="header-section-number">19.9.8</span> Validating the Summary Statistics in <code>m2_lrm</code></h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">43203</span>); <span class="kw">validate</span>(m2_lrm)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">43203</span>); <span class="kw">validate</span>(m2_lrm)</code></pre>
 <pre><code>          index.orig training    test optimism index.corrected  n
 Dxy           0.2672   0.2688  0.2666   0.0022          0.2650 40
 R2            0.1023   0.1036  0.1017   0.0018          0.1005 40
@@ -1814,8 +1840,8 @@ gp            0.1493   0.1501  0.1489   0.0012          0.1481 40</code></pre>
 <div id="testing-the-proportional-odds-assumption-1" class="section level3">
 <h3><span class="header-section-number">19.9.9</span> Testing the Proportional Odds Assumption</h3>
 <p>Again, we’ll fit the analogous multinomial logit model, with the <code>multinom</code> function from the <code>nnet</code> package.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(m2_multi &lt;-<span class="st"> </span><span class="kw">multinom</span>(genh <span class="op">~</span><span class="st"> </span>sleephrs <span class="op">+</span><span class="st"> </span>bmi <span class="op">+</span><span class="st"> </span>costprob, 
-                      <span class="dt">data =</span> sm1))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">(m2_multi &lt;-<span class="st"> </span><span class="kw">multinom</span>(genh <span class="op">~</span><span class="st"> </span>sleephrs <span class="op">+</span><span class="st"> </span>bmi <span class="op">+</span><span class="st"> </span>costprob, 
+                      <span class="dt">data =</span> sm1))</code></pre>
 <pre><code># weights:  25 (16 variable)
 initial  value 7598.156385 
 iter  10 value 6840.882689
@@ -1835,16 +1861,16 @@ Coefficients:
 Residual Deviance: 13123.6 
 AIC: 13155.6 </code></pre>
 <p>The multinomial logit fits four intercepts and 12 slopes, for a total of 16 estimated parameters. The proportional odds logit in model <code>m2</code>, as we’ve seen, fits four intercepts and three slopes, for a total of 7. The difference is 9, and we use that number in the sequence below to build our test of the proportional odds assumption.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">LL_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">logLik</span>(m2)
+<pre class="sourceCode r"><code class="sourceCode r">LL_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">logLik</span>(m2)
 LL_2m &lt;-<span class="st"> </span><span class="kw">logLik</span>(m2_multi)
-(G &lt;-<span class="st"> </span><span class="op">-</span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>(LL_<span class="dv">2</span>[<span class="dv">1</span>] <span class="op">-</span><span class="st"> </span>LL_2m[<span class="dv">1</span>]))</code></pre></div>
+(G &lt;-<span class="st"> </span><span class="dv">-2</span> <span class="op">*</span><span class="st"> </span>(LL_<span class="dv">2</span>[<span class="dv">1</span>] <span class="op">-</span><span class="st"> </span>LL_2m[<span class="dv">1</span>]))</code></pre>
 <pre><code>[1] 42.29865</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pchisq</span>(G, <span class="dv">9</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pchisq</span>(G, <span class="dv">9</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</code></pre>
 <pre><code>[1] 2.898116e-06</code></pre>
 <p>The result is highly significant, suggesting that we have a problem somewhere with the proportional odds assumption. When this happens, I suggest you build the following plot of score residuals:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))
 <span class="kw">resid</span>(m2_lrm, <span class="st">&#39;score.binary&#39;</span>, <span class="dt">pl=</span><span class="ot">TRUE</span>)
-<span class="kw">par</span>(<span class="dt">mfrow=</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</code></pre></div>
+<span class="kw">par</span>(<span class="dt">mfrow=</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-516-1.png" width="672" /></p>
 <p>From this plot, <code>bmi</code> and <code>costprob</code> look pretty different as we move from the Very Good toward the Poor cutpoints, relative to <code>sleephrs</code>, which is more stable.</p>
 </div>
@@ -1852,19 +1878,19 @@ LL_2m &lt;-<span class="st"> </span><span class="kw">logLik</span>(m2_multi)
 <h3><span class="header-section-number">19.9.10</span> Plotting the Fitted Model</h3>
 <div id="nomogram" class="section level4">
 <h4><span class="header-section-number">19.9.10.1</span> Nomogram</h4>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fun.ge3 &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">plogis</span>(x <span class="op">-</span><span class="st"> </span>m2_lrm<span class="op">$</span>coef[<span class="dv">1</span>] <span class="op">+</span><span class="st"> </span>m2_lrm<span class="op">$</span>coef[<span class="dv">2</span>])
+<pre class="sourceCode r"><code class="sourceCode r">fun.ge3 &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">plogis</span>(x <span class="op">-</span><span class="st"> </span>m2_lrm<span class="op">$</span>coef[<span class="dv">1</span>] <span class="op">+</span><span class="st"> </span>m2_lrm<span class="op">$</span>coef[<span class="dv">2</span>])
 fun.ge4 &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">plogis</span>(x <span class="op">-</span><span class="st"> </span>m2_lrm<span class="op">$</span>coef[<span class="dv">1</span>] <span class="op">+</span><span class="st"> </span>m2_lrm<span class="op">$</span>coef[<span class="dv">3</span>])
 fun.ge5 &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">plogis</span>(x <span class="op">-</span><span class="st"> </span>m2_lrm<span class="op">$</span>coef[<span class="dv">1</span>] <span class="op">+</span><span class="st"> </span>m2_lrm<span class="op">$</span>coef[<span class="dv">4</span>])
 
 <span class="kw">plot</span>(<span class="kw">nomogram</span>(m2_lrm, <span class="dt">fun=</span><span class="kw">list</span>(<span class="st">&#39;Prob Y &gt;= 2 (VG or worse)&#39;</span> =<span class="st"> </span>plogis, 
                                <span class="st">&#39;Prob Y &gt;= 3 (Good or worse)&#39;</span> =<span class="st"> </span>fun.ge3,
                                <span class="st">&#39;Prob Y &gt;= 4 (Fair or Poor)&#39;</span> =<span class="st"> </span>fun.ge4,
-                               <span class="st">&#39;Prob Y = 5 (Poor)&#39;</span> =<span class="st"> </span>fun.ge5)))</code></pre></div>
+                               <span class="st">&#39;Prob Y = 5 (Poor)&#39;</span> =<span class="st"> </span>fun.ge5)))</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-517-1.png" width="960" /></p>
 </div>
 <div id="using-predict-and-showing-mean-prediction-on-1-5-scale" class="section level4">
 <h4><span class="header-section-number">19.9.10.2</span> Using Predict and showing mean prediction on 1-5 scale</h4>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="kw">Predict</span>(m2_lrm, <span class="dt">fun =</span> <span class="kw">Mean</span>(m2_lrm, <span class="dt">code =</span> <span class="ot">TRUE</span>)))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="kw">Predict</span>(m2_lrm, <span class="dt">fun =</span> <span class="kw">Mean</span>(m2_lrm, <span class="dt">code =</span> <span class="ot">TRUE</span>)))</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-518-1.png" width="672" /></p>
 <p>The nomogram and Predict results would be more interesting, of course, if we included a spline or interaction term. Let’s do that in model <code>m3_lrm</code>, and also add the <code>incomegroup</code> information.</p>
 </div>
@@ -1872,12 +1898,12 @@ fun.ge5 &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span 
 </div>
 <div id="a-larger-model-including-income-group" class="section level2">
 <h2><span class="header-section-number">19.10</span> A Larger Model, including income group</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">m3_lrm &lt;-<span class="st"> </span><span class="kw">lrm</span>(gen_n <span class="op">~</span><span class="st"> </span><span class="kw">rcs</span>(sleephrs,<span class="dv">3</span>) <span class="op">+</span><span class="st"> </span><span class="kw">rcs</span>(bmi, <span class="dv">4</span>) <span class="op">+</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">m3_lrm &lt;-<span class="st"> </span><span class="kw">lrm</span>(gen_n <span class="op">~</span><span class="st"> </span><span class="kw">rcs</span>(sleephrs,<span class="dv">3</span>) <span class="op">+</span><span class="st"> </span><span class="kw">rcs</span>(bmi, <span class="dv">4</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">                  </span>incomegroup <span class="op">+</span><span class="st"> </span><span class="kw">catg</span>(costprob) <span class="op">+</span><span class="st"> </span>
 <span class="st">                  </span>bmi <span class="op">%ia%</span><span class="st"> </span>costprob, 
               <span class="dt">data =</span> sm1, <span class="dt">x =</span> T, <span class="dt">y =</span> T)
 
-m3_lrm</code></pre></div>
+m3_lrm</code></pre>
 <pre><code>Logistic Regression Model
  
  lrm(formula = gen_n ~ rcs(sleephrs, 3) + rcs(bmi, 4) + incomegroup + 
@@ -1918,12 +1944,12 @@ m3_lrm</code></pre></div>
  bmi * costprob     -0.0236 0.0147  -1.60 0.1093  
  </code></pre>
 <p>Another option here would have been to consider building <code>incomegroup</code> as a <code>scored</code> variable, with an order on its own, but I won’t force that here. Here’s the <code>polr</code> version…</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">m3 &lt;-<span class="st"> </span><span class="kw">polr</span>(genh <span class="op">~</span><span class="st"> </span><span class="kw">rcs</span>(sleephrs,<span class="dv">3</span>) <span class="op">+</span><span class="st"> </span><span class="kw">rcs</span>(bmi, <span class="dv">4</span>) <span class="op">+</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">m3 &lt;-<span class="st"> </span><span class="kw">polr</span>(genh <span class="op">~</span><span class="st"> </span><span class="kw">rcs</span>(sleephrs,<span class="dv">3</span>) <span class="op">+</span><span class="st"> </span><span class="kw">rcs</span>(bmi, <span class="dv">4</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">               </span>incomegroup <span class="op">+</span><span class="st"> </span>costprob <span class="op">+</span><span class="st"> </span>
-<span class="st">               </span>bmi <span class="op">%ia%</span><span class="st"> </span>costprob, <span class="dt">data =</span> sm1)</code></pre></div>
+<span class="st">               </span>bmi <span class="op">%ia%</span><span class="st"> </span>costprob, <span class="dt">data =</span> sm1)</code></pre>
 <div id="cross-tabulation-of-predictedobserved-classifications" class="section level3">
 <h3><span class="header-section-number">19.10.1</span> Cross-Tabulation of Predicted/Observed Classifications</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">addmargins</span>(<span class="kw">table</span>(<span class="kw">predict</span>(m3), sm1<span class="op">$</span>genh))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">addmargins</span>(<span class="kw">table</span>(<span class="kw">predict</span>(m3), sm1<span class="op">$</span>genh))</code></pre>
 <pre><code>      
         1-E 2_VG  3_G  4_F  5_P  Sum
   1-E     0    0    0    0    0    0
@@ -1936,25 +1962,25 @@ m3_lrm</code></pre></div>
 </div>
 <div id="nomogram-1" class="section level3">
 <h3><span class="header-section-number">19.10.2</span> Nomogram</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fun.ge3 &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">plogis</span>(x <span class="op">-</span><span class="st"> </span>m3_lrm<span class="op">$</span>coef[<span class="dv">1</span>] <span class="op">+</span><span class="st"> </span>m3_lrm<span class="op">$</span>coef[<span class="dv">2</span>])
+<pre class="sourceCode r"><code class="sourceCode r">fun.ge3 &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">plogis</span>(x <span class="op">-</span><span class="st"> </span>m3_lrm<span class="op">$</span>coef[<span class="dv">1</span>] <span class="op">+</span><span class="st"> </span>m3_lrm<span class="op">$</span>coef[<span class="dv">2</span>])
 fun.ge4 &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">plogis</span>(x <span class="op">-</span><span class="st"> </span>m3_lrm<span class="op">$</span>coef[<span class="dv">1</span>] <span class="op">+</span><span class="st"> </span>m3_lrm<span class="op">$</span>coef[<span class="dv">3</span>])
 fun.ge5 &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">plogis</span>(x <span class="op">-</span><span class="st"> </span>m3_lrm<span class="op">$</span>coef[<span class="dv">1</span>] <span class="op">+</span><span class="st"> </span>m3_lrm<span class="op">$</span>coef[<span class="dv">4</span>])
 
 <span class="kw">plot</span>(<span class="kw">nomogram</span>(m3_lrm, <span class="dt">fun=</span><span class="kw">list</span>(<span class="st">&#39;Prob Y &gt;= 2 (VG or worse)&#39;</span> =<span class="st"> </span>plogis, 
                                <span class="st">&#39;Prob Y &gt;= 3 (Good or worse)&#39;</span> =<span class="st"> </span>fun.ge3,
                                <span class="st">&#39;Prob Y &gt;= 4 (Fair or Poor)&#39;</span> =<span class="st"> </span>fun.ge4,
-                               <span class="st">&#39;Prob Y = 5 (Poor)&#39;</span> =<span class="st"> </span>fun.ge5)))</code></pre></div>
+                               <span class="st">&#39;Prob Y = 5 (Poor)&#39;</span> =<span class="st"> </span>fun.ge5)))</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-522-1.png" width="960" /></p>
 </div>
 <div id="using-predict-and-showing-mean-prediction-on-1-5-scale-1" class="section level3">
 <h3><span class="header-section-number">19.10.3</span> Using Predict and showing mean prediction on 1-5 scale</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="kw">Predict</span>(m3_lrm, <span class="dt">fun =</span> <span class="kw">Mean</span>(m3_lrm, <span class="dt">code =</span> <span class="ot">TRUE</span>)))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="kw">Predict</span>(m3_lrm, <span class="dt">fun =</span> <span class="kw">Mean</span>(m3_lrm, <span class="dt">code =</span> <span class="ot">TRUE</span>)))</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-523-1.png" width="672" /></p>
 <p>Here, we’re plotting the mean score on the 1-5 <code>gen_n</code> scale.</p>
 </div>
 <div id="validating-the-summary-statistics-in-m3_lrm" class="section level3">
 <h3><span class="header-section-number">19.10.4</span> Validating the Summary Statistics in <code>m3_lrm</code></h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">43221</span>); <span class="kw">validate</span>(m3_lrm)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">43221</span>); <span class="kw">validate</span>(m3_lrm)</code></pre>
 <pre><code>          index.orig training    test optimism index.corrected  n
 Dxy           0.4128   0.4144  0.4104   0.0040          0.4088 40
 R2            0.2307   0.2341  0.2280   0.0061          0.2246 40
@@ -2038,7 +2064,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');

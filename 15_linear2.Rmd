@@ -480,7 +480,7 @@ So, now we have an imputation model, called `imp_fit`. and two outcome models: `
 
 ### Model A with Multiple Imputation
 
-To build the `mA_imp` multiple imputation fit for model `mod.A`, we use the `fit.mult.impute` command, and specify the model, the fitter (here, `lrm`), the imputation model (`xtrans = imp_fit`) and the data set prior to imputation (`smartcle2_imp0`).
+To build the `mA_imp` multiple imputation fit for model `mod.A`, we use the `fit.mult.impute` command, and specify the model, the fitter (here, `ols`), the imputation model (`xtrans = imp_fit`) and the data set prior to imputation (`smartcle2_imp0`).
 
 ```{r}
 mA_imp <- fit.mult.impute(sleephrs ~ alcdays + bmi*female + 

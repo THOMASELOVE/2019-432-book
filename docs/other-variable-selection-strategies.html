@@ -50,41 +50,67 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 </head>
@@ -154,7 +180,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.6.1" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#fitting-a-simple-regression-model"><i class="fa fa-check"></i><b>2.6.1</b> Fitting a Simple Regression Model</a></li>
 <li class="chapter" data-level="2.6.2" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#model-summary-for-a-simple-one-predictor-regression"><i class="fa fa-check"></i><b>2.6.2</b> Model Summary for a Simple (One-Predictor) Regression</a></li>
 <li class="chapter" data-level="2.6.3" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#using-the-broom-package"><i class="fa fa-check"></i><b>2.6.3</b> Using the <code>broom</code> package</a></li>
-<li class="chapter" data-level="2.6.4" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#how-does-the-model-do-residuals-vs.fitted-values"><i class="fa fa-check"></i><b>2.6.4</b> How does the model do? (Residuals vs. Fitted Values)</a></li>
+<li class="chapter" data-level="2.6.4" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#how-does-the-model-do-residuals-vs.-fitted-values"><i class="fa fa-check"></i><b>2.6.4</b> How does the model do? (Residuals vs. Fitted Values)</a></li>
 </ul></li>
 <li class="chapter" data-level="2.7" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#a-new-small-study-predicting-bmi"><i class="fa fa-check"></i><b>2.7</b> A New Small Study: Predicting BMI</a><ul>
 <li class="chapter" data-level="2.7.1" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#does-female-predict-bmi-well"><i class="fa fa-check"></i><b>2.7.1</b> Does <code>female</code> predict <code>bmi</code> well?</a></li>
@@ -958,7 +984,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Use the outcome, but cross-validate the target measure of prediction error.</li>
 <li>Use the outcome, and <strong>shrink</strong> the coefficient estimates.</li>
 </ol>
-<p>The best subsets methods we have studied either include a variable or drop it from the model. Often, this choice is based on only a tiny difference in the quality of a fit to data.</p>
+<p>The best subsets methods we have studied either include a variable or drop it from the model.
+Often, this choice is based on only a tiny difference in the quality of a fit to data.</p>
 <ul>
 <li><span class="citation">Harrell (<a href="#ref-Harrell2001">2001</a>)</span>: not reasonable to assume that a population regression coefficient would be exactly zero just because it failed to meet a criterion for significance.</li>
 <li>Brad Efron has suggested that a stepwise approach is “overly greedy, impulsively eliminating covariates which are correlated with other covariates.”</li>
@@ -991,48 +1018,48 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>The idea is to pick a value of <span class="math inline">\(\lambda\)</span> for which the coefficients seem relatively stable.</li>
 </ul></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">preds &lt;-<span class="st"> </span><span class="kw">with</span>(prost, <span class="kw">cbind</span>(lcavol, lweight, age, bph_f,
+<pre class="sourceCode r"><code class="sourceCode r">preds &lt;-<span class="st"> </span><span class="kw">with</span>(prost, <span class="kw">cbind</span>(lcavol, lweight, age, bph_f,
                            svi_f, lcp, gleason_f, pgg45))
 
 x &lt;-<span class="st"> </span><span class="kw">lm.ridge</span>(prost<span class="op">$</span>lpsa <span class="op">~</span><span class="st"> </span>preds, <span class="dt">lambda =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">100</span>)
     
 <span class="kw">plot</span>(x)
 <span class="kw">title</span>(<span class="st">&quot;Ridge Regression for prost data&quot;</span>)
-<span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>)</code></pre></div>
+<span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/ridge_prost_code-1.png" width="672" /></p>
 <p>Usually, you need to use trial and error to decide the range of <span class="math inline">\(\lambda\)</span> to be tested. Here, <code>0:100</code> means going from 0 (no shrinkage) to 100 in steps of 1.</p>
 </div>
 <div id="the-lm.ridge-plot---where-do-coefficients-stabilize" class="section level3">
 <h3><span class="header-section-number">11.2.2</span> The <code>lm.ridge</code> plot - where do coefficients stabilize?</h3>
 <p>Does <span class="math inline">\(\lambda = 20\)</span> seem like a stable spot here?</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">lm.ridge</span>(prost<span class="op">$</span>lpsa <span class="op">~</span><span class="st"> </span>preds, <span class="dt">lambda =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">100</span>)
+<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">lm.ridge</span>(prost<span class="op">$</span>lpsa <span class="op">~</span><span class="st"> </span>preds, <span class="dt">lambda =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">100</span>)
 <span class="kw">plot</span>(x)
 <span class="kw">title</span>(<span class="st">&quot;Ridge Regression for prost data&quot;</span>)
 <span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>)
-<span class="kw">abline</span>(<span class="dt">v=</span><span class="dv">20</span>, <span class="dt">lty=</span><span class="dv">2</span>, <span class="dt">col=</span><span class="st">&quot;black&quot;</span>)</code></pre></div>
+<span class="kw">abline</span>(<span class="dt">v=</span><span class="dv">20</span>, <span class="dt">lty=</span><span class="dv">2</span>, <span class="dt">col=</span><span class="st">&quot;black&quot;</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/ridge_prost_20-1.png" width="672" /></p>
 <p>The coefficients at <span class="math inline">\(\lambda\)</span> = 20 can be determined from the <code>lm.ridge</code> output. These are fully standardized coefficients. The original predictors are centered by their means and then scaled by their standard deviations and the outcome has also been centered, in these models.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(x<span class="op">$</span>coef[,<span class="dv">20</span>],<span class="dv">3</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(x<span class="op">$</span>coef[,<span class="dv">20</span>],<span class="dv">3</span>)</code></pre>
 <pre><code>   predslcavol   predslweight       predsage     predsbph_f     predssvi_f 
          0.482          0.248         -0.091          0.097          0.252 
       predslcp predsgleason_f     predspgg45 
          0.009         -0.099          0.061 </code></pre>
 <p>Was an intercept used?</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x<span class="op">$</span>Inter</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">x<span class="op">$</span>Inter</code></pre>
 <pre><code>[1] 1</code></pre>
 <p>Yes, it was. There is an automated way to pick <span class="math inline">\(\lambda\)</span>. Use the <code>select</code> function in the <code>MASS</code> package:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">MASS<span class="op">::</span><span class="kw">select</span>(x)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">MASS<span class="op">::</span><span class="kw">select</span>(x)</code></pre>
 <pre><code>modified HKB estimator is 4.210238 
 modified L-W estimator is 3.32223 
 smallest value of GCV  at 6 </code></pre>
 <p>I’ll use the GCV = generalized cross-validation to select <span class="math inline">\(\lambda\)</span> = 6 instead.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">lm.ridge</span>(prost<span class="op">$</span>lpsa <span class="op">~</span><span class="st"> </span>preds, <span class="dt">lambda =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">100</span>)
+<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">lm.ridge</span>(prost<span class="op">$</span>lpsa <span class="op">~</span><span class="st"> </span>preds, <span class="dt">lambda =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">100</span>)
 <span class="kw">plot</span>(x)
 <span class="kw">title</span>(<span class="st">&quot;Ridge Regression for prost data&quot;</span>)
 <span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>)
-<span class="kw">abline</span>(<span class="dt">v=</span><span class="dv">6</span>, <span class="dt">lty=</span><span class="dv">2</span>, <span class="dt">col=</span><span class="st">&quot;black&quot;</span>)</code></pre></div>
+<span class="kw">abline</span>(<span class="dt">v=</span><span class="dv">6</span>, <span class="dt">lty=</span><span class="dv">2</span>, <span class="dt">col=</span><span class="st">&quot;black&quot;</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/c11_ridge_for_ptdsmale_with_40_line-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x<span class="op">$</span>coef[,<span class="dv">6</span>]</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">x<span class="op">$</span>coef[,<span class="dv">6</span>]</code></pre>
 <pre><code>   predslcavol   predslweight       predsage     predsbph_f     predssvi_f 
     0.58911149     0.26773757    -0.13715070     0.11862949     0.29491008 
       predslcp predsgleason_f     predspgg45 
@@ -1074,9 +1101,9 @@ smallest value of GCV  at 6 </code></pre>
 <li>The first plot shows what coefficients get selected as we move from constraining all of the coefficients to zero (complete shrinkage) towards fewer constraints all the way up to ordinary least squares, showing which variables are included in the model at each point.</li>
 <li>The second plot suggests where on the first plot we should look for a good model choice, according to a cross-validation approach.</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## requires lars package
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## requires lars package</span>
 lasso1 &lt;-<span class="st"> </span><span class="kw">lars</span>(preds, prost<span class="op">$</span>lpsa, <span class="dt">type=</span><span class="st">&quot;lasso&quot;</span>)
-<span class="kw">plot</span>(lasso1)</code></pre></div>
+<span class="kw">plot</span>(lasso1)</code></pre>
 <p><img src="2019-432-book_files/figure-html/lasso_graph1_forprost-1.png" width="672" /></p>
 <ul>
 <li>The y axis shows standardized regression coefficients.
@@ -1093,7 +1120,7 @@ lasso1 &lt;-<span class="st"> </span><span class="kw">lars</span>(preds, prost<s
 <p>The lasso graph starts at constraining all of the coefficients to zero, and then moves toward ordinary least squares.</p>
 <p>Identifiers for the predictors (numbers) are shown to the right of the graph.</p>
 <p>The vertical lines in the lasso plot show when a variable has been eliminated from the model, and in fact these are the only points that are actually shown in the default lasso graph. The labels on the top of the graph tell you how many predictors are in the model at that stage.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(lasso1)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(lasso1)</code></pre>
 <pre><code>LARS/LASSO
 Call: lars(x = preds, y = prost$lpsa, type = &quot;lasso&quot;)
   Df     Rss       Cp
@@ -1120,30 +1147,30 @@ Call: lars(x = preds, y = prost$lpsa, type = &quot;lasso&quot;)
 </ul></li>
 </ul>
 <p>The cross-validation plot is the second lasso plot.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">432</span>)
-lassocv &lt;-<span class="st"> </span><span class="kw">cv.lars</span>(preds, prost<span class="op">$</span>lpsa, <span class="dt">K=</span><span class="dv">10</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">432</span>)
+lassocv &lt;-<span class="st"> </span><span class="kw">cv.lars</span>(preds, prost<span class="op">$</span>lpsa, <span class="dt">K=</span><span class="dv">10</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/lasso_graph2-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## default cv.lars K is 10</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## default cv.lars K is 10</span></code></pre>
 <p>We’re looking to minimize cross-validated mean squared error in this plot, which doesn’t seem to happen until the fraction gets very close to 1.</p>
 </div>
 <div id="what-value-of-the-key-fraction-minimizes-cross-validated-mse" class="section level3">
 <h3><span class="header-section-number">11.3.4</span> What value of the key fraction minimizes cross-validated MSE?</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">frac &lt;-<span class="st"> </span>lassocv<span class="op">$</span>index[<span class="kw">which.min</span>(lassocv<span class="op">$</span>cv)]
-frac</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">frac &lt;-<span class="st"> </span>lassocv<span class="op">$</span>index[<span class="kw">which.min</span>(lassocv<span class="op">$</span>cv)]
+frac</code></pre>
 <pre><code>[1] 0.989899</code></pre>
 <p>The cross-validation plot suggests we use a fraction of nearly 1.0, suggesting that all of the predictors will be kept in, based on the top LASSO plot.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>))
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>))
 lasso1 &lt;-<span class="st"> </span><span class="kw">lars</span>(preds, prost<span class="op">$</span>lpsa, <span class="dt">type=</span><span class="st">&quot;lasso&quot;</span>)
 <span class="kw">plot</span>(lasso1)
 <span class="kw">set.seed</span>(<span class="dv">432</span>)
-lassocv &lt;-<span class="st"> </span><span class="kw">cv.lars</span>(preds, prost<span class="op">$</span>lpsa, <span class="dt">K=</span><span class="dv">10</span>)</code></pre></div>
+lassocv &lt;-<span class="st"> </span><span class="kw">cv.lars</span>(preds, prost<span class="op">$</span>lpsa, <span class="dt">K=</span><span class="dv">10</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/lasso_bothplots-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</code></pre>
 </div>
 <div id="coefficients-for-the-model-identified-by-the-cross-validation" class="section level3">
 <h3><span class="header-section-number">11.3.5</span> Coefficients for the Model Identified by the Cross-Validation</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">coef.cv &lt;-<span class="st"> </span><span class="kw">coef</span>(lasso1, <span class="dt">s=</span>frac, <span class="dt">mode=</span><span class="st">&quot;fraction&quot;</span>)
-<span class="kw">round</span>(coef.cv,<span class="dv">4</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">coef.cv &lt;-<span class="st"> </span><span class="kw">coef</span>(lasso1, <span class="dt">s=</span>frac, <span class="dt">mode=</span><span class="st">&quot;fraction&quot;</span>)
+<span class="kw">round</span>(coef.cv,<span class="dv">4</span>)</code></pre>
 <pre><code>   lcavol   lweight       age     bph_f     svi_f       lcp gleason_f 
    0.5529    0.6402   -0.0217    0.1535    0.7750   -0.1155   -0.1826 
     pgg45 
@@ -1152,9 +1179,9 @@ lassocv &lt;-<span class="st"> </span><span class="kw">cv.lars</span>(preds, pro
 </div>
 <div id="obtaining-fitted-values-from-lasso" class="section level3">
 <h3><span class="header-section-number">11.3.6</span> Obtaining Fitted Values from Lasso</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fits.cv &lt;-<span class="st"> </span><span class="kw">predict.lars</span>(lasso1, preds, <span class="dt">s=</span>frac, 
+<pre class="sourceCode r"><code class="sourceCode r">fits.cv &lt;-<span class="st"> </span><span class="kw">predict.lars</span>(lasso1, preds, <span class="dt">s=</span>frac, 
                         <span class="dt">type=</span><span class="st">&quot;fit&quot;</span>, <span class="dt">mode=</span><span class="st">&quot;fraction&quot;</span>)
-fits.cv</code></pre></div>
+fits.cv</code></pre>
 <pre><code>$s
 [1] 0.989899
 
@@ -1182,7 +1209,7 @@ $fit
 </div>
 <div id="complete-set-of-fitted-values-from-the-lasso" class="section level3">
 <h3><span class="header-section-number">11.3.7</span> Complete Set of Fitted Values from the Lasso</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(fits.cv<span class="op">$</span>fit,<span class="dv">3</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(fits.cv<span class="op">$</span>fit,<span class="dv">3</span>)</code></pre>
 <pre><code> [1] 0.800 0.749 0.511 0.610 1.700 0.834 1.829 2.130 1.249 1.266 1.470
 [12] 0.778 2.076 1.913 2.153 1.812 1.271 2.399 1.323 1.771 1.976 2.745
 [23] 1.166 2.483 1.804 1.911 2.014 1.783 1.971 2.169 2.038 1.866 1.696
@@ -1193,7 +1220,7 @@ $fit
 [78] 3.452 3.405 3.181 2.050 2.899 3.674 3.329 2.697 3.834 2.989 3.056
 [89] 4.290 3.099 3.378 4.021 3.831 4.753 3.629 4.135 4.098</code></pre>
 <p>To assess the quality of these predictions, we might plot them against the observed values of our outcome (<code>lpsa</code>), or we might look at residuals vs. these fitted values.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">prost_lasso_res &lt;-<span class="st"> </span><span class="kw">data_frame</span>(<span class="dt">fitted =</span> fits.cv<span class="op">$</span>fit, 
+<pre class="sourceCode r"><code class="sourceCode r">prost_lasso_res &lt;-<span class="st"> </span><span class="kw">data_frame</span>(<span class="dt">fitted =</span> fits.cv<span class="op">$</span>fit, 
                              <span class="dt">actual =</span> prost<span class="op">$</span>lpsa, 
                              <span class="dt">resid =</span> actual <span class="op">-</span><span class="st"> </span>fitted)
 
@@ -1202,16 +1229,16 @@ $fit
 <span class="st">    </span><span class="kw">geom_abline</span>(<span class="dt">slope =</span> <span class="dv">1</span>, <span class="dt">intercept =</span> <span class="dv">0</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Fitted log(PSA) from Cross-Validated LASSO&quot;</span>,
          <span class="dt">x =</span> <span class="st">&quot;Observed values of log(PSA)&quot;</span>,
-         <span class="dt">title =</span> <span class="st">&quot;Fitted vs. Actual Values of log(PSA)&quot;</span>)</code></pre></div>
+         <span class="dt">title =</span> <span class="st">&quot;Fitted vs. Actual Values of log(PSA)&quot;</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-133-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(prost_lasso_res, <span class="kw">aes</span>(<span class="dt">x =</span> fitted, <span class="dt">y =</span> resid)) <span class="op">+</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(prost_lasso_res, <span class="kw">aes</span>(<span class="dt">x =</span> fitted, <span class="dt">y =</span> resid)) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="dv">0</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">se =</span> F) <span class="op">+</span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;LASSO-fitted log(PSA)&quot;</span>,
          <span class="dt">y =</span> <span class="st">&quot;Residuals from Cross-Validated LASSO model&quot;</span>,
          <span class="dt">title =</span> <span class="st">&quot;Residuals vs. Fitted Values of log(PSA) from LASSO&quot;</span>,
-         <span class="dt">subtitle =</span> <span class="st">&quot;with loess smooth&quot;</span>)</code></pre></div>
+         <span class="dt">subtitle =</span> <span class="st">&quot;with loess smooth&quot;</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-134-1.png" width="672" /></p>
 </div>
 <div id="when-is-the-lasso-most-useful" class="section level3">
@@ -1224,14 +1251,14 @@ $fit
 <div id="applying-the-lasso-to-the-pollution-data" class="section level2">
 <h2><span class="header-section-number">11.4</span> Applying the Lasso to the <code>pollution</code> data</h2>
 <p>Let’s consider the lasso approach in application to the <code>pollution</code> data we’ve seen previously. Recall that we have 60 observations on an outcome, <code>y</code>, and 15 predictors, labeled x1 through x15.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">preds &lt;-<span class="st"> </span><span class="kw">with</span>(pollution, <span class="kw">cbind</span>(x1, x2, x3, x4, x5, x6, x7,
+<pre class="sourceCode r"><code class="sourceCode r">preds &lt;-<span class="st"> </span><span class="kw">with</span>(pollution, <span class="kw">cbind</span>(x1, x2, x3, x4, x5, x6, x7,
                                x8, x9, x10, x11, x12, x13,
                                x14, x15))
 
 lasso_p1 &lt;-<span class="st"> </span><span class="kw">lars</span>(preds, pollution<span class="op">$</span>y, <span class="dt">type=</span><span class="st">&quot;lasso&quot;</span>)
-<span class="kw">plot</span>(lasso_p1)</code></pre></div>
+<span class="kw">plot</span>(lasso_p1)</code></pre>
 <p><img src="2019-432-book_files/figure-html/lasso_graph1_forpollution-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(lasso_p1)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(lasso_p1)</code></pre>
 <pre><code>LARS/LASSO
 Call: lars(x = preds, y = pollution$y, type = &quot;lasso&quot;)
    Df    Rss       Cp
@@ -1254,31 +1281,31 @@ Call: lars(x = preds, y = pollution$y, type = &quot;lasso&quot;)
 16 15  53847  14.1361
 17 16  53681  16.0000</code></pre>
 <p>Based on the C<sub>p</sub> statistics, it looks like the big improvements occur somewhere around the move from 6 to 7 df. Let’s look at the cross-validation</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">432012</span>)
-pollution_lassocv &lt;-<span class="st"> </span><span class="kw">cv.lars</span>(preds, pollution<span class="op">$</span>y, <span class="dt">K=</span><span class="dv">10</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">432012</span>)
+pollution_lassocv &lt;-<span class="st"> </span><span class="kw">cv.lars</span>(preds, pollution<span class="op">$</span>y, <span class="dt">K=</span><span class="dv">10</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-135-1.png" width="672" /></p>
 <p>Here it looks like cross-validated MSE happens somewhere between a fraction of 0.2 and 0.4.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">frac &lt;-<span class="st"> </span>pollution_lassocv<span class="op">$</span>index[<span class="kw">which.min</span>(pollution_lassocv<span class="op">$</span>cv)]
-frac</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">frac &lt;-<span class="st"> </span>pollution_lassocv<span class="op">$</span>index[<span class="kw">which.min</span>(pollution_lassocv<span class="op">$</span>cv)]
+frac</code></pre>
 <pre><code>[1] 0.3535354</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>))
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>))
 lasso_p1 &lt;-<span class="st"> </span><span class="kw">lars</span>(preds, pollution<span class="op">$</span>y, <span class="dt">type=</span><span class="st">&quot;lasso&quot;</span>)
 <span class="kw">plot</span>(lasso_p1)
 <span class="kw">set.seed</span>(<span class="dv">432012</span>)
-pollution_lassocv &lt;-<span class="st"> </span><span class="kw">cv.lars</span>(preds, pollution<span class="op">$</span>y, <span class="dt">K=</span><span class="dv">10</span>)</code></pre></div>
+pollution_lassocv &lt;-<span class="st"> </span><span class="kw">cv.lars</span>(preds, pollution<span class="op">$</span>y, <span class="dt">K=</span><span class="dv">10</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-137-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</code></pre>
 <p>It looks like a model with 6-8 predictors will be the most useful. The cross-validated coefficients are as follows:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">poll.cv &lt;-<span class="st"> </span><span class="kw">coef</span>(lasso_p1, <span class="dt">s=</span>frac, <span class="dt">mode=</span><span class="st">&quot;fraction&quot;</span>)
-<span class="kw">round</span>(poll.cv,<span class="dv">3</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">poll.cv &lt;-<span class="st"> </span><span class="kw">coef</span>(lasso_p1, <span class="dt">s=</span>frac, <span class="dt">mode=</span><span class="st">&quot;fraction&quot;</span>)
+<span class="kw">round</span>(poll.cv,<span class="dv">3</span>)</code></pre>
 <pre><code>     x1      x2      x3      x4      x5      x6      x7      x8      x9 
   1.471  -1.164  -1.102   0.000   0.000 -10.610  -0.457   0.003   3.918 
     x10     x11     x12     x13     x14     x15 
   0.000   0.000   0.000   0.000   0.228   0.000 </code></pre>
 <p>Note that by this cross-validated lasso selection, not only are the coefficients for the 8 variables remaining in the model shrunken, but variables <code>x4</code>, <code>x5</code>, <code>x10</code>, <code>x11</code>, <code>x12</code>, <code>x13</code> and <code>x15</code> are all dropped from the model, and model <code>x8</code> almost is, as well.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">poll_fits &lt;-<span class="st"> </span><span class="kw">predict.lars</span>(lasso_p1, preds, <span class="dt">s=</span>frac, 
+<pre class="sourceCode r"><code class="sourceCode r">poll_fits &lt;-<span class="st"> </span><span class="kw">predict.lars</span>(lasso_p1, preds, <span class="dt">s=</span>frac, 
                         <span class="dt">type=</span><span class="st">&quot;fit&quot;</span>, <span class="dt">mode=</span><span class="st">&quot;fraction&quot;</span>)
-<span class="kw">round</span>(poll_fits<span class="op">$</span>fit,<span class="dv">3</span>)</code></pre></div>
+<span class="kw">round</span>(poll_fits<span class="op">$</span>fit,<span class="dv">3</span>)</code></pre>
 <pre><code> [1]  932.627  918.415  921.904  987.396 1050.184 1065.837  912.424
  [8]  916.605  949.647  926.168  996.625 1017.362  977.730  954.550
 [15]  931.455  894.263  931.551  868.599  973.471  940.937  881.867
@@ -1289,7 +1316,7 @@ pollution_lassocv &lt;-<span class="st"> </span><span class="kw">cv.lars</span>(
 [50]  895.082  909.398  917.969  926.777  917.381  991.266  879.972
 [57]  942.867  913.737  960.952  949.030</code></pre>
 <p>Here’s a plot of the actual <code>pollution</code> y values, against these fitted values.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">poll_lasso_res &lt;-<span class="st"> </span><span class="kw">data_frame</span>(<span class="dt">fitted =</span> poll_fits<span class="op">$</span>fit, 
+<pre class="sourceCode r"><code class="sourceCode r">poll_lasso_res &lt;-<span class="st"> </span><span class="kw">data_frame</span>(<span class="dt">fitted =</span> poll_fits<span class="op">$</span>fit, 
                              <span class="dt">actual =</span> pollution<span class="op">$</span>y, 
                              <span class="dt">resid =</span> actual <span class="op">-</span><span class="st"> </span>fitted)
 
@@ -1298,17 +1325,17 @@ pollution_lassocv &lt;-<span class="st"> </span><span class="kw">cv.lars</span>(
 <span class="st">    </span><span class="kw">geom_abline</span>(<span class="dt">slope =</span> <span class="dv">1</span>, <span class="dt">intercept =</span> <span class="dv">0</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Fitted y values from Cross-Validated LASSO&quot;</span>,
          <span class="dt">x =</span> <span class="st">&quot;Observed values of y = Age-Adjusted Mortality Rate&quot;</span>,
-         <span class="dt">title =</span> <span class="st">&quot;Fitted vs. Actual Values of Age-Adjusted Mortality&quot;</span>)</code></pre></div>
+         <span class="dt">title =</span> <span class="st">&quot;Fitted vs. Actual Values of Age-Adjusted Mortality&quot;</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-139-1.png" width="672" /></p>
 <p>And now, here’s a plot or residuals vs. fitted values.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(poll_lasso_res, <span class="kw">aes</span>(<span class="dt">x =</span> fitted, <span class="dt">y =</span> resid)) <span class="op">+</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(poll_lasso_res, <span class="kw">aes</span>(<span class="dt">x =</span> fitted, <span class="dt">y =</span> resid)) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="dv">0</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">se =</span> F) <span class="op">+</span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;LASSO-fitted Age-Adjusted Mortality&quot;</span>,
          <span class="dt">y =</span> <span class="st">&quot;Residuals from Cross-Validated LASSO model&quot;</span>,
          <span class="dt">title =</span> <span class="st">&quot;Residuals vs. Fitted Values of Age-Adjusted Mortality from LASSO&quot;</span>,
-         <span class="dt">subtitle =</span> <span class="st">&quot;with loess smooth&quot;</span>)</code></pre></div>
+         <span class="dt">subtitle =</span> <span class="st">&quot;with loess smooth&quot;</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-140-1.png" width="672" /></p>
 
 </div>
@@ -1316,7 +1343,7 @@ pollution_lassocv &lt;-<span class="st"> </span><span class="kw">cv.lars</span>(
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-Vittinghoff2012">
-<p>Vittinghoff, Eric, David V. Glidden, Stephen C. Shiboski, and Charles E. McCulloch. 2012. <em>Regression Methods in Biostatistics: Linear, Logistic, Survival, and Repeated Measures Models</em>. Second Edition. Springer-Verlag, Inc. <a href="http://www.biostat.ucsf.edu/vgsm/" class="uri">http://www.biostat.ucsf.edu/vgsm/</a>.</p>
+<p>Vittinghoff, Eric, David V. Glidden, Stephen C. Shiboski, and Charles E. McCulloch. 2012. <em>Regression Methods in Biostatistics: Linear, Logistic, Survival, and Repeated Measures Models</em>. Second Edition. Springer-Verlag, Inc. <a href="http://www.biostat.ucsf.edu/vgsm/">http://www.biostat.ucsf.edu/vgsm/</a>.</p>
 </div>
 <div id="ref-Harrell2001">
 <p>Harrell, Frank E. 2001. <em>Regression Modeling Strategies</em>. New York: Springer.</p>
@@ -1381,7 +1408,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');

@@ -50,41 +50,67 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 </head>
@@ -154,7 +180,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.6.1" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#fitting-a-simple-regression-model"><i class="fa fa-check"></i><b>2.6.1</b> Fitting a Simple Regression Model</a></li>
 <li class="chapter" data-level="2.6.2" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#model-summary-for-a-simple-one-predictor-regression"><i class="fa fa-check"></i><b>2.6.2</b> Model Summary for a Simple (One-Predictor) Regression</a></li>
 <li class="chapter" data-level="2.6.3" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#using-the-broom-package"><i class="fa fa-check"></i><b>2.6.3</b> Using the <code>broom</code> package</a></li>
-<li class="chapter" data-level="2.6.4" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#how-does-the-model-do-residuals-vs.fitted-values"><i class="fa fa-check"></i><b>2.6.4</b> How does the model do? (Residuals vs. Fitted Values)</a></li>
+<li class="chapter" data-level="2.6.4" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#how-does-the-model-do-residuals-vs.-fitted-values"><i class="fa fa-check"></i><b>2.6.4</b> How does the model do? (Residuals vs. Fitted Values)</a></li>
 </ul></li>
 <li class="chapter" data-level="2.7" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#a-new-small-study-predicting-bmi"><i class="fa fa-check"></i><b>2.7</b> A New Small Study: Predicting BMI</a><ul>
 <li class="chapter" data-level="2.7.1" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#does-female-predict-bmi-well"><i class="fa fa-check"></i><b>2.7.1</b> Does <code>female</code> predict <code>bmi</code> well?</a></li>
@@ -957,16 +983,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="ingesting-the-raw-data" class="section level2">
 <h2><span class="header-section-number">17.2</span> Ingesting The Raw Data</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(skimr) 
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(skimr) 
 <span class="kw">library</span>(broom); <span class="kw">library</span>(modelr)
-<span class="kw">library</span>(haven); <span class="kw">library</span>(tidyverse)</code></pre></div>
+<span class="kw">library</span>(haven); <span class="kw">library</span>(tidyverse)</code></pre>
 </div>
 <div id="the-national-data" class="section level2">
 <h2><span class="header-section-number">17.3</span> The National Data</h2>
 <p>To create the data files we’ll use, I used the <code>read_xpt</code> function from the <code>haven</code> package to bring in the SAS XPT data file that is provided by CDC. The codes I used (but won’t use in these Notes) were:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span><span class="kw">read_xpt</span>(<span class="st">&quot;data/MMSA2016.xpt&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>tbl_df
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span><span class="kw">read_xpt</span>(<span class="st">&quot;data/MMSA2016.xpt&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>tbl_df
 
-<span class="kw">dim</span>(smart.raw)</code></pre></div>
+<span class="kw">dim</span>(smart.raw)</code></pre>
 <p>This gives the nationwide data, which has 249,011 rows and 146 columns.</p>
 <p>But for the purposes of putting these Notes online, I needed to crank down the sample size enormously. To that end, I created a new data file, called smartorig.csv, which I developed by</p>
 <ul>
@@ -975,14 +1001,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>saving it</li>
 </ul>
 <p>So, for purposes of these notes, our complete data set is actually coming from <code>smartorg.csv</code> and consists only of the 6,014 observations from Ohio.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/smartorig.csv&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>tbl_df</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/smartorig.csv&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>tbl_df</code></pre>
 <pre><code>Parsed with column specification:
 cols(
   .default = col_double(),
   MMSANAME = col_character()
 )</code></pre>
 <pre><code>See spec(...) for full column specifications.</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(smart.raw)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(smart.raw)</code></pre>
 <pre><code>[1] 6014  146</code></pre>
 </div>
 <div id="cleaning-the-brfss-data" class="section level2">
@@ -991,7 +1017,7 @@ cols(
 <ul>
 <li><code>DISPCODE</code> which is 1100 if the subject completed the interview, and 1200 if they partially completed the interview.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(DISPCODE)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(DISPCODE)</code></pre>
 <pre><code># A tibble: 2 x 2
   DISPCODE     n
      &lt;dbl&gt; &lt;int&gt;
@@ -1004,11 +1030,11 @@ cols(
 <li>So we should change all numerical values above 76 to NA for our analyses (the blanks are already regarded as NAs by R in the ingestion process.)</li>
 </ul></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">hhadults =</span> HHADULT,
            <span class="dt">hhadults =</span> <span class="kw">replace</span>(hhadults, hhadults <span class="op">&gt;</span><span class="st"> </span><span class="dv">76</span>, <span class="ot">NA</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(HHADULT, hhadults) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tail</span>()</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(HHADULT, hhadults) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tail</span>()</code></pre>
 <pre><code># A tibble: 6 x 3
   HHADULT hhadults     n
     &lt;dbl&gt;    &lt;dbl&gt; &lt;int&gt;
@@ -1036,8 +1062,10 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>BLANK = Not asked or missing</li>
 </ul></li>
 </ul>
-<p>To clean up the <code>GENHLTH</code> data into a new variable called <code>genhealth</code> we’ll need to - convince R that the 7 and 9 values are in fact best interpreted as <code>NA</code>, - and perhaps change the variable to a factor and incorporate the names into the levels.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<p>To clean up the <code>GENHLTH</code> data into a new variable called <code>genhealth</code> we’ll need to
+- convince R that the 7 and 9 values are in fact best interpreted as <code>NA</code>,
+- and perhaps change the variable to a factor and incorporate the names into the levels.</p>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">genhealth =</span> <span class="kw">fct_recode</span>(<span class="kw">factor</span>(GENHLTH), 
                                 <span class="st">&quot;1_Excellent&quot;</span> =<span class="st"> &quot;1&quot;</span>,
                                 <span class="st">&quot;2_VeryGood&quot;</span> =<span class="st"> &quot;2&quot;</span>,
@@ -1047,7 +1075,9 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
                                 <span class="dt">NULL =</span> <span class="st">&quot;7&quot;</span>,
                                 <span class="dt">NULL =</span> <span class="st">&quot;9&quot;</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(GENHLTH, genhealth) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tail</span>()</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(GENHLTH, genhealth) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tail</span>()</code></pre>
+<pre><code>Warning: Factor `genhealth` contains implicit NA, consider using
+`forcats::fct_explicit_na`</code></pre>
 <pre><code># A tibble: 6 x 3
   GENHLTH genhealth      n
     &lt;dbl&gt; &lt;fct&gt;      &lt;int&gt;
@@ -1072,13 +1102,15 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>99 is the code for Refused</li>
 <li>BLANK indicates Not asked or missing, and R recognizes this as <code>NA</code> properly.</li>
 </ul>
-<p>To clean up <code>PHYSHLTH</code> to a new variable called <code>physhealth</code>, we’ll need: - to convince R that the 77 and 99 values are in fact best interpreted as <code>NA</code>, and - to convince R that the 88 should be interpreted as 0.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<p>To clean up <code>PHYSHLTH</code> to a new variable called <code>physhealth</code>, we’ll need:
+- to convince R that the 77 and 99 values are in fact best interpreted as <code>NA</code>, and
+- to convince R that the 88 should be interpreted as 0.</p>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">physhealth =</span> PHYSHLTH,
            <span class="dt">physhealth =</span> <span class="kw">replace</span>(physhealth, physhealth <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">77</span>, <span class="dv">99</span>), <span class="ot">NA</span>),
            <span class="dt">physhealth =</span> <span class="kw">replace</span>(physhealth, physhealth <span class="op">==</span><span class="st"> </span><span class="dv">88</span>, <span class="dv">0</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(PHYSHLTH, physhealth) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tail</span>()</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(PHYSHLTH, physhealth) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tail</span>()</code></pre>
 <pre><code># A tibble: 6 x 3
   PHYSHLTH physhealth     n
      &lt;dbl&gt;      &lt;dbl&gt; &lt;int&gt;
@@ -1096,13 +1128,15 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <ul>
 <li>This is coded just like the <code>PHYSHLTH</code> variable, so we need to do the same cleaning we did there.</li>
 </ul>
-<p>To clean up <code>MENTHLTH</code> to a new variable called <code>menthealth</code>, we’ll need: - to convince R that the 77 and 99 values are in fact best interpreted as <code>NA</code>, and - to convince R that the 88 should be interpreted as 0.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<p>To clean up <code>MENTHLTH</code> to a new variable called <code>menthealth</code>, we’ll need:
+- to convince R that the 77 and 99 values are in fact best interpreted as <code>NA</code>, and
+- to convince R that the 88 should be interpreted as 0.</p>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">menthealth =</span> MENTHLTH,
            <span class="dt">menthealth =</span> <span class="kw">replace</span>(menthealth, menthealth <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">77</span>, <span class="dv">99</span>), <span class="ot">NA</span>),
            <span class="dt">menthealth =</span> <span class="kw">replace</span>(menthealth, menthealth <span class="op">==</span><span class="st"> </span><span class="dv">88</span>, <span class="dv">0</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(MENTHLTH, menthealth) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tail</span>()</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(MENTHLTH, menthealth) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tail</span>()</code></pre>
 <pre><code># A tibble: 6 x 3
   MENTHLTH menthealth     n
      &lt;dbl&gt;      &lt;dbl&gt; &lt;int&gt;
@@ -1119,12 +1153,12 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <ul>
 <li>Again, we recode just like the <code>PHYSHLTH</code> variable.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">poorhealth =</span> POORHLTH,
            <span class="dt">poorhealth =</span> <span class="kw">replace</span>(poorhealth, poorhealth <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">77</span>, <span class="dv">99</span>), <span class="ot">NA</span>),
            <span class="dt">poorhealth =</span> <span class="kw">replace</span>(poorhealth, poorhealth <span class="op">==</span><span class="st"> </span><span class="dv">88</span>, <span class="dv">0</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(POORHLTH, poorhealth) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tail</span>()</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(POORHLTH, poorhealth) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tail</span>()</code></pre>
 <pre><code># A tibble: 6 x 3
   POORHLTH poorhealth     n
      &lt;dbl&gt;      &lt;dbl&gt; &lt;int&gt;
@@ -1149,13 +1183,14 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>9 = Refused</li>
 </ul>
 <p>To clean up the <code>HLTHPLN1</code> data into a new variable called <code>healthplan</code> we’ll<br />
-- convince R that the 7 and 9 values are in fact best interpreted as <code>NA</code>, - and turn it into an indicator variable, e.g., we will leave the variable as numeric, but change the values to 1 = Yes and 0 = No.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+- convince R that the 7 and 9 values are in fact best interpreted as <code>NA</code>,
+- and turn it into an indicator variable, e.g., we will leave the variable as numeric, but change the values to 1 = Yes and 0 = No.</p>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">healthplan =</span> HLTHPLN1,
            <span class="dt">healthplan =</span> <span class="kw">replace</span>(healthplan, healthplan <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">9</span>), <span class="ot">NA</span>),
            <span class="dt">healthplan =</span> <span class="kw">replace</span>(healthplan, healthplan <span class="op">==</span><span class="st"> </span><span class="dv">2</span>, <span class="dv">0</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(HLTHPLN1, healthplan)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(HLTHPLN1, healthplan)</code></pre>
 <pre><code># A tibble: 4 x 3
   HLTHPLN1 healthplan     n
      &lt;dbl&gt;      &lt;dbl&gt; &lt;int&gt;
@@ -1177,9 +1212,12 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 </ul>
 <p>Let’s build two variables here. We’ll create a <code>hasdoc</code> variable which is simply Yes or No, and a factor variable called <code>numdocs2</code> which keeps the first three levels in place.</p>
 <p>To clean up the <code>PERSDOC2</code> data into a new variable called <code>hasdoc</code> we’ll<br />
-- convince R that the 7 and 9 values are in fact best interpreted as <code>NA</code>, - and turn it into an indicator variable, e.g., we will leave the variable as numeric, but change the values to 1 = Yes and 0 = No, so that the original 1 and 2 become 1, and the original 3 becomes 0.</p>
-<p>To clean up the <code>PERSDOC2</code> data into a new variable called <code>numdocs2</code> we’ll - convince R that the 7 and 9 values are in fact best interpreted as <code>NA</code>, - relabel options 1, 2 and 3 while turning the variable into a factor.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+- convince R that the 7 and 9 values are in fact best interpreted as <code>NA</code>,
+- and turn it into an indicator variable, e.g., we will leave the variable as numeric, but change the values to 1 = Yes and 0 = No, so that the original 1 and 2 become 1, and the original 3 becomes 0.</p>
+<p>To clean up the <code>PERSDOC2</code> data into a new variable called <code>numdocs2</code> we’ll
+- convince R that the 7 and 9 values are in fact best interpreted as <code>NA</code>,
+- relabel options 1, 2 and 3 while turning the variable into a factor.</p>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">hasdoc =</span> PERSDOC2,
            <span class="dt">hasdoc =</span> <span class="kw">replace</span>(hasdoc, hasdoc <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">9</span>), <span class="ot">NA</span>),
            <span class="dt">hasdoc =</span> <span class="kw">replace</span>(hasdoc, hasdoc <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="dv">1</span>),
@@ -1191,7 +1229,9 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
                                  <span class="dt">NULL =</span> <span class="st">&quot;7&quot;</span>,
                                  <span class="dt">NULL =</span> <span class="st">&quot;9&quot;</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(PERSDOC2, hasdoc, numdocs2)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(PERSDOC2, hasdoc, numdocs2)</code></pre>
+<pre><code>Warning: Factor `numdocs2` contains implicit NA, consider using
+`forcats::fct_explicit_na`</code></pre>
 <pre><code># A tibble: 5 x 4
   PERSDOC2 hasdoc numdocs2          n
      &lt;dbl&gt;  &lt;dbl&gt; &lt;fct&gt;         &lt;int&gt;
@@ -1212,12 +1252,12 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>BLANK = Not asked or missing</li>
 </ul>
 <p>This is just like <code>HLTHPLAN</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">costprob =</span> MEDCOST,
            <span class="dt">costprob =</span> <span class="kw">replace</span>(costprob, costprob <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">9</span>), <span class="ot">NA</span>),
            <span class="dt">costprob =</span> <span class="kw">replace</span>(costprob, costprob <span class="op">==</span><span class="st"> </span><span class="dv">2</span>, <span class="dv">0</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(MEDCOST, costprob)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(MEDCOST, costprob)</code></pre>
 <pre><code># A tibble: 4 x 3
   MEDCOST costprob     n
     &lt;dbl&gt;    &lt;dbl&gt; &lt;int&gt;
@@ -1239,8 +1279,10 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>9 = Refused</li>
 <li>BLANK = Not asked or missing</li>
 </ul>
-<p>To clean up the <code>CHECKUP1</code> data into a new variable called <code>checktime</code> we’ll - convince R that the 7 and 9 values are in fact best interpreted as <code>NA</code>, - relabel options 1, 2, 3, 4 and 8 while turning the variable into a factor.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<p>To clean up the <code>CHECKUP1</code> data into a new variable called <code>checktime</code> we’ll
+- convince R that the 7 and 9 values are in fact best interpreted as <code>NA</code>,
+- relabel options 1, 2, 3, 4 and 8 while turning the variable into a factor.</p>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">checktime =</span> <span class="kw">fct_recode</span>(<span class="kw">factor</span>(CHECKUP1),
                                  <span class="st">&quot;1_In-past-year&quot;</span> =<span class="st"> &quot;1&quot;</span>,
                                  <span class="st">&quot;2_1-to-2-years&quot;</span> =<span class="st"> &quot;2&quot;</span>,
@@ -1250,7 +1292,9 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
                                  <span class="dt">NULL =</span> <span class="st">&quot;7&quot;</span>,
                                  <span class="dt">NULL =</span> <span class="st">&quot;9&quot;</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(CHECKUP1, checktime)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(CHECKUP1, checktime)</code></pre>
+<pre><code>Warning: Factor `checktime` contains implicit NA, consider using
+`forcats::fct_explicit_na`</code></pre>
 <pre><code># A tibble: 7 x 3
   CHECKUP1 checktime          n
      &lt;dbl&gt; &lt;fct&gt;          &lt;int&gt;
@@ -1276,12 +1320,12 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>BLANK = Not asked or missing</li>
 </ul>
 <p>This is just like <code>HLTHPLAN</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">exerany =</span> EXERANY2,
            <span class="dt">exerany =</span> <span class="kw">replace</span>(exerany, exerany <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">9</span>), <span class="ot">NA</span>),
            <span class="dt">exerany =</span> <span class="kw">replace</span>(exerany, exerany <span class="op">==</span><span class="st"> </span><span class="dv">2</span>, <span class="dv">0</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(EXERANY2, exerany)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(EXERANY2, exerany)</code></pre>
 <pre><code># A tibble: 4 x 3
   EXERANY2 exerany     n
      &lt;dbl&gt;   &lt;dbl&gt; &lt;int&gt;
@@ -1300,11 +1344,11 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>The response is 1-24, with special values 77 for Don’t Know/Not Sure and 99 for refused, with BLANK for missing or not asked.</li>
 <li>So we should change all numerical values above 24 to NA for our analyses (the blanks are already regarded as NAs by R in the ingestion process.)</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">sleephrs =</span> SLEPTIM1,
            <span class="dt">sleephrs =</span> <span class="kw">replace</span>(sleephrs, sleephrs <span class="op">&gt;</span><span class="st"> </span><span class="dv">24</span>, <span class="ot">NA</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(SLEPTIM1, sleephrs) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tail</span>()</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(SLEPTIM1, sleephrs) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tail</span>()</code></pre>
 <pre><code># A tibble: 6 x 3
   SLEPTIM1 sleephrs     n
      &lt;dbl&gt;    &lt;dbl&gt; &lt;int&gt;
@@ -1330,11 +1374,11 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 </ul>
 <p>and we’ll recode them all to 1 = Yes, 0 = No, otherwise NA, as we’ve done previously.</p>
 <p>The questions are all started with “Has a doctor, nurse, or other health professional ever told you that you had any of the following? For each, tell me Yes, No, or you’re Not sure.”</p>
-<table style="width:86%;">
+<table>
 <colgroup>
-<col width="12%" />
-<col width="12%" />
-<col width="61%" />
+<col width="13%" />
+<col width="13%" />
+<col width="72%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -1401,7 +1445,7 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 </tr>
 </tbody>
 </table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">hx.mi =</span> CVDINFR4,
            <span class="dt">hx.mi =</span> <span class="kw">replace</span>(hx.mi, hx.mi <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">9</span>), <span class="ot">NA</span>),
            <span class="dt">hx.mi =</span> <span class="kw">replace</span>(hx.mi, hx.mi <span class="op">==</span><span class="st"> </span><span class="dv">2</span>, <span class="dv">0</span>),
@@ -1434,7 +1478,7 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
            <span class="dt">hx.depress =</span> <span class="kw">replace</span>(hx.depress, hx.depress <span class="op">==</span><span class="st"> </span><span class="dv">2</span>, <span class="dv">0</span>),
            <span class="dt">hx.kidney =</span> CHCKIDNY,
            <span class="dt">hx.kidney =</span> <span class="kw">replace</span>(hx.kidney, hx.kidney <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">9</span>), <span class="ot">NA</span>),
-           <span class="dt">hx.kidney =</span> <span class="kw">replace</span>(hx.kidney, hx.kidney <span class="op">==</span><span class="st"> </span><span class="dv">2</span>, <span class="dv">0</span>))</code></pre></div>
+           <span class="dt">hx.kidney =</span> <span class="kw">replace</span>(hx.kidney, hx.kidney <span class="op">==</span><span class="st"> </span><span class="dv">2</span>, <span class="dv">0</span>))</code></pre>
 <p>We definitely should have written a function to do that, of course.</p>
 </div>
 <div id="diabete3-and-its-cleanup-to-hx.diabetes-and-diabetes3" class="section level4">
@@ -1450,7 +1494,7 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>BLANK = Not asked or missing</li>
 </ul>
 <p>I’ll create one variable called <code>hx.diabetes</code> which is 1 if <code>DIABETE3</code> = 1, and 0 otherwise, with appropriate NAs, like our other variables. Then I’ll create <code>diabetes3</code> to include all of this information in a factor, but again recode the missing values properly.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">hx.diabetes =</span> DIABETE3,
            <span class="dt">hx.diabetes =</span> <span class="kw">replace</span>(hx.diabetes, hx.diabetes <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">9</span>), <span class="ot">NA</span>),
            <span class="dt">hx.diabetes =</span> <span class="kw">replace</span>(hx.diabetes, hx.diabetes <span class="op">%in%</span><span class="st"> </span><span class="dv">2</span><span class="op">:</span><span class="dv">4</span>, <span class="dv">0</span>),
@@ -1462,7 +1506,9 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
                                   <span class="dt">NULL =</span> <span class="st">&quot;7&quot;</span>,
                                   <span class="dt">NULL =</span> <span class="st">&quot;9&quot;</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(DIABETE3, hx.diabetes, diabetes3)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(DIABETE3, hx.diabetes, diabetes3)</code></pre>
+<pre><code>Warning: Factor `diabetes3` contains implicit NA, consider using
+`forcats::fct_explicit_na`</code></pre>
 <pre><code># A tibble: 6 x 4
   DIABETE3 hx.diabetes diabetes3             n
      &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;             &lt;int&gt;
@@ -1479,11 +1525,11 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <ul>
 <li>The response is 1-97, with special values 98 for Don’t Know/Not Sure and 99 for refused, with BLANK for missing or not asked. People 97 years of age and above were listed as 97.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">diab.age =</span> DIABAGE2,
            <span class="dt">diab.age =</span> <span class="kw">replace</span>(diab.age, diab.age <span class="op">&gt;</span><span class="st"> </span><span class="dv">97</span>, <span class="ot">NA</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(DIABAGE2, diab.age) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tail</span>()</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(DIABAGE2, diab.age) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tail</span>()</code></pre>
 <pre><code># A tibble: 6 x 3
   DIABAGE2 diab.age     n
      &lt;dbl&gt;    &lt;dbl&gt; &lt;int&gt;
@@ -1511,7 +1557,7 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>BLANK = Not asked or missing</li>
 </ul>
 <p>We’ll again use the approach from <code>CHECKUP1</code>…</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">denttime =</span> <span class="kw">fct_recode</span>(<span class="kw">factor</span>(LASTDEN3),
                                  <span class="st">&quot;1_In-past-year&quot;</span> =<span class="st"> &quot;1&quot;</span>,
                                  <span class="st">&quot;2_1-to-2-years&quot;</span> =<span class="st"> &quot;2&quot;</span>,
@@ -1521,7 +1567,9 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
                                  <span class="dt">NULL =</span> <span class="st">&quot;7&quot;</span>,
                                  <span class="dt">NULL =</span> <span class="st">&quot;9&quot;</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(LASTDEN3, denttime)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(LASTDEN3, denttime)</code></pre>
+<pre><code>Warning: Factor `denttime` contains implicit NA, consider using
+`forcats::fct_explicit_na`</code></pre>
 <pre><code># A tibble: 7 x 3
   LASTDEN3 denttime           n
      &lt;dbl&gt; &lt;fct&gt;          &lt;int&gt;
@@ -1546,7 +1594,7 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>BLANK = Not asked or missing</li>
 </ul>
 <p>We’ll recode this to <code>remteeth</code> which will be 0 for None, 1 for 1-5, 2 for 6+ but not all, and 3 for All.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">remteeth =</span> <span class="kw">fct_recode</span>(<span class="kw">factor</span>(RMVTETH3),
                                  <span class="st">&quot;None&quot;</span> =<span class="st"> &quot;8&quot;</span>,
                                  <span class="st">&quot;1-5&quot;</span> =<span class="st"> &quot;1&quot;</span>,
@@ -1555,7 +1603,9 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
                                  <span class="dt">NULL =</span> <span class="st">&quot;7&quot;</span>,
                                  <span class="dt">NULL =</span> <span class="st">&quot;9&quot;</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(RMVTETH3, remteeth)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(RMVTETH3, remteeth)</code></pre>
+<pre><code>Warning: Factor `remteeth` contains implicit NA, consider using
+`forcats::fct_explicit_na`</code></pre>
 <pre><code># A tibble: 6 x 3
   RMVTETH3 remteeth         n
      &lt;dbl&gt; &lt;fct&gt;        &lt;int&gt;
@@ -1653,7 +1703,7 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 </tr>
 </tbody>
 </table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">agegroup =</span> <span class="kw">fct_recode</span>(<span class="kw">factor</span>(<span class="st">`</span><span class="dt">_AGEG5YR</span><span class="st">`</span>),
                                 <span class="st">&quot;18-24&quot;</span> =<span class="st"> &quot;1&quot;</span>,
                                 <span class="st">&quot;25-29&quot;</span> =<span class="st"> &quot;2&quot;</span>,
@@ -1670,7 +1720,9 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
                                 <span class="st">&quot;80-96&quot;</span> =<span class="st"> &quot;13&quot;</span>,
                                 <span class="dt">NULL =</span> <span class="st">&quot;14&quot;</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(<span class="st">`</span><span class="dt">_AGEG5YR</span><span class="st">`</span>, agegroup)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(<span class="st">`</span><span class="dt">_AGEG5YR</span><span class="st">`</span>, agegroup)</code></pre>
+<pre><code>Warning: Factor `agegroup` contains implicit NA, consider using
+`forcats::fct_explicit_na`</code></pre>
 <pre><code># A tibble: 14 x 3
    `_AGEG5YR` agegroup     n
         &lt;dbl&gt; &lt;fct&gt;    &lt;int&gt;
@@ -1698,11 +1750,11 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>9 = Refused</li>
 </ul>
 <p>We’ll recode that to <code>female</code> = 1 for Female, 0 Male, otherwise NA. Note the trick here is to subtract one from the coded <code>SEX</code> to get the desired <code>female</code>, but this requires that we move 9 to NA, rather than 9.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">female =</span> SEX <span class="op">-</span><span class="st"> </span><span class="dv">1</span>,
            <span class="dt">female =</span> <span class="kw">replace</span>(female, female <span class="op">==</span><span class="st"> </span><span class="dv">8</span>, <span class="ot">NA</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(SEX, female)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(SEX, female)</code></pre>
 <pre><code># A tibble: 3 x 3
     SEX female     n
   &lt;dbl&gt;  &lt;dbl&gt; &lt;int&gt;
@@ -1724,7 +1776,7 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>BLANK = Not asked or missing</li>
 </ul>
 <p>We’ll just turn this into a factor, and move 9 to NA.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">marital =</span> <span class="kw">fct_recode</span>(<span class="kw">factor</span>(MARITAL),
                                 <span class="st">&quot;Married&quot;</span> =<span class="st"> &quot;1&quot;</span>,
                                 <span class="st">&quot;Divorced&quot;</span> =<span class="st"> &quot;2&quot;</span>,
@@ -1734,7 +1786,9 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
                                 <span class="st">&quot;Unmarried_Couple&quot;</span> =<span class="st"> &quot;6&quot;</span>,
                                 <span class="dt">NULL =</span> <span class="st">&quot;9&quot;</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(MARITAL, marital)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(MARITAL, marital)</code></pre>
+<pre><code>Warning: Factor `marital` contains implicit NA, consider using
+`forcats::fct_explicit_na`</code></pre>
 <pre><code># A tibble: 7 x 3
   MARITAL marital              n
     &lt;dbl&gt; &lt;fct&gt;            &lt;int&gt;
@@ -1760,7 +1814,7 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>BLANK = Not asked or missing</li>
 </ul>
 <p>We’ll just turn this into a factor, and move 9 to NA.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">educgroup =</span> <span class="kw">fct_recode</span>(<span class="kw">factor</span>(EDUCA),
                                 <span class="st">&quot;Kindergarten&quot;</span> =<span class="st"> &quot;1&quot;</span>,
                                 <span class="st">&quot;Elementary&quot;</span> =<span class="st"> &quot;2&quot;</span>,
@@ -1770,7 +1824,9 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
                                 <span class="st">&quot;College_Grad&quot;</span> =<span class="st"> &quot;6&quot;</span>,
                                 <span class="dt">NULL =</span> <span class="st">&quot;9&quot;</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(EDUCA, educgroup)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(EDUCA, educgroup)</code></pre>
+<pre><code>Warning: Factor `educgroup` contains implicit NA, consider using
+`forcats::fct_explicit_na`</code></pre>
 <pre><code># A tibble: 7 x 3
   EDUCA educgroup        n
   &lt;dbl&gt; &lt;fct&gt;        &lt;int&gt;
@@ -1794,12 +1850,12 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>BLANK = Not asked or missing</li>
 </ul>
 <p>We’ll recode as <code>home.own</code> = 1 if they own their home, and 0 otherwise, and dealing with missingness properly.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">home.own =</span> RENTHOM1,
            <span class="dt">home.own =</span> <span class="kw">replace</span>(home.own, home.own <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>,<span class="dv">9</span>), <span class="ot">NA</span>),
            <span class="dt">home.own =</span> <span class="kw">replace</span>(home.own, home.own <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>), <span class="dv">0</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(RENTHOM1, home.own)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(RENTHOM1, home.own)</code></pre>
 <pre><code># A tibble: 5 x 3
   RENTHOM1 home.own     n
      &lt;dbl&gt;    &lt;dbl&gt; &lt;int&gt;
@@ -1819,12 +1875,12 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>9 = Refused</li>
 <li>BLANK = Not asked or missing</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">phones2 =</span> NUMHHOL2,
            <span class="dt">phones2 =</span> <span class="kw">replace</span>(phones2, phones2 <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">9</span>), <span class="ot">NA</span>),
            <span class="dt">phones2 =</span> <span class="kw">replace</span>(phones2, phones2 <span class="op">==</span><span class="st"> </span><span class="dv">2</span>, <span class="dv">0</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(NUMHHOL2, phones2)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(NUMHHOL2, phones2)</code></pre>
 <pre><code># A tibble: 5 x 3
   NUMHHOL2 phones2     n
      &lt;dbl&gt;   &lt;dbl&gt; &lt;int&gt;
@@ -1843,11 +1899,11 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>9 = Refused</li>
 <li>BLANK = Not asked or missing</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">numphones =</span> NUMPHON2,
            <span class="dt">numphones =</span> <span class="kw">replace</span>(numphones, numphones <span class="op">&gt;</span><span class="st"> </span><span class="dv">6</span>, <span class="ot">NA</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(NUMPHON2, numphones) </code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(NUMPHON2, numphones) </code></pre>
 <pre><code># A tibble: 9 x 3
   NUMPHON2 numphones     n
      &lt;dbl&gt;     &lt;dbl&gt; &lt;int&gt;
@@ -1871,12 +1927,12 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>9 = Refused</li>
 <li>BLANK = Not asked or missing</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">veteran =</span> VETERAN3,
            <span class="dt">veteran =</span> <span class="kw">replace</span>(veteran, veteran <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">9</span>), <span class="ot">NA</span>),
            <span class="dt">veteran =</span> <span class="kw">replace</span>(veteran, veteran <span class="op">==</span><span class="st"> </span><span class="dv">2</span>, <span class="dv">0</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(VETERAN3, veteran)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(VETERAN3, veteran)</code></pre>
 <pre><code># A tibble: 5 x 3
   VETERAN3 veteran     n
      &lt;dbl&gt;   &lt;dbl&gt; &lt;int&gt;
@@ -1902,7 +1958,7 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>BLANK = Not asked or missing</li>
 </ul>
 <p>We’ll just turn this into a factor, and move 9 to NA.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">employment =</span> <span class="kw">fct_recode</span>(<span class="kw">factor</span>(EMPLOY1),
                                 <span class="st">&quot;Employed_for_wages&quot;</span> =<span class="st"> &quot;1&quot;</span>,
                                 <span class="st">&quot;Self-employed&quot;</span> =<span class="st"> &quot;2&quot;</span>,
@@ -1914,7 +1970,9 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
                                 <span class="st">&quot;Unable_to_work&quot;</span> =<span class="st"> &quot;8&quot;</span>,
                                 <span class="dt">NULL =</span> <span class="st">&quot;9&quot;</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(EMPLOY1, employment)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(EMPLOY1, employment)</code></pre>
+<pre><code>Warning: Factor `employment` contains implicit NA, consider using
+`forcats::fct_explicit_na`</code></pre>
 <pre><code># A tibble: 10 x 3
    EMPLOY1 employment                n
      &lt;dbl&gt; &lt;fct&gt;                 &lt;int&gt;
@@ -1938,12 +1996,12 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>99 = Refused</li>
 <li>BLANK = Not asked or missing</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">numkids =</span> CHILDREN,
            <span class="dt">numkids =</span> <span class="kw">replace</span>(numkids, numkids <span class="op">==</span><span class="st"> </span><span class="dv">99</span>, <span class="ot">NA</span>),
            <span class="dt">numkids =</span> <span class="kw">replace</span>(numkids, numkids <span class="op">==</span><span class="st"> </span><span class="dv">88</span>, <span class="dv">0</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(CHILDREN, numkids) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tail</span>()</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(CHILDREN, numkids) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tail</span>()</code></pre>
 <pre><code># A tibble: 6 x 3
   CHILDREN numkids     n
      &lt;dbl&gt;   &lt;dbl&gt; &lt;int&gt;
@@ -1971,7 +2029,7 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>BLANK = Not asked or missing</li>
 </ul>
 <p>We’ll just turn this into a factor, and move 77 and 99 to NA.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">incomegroup =</span> <span class="kw">fct_recode</span>(<span class="kw">factor</span>(<span class="st">`</span><span class="dt">INCOME2</span><span class="st">`</span>),
                                 <span class="st">&quot;0-9K&quot;</span> =<span class="st"> &quot;1&quot;</span>,
                                 <span class="st">&quot;10-14K&quot;</span> =<span class="st"> &quot;2&quot;</span>,
@@ -1984,7 +2042,9 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
                                 <span class="dt">NULL =</span> <span class="st">&quot;77&quot;</span>,
                                 <span class="dt">NULL =</span> <span class="st">&quot;99&quot;</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(<span class="st">`</span><span class="dt">INCOME2</span><span class="st">`</span>, incomegroup)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(<span class="st">`</span><span class="dt">INCOME2</span><span class="st">`</span>, incomegroup)</code></pre>
+<pre><code>Warning: Factor `incomegroup` contains implicit NA, consider using
+`forcats::fct_explicit_na`</code></pre>
 <pre><code># A tibble: 11 x 3
    INCOME2 incomegroup     n
      &lt;dbl&gt; &lt;fct&gt;       &lt;int&gt;
@@ -2010,12 +2070,12 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>9 = Refused</li>
 <li>BLANK = Not asked or missing</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">internet30 =</span> INTERNET,
            <span class="dt">internet30 =</span> <span class="kw">replace</span>(internet30, internet30 <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">9</span>), <span class="ot">NA</span>),
            <span class="dt">internet30 =</span> <span class="kw">replace</span>(internet30, internet30 <span class="op">==</span><span class="st"> </span><span class="dv">2</span>, <span class="dv">0</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(INTERNET, internet30)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(INTERNET, internet30)</code></pre>
 <pre><code># A tibble: 5 x 3
   INTERNET internet30     n
      &lt;dbl&gt;      &lt;dbl&gt; &lt;int&gt;
@@ -2028,10 +2088,10 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <div id="wtkg3-is-weight_kg" class="section level4">
 <h4><span class="header-section-number">17.4.8.13</span> <code>WTKG3</code> is <code>weight_kg</code></h4>
 <p><code>WTKG3</code> is computed by CDC, as the respondent’s weight in kilograms with two implied decimal places. We calculate the actual weight in kg, with the following:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">weight_kg =</span> WTKG3<span class="op">/</span><span class="dv">100</span>)
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(WTKG3, weight_kg)<span class="co"># %&gt;% tail()</span></code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(WTKG3, weight_kg)<span class="co"># %&gt;% tail()</span></code></pre>
 <pre><code># A tibble: 260 x 3
    WTKG3 weight_kg     n
    &lt;dbl&gt;     &lt;dbl&gt; &lt;int&gt;
@@ -2057,13 +2117,13 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>9999 = Refused</li>
 </ul>
 <p>Note that there is one impossible value of 575 in the data set. We’ll make that an NA, and we’ll also make NA any heights below 3 feet, or above 2.24 meters. Specifically, we calculate the actual height in meters, with the following:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">height_m =</span> <span class="kw">case_when</span>(
         HEIGHT3 <span class="op">&gt;=</span><span class="st"> </span><span class="dv">300</span> <span class="op">&amp;</span><span class="st"> </span>HEIGHT3 <span class="op">&lt;=</span><span class="st"> </span><span class="dv">511</span> <span class="op">~</span><span class="st"> </span><span class="kw">round</span>((<span class="dv">12</span><span class="op">*</span><span class="kw">floor</span>(HEIGHT3<span class="op">/</span><span class="dv">100</span>) <span class="op">+</span><span class="st"> </span>(HEIGHT3 <span class="op">-</span><span class="st"> </span><span class="dv">100</span><span class="op">*</span><span class="kw">floor</span>(HEIGHT3<span class="op">/</span><span class="dv">100</span>)))<span class="op">*</span><span class="fl">0.0254</span>,<span class="dv">2</span>),
         HEIGHT3 <span class="op">&gt;=</span><span class="st"> </span><span class="dv">600</span> <span class="op">&amp;</span><span class="st"> </span>HEIGHT3 <span class="op">&lt;=</span><span class="st"> </span><span class="dv">711</span> <span class="op">~</span><span class="st"> </span><span class="kw">round</span>((<span class="dv">12</span><span class="op">*</span><span class="kw">floor</span>(HEIGHT3<span class="op">/</span><span class="dv">100</span>) <span class="op">+</span><span class="st"> </span>(HEIGHT3 <span class="op">-</span><span class="st"> </span><span class="dv">100</span><span class="op">*</span><span class="kw">floor</span>(HEIGHT3<span class="op">/</span><span class="dv">100</span>)))<span class="op">*</span><span class="fl">0.0254</span>,<span class="dv">2</span>),
         HEIGHT3 <span class="op">&gt;=</span><span class="st"> </span><span class="dv">9000</span> <span class="op">&amp;</span><span class="st"> </span>HEIGHT3 <span class="op">&lt;=</span><span class="st"> </span><span class="dv">9224</span> <span class="op">~</span><span class="st"> </span>((HEIGHT3 <span class="op">-</span><span class="st"> </span><span class="dv">9000</span>)<span class="op">/</span><span class="dv">100</span>)))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(HEIGHT3, height_m) <span class="co"># %&gt;% tail()</span></code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(HEIGHT3, height_m) <span class="co"># %&gt;% tail()</span></code></pre>
 <pre><code># A tibble: 35 x 3
    HEIGHT3 height_m     n
      &lt;dbl&gt;    &lt;dbl&gt; &lt;int&gt;
@@ -2082,10 +2142,10 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <div id="bmi-is-calculated-from-height_m-and-weight_kg" class="section level4">
 <h4><span class="header-section-number">17.4.8.15</span> <code>bmi</code> is calculated from <code>height_m</code> and <code>weight_kg</code></h4>
 <p>We’ll calculate body-mass index from height and weight.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">bmi =</span> <span class="kw">round</span>(weight_kg<span class="op">/</span>(height_m)<span class="op">^</span><span class="dv">2</span>,<span class="dv">2</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(height_m, weight_kg, bmi)<span class="co"># %&gt;% tail()</span></code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(height_m, weight_kg, bmi)<span class="co"># %&gt;% tail()</span></code></pre>
 <pre><code># A tibble: 1,583 x 4
    height_m weight_kg   bmi     n
       &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;
@@ -2110,11 +2170,13 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>BMI from 25 up to 30 indicates overweight</li>
 <li>BMI of 30 and higher indicates obesity</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">bmigroup =</span> <span class="kw">factor</span>(<span class="kw">cut2</span>(<span class="kw">as.numeric</span>(bmi), 
                            <span class="dt">cuts =</span> <span class="kw">c</span>(<span class="fl">18.5</span>, <span class="fl">25.0</span>, <span class="fl">30.0</span>))))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(bmigroup)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(bmigroup)</code></pre>
+<pre><code>Warning: Factor `bmigroup` contains implicit NA, consider using
+`forcats::fct_explicit_na`</code></pre>
 <pre><code># A tibble: 5 x 2
   bmigroup          n
   &lt;fct&gt;         &lt;int&gt;
@@ -2134,12 +2196,12 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>9 = Refused</li>
 <li>BLANK = Not asked or missing (includes SEX = male)</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">pregnant =</span> PREGNANT,
            <span class="dt">pregnant =</span> <span class="kw">replace</span>(pregnant, pregnant <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">9</span>), <span class="ot">NA</span>),
            <span class="dt">pregnant =</span> <span class="kw">replace</span>(pregnant, pregnant <span class="op">==</span><span class="st"> </span><span class="dv">2</span>, <span class="dv">0</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(PREGNANT, pregnant)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(PREGNANT, pregnant)</code></pre>
 <pre><code># A tibble: 5 x 3
   PREGNANT pregnant     n
      &lt;dbl&gt;    &lt;dbl&gt; &lt;int&gt;
@@ -2159,12 +2221,12 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>9 = Refused</li>
 <li>BLANK = Not asked or missing</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">deaf =</span> DEAF,
            <span class="dt">deaf =</span> <span class="kw">replace</span>(deaf, deaf <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">9</span>), <span class="ot">NA</span>),
            <span class="dt">deaf =</span> <span class="kw">replace</span>(deaf, deaf <span class="op">==</span><span class="st"> </span><span class="dv">2</span>, <span class="dv">0</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(DEAF, deaf)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(DEAF, deaf)</code></pre>
 <pre><code># A tibble: 5 x 3
    DEAF  deaf     n
   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;
@@ -2184,12 +2246,12 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>9 = Refused</li>
 <li>BLANK = Not asked or missing</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">blind =</span> BLIND,
            <span class="dt">blind =</span> <span class="kw">replace</span>(blind, blind <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">9</span>), <span class="ot">NA</span>),
            <span class="dt">blind =</span> <span class="kw">replace</span>(blind, blind <span class="op">==</span><span class="st"> </span><span class="dv">2</span>, <span class="dv">0</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(BLIND, blind)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(BLIND, blind)</code></pre>
 <pre><code># A tibble: 5 x 3
   BLIND blind     n
   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;
@@ -2209,12 +2271,12 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>9 = Refused</li>
 <li>BLANK = Not asked or missing</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">decide =</span> DECIDE,
            <span class="dt">decide =</span> <span class="kw">replace</span>(decide, decide <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">9</span>), <span class="ot">NA</span>),
            <span class="dt">decide =</span> <span class="kw">replace</span>(decide, decide <span class="op">==</span><span class="st"> </span><span class="dv">2</span>, <span class="dv">0</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(DECIDE, decide)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(DECIDE, decide)</code></pre>
 <pre><code># A tibble: 5 x 3
   DECIDE decide     n
    &lt;dbl&gt;  &lt;dbl&gt; &lt;int&gt;
@@ -2234,12 +2296,12 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>9 = Refused</li>
 <li>BLANK = Not asked or missing</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">diffwalk =</span> DIFFWALK,
            <span class="dt">diffwalk =</span> <span class="kw">replace</span>(diffwalk, diffwalk <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">9</span>), <span class="ot">NA</span>),
            <span class="dt">diffwalk =</span> <span class="kw">replace</span>(diffwalk, diffwalk <span class="op">==</span><span class="st"> </span><span class="dv">2</span>, <span class="dv">0</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(DIFFWALK, diffwalk)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(DIFFWALK, diffwalk)</code></pre>
 <pre><code># A tibble: 5 x 3
   DIFFWALK diffwalk     n
      &lt;dbl&gt;    &lt;dbl&gt; &lt;int&gt;
@@ -2259,12 +2321,12 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>9 = Refused</li>
 <li>BLANK = Not asked or missing</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">diffdress =</span> DIFFDRES,
            <span class="dt">diffdress =</span> <span class="kw">replace</span>(diffdress, diffdress <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">9</span>), <span class="ot">NA</span>),
            <span class="dt">diffdress =</span> <span class="kw">replace</span>(diffdress, diffdress <span class="op">==</span><span class="st"> </span><span class="dv">2</span>, <span class="dv">0</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(DIFFDRES, diffdress)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(DIFFDRES, diffdress)</code></pre>
 <pre><code># A tibble: 5 x 3
   DIFFDRES diffdress     n
      &lt;dbl&gt;     &lt;dbl&gt; &lt;int&gt;
@@ -2284,12 +2346,12 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>9 = Refused</li>
 <li>BLANK = Not asked or missing</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">diffalone =</span> DIFFALON,
            <span class="dt">diffalone =</span> <span class="kw">replace</span>(diffalone, diffalone <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">9</span>), <span class="ot">NA</span>),
            <span class="dt">diffalone =</span> <span class="kw">replace</span>(diffalone, diffalone <span class="op">==</span><span class="st"> </span><span class="dv">2</span>, <span class="dv">0</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(DIFFALON, diffalone)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(DIFFALON, diffalone)</code></pre>
 <pre><code># A tibble: 5 x 3
   DIFFALON diffalone     n
      &lt;dbl&gt;     &lt;dbl&gt; &lt;int&gt;
@@ -2311,12 +2373,12 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>7 = Don’t know/Not sure</li>
 <li>9 = Refused</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">smoke100 =</span> SMOKE100,
            <span class="dt">smoke100 =</span> <span class="kw">replace</span>(smoke100, smoke100 <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">9</span>), <span class="ot">NA</span>),
            <span class="dt">smoke100 =</span> <span class="kw">replace</span>(smoke100, smoke100 <span class="op">==</span><span class="st"> </span><span class="dv">2</span>, <span class="dv">0</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(SMOKE100, smoke100)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(SMOKE100, smoke100)</code></pre>
 <pre><code># A tibble: 5 x 3
   SMOKE100 smoke100     n
      &lt;dbl&gt;    &lt;dbl&gt; &lt;int&gt;
@@ -2350,12 +2412,12 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>7 = Don’t know/Not sure</li>
 <li>9 = Refused</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">ecig.ever =</span> ECIGARET,
            <span class="dt">ecig.ever =</span> <span class="kw">replace</span>(ecig.ever, ecig.ever <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">9</span>), <span class="ot">NA</span>),
            <span class="dt">ecig.ever =</span> <span class="kw">replace</span>(ecig.ever, ecig.ever <span class="op">==</span><span class="st"> </span><span class="dv">2</span>, <span class="dv">0</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(ECIGARET, ecig.ever)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(ECIGARET, ecig.ever)</code></pre>
 <pre><code># A tibble: 5 x 3
   ECIGARET ecig.ever     n
      &lt;dbl&gt;     &lt;dbl&gt; &lt;int&gt;
@@ -2383,7 +2445,7 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>BLANK = Not asked or Missing</li>
 </ul>
 <p>We’re going to convert this to a single numeric value. Answers in days per week (in the past 7 days) will be converted (after rounding) to days in the past 30. This is a little bit of a mess, really, but we can do it.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">alcdays =</span> <span class="kw">as.numeric</span>(ALCDAY5)) <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">alcdays =</span> <span class="kw">replace</span>(alcdays, alcdays <span class="op">==</span><span class="st"> </span><span class="dv">888</span>, <span class="dv">0</span>),
            <span class="dt">alcdays =</span> <span class="kw">replace</span>(alcdays, alcdays <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">777</span>, <span class="dv">999</span>), <span class="ot">NA</span>)) <span class="op">%&gt;%</span>
@@ -2391,7 +2453,7 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
                                ALCDAY5 <span class="op">&gt;</span><span class="st"> </span><span class="dv">100</span> <span class="op">&amp;</span><span class="st"> </span>ALCDAY5 <span class="op">&lt;</span><span class="st"> </span><span class="dv">108</span> <span class="op">~</span><span class="st"> </span><span class="kw">round</span>((ALCDAY5 <span class="op">-</span><span class="st"> </span><span class="dv">100</span>)<span class="op">*</span><span class="dv">30</span><span class="op">/</span><span class="dv">7</span>,<span class="dv">0</span>),
                                <span class="ot">TRUE</span> <span class="op">~</span><span class="st"> </span>alcdays))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(ALCDAY5, alcdays)</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(ALCDAY5, alcdays)</code></pre>
 <pre><code># A tibble: 38 x 3
    ALCDAY5 alcdays     n
      &lt;dbl&gt;   &lt;dbl&gt; &lt;int&gt;
@@ -2416,11 +2478,11 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <li>99 = Refused</li>
 <li>BLANK = Not asked or Missing (always happens when ALCDAY5 = 777, 888 or 999)</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">avgdrinks =</span> AVEDRNK2,
            <span class="dt">avgdrinks =</span> <span class="kw">replace</span>(avgdrinks, avgdrinks <span class="op">&gt;</span><span class="st"> </span><span class="dv">76</span>, <span class="ot">NA</span>))
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(AVEDRNK2, avgdrinks) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tail</span>()</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(AVEDRNK2, avgdrinks) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tail</span>()</code></pre>
 <pre><code># A tibble: 6 x 3
   AVEDRNK2 avgdrinks     n
      &lt;dbl&gt;     &lt;dbl&gt; &lt;int&gt;
@@ -2556,7 +2618,7 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <div id="age_imp-creating-age-data-out-of-thin-air" class="section level3">
 <h3><span class="header-section-number">17.5.1</span> <code>age_imp</code>: Creating Age Data out of Thin Air</h3>
 <p>I want a quantitative age variable, so I’m going to create an imputed <code>age_imp</code> value for each subject based on their <code>agegroup</code>. For each age group, I will assume that each of the ages represented by a value in that age group will be equally likely, and will draw from the relevant uniform distribution to impute age.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">20180114</span>)
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">20180114</span>)
 
 smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">age_low =</span> <span class="kw">as.numeric</span>(<span class="kw">str_sub</span>(<span class="kw">as.character</span>(agegroup), <span class="dv">1</span>, <span class="dv">2</span>))) <span class="op">%&gt;%</span>
@@ -2566,7 +2628,7 @@ smart.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span>
                             <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">1</span>, <span class="dt">min =</span> age_low, <span class="dt">max =</span> age_high),<span class="dv">0</span>),
                             <span class="ot">NA</span>)) 
 
-smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(agegroup, age_imp) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tail</span>()</code></pre></div>
+smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(agegroup, age_imp) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tail</span>()</code></pre>
 <pre><code># A tibble: 6 x 3
   agegroup age_imp     n
   &lt;fct&gt;      &lt;dbl&gt; &lt;int&gt;
@@ -2581,7 +2643,7 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 <div id="clean-data-in-the-state-of-ohio" class="section level2">
 <h2><span class="header-section-number">17.6</span> Clean Data in the State of Ohio</h2>
 <p>There are five MMSAs associated with the state of Ohio, associated with Cincinnati, Cleveland, Columbus, Dayton and Toledo.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart_ohio &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span>
+<pre class="sourceCode r"><code class="sourceCode r">smart_ohio &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(MMSANAME, <span class="st">&#39;, OH&#39;</span>)) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">select</span>(SEQNO, MMSANAME, hhadults, 
            genhealth, physhealth, menthealth, 
@@ -2601,16 +2663,16 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
            avgdrinks, age_imp)
 
 <span class="kw">skim_with</span>(<span class="dt">numeric =</span> <span class="kw">list</span>(<span class="dt">hist =</span> <span class="ot">NULL</span>))
-<span class="kw">skim</span>(<span class="kw">select</span>(smart_ohio, <span class="op">-</span>SEQNO))</code></pre></div>
+<span class="kw">skim</span>(<span class="kw">select</span>(smart_ohio, <span class="op">-</span>SEQNO))</code></pre>
 <pre><code>Skim summary statistics
  n obs: 6014 
  n variables: 57 
 
--- Variable type:character ------------------------------------
+-- Variable type:character --------------------------------------------------------
  variable missing complete    n min max empty n_unique
  MMSANAME       0     6014 6014  41  51     0        5
 
--- Variable type:factor ---------------------------------------
+-- Variable type:factor -----------------------------------------------------------
     variable missing complete    n n_unique
     agegroup      76     5938 6014       13
     bmigroup     422     5592 6014        4
@@ -2638,7 +2700,7 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
      1_O: 4783, 3_Z: 744, 2_M: 463, NA: 24   FALSE
   Non: 2993, 1-5: 1632, 6+_: 775, All: 485   FALSE
 
--- Variable type:numeric --------------------------------------
+-- Variable type:numeric ----------------------------------------------------------
     variable missing complete    n   mean    sd    p0   p25   p50   p75
      age_imp      76     5938 6014 55.96  18.34 18    43    57    68   
      alcdays     217     5797 6014  4.76   8.02  0     0     1     5   
@@ -2729,20 +2791,20 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
    1   
    1   
  249.48</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">write_csv</span>(smart_ohio, <span class="st">&quot;data/smart_ohio.csv&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">write_csv</span>(smart_ohio, <span class="st">&quot;data/smart_ohio.csv&quot;</span>)</code></pre>
 </div>
 <div id="clean-cleveland-elyria-data" class="section level2">
 <h2><span class="header-section-number">17.7</span> Clean Cleveland-Elyria Data</h2>
 <div id="cleveland---elyria-raw-data" class="section level3">
 <h3><span class="header-section-number">17.7.1</span> Cleveland - Elyria Raw Data</h3>
 <p>The <code>MMSANAME</code> variable is probably the simplest way for us to filter our data down to the MMSA we are interested in. Here, I’m using the <code>str_detect</code> function to identify the values of <code>MMSANAME</code> that contain the text “Cleveland”.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.cle.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(MMSANAME, <span class="st">&#39;Cleveland&#39;</span>)) </code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">smart.cle.raw &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(MMSANAME, <span class="st">&#39;Cleveland&#39;</span>)) </code></pre>
 <p>In the Cleveland-Elyria MSA, we have 1036 observations on the same 204 variables.</p>
 </div>
 <div id="clean-data---larger" class="section level3">
 <h3><span class="header-section-number">17.7.2</span> Clean Data - Larger</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.cle &lt;-<span class="st"> </span>smart.cle.raw <span class="op">%&gt;%</span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.cle &lt;-<span class="st"> </span>smart.cle.raw <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">select</span>(SEQNO, MMSANAME, hhadults, 
            genhealth, physhealth, menthealth, 
            poorhealth, healthplan, hasdoc, numdocs2, 
@@ -2761,16 +2823,16 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
            avgdrinks, age_imp)
 
 <span class="kw">skim_with</span>(<span class="dt">numeric =</span> <span class="kw">list</span>(<span class="dt">hist =</span> <span class="ot">NULL</span>))
-<span class="kw">skim</span>(<span class="kw">select</span>(smart.cle, <span class="op">-</span>SEQNO))</code></pre></div>
+<span class="kw">skim</span>(<span class="kw">select</span>(smart.cle, <span class="op">-</span>SEQNO))</code></pre>
 <pre><code>Skim summary statistics
  n obs: 1036 
  n variables: 57 
 
--- Variable type:character ------------------------------------
+-- Variable type:character --------------------------------------------------------
  variable missing complete    n min max empty n_unique
  MMSANAME       0     1036 1036  51  51     0        1
 
--- Variable type:factor ---------------------------------------
+-- Variable type:factor -----------------------------------------------------------
     variable missing complete    n n_unique
     agegroup      12     1024 1036       13
     bmigroup      84      952 1036        4
@@ -2798,7 +2860,7 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
     1_O: 795, 3_Z: 135, 2_M: 101, NA: 5   FALSE
   Non: 510, 1-5: 293, 6+_: 127, All: 81   FALSE
 
--- Variable type:numeric --------------------------------------
+-- Variable type:numeric ----------------------------------------------------------
     variable missing complete    n   mean    sd    p0   p25   p50   p75
      age_imp      12     1024 1036 57.3   18.86 18    45    60    70   
      alcdays      46      990 1036  4.65   8.05  0     0     1     4   
@@ -2889,11 +2951,11 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
    1   
    1   
  204.12</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">write_csv</span>(smart.cle, <span class="st">&quot;data/smartcle.csv&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">write_csv</span>(smart.cle, <span class="st">&quot;data/smartcle.csv&quot;</span>)</code></pre>
 </div>
 <div id="creation-of-the-smartcle1.csv-data" class="section level3">
 <h3><span class="header-section-number">17.7.3</span> Creation of the <code>smartcle1.csv</code> data</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">smart.cle1 &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span>
+<pre class="sourceCode r"><code class="sourceCode r">smart.cle1 &lt;-<span class="st"> </span>smart.raw <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(MMSANAME, <span class="st">&#39;Cleveland&#39;</span>)) <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">select</span>(SEQNO, physhealth, menthealth, 
            poorhealth, genhealth, bmi, female,
@@ -2901,8 +2963,8 @@ smart.raw <span class="op">%&gt;%</span><span class="st"> </span><span class="kw
 
 <span class="co"># write_csv(smart.cle1, &quot;data/smartcle1.csv&quot;)</span>
 
-## this last line commented out because the file was
-## created earlier in these notes</code></pre></div>
+<span class="co">## this last line commented out because the file was</span>
+<span class="co">## created earlier in these notes</span></code></pre>
 
 </div>
 </div>
@@ -2963,7 +3025,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');

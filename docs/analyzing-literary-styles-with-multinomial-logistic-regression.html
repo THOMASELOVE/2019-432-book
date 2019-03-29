@@ -50,41 +50,67 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 </head>
@@ -154,7 +180,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.6.1" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#fitting-a-simple-regression-model"><i class="fa fa-check"></i><b>2.6.1</b> Fitting a Simple Regression Model</a></li>
 <li class="chapter" data-level="2.6.2" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#model-summary-for-a-simple-one-predictor-regression"><i class="fa fa-check"></i><b>2.6.2</b> Model Summary for a Simple (One-Predictor) Regression</a></li>
 <li class="chapter" data-level="2.6.3" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#using-the-broom-package"><i class="fa fa-check"></i><b>2.6.3</b> Using the <code>broom</code> package</a></li>
-<li class="chapter" data-level="2.6.4" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#how-does-the-model-do-residuals-vs.fitted-values"><i class="fa fa-check"></i><b>2.6.4</b> How does the model do? (Residuals vs. Fitted Values)</a></li>
+<li class="chapter" data-level="2.6.4" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#how-does-the-model-do-residuals-vs.-fitted-values"><i class="fa fa-check"></i><b>2.6.4</b> How does the model do? (Residuals vs. Fitted Values)</a></li>
 </ul></li>
 <li class="chapter" data-level="2.7" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#a-new-small-study-predicting-bmi"><i class="fa fa-check"></i><b>2.7</b> A New Small Study: Predicting BMI</a><ul>
 <li class="chapter" data-level="2.7.1" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#does-female-predict-bmi-well"><i class="fa fa-check"></i><b>2.7.1</b> Does <code>female</code> predict <code>bmi</code> well?</a></li>
@@ -937,10 +963,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">20.1</span> The Authorship Example</h2>
 <p>This example is based on the work of Jeffrey S. Simonoff (2003) <em>Analyzing Categorical Data</em> in Chapter 10. Related data and R code are available at <a href="http://people.stern.nyu.edu/jsimonof/AnalCatData/Splus/" class="uri">http://people.stern.nyu.edu/jsimonof/AnalCatData/Splus/</a>. Meanwhile, the data set and analysis are based on the work of Peng RD and Hengartner NW (2002) Quantitative analysis of literary styles, <em>The American Statistician</em>, 56, 175-185.</p>
 <p>The <code>authorship.csv</code> data file contains 841 rows. Each row describes a block of text that contains 1700 total words from one of several books by four authors: Jane Austen (samples from 7 books), Jack London (6 books), John Milton (2 books), or William Shakespeare (12 books). The data include counts within the blocks of text of 69 function words, such as “a”, “by”, “no”, “that” and “with”. The goal of our analysis, mirroring that of Simonoff, will be to use the incidence of these function words to build a model that distinguishes the authors.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">authorship<span class="op">$</span>Author &lt;-<span class="st"> </span><span class="kw">factor</span>(authorship<span class="op">$</span>Author, 
+<pre class="sourceCode r"><code class="sourceCode r">authorship<span class="op">$</span>Author &lt;-<span class="st"> </span><span class="kw">factor</span>(authorship<span class="op">$</span>Author, 
     <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;Shakespeare&quot;</span>, <span class="st">&quot;Austen&quot;</span>, <span class="st">&quot;London&quot;</span>, <span class="st">&quot;Milton&quot;</span>))
 
-authorship</code></pre></div>
+authorship</code></pre>
 <pre><code># A tibble: 841 x 71
    BookID Author     a   all  also    an   and   any   are    as    at
     &lt;dbl&gt; &lt;fct&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -967,7 +993,16 @@ authorship</code></pre></div>
 #   when &lt;dbl&gt;, which &lt;dbl&gt;, who &lt;dbl&gt;, will &lt;dbl&gt;, with &lt;dbl&gt;,
 #   would &lt;dbl&gt;, your &lt;dbl&gt;</code></pre>
 <blockquote>
-<p>To-morrow, and to-morrow, and to-morrow, Creeps in this petty pace from day to day, To the last syllable of recorded time; And all our yesterdays have lighted fools The way to dusty death. Out, out, brief candle! Life’s but a walking shadow, a poor player, That struts and frets his hour upon the stage, And then is heard no more. It is a tale Told by an idiot, full of sound and fury, Signifying nothing.</p>
+<p>To-morrow, and to-morrow, and to-morrow,
+Creeps in this petty pace from day to day,
+To the last syllable of recorded time;
+And all our yesterdays have lighted fools
+The way to dusty death. Out, out, brief candle!
+Life’s but a walking shadow, a poor player,
+That struts and frets his hour upon the stage,
+And then is heard no more. It is a tale
+Told by an idiot, full of sound and fury,
+Signifying nothing.</p>
 </blockquote>
 </div>
 <div id="focus-on-11-key-words" class="section level2">
@@ -976,14 +1011,14 @@ authorship</code></pre></div>
 <ul>
 <li>“be”, “been”, “had”, “it”, “may”, “not”, “on”, “the”, “upon”, “was” and “which”</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">auth2 &lt;-<span class="st"> </span>authorship <span class="op">%&gt;%</span>
+<pre class="sourceCode r"><code class="sourceCode r">auth2 &lt;-<span class="st"> </span>authorship <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">select</span>(Author, BookID, be, been, had, it, may, not, 
            on, the, upon, was, which)
 
 auth2.long &lt;-<span class="st"> </span>auth2 <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">gather</span>(<span class="st">&quot;word&quot;</span>, <span class="st">&quot;n&quot;</span>, <span class="dv">3</span><span class="op">:</span><span class="dv">13</span>)
 
-auth2.long</code></pre></div>
+auth2.long</code></pre>
 <pre><code># A tibble: 9,251 x 4
    Author BookID word      n
    &lt;fct&gt;   &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;
@@ -1000,11 +1035,11 @@ auth2.long</code></pre></div>
 # ... with 9,241 more rows</code></pre>
 <div id="side-by-side-boxplots" class="section level3">
 <h3><span class="header-section-number">20.2.1</span> Side by Side Boxplots</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(auth2.long, <span class="kw">aes</span>(<span class="dt">x =</span> Author, <span class="dt">y =</span> n)) <span class="op">+</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(auth2.long, <span class="kw">aes</span>(<span class="dt">x =</span> Author, <span class="dt">y =</span> n)) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_boxplot</span>() <span class="op">+</span>
 <span class="st">    </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>word, <span class="dt">ncol =</span> <span class="dv">3</span>, <span class="dt">scales =</span> <span class="st">&quot;free_y&quot;</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">theme_bw</span>() <span class="op">+</span>
-<span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;&quot;</span>)</code></pre></div>
+<span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;&quot;</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/unnamed-chunk-527-1.png" width="672" /></p>
 <blockquote>
 <p>Oh! do not attack me with your watch. A watch is always too fast or too slow. I cannot be dictated to by a watch.</p>
@@ -1014,9 +1049,9 @@ auth2.long</code></pre></div>
 <div id="a-multinomial-logistic-regression-model" class="section level2">
 <h2><span class="header-section-number">20.3</span> A Multinomial Logistic Regression Model</h2>
 <p>Let’s start with a multinomial model to predict <code>Author</code> on the basis of these 11 key predictors, using the <code>multinom</code> function from the <code>nnet</code> package.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">authnom1 &lt;-<span class="st"> </span><span class="kw">multinom</span>(Author <span class="op">~</span><span class="st"> </span>be <span class="op">+</span><span class="st"> </span>been <span class="op">+</span><span class="st"> </span>had <span class="op">+</span><span class="st"> </span>it <span class="op">+</span><span class="st"> </span>may <span class="op">+</span><span class="st"> </span>not <span class="op">+</span><span class="st"> </span>on <span class="op">+</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">authnom1 &lt;-<span class="st"> </span><span class="kw">multinom</span>(Author <span class="op">~</span><span class="st"> </span>be <span class="op">+</span><span class="st"> </span>been <span class="op">+</span><span class="st"> </span>had <span class="op">+</span><span class="st"> </span>it <span class="op">+</span><span class="st"> </span>may <span class="op">+</span><span class="st"> </span>not <span class="op">+</span><span class="st"> </span>on <span class="op">+</span><span class="st"> </span>
 <span class="st">                         </span>the <span class="op">+</span><span class="st"> </span>upon <span class="op">+</span><span class="st"> </span>was <span class="op">+</span><span class="st"> </span>which, <span class="dt">data=</span>authorship, 
-                     <span class="dt">maxit=</span><span class="dv">200</span>)</code></pre></div>
+                     <span class="dt">maxit=</span><span class="dv">200</span>)</code></pre>
 <pre><code># weights:  52 (36 variable)
 initial  value 1165.873558 
 iter  10 value 293.806160
@@ -1033,7 +1068,7 @@ iter 110 value 45.868017
 iter 120 value 45.863256
 final  value 45.863228 
 converged</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(authnom1)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(authnom1)</code></pre>
 <pre><code>Call:
 multinom(formula = Author ~ be + been + had + it + may + not + 
     on + the + upon + was + which, data = authorship, maxit = 200)
@@ -1066,8 +1101,8 @@ Residual Deviance: 91.72646
 AIC: 163.7265 </code></pre>
 <div id="testing-model-1" class="section level3">
 <h3><span class="header-section-number">20.3.1</span> Testing Model 1</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">z1 &lt;-<span class="st"> </span><span class="kw">summary</span>(authnom1)<span class="op">$</span>coefficients<span class="op">/</span><span class="kw">summary</span>(authnom1)<span class="op">$</span>standard.errors
-<span class="kw">round</span>(z1,<span class="dv">2</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">z1 &lt;-<span class="st"> </span><span class="kw">summary</span>(authnom1)<span class="op">$</span>coefficients<span class="op">/</span><span class="kw">summary</span>(authnom1)<span class="op">$</span>standard.errors
+<span class="kw">round</span>(z1,<span class="dv">2</span>)</code></pre>
 <pre><code>       (Intercept)    be  been  had    it   may   not   on   the  upon
 Austen       -3.17  2.98  1.73 1.71  0.04 -0.50 -0.82 2.70 -0.68 -3.30
 London       -2.73 -0.39  0.52 1.72  0.76 -0.03 -2.26 2.55  3.90 -2.71
@@ -1076,8 +1111,8 @@ Milton       -0.33 -0.68 -1.54 1.67 -3.56 -0.19  0.43 2.34  1.83 -3.17
 Austen 3.88  0.63
 London 3.83 -2.32
 Milton 1.67 -0.28</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p1 &lt;-<span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>(<span class="kw">abs</span>(z1), <span class="dv">0</span>, <span class="dv">1</span>)) <span class="op">*</span><span class="st"> </span><span class="dv">2</span>
-<span class="kw">pander</span>(<span class="kw">round</span>(p1,<span class="dv">3</span>))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">p1 &lt;-<span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>(<span class="kw">abs</span>(z1), <span class="dv">0</span>, <span class="dv">1</span>)) <span class="op">*</span><span class="st"> </span><span class="dv">2</span>
+<span class="kw">pander</span>(<span class="kw">round</span>(p1,<span class="dv">3</span>))</code></pre>
 <table>
 <caption>Table continues below</caption>
 <colgroup>
@@ -1189,9 +1224,9 @@ Milton 1.67 -0.28</code></pre>
 </div>
 <div id="model-2" class="section level2">
 <h2><span class="header-section-number">20.4</span> Model 2</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">authnom2 &lt;-<span class="st"> </span><span class="kw">multinom</span>(Author <span class="op">~</span><span class="st"> </span>be <span class="op">+</span><span class="st"> </span>had <span class="op">+</span><span class="st"> </span>it <span class="op">+</span><span class="st"> </span>not <span class="op">+</span><span class="st"> </span>on <span class="op">+</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">authnom2 &lt;-<span class="st"> </span><span class="kw">multinom</span>(Author <span class="op">~</span><span class="st"> </span>be <span class="op">+</span><span class="st"> </span>had <span class="op">+</span><span class="st"> </span>it <span class="op">+</span><span class="st"> </span>not <span class="op">+</span><span class="st"> </span>on <span class="op">+</span><span class="st"> </span>
 <span class="st">                         </span>the <span class="op">+</span><span class="st"> </span>upon <span class="op">+</span><span class="st"> </span>was <span class="op">+</span><span class="st"> </span>which, <span class="dt">data=</span>authorship, 
-                     <span class="dt">maxit=</span><span class="dv">200</span>)</code></pre></div>
+                     <span class="dt">maxit=</span><span class="dv">200</span>)</code></pre>
 <pre><code># weights:  44 (30 variable)
 initial  value 1165.873558 
 iter  10 value 304.985478
@@ -1206,7 +1241,7 @@ iter  90 value 50.834262
 iter 100 value 50.743136
 final  value 50.743111 
 converged</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(authnom2)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(authnom2)</code></pre>
 <pre><code>Call:
 multinom(formula = Author ~ be + had + it + not + on + the + 
     upon + was + which, data = authorship, maxit = 200)
@@ -1235,7 +1270,7 @@ Residual Deviance: 101.4862
 AIC: 161.4862 </code></pre>
 <div id="comparing-model-2-to-model-1" class="section level3">
 <h3><span class="header-section-number">20.4.1</span> Comparing Model 2 to Model 1</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(authnom1, authnom2)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(authnom1, authnom2)</code></pre>
 <pre><code>Likelihood ratio tests of Multinomial Models
 
 Response: Author
@@ -1248,14 +1283,14 @@ Response: Author
 </div>
 <div id="testing-model-2" class="section level3">
 <h3><span class="header-section-number">20.4.2</span> Testing Model 2</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">z2 &lt;-<span class="st"> </span><span class="kw">summary</span>(authnom2)<span class="op">$</span>coefficients<span class="op">/</span><span class="kw">summary</span>(authnom2)<span class="op">$</span>standard.errors
-<span class="kw">round</span>(z2,<span class="dv">2</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">z2 &lt;-<span class="st"> </span><span class="kw">summary</span>(authnom2)<span class="op">$</span>coefficients<span class="op">/</span><span class="kw">summary</span>(authnom2)<span class="op">$</span>standard.errors
+<span class="kw">round</span>(z2,<span class="dv">2</span>)</code></pre>
 <pre><code>       (Intercept)    be  had    it   not   on   the  upon  was which
 Austen       -3.51  3.56 3.04  0.30 -0.42 2.40 -0.06 -3.47 4.29  0.43
 London       -3.09 -0.84 2.62  1.04 -2.41 2.39  4.69 -2.64 4.24 -2.62
 Milton       -0.48 -0.47 0.84 -3.80  0.45 2.83  1.66 -2.82 1.83 -0.45</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p2 &lt;-<span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>(<span class="kw">abs</span>(z2), <span class="dv">0</span>, <span class="dv">1</span>)) <span class="op">*</span><span class="st"> </span><span class="dv">2</span>
-<span class="kw">round</span>(p2,<span class="dv">3</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">p2 &lt;-<span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>(<span class="kw">abs</span>(z2), <span class="dv">0</span>, <span class="dv">1</span>)) <span class="op">*</span><span class="st"> </span><span class="dv">2</span>
+<span class="kw">round</span>(p2,<span class="dv">3</span>)</code></pre>
 <pre><code>       (Intercept)    be   had    it   not    on   the  upon   was which
 Austen       0.000 0.000 0.002 0.762 0.674 0.016 0.950 0.001 0.000 0.664
 London       0.002 0.399 0.009 0.299 0.016 0.017 0.000 0.008 0.000 0.009
@@ -1276,7 +1311,7 @@ Milton       0.628 0.639 0.398 0.000 0.653 0.005 0.096 0.005 0.067 0.650</code><
 <div id="classification-table" class="section level2">
 <h2><span class="header-section-number">20.5</span> Classification Table</h2>
 <p>How well does this model (model 2) distinguish these authors based on blocks of 1700 words of text?</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(authorship<span class="op">$</span>Author, <span class="kw">predict</span>(authnom2))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(authorship<span class="op">$</span>Author, <span class="kw">predict</span>(authnom2))</code></pre>
 <pre><code>             
               Shakespeare Austen London Milton
   Shakespeare         168      3      1      1
@@ -1285,19 +1320,40 @@ Milton       0.628 0.639 0.398 0.000 0.653 0.005 0.096 0.005 0.067 0.650</code><
   Milton                2      0      1     52</code></pre>
 <p>Based on this classification table, I’d say it does a nice job. Almost 98% of the blocks of text are correctly classified.</p>
 <blockquote>
-<p>Fly, envious Time, till thou run out thy race; Call on the lazy leaden-stepping hours, Whose speed is but the heavy plummet’s pace; And glut thyself with what thy womb devours, Which is no more then what is false and vain, And merely mortal dross; So little is our loss, So little is thy gain. For when, as each thing bad thou hast entomb’d And last of all thy greedy self consumed, Then long Eternity shall greet our bliss, With an individual kiss; And Joy shall overtake us, as a flood, When every thing that is sincerely good, And perfectly divine, With truth, and peace, and love, shall ever shine, About the supreme throne Of Him, to whose happy-making sight, alone, When once our heavenly-guided soul shall climb, Then all this earthly grossness quit, Attired with stars, we shall for ever sit, Triumphing over Death, and Chance, and thee, O Time!</p>
+<p>Fly, envious Time, till thou run out thy race;
+Call on the lazy leaden-stepping hours,
+Whose speed is but the heavy plummet’s pace;
+And glut thyself with what thy womb devours,
+Which is no more then what is false and vain,
+And merely mortal dross;
+So little is our loss,
+So little is thy gain.
+For when, as each thing bad thou hast entomb’d
+And last of all thy greedy self consumed,
+Then long Eternity shall greet our bliss,
+With an individual kiss;
+And Joy shall overtake us, as a flood,
+When every thing that is sincerely good,
+And perfectly divine,
+With truth, and peace, and love, shall ever shine,
+About the supreme throne
+Of Him, to whose happy-making sight, alone,
+When once our heavenly-guided soul shall climb,
+Then all this earthly grossness quit,
+Attired with stars, we shall for ever sit,
+Triumphing over Death, and Chance, and thee, O Time!</p>
 </blockquote>
 </div>
 <div id="probability-curves-based-on-a-single-predictor" class="section level2">
 <h2><span class="header-section-number">20.6</span> Probability Curves based on a Single Predictor</h2>
 <p>In situations where only one predictor is used, we can develop nice plots of estimated probabilities for each group as a function of the predictor. Suppose we look at the single word “been” (note that this was left out of Model 2.)</p>
 <p>Note that the possible values for counts of “been” in the data range from 0 to 27…</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(authorship<span class="op">$</span>been)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(authorship<span class="op">$</span>been)</code></pre>
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
   0.000   2.000   4.000   4.614   7.000  27.000 </code></pre>
 <p>Now, we’ll build a model to predict the author based solely on the counts of the word “been”.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">authnom3 &lt;-<span class="st"> </span><span class="kw">multinom</span>(Author <span class="op">~</span><span class="st"> </span>been, 
-                     <span class="dt">data=</span>authorship, <span class="dt">maxit=</span><span class="dv">200</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">authnom3 &lt;-<span class="st"> </span><span class="kw">multinom</span>(Author <span class="op">~</span><span class="st"> </span>been, 
+                     <span class="dt">data=</span>authorship, <span class="dt">maxit=</span><span class="dv">200</span>)</code></pre>
 <pre><code># weights:  12 (6 variable)
 initial  value 1165.873558 
 iter  10 value 757.915093
@@ -1305,12 +1361,12 @@ iter  20 value 755.454631
 final  value 755.454551 
 converged</code></pre>
 <p>Next, we’ll build a grid of the predicted log odds for each author (as compared to Shakespeare) using the fitted coefficients. The grid will cover every possible value from 0 to 27, increasing by 0.1, using the following trick in R.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">beengrid &lt;-<span class="st"> </span><span class="kw">cbind</span>(<span class="dv">1</span>,<span class="kw">c</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">270</span>)<span class="op">/</span><span class="dv">10</span>)
+<pre class="sourceCode r"><code class="sourceCode r">beengrid &lt;-<span class="st"> </span><span class="kw">cbind</span>(<span class="dv">1</span>,<span class="kw">c</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">270</span>)<span class="op">/</span><span class="dv">10</span>)
 austenlogit &lt;-<span class="st"> </span>beengrid <span class="op">%*%</span><span class="st"> </span><span class="kw">coef</span>(authnom3)[<span class="dv">1</span>,]
 londonlogit &lt;-<span class="st"> </span>beengrid <span class="op">%*%</span><span class="st"> </span><span class="kw">coef</span>(authnom3)[<span class="dv">2</span>,]
-miltonlogit &lt;-<span class="st"> </span>beengrid <span class="op">%*%</span><span class="st"> </span><span class="kw">coef</span>(authnom3)[<span class="dv">3</span>,]</code></pre></div>
+miltonlogit &lt;-<span class="st"> </span>beengrid <span class="op">%*%</span><span class="st"> </span><span class="kw">coef</span>(authnom3)[<span class="dv">3</span>,]</code></pre>
 <p>Next, we’ll use that grid of logit values to estimate the fitted probabilities for each value of “been” between 0 and 27.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">austenprob &lt;-<span class="st"> </span><span class="kw">exp</span>(austenlogit)<span class="op">/</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r">austenprob &lt;-<span class="st"> </span><span class="kw">exp</span>(austenlogit)<span class="op">/</span><span class="st"> </span>
 <span class="st">    </span>(<span class="kw">exp</span>(austenlogit) <span class="op">+</span><span class="st"> </span><span class="kw">exp</span>(londonlogit) <span class="op">+</span><span class="st"> </span>
 <span class="st">         </span><span class="kw">exp</span>(miltonlogit) <span class="op">+</span><span class="st"> </span><span class="dv">1</span>)
 londonprob &lt;-<span class="st"> </span><span class="kw">exp</span>(londonlogit)<span class="op">/</span><span class="st"> </span>
@@ -1326,7 +1382,7 @@ been_dat &lt;-<span class="st"> </span><span class="kw">data_frame</span>(<span 
                        <span class="dt">london =</span> londonprob[,<span class="dv">1</span>], 
                        <span class="dt">milton =</span> miltonprob[,<span class="dv">1</span>], 
                        <span class="dt">shakespeare =</span> shakesprob[,<span class="dv">1</span>])
-been_dat</code></pre></div>
+been_dat</code></pre>
 <pre><code># A tibble: 271 x 5
    been_count austen london milton shakespeare
         &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;       &lt;dbl&gt;
@@ -1342,9 +1398,9 @@ been_dat</code></pre></div>
 10        0.9 0.0644  0.256  0.171       0.509
 # ... with 261 more rows</code></pre>
 <p>Now, we gather the data by author name and probability</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">been_dat_long &lt;-<span class="st"> </span>been_dat <span class="op">%&gt;%</span>
+<pre class="sourceCode r"><code class="sourceCode r">been_dat_long &lt;-<span class="st"> </span>been_dat <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">gather</span>(<span class="st">&quot;name&quot;</span>, <span class="st">&quot;prob&quot;</span>, <span class="dv">2</span><span class="op">:</span><span class="dv">5</span>)
-been_dat_long</code></pre></div>
+been_dat_long</code></pre>
 <pre><code># A tibble: 1,084 x 3
    been_count name     prob
         &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;
@@ -1361,18 +1417,18 @@ been_dat_long</code></pre></div>
 # ... with 1,074 more rows</code></pre>
 <div id="produce-the-plot-of-estimated-probabilities-based-on-been-counts" class="section level3">
 <h3><span class="header-section-number">20.6.1</span> Produce the Plot of Estimated Probabilities based on “been” counts</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(been_dat_long, <span class="kw">aes</span>(<span class="dt">x =</span> been_count, <span class="dt">y =</span> prob, 
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(been_dat_long, <span class="kw">aes</span>(<span class="dt">x =</span> been_count, <span class="dt">y =</span> prob, 
                           <span class="dt">col =</span> name)) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_line</span>(<span class="dt">size =</span> <span class="fl">1.5</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Count of the word `been`&quot;</span>, 
-         <span class="dt">y =</span> <span class="st">&quot;Model probability&quot;</span>)</code></pre></div>
+         <span class="dt">y =</span> <span class="st">&quot;Model probability&quot;</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/plot%20of%20estimated%20probabilities-1.png" width="672" /></p>
 </div>
 <div id="boxplot-of-been-counts" class="section level3">
 <h3><span class="header-section-number">20.6.2</span> Boxplot of “been” counts</h3>
 <p>Compare this to what we see in the raw counts of the word “been”.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">been.long &lt;-<span class="st"> </span><span class="kw">filter</span>(auth2.long, word <span class="op">==</span><span class="st"> &quot;been&quot;</span>)
+<pre class="sourceCode r"><code class="sourceCode r">been.long &lt;-<span class="st"> </span><span class="kw">filter</span>(auth2.long, word <span class="op">==</span><span class="st"> &quot;been&quot;</span>)
 been.long<span class="op">$</span>Auth &lt;-<span class="st"> </span><span class="kw">fct_relevel</span>(been.long<span class="op">$</span>Author, 
             <span class="st">&quot;Austen&quot;</span>, <span class="st">&quot;London&quot;</span>, <span class="st">&quot;Milton&quot;</span>, <span class="st">&quot;Shakespeare&quot;</span>)
 <span class="co"># releveling to make the colors match the model plot</span>
@@ -1381,7 +1437,7 @@ been.long<span class="op">$</span>Auth &lt;-<span class="st"> </span><span class
 <span class="st">    </span><span class="kw">geom_boxplot</span>() <span class="op">+</span>
 <span class="st">    </span><span class="kw">guides</span>(<span class="dt">fill =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">theme_bw</span>() <span class="op">+</span>
-<span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Count of the word `been`&quot;</span>)</code></pre></div>
+<span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Count of the word `been`&quot;</span>)</code></pre>
 <p><img src="2019-432-book_files/figure-html/side%20by%20side%20boxplot%20of%20been%20by%20author-1.png" width="672" /></p>
 </div>
 <div id="quote-sources" class="section level3">
@@ -1452,7 +1508,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');

@@ -50,41 +50,67 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 </head>
@@ -154,7 +180,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.6.1" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#fitting-a-simple-regression-model"><i class="fa fa-check"></i><b>2.6.1</b> Fitting a Simple Regression Model</a></li>
 <li class="chapter" data-level="2.6.2" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#model-summary-for-a-simple-one-predictor-regression"><i class="fa fa-check"></i><b>2.6.2</b> Model Summary for a Simple (One-Predictor) Regression</a></li>
 <li class="chapter" data-level="2.6.3" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#using-the-broom-package"><i class="fa fa-check"></i><b>2.6.3</b> Using the <code>broom</code> package</a></li>
-<li class="chapter" data-level="2.6.4" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#how-does-the-model-do-residuals-vs.fitted-values"><i class="fa fa-check"></i><b>2.6.4</b> How does the model do? (Residuals vs. Fitted Values)</a></li>
+<li class="chapter" data-level="2.6.4" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#how-does-the-model-do-residuals-vs.-fitted-values"><i class="fa fa-check"></i><b>2.6.4</b> How does the model do? (Residuals vs. Fitted Values)</a></li>
 </ul></li>
 <li class="chapter" data-level="2.7" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#a-new-small-study-predicting-bmi"><i class="fa fa-check"></i><b>2.7</b> A New Small Study: Predicting BMI</a><ul>
 <li class="chapter" data-level="2.7.1" data-path="linear-regression-on-a-small-smart-data-set.html"><a href="linear-regression-on-a-small-smart-data-set.html#does-female-predict-bmi-well"><i class="fa fa-check"></i><b>2.7.1</b> Does <code>female</code> predict <code>bmi</code> well?</a></li>
@@ -940,12 +966,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3><span class="header-section-number">1.1.1</span> A simple Table 1</h3>
 <p>Table 1 is especially common in the context of clinical research. Consider the excerpt below, from a January 2015 article in the <em>New England Journal of Medicine</em> <span class="citation">(Tolaney et al. <a href="#ref-Tolaney2015">2015</a>)</span>.</p>
 <p><img src="images/Tolaney-snip1.png" width="50%" /></p>
-<p>This (partial) table reports baseline characteristics on age group, sex and race, describing 406 patients with HER2-positive<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> invasive breast cancer that began the protocol therapy. Age, sex and race (along with severity of illness) are the most commonly identified characteristics in a Table 1.</p>
+<p>This (partial) table reports baseline characteristics on age group, sex and race, describing 406 patients with HER2-positive<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> invasive breast cancer that began the protocol therapy. Age, sex and race (along with severity of illness) are the most commonly identified characteristics in a Table 1.</p>
 <p>In addition to the measures shown in this excerpt, the full Table also includes detailed information on the primary tumor for each patient, including its size, nodal status and histologic grade. Footnotes tell us that the percentages shown are subject to rounding, and may not total 100, and that the race information was self-reported.</p>
 </div>
 <div id="a-group-comparison" class="section level3">
 <h3><span class="header-section-number">1.1.2</span> A group comparison</h3>
-<p>A more typical Table 1 involves a group comparison, for example in this excerpt from <span class="citation">Roy et al. (<a href="#ref-Roy2008">2008</a>)</span>. This Table 1 describes a multi-center randomized clinical trial comparing two different approaches to caring for patients with heart failure and atrial fibrillation<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>.</p>
+<p>A more typical Table 1 involves a group comparison, for example in this excerpt from <span class="citation">Roy et al. (<a href="#ref-Roy2008">2008</a>)</span>. This Table 1 describes a multi-center randomized clinical trial comparing two different approaches to caring for patients with heart failure and atrial fibrillation<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.</p>
 <p><img src="images/Roy-snip1.png" width="90%" /></p>
 <p>The article provides percentages, means and standard deviations across groups, but note that it does not provide p values for the comparison of baseline characteristics. This is a common feature of NEJM reports on randomized clinical trials, where we anticipate that the two groups will be well matched at baseline. Note that the patients in this study were <em>randomly</em> assigned to either the rhythm-control group or to the rate-control group, using blocked randomizations stratified by study center.</p>
 </div>
@@ -961,10 +987,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="simulated-fakestroke-data" class="section level2">
 <h2><span class="header-section-number">1.3</span> Simulated <code>fakestroke</code> data</h2>
 <p>Consider the simulated data, available on the Data and Code page of <a href="https://github.com/THOMASELOVE/2019-432">our course website</a> in the <code>fakestroke.csv</code> file, which I built to let us mirror the Table 1 for MR CLEAN <span class="citation">(Berkhemer et al. <a href="#ref-Berkhemer2015">2015</a>)</span>. The <code>fakestroke.csv</code> file contains the following 18 variables for 500 patients.</p>
-<table style="width:75%;">
+<table>
 <colgroup>
-<col width="16%" />
-<col width="58%" />
+<col width="21%" />
+<col width="78%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -1031,7 +1057,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </tr>
 <tr class="odd">
 <td align="right"><code>ia.occlus</code></td>
-<td>Intracranial arterial occlusion, based on vessel imaging - five categories<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></td>
+<td>Intracranial arterial occlusion, based on vessel imaging - five categories<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></td>
 </tr>
 <tr class="even">
 <td align="right"><code>extra.ica</code></td>
@@ -1048,7 +1074,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </tbody>
 </table>
 <p>Here’s a quick look at the simulated data in <code>fakestroke</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fakestroke</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">fakestroke</code></pre>
 <pre><code># A tibble: 500 x 18
    studyid trt     age sex   nihss location hx.isch  afib    dm mrankin
    &lt;fct&gt;   &lt;fct&gt; &lt;dbl&gt; &lt;fct&gt; &lt;int&gt; &lt;fct&gt;    &lt;fct&gt;   &lt;int&gt; &lt;int&gt; &lt;fct&gt;  
@@ -1076,7 +1102,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li>the <code>strata</code> which indicates the levels want to use in the columns of our Table 1 (for us, that’s <code>trt</code>)</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fs.vars &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;age&quot;</span>, <span class="st">&quot;sex&quot;</span>, <span class="st">&quot;nihss&quot;</span>, <span class="st">&quot;location&quot;</span>, 
+<pre class="sourceCode r"><code class="sourceCode r">fs.vars &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;age&quot;</span>, <span class="st">&quot;sex&quot;</span>, <span class="st">&quot;nihss&quot;</span>, <span class="st">&quot;location&quot;</span>, 
           <span class="st">&quot;hx.isch&quot;</span>, <span class="st">&quot;afib&quot;</span>, <span class="st">&quot;dm&quot;</span>, <span class="st">&quot;mrankin&quot;</span>, <span class="st">&quot;sbp&quot;</span>,
           <span class="st">&quot;iv.altep&quot;</span>, <span class="st">&quot;time.iv&quot;</span>, <span class="st">&quot;aspects&quot;</span>, 
           <span class="st">&quot;ia.occlus&quot;</span>, <span class="st">&quot;extra.ica&quot;</span>, <span class="st">&quot;time.rand&quot;</span>)
@@ -1086,34 +1112,34 @@ fs.trt &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">
 att1 &lt;-<span class="st"> </span><span class="kw">CreateTableOne</span>(<span class="dt">data =</span> fakestroke, 
                        <span class="dt">vars =</span> fs.vars, 
                        <span class="dt">strata =</span> fs.trt)
-<span class="kw">print</span>(att1)</code></pre></div>
+<span class="kw">print</span>(att1)</code></pre>
 <pre><code>                       Stratified by trt
                         Control        Intervention   p      test
   n                        267            233                    
-  age (mean (sd))        65.38 (16.10)  63.93 (18.09)  0.343     
+  age (mean (SD))        65.38 (16.10)  63.93 (18.09)  0.343     
   sex = Male (%)           157 (58.8)     135 (57.9)   0.917     
-  nihss (mean (sd))      18.08 (4.32)   17.97 (5.04)   0.787     
+  nihss (mean (SD))      18.08 (4.32)   17.97 (5.04)   0.787     
   location = Right (%)     114 (42.7)     117 (50.2)   0.111     
   hx.isch = Yes (%)         25 ( 9.4)      29 (12.4)   0.335     
-  afib (mean (sd))        0.26 (0.44)    0.28 (0.45)   0.534     
-  dm (mean (sd))          0.13 (0.33)    0.12 (0.33)   0.923     
+  afib (mean (SD))        0.26 (0.44)    0.28 (0.45)   0.534     
+  dm (mean (SD))          0.13 (0.33)    0.12 (0.33)   0.923     
   mrankin (%)                                          0.922     
      &gt; 2                    11 ( 4.1)      10 ( 4.3)             
      0                     214 (80.1)     190 (81.5)             
      1                      29 (10.9)      21 ( 9.0)             
      2                      13 ( 4.9)      12 ( 5.2)             
-  sbp (mean (sd))       145.00 (24.40) 146.03 (26.00)  0.647     
+  sbp (mean (SD))       145.00 (24.40) 146.03 (26.00)  0.647     
   iv.altep = Yes (%)       242 (90.6)     203 (87.1)   0.267     
-  time.iv (mean (sd))    87.96 (26.01)  98.22 (45.48)  0.003     
-  aspects (mean (sd))     8.65 (1.47)    8.35 (1.64)   0.033     
+  time.iv (mean (SD))    87.96 (26.01)  98.22 (45.48)  0.003     
+  aspects (mean (SD))     8.65 (1.47)    8.35 (1.64)   0.033     
   ia.occlus (%)                                        0.795     
      A1 or A2                2 ( 0.8)       1 ( 0.4)             
      ICA with M1            75 (28.2)      59 (25.3)             
      Intracranial ICA        3 ( 1.1)       1 ( 0.4)             
      M1                    165 (62.0)     154 (66.1)             
      M2                     21 ( 7.9)      18 ( 7.7)             
-  extra.ica (mean (sd))   0.26 (0.44)    0.32 (0.47)   0.150     
-  time.rand (mean (sd)) 213.88 (70.29) 202.51 (57.33)  0.051     </code></pre>
+  extra.ica (mean (SD))   0.26 (0.44)    0.32 (0.47)   0.150     
+  time.rand (mean (SD)) 213.88 (70.29) 202.51 (57.33)  0.051     </code></pre>
 <div id="some-of-this-is-very-useful-and-other-parts-need-to-be-fixed." class="section level3">
 <h3><span class="header-section-number">1.4.1</span> Some of this is very useful, and other parts need to be fixed.</h3>
 <ol style="list-style-type: decimal">
@@ -1126,38 +1152,38 @@ att1 &lt;-<span class="st"> </span><span class="kw">CreateTableOne</span>(<span 
 <div id="fakestroke-cleaning-up-categorical-variables" class="section level3">
 <h3><span class="header-section-number">1.4.2</span> <code>fakestroke</code> Cleaning Up Categorical Variables</h3>
 <p>Let’s specify each of the categorical variables as categorical explicitly. This helps the <code>CreateTableOne</code> function treat them appropriately, and display them with counts and percentages. This includes all of the 1/0, Yes/No and multi-categorical variables.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fs.factorvars &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;sex&quot;</span>, <span class="st">&quot;location&quot;</span>, <span class="st">&quot;hx.isch&quot;</span>, <span class="st">&quot;afib&quot;</span>, <span class="st">&quot;dm&quot;</span>, 
-                   <span class="st">&quot;mrankin&quot;</span>, <span class="st">&quot;iv.altep&quot;</span>, <span class="st">&quot;ia.occlus&quot;</span>, <span class="st">&quot;extra.ica&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">fs.factorvars &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;sex&quot;</span>, <span class="st">&quot;location&quot;</span>, <span class="st">&quot;hx.isch&quot;</span>, <span class="st">&quot;afib&quot;</span>, <span class="st">&quot;dm&quot;</span>, 
+                   <span class="st">&quot;mrankin&quot;</span>, <span class="st">&quot;iv.altep&quot;</span>, <span class="st">&quot;ia.occlus&quot;</span>, <span class="st">&quot;extra.ica&quot;</span>)</code></pre>
 <p>Then we simply add a <code>factorVars = fs.factorvars</code> call to the <code>CreateTableOne</code> function.</p>
 <p>We also want to re-order some of those categorical variables, so that the levels are more useful to us. Specifically, we want to:</p>
 <ul>
 <li>place Intervention before Control in the <code>trt</code> variable,</li>
 <li>reorder the <code>mrankin</code> scale as 0, 1, 2, &gt; 2, and</li>
-<li>rearrange the <code>ia.occlus</code> variable to the order<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> presented in <span class="citation">Berkhemer et al. (<a href="#ref-Berkhemer2015">2015</a>)</span>.</li>
+<li>rearrange the <code>ia.occlus</code> variable to the order<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> presented in <span class="citation">Berkhemer et al. (<a href="#ref-Berkhemer2015">2015</a>)</span>.</li>
 </ul>
 <p>To accomplish this, we’ll use the <code>fct_relevel</code> function from the <code>forcats</code> package (loaded with the rest of the core <code>tidyverse</code> packages) to reorder our levels manually.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fakestroke &lt;-<span class="st"> </span>fakestroke <span class="op">%&gt;%</span>
+<pre class="sourceCode r"><code class="sourceCode r">fakestroke &lt;-<span class="st"> </span>fakestroke <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">trt =</span> <span class="kw">fct_relevel</span>(trt, <span class="st">&quot;Intervention&quot;</span>, <span class="st">&quot;Control&quot;</span>),
            <span class="dt">mrankin =</span> <span class="kw">fct_relevel</span>(mrankin, <span class="st">&quot;0&quot;</span>, <span class="st">&quot;1&quot;</span>, <span class="st">&quot;2&quot;</span>, <span class="st">&quot;&gt; 2&quot;</span>),
            <span class="dt">ia.occlus =</span> <span class="kw">fct_relevel</span>(ia.occlus, <span class="st">&quot;Intracranial ICA&quot;</span>, 
                                    <span class="st">&quot;ICA with M1&quot;</span>, <span class="st">&quot;M1&quot;</span>, <span class="st">&quot;M2&quot;</span>, 
                                    <span class="st">&quot;A1 or A2&quot;</span>)
-           ) </code></pre></div>
+           ) </code></pre>
 </div>
 </div>
 <div id="fakestroke-table-1-attempt-2" class="section level2">
 <h2><span class="header-section-number">1.5</span> <code>fakestroke</code> Table 1: Attempt 2</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">att2 &lt;-<span class="st"> </span><span class="kw">CreateTableOne</span>(<span class="dt">data =</span> fakestroke, 
+<pre class="sourceCode r"><code class="sourceCode r">att2 &lt;-<span class="st"> </span><span class="kw">CreateTableOne</span>(<span class="dt">data =</span> fakestroke, 
                        <span class="dt">vars =</span> fs.vars,
                        <span class="dt">factorVars =</span> fs.factorvars,
                        <span class="dt">strata =</span> fs.trt)
-<span class="kw">print</span>(att2)</code></pre></div>
+<span class="kw">print</span>(att2)</code></pre>
 <pre><code>                       Stratified by trt
                         Intervention   Control        p      test
   n                        233            267                    
-  age (mean (sd))        63.93 (18.09)  65.38 (16.10)  0.343     
+  age (mean (SD))        63.93 (18.09)  65.38 (16.10)  0.343     
   sex = Male (%)           135 (57.9)     157 (58.8)   0.917     
-  nihss (mean (sd))      17.97 (5.04)   18.08 (4.32)   0.787     
+  nihss (mean (SD))      17.97 (5.04)   18.08 (4.32)   0.787     
   location = Right (%)     117 (50.2)     114 (42.7)   0.111     
   hx.isch = Yes (%)         29 (12.4)      25 ( 9.4)   0.335     
   afib = 1 (%)              66 (28.3)      69 (25.8)   0.601     
@@ -1167,10 +1193,10 @@ att1 &lt;-<span class="st"> </span><span class="kw">CreateTableOne</span>(<span 
      1                      21 ( 9.0)      29 (10.9)             
      2                      12 ( 5.2)      13 ( 4.9)             
      &gt; 2                    10 ( 4.3)      11 ( 4.1)             
-  sbp (mean (sd))       146.03 (26.00) 145.00 (24.40)  0.647     
+  sbp (mean (SD))       146.03 (26.00) 145.00 (24.40)  0.647     
   iv.altep = Yes (%)       203 (87.1)     242 (90.6)   0.267     
-  time.iv (mean (sd))    98.22 (45.48)  87.96 (26.01)  0.003     
-  aspects (mean (sd))     8.35 (1.64)    8.65 (1.47)   0.033     
+  time.iv (mean (SD))    98.22 (45.48)  87.96 (26.01)  0.003     
+  aspects (mean (SD))     8.35 (1.64)    8.65 (1.47)   0.033     
   ia.occlus (%)                                        0.795     
      Intracranial ICA        1 ( 0.4)       3 ( 1.1)             
      ICA with M1            59 (25.3)      75 (28.2)             
@@ -1178,7 +1204,7 @@ att1 &lt;-<span class="st"> </span><span class="kw">CreateTableOne</span>(<span 
      M2                     18 ( 7.7)      21 ( 7.9)             
      A1 or A2                1 ( 0.4)       2 ( 0.8)             
   extra.ica = 1 (%)         75 (32.2)      70 (26.3)   0.179     
-  time.rand (mean (sd)) 202.51 (57.33) 213.88 (70.29)  0.051     </code></pre>
+  time.rand (mean (SD)) 202.51 (57.33) 213.88 (70.29)  0.051     </code></pre>
 <p>The categorical data presentation looks much improved.</p>
 <div id="what-summaries-should-we-show" class="section level3">
 <h3><span class="header-section-number">1.5.1</span> What summaries should we show?</h3>
@@ -1196,9 +1222,9 @@ att1 &lt;-<span class="st"> </span><span class="kw">CreateTableOne</span>(<span 
 </ul></li>
 </ul>
 <p>To finish our Table 1, then, we need to specify which variables should be treated as non-Normal in the <code>print</code> statement - notice that we don’t need to redo the <code>CreateTableOne</code> for this change.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(att2, 
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(att2, 
       <span class="dt">nonnormal =</span> <span class="kw">c</span>(<span class="st">&quot;age&quot;</span>, <span class="st">&quot;nihss&quot;</span>, <span class="st">&quot;time.iv&quot;</span>, <span class="st">&quot;aspects&quot;</span>, <span class="st">&quot;time.rand&quot;</span>),
-      <span class="dt">exact =</span> <span class="kw">c</span>(<span class="st">&quot;location&quot;</span>, <span class="st">&quot;mrankin&quot;</span>))</code></pre></div>
+      <span class="dt">exact =</span> <span class="kw">c</span>(<span class="st">&quot;location&quot;</span>, <span class="st">&quot;mrankin&quot;</span>))</code></pre>
 <pre><code>                          Stratified by trt
                            Intervention            Control                
   n                           233                     267                 
@@ -1214,7 +1240,7 @@ att1 &lt;-<span class="st"> </span><span class="kw">CreateTableOne</span>(<span 
      1                         21 ( 9.0)               29 (10.9)          
      2                         12 ( 5.2)               13 ( 4.9)          
      &gt; 2                       10 ( 4.3)               11 ( 4.1)          
-  sbp (mean (sd))          146.03 (26.00)          145.00 (24.40)         
+  sbp (mean (SD))          146.03 (26.00)          145.00 (24.40)         
   iv.altep = Yes (%)          203 (87.1)              242 (90.6)          
   time.iv (median [IQR])    85.00 [67.00, 110.00]   87.00 [65.00, 116.00] 
   aspects (median [IQR])     9.00 [7.00, 10.00]      9.00 [8.00, 10.00]   
@@ -1241,7 +1267,7 @@ att1 &lt;-<span class="st"> </span><span class="kw">CreateTableOne</span>(<span 
      1                                   
      2                                   
      &gt; 2                                 
-  sbp (mean (sd))           0.647        
+  sbp (mean (SD))           0.647        
   iv.altep = Yes (%)        0.267        
   time.iv (median [IQR])    0.596 nonnorm
   aspects (median [IQR])    0.075 nonnorm
@@ -1260,7 +1286,7 @@ att1 &lt;-<span class="st"> </span><span class="kw">CreateTableOne</span>(<span 
 <p>If this was a real data set, we’d want to get a more detailed description of the data to make decisions about things like potentially collapsing categories of a variable, or whether or not a normal distribution was useful for a particular continuous variable, etc. You can do this with the <code>summary</code> command applied to a created Table 1, which shows, among other things, the effect of changing from normal to non-normal <em>p</em> values for continuous variables, and from approximate to “exact” <em>p</em> values for categorical factors.</p>
 <p>Again, as noted above, in a real data situation, we’d want to plot the quantitative variables (within each group) to make a smart decision about whether a t test or Wilcoxon approach is more appropriate.</p>
 <p>Note in the summary below that we have some missing values here. Often, we’ll present this information within the Table 1, as well.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(att2)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(att2)</code></pre>
 <pre><code>
      ### Summary of continuous variables ###
 
@@ -1405,22 +1431,22 @@ extra.ica 0.129370206</code></pre>
 <div id="approach-a-save-and-open-in-excel" class="section level3">
 <h3><span class="header-section-number">1.7.1</span> Approach A: Save and open in Excel</h3>
 <p>One option is to <strong>save the Table 1</strong> to a <code>.csv</code> file within our <code>data</code> subfolder (note that the <code>data</code> folder must already exist), which you can then open directly in Excel. This is the approach I generally use. Note the addition of some <code>quote</code>, <code>noSpaces</code> and <code>printToggle</code> selections here.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fs.table1save &lt;-<span class="st"> </span><span class="kw">print</span>(att2, 
+<pre class="sourceCode r"><code class="sourceCode r">fs.table1save &lt;-<span class="st"> </span><span class="kw">print</span>(att2, 
       <span class="dt">nonnormal =</span> <span class="kw">c</span>(<span class="st">&quot;age&quot;</span>, <span class="st">&quot;nihss&quot;</span>, <span class="st">&quot;time.iv&quot;</span>, <span class="st">&quot;aspects&quot;</span>, <span class="st">&quot;time.rand&quot;</span>),
       <span class="dt">exact =</span> <span class="kw">c</span>(<span class="st">&quot;location&quot;</span>, <span class="st">&quot;mrankin&quot;</span>),
       <span class="dt">quote =</span> <span class="ot">FALSE</span>, <span class="dt">noSpaces =</span> <span class="ot">TRUE</span>, <span class="dt">printToggle =</span> <span class="ot">FALSE</span>)
 
-<span class="kw">write.csv</span>(fs.table1save, <span class="dt">file =</span> <span class="st">&quot;data/fs-table1.csv&quot;</span>)</code></pre></div>
+<span class="kw">write.csv</span>(fs.table1save, <span class="dt">file =</span> <span class="st">&quot;data/fs-table1.csv&quot;</span>)</code></pre>
 <p>When I then open the <code>fs-table1.csv</code> file in Excel, it looks like this:</p>
 <p><img src="images/fs-table1inExcel.png" width="90%" /></p>
 <p>And from here, I can either drop it directly into Word, or present it as is, or start tweaking it to meet formatting needs.</p>
 </div>
 <div id="approach-b-produce-the-table-so-you-can-cut-and-paste-it" class="section level3">
 <h3><span class="header-section-number">1.7.2</span> Approach B: Produce the Table so you can cut and paste it</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(att2, 
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(att2, 
       <span class="dt">nonnormal =</span> <span class="kw">c</span>(<span class="st">&quot;age&quot;</span>, <span class="st">&quot;nihss&quot;</span>, <span class="st">&quot;time.iv&quot;</span>, <span class="st">&quot;aspects&quot;</span>, <span class="st">&quot;time.rand&quot;</span>),
       <span class="dt">exact =</span> <span class="kw">c</span>(<span class="st">&quot;location&quot;</span>, <span class="st">&quot;mrankin&quot;</span>),
-      <span class="dt">quote =</span> <span class="ot">TRUE</span>, <span class="dt">noSpaces =</span> <span class="ot">TRUE</span>)</code></pre></div>
+      <span class="dt">quote =</span> <span class="ot">TRUE</span>, <span class="dt">noSpaces =</span> <span class="ot">TRUE</span>)</code></pre>
 <p>This will look like a mess by itself, but if you:</p>
 <ol style="list-style-type: decimal">
 <li>copy and paste that mess into Excel</li>
@@ -1440,7 +1466,7 @@ extra.ica 0.129370206</code></pre>
 </div>
 <div id="a-controlled-biological-experiment---the-blood-brain-barrier" class="section level2">
 <h2><span class="header-section-number">1.8</span> A Controlled Biological Experiment - The Blood-Brain Barrier</h2>
-<p>My source for the data and the following explanatory paragraph is page 307 from <span class="citation">F. L. Ramsey and Schafer (<a href="#ref-RamseySchafer2002">2002</a>)</span>. The original data come from <span class="citation">Barnett et al. (<a href="#ref-Barnett1995">1995</a>)</span>.</p>
+<p>My source for the data and the following explanatory paragraph is page 307 from <span class="citation">Ramsey and Schafer (<a href="#ref-RamseySchafer2002">2002</a>)</span>. The original data come from <span class="citation">Barnett et al. (<a href="#ref-Barnett1995">1995</a>)</span>.</p>
 <blockquote>
 <p>The human brain (and that of rats, coincidentally) is protected from the bacteria and toxins that course through the bloodstream by something called the blood-brain barrier. After a method of disrupting the barrier was developed, researchers tested this new mechanism, as follows. A series of 34 rats were inoculated with human lung cancer cells to induce brain tumors. After 9-11 days they were infused with either the barrier disruption (BD) solution or, as a control, a normal saline (NS) solution. Fifteen minutes later, the rats received a standard dose of a particular therapeutic antibody (L6-F(ab’)2. The key measure of the effectiveness of transmission across the brain-blood barrier is the ratio of the antibody concentration in the brain tumor to the antibody concentration in normal tissue outside the brain. The rats were then sacrificed, and the amounts of antibody in the brain tumor and in normal tissue from the liver were measured. The study’s primary objective is to determine whether the antibody concentration in the tumor increased when the blood-barrier disruption infusion was given, and if so, by how much?</p>
 </blockquote>
@@ -1448,10 +1474,10 @@ extra.ica 0.129370206</code></pre>
 <div id="the-bloodbrain.csv-file" class="section level2">
 <h2><span class="header-section-number">1.9</span> The <code>bloodbrain.csv</code> file</h2>
 <p>Consider the data, available on the Data and Code page of <a href="https://github.com/THOMASELOVE/2019-432">our course website</a> in the <code>bloodbrain.csv</code> file, which includes the following variables:</p>
-<table style="width:75%;">
+<table>
 <colgroup>
-<col width="12%" />
-<col width="62%" />
+<col width="15%" />
+<col width="84%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -1507,7 +1533,7 @@ extra.ica 0.129370206</code></pre>
 </tbody>
 </table>
 <p>And here’s what the data look like in R.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bloodbrain</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">bloodbrain</code></pre>
 <pre><code># A tibble: 34 x 11
     case  brain  liver tlratio solution sactime postin sex   wt.init
    &lt;int&gt;  &lt;int&gt;  &lt;int&gt;   &lt;dbl&gt; &lt;fct&gt;      &lt;dbl&gt;  &lt;int&gt; &lt;fct&gt;   &lt;int&gt;
@@ -1526,15 +1552,15 @@ extra.ica 0.129370206</code></pre>
 </div>
 <div id="a-table-1-for-bloodbrain" class="section level2">
 <h2><span class="header-section-number">1.10</span> A Table 1 for <code>bloodbrain</code></h2>
-<p><span class="citation">Barnett et al. (<a href="#ref-Barnett1995">1995</a>)</span> did not provide a Table 1 for these data, so let’s build one to compare the two <code>solutions</code> (<code>BD</code> vs. <code>NS</code>) on the covariates and outcomes, plus the natural logarithm of the tumor/liver concentration ratio (<code>tlratio</code>). We’ll opt to treat the sacrifice time (<code>sactime</code>) and the days post-inoculation of lung cancer cells (<code>postin</code>) as categorical rather than quantitative variables.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bloodbrain &lt;-<span class="st"> </span>bloodbrain <span class="op">%&gt;%</span>
+<p><span class="citation">Barnett et al. (<a href="#ref-Barnett1995">1995</a>)</span> did not provide a Table 1 for these data, so let’s build one to compare the two <code>solutions</code> (<code>BD</code> vs. <code>NS</code>) on the covariates and outcomes, plus the natural logarithm of the tumor/liver concentration ratio (<code>tlratio</code>). We’ll opt to treat the sacrifice time (<code>sactime</code>) and the days post-inoculation of lung cancer cells (<code>postin</code>) as categorical rather than quantitative variables.</p>
+<pre class="sourceCode r"><code class="sourceCode r">bloodbrain &lt;-<span class="st"> </span>bloodbrain <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">mutate</span>(<span class="dt">logTL =</span> <span class="kw">log</span>(tlratio))
 
-<span class="kw">dput</span>(<span class="kw">names</span>(bloodbrain))</code></pre></div>
+<span class="kw">dput</span>(<span class="kw">names</span>(bloodbrain))</code></pre>
 <pre><code>c(&quot;case&quot;, &quot;brain&quot;, &quot;liver&quot;, &quot;tlratio&quot;, &quot;solution&quot;, &quot;sactime&quot;, 
 &quot;postin&quot;, &quot;sex&quot;, &quot;wt.init&quot;, &quot;wt.loss&quot;, &quot;wt.tumor&quot;, &quot;logTL&quot;)</code></pre>
 <p>OK - there’s the list of variables we’ll need. I’ll put the outcomes at the bottom of the table.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bb.vars &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;sactime&quot;</span>, <span class="st">&quot;postin&quot;</span>, <span class="st">&quot;sex&quot;</span>, <span class="st">&quot;wt.init&quot;</span>, <span class="st">&quot;wt.loss&quot;</span>, 
+<pre class="sourceCode r"><code class="sourceCode r">bb.vars &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;sactime&quot;</span>, <span class="st">&quot;postin&quot;</span>, <span class="st">&quot;sex&quot;</span>, <span class="st">&quot;wt.init&quot;</span>, <span class="st">&quot;wt.loss&quot;</span>, 
              <span class="st">&quot;wt.tumor&quot;</span>, <span class="st">&quot;brain&quot;</span>, <span class="st">&quot;liver&quot;</span>, <span class="st">&quot;tlratio&quot;</span>, <span class="st">&quot;logTL&quot;</span>)
 
 bb.factors &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;sactime&quot;</span>, <span class="st">&quot;sex&quot;</span>, <span class="st">&quot;postin&quot;</span>)
@@ -1543,7 +1569,7 @@ bb.att1 &lt;-<span class="st"> </span><span class="kw">CreateTableOne</span>(<sp
                           <span class="dt">vars =</span> bb.vars,
                           <span class="dt">factorVars =</span> bb.factors,
                           <span class="dt">strata =</span> <span class="kw">c</span>(<span class="st">&quot;solution&quot;</span>))
-<span class="kw">summary</span>(bb.att1)</code></pre></div>
+<span class="kw">summary</span>(bb.att1)</code></pre>
 <pre><code>
      ### Summary of continuous variables ###
 
@@ -1652,7 +1678,7 @@ sex     0.0000000</code></pre>
 <div id="generate-final-table-1-for-bloodbrain" class="section level3">
 <h3><span class="header-section-number">1.10.1</span> Generate final Table 1 for <code>bloodbrain</code></h3>
 <p>I’ll choose to treat <code>tlratio</code> and its logarithm as non-Normal, but otherwise, use t tests, but admittedly, that’s an arbitrary decision, really.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(bb.att1, <span class="dt">nonnormal =</span> <span class="kw">c</span>(<span class="st">&quot;tlratio&quot;</span>, <span class="st">&quot;logTL&quot;</span>))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(bb.att1, <span class="dt">nonnormal =</span> <span class="kw">c</span>(<span class="st">&quot;tlratio&quot;</span>, <span class="st">&quot;logTL&quot;</span>))</code></pre>
 <pre><code>                        Stratified by solution
                          BD                      NS                      
   n                             17                      17               
@@ -1666,11 +1692,11 @@ sex     0.0000000</code></pre>
      10                         14 (82.4)               13 (76.5)        
      11                          2 (11.8)                2 (11.8)        
   sex = M (%)                    4 (23.5)                4 (23.5)        
-  wt.init (mean (sd))       242.82 (27.23)          240.47 (28.54)       
-  wt.loss (mean (sd))         3.34 (4.68)             3.94 (3.88)        
-  wt.tumor (mean (sd))      157.29 (84.00)          208.53 (116.68)      
-  brain (mean (sd))       56043.41 (33675.40)     23887.18 (14610.53)    
-  liver (mean (sd))      672577.35 (694479.58)   664975.47 (700773.13)   
+  wt.init (mean (SD))       242.82 (27.23)          240.47 (28.54)       
+  wt.loss (mean (SD))         3.34 (4.68)             3.94 (3.88)        
+  wt.tumor (mean (SD))      157.29 (84.00)          208.53 (116.68)      
+  brain (mean (SD))       56043.41 (33675.40)     23887.18 (14610.53)    
+  liver (mean (SD))      672577.35 (694479.58)   664975.47 (700773.13)   
   tlratio (median [IQR])      0.12 [0.06, 2.84]       0.05 [0.03, 0.94]  
   logTL (median [IQR])       -2.10 [-2.74, 1.04]     -2.95 [-3.41, -0.07]
                         Stratified by solution
@@ -1686,18 +1712,18 @@ sex     0.0000000</code></pre>
      10                                
      11                                
   sex = M (%)             1.000        
-  wt.init (mean (sd))     0.807        
-  wt.loss (mean (sd))     0.684        
-  wt.tumor (mean (sd))    0.152        
-  brain (mean (sd))       0.001        
-  liver (mean (sd))       0.975        
+  wt.init (mean (SD))     0.807        
+  wt.loss (mean (SD))     0.684        
+  wt.tumor (mean (SD))    0.152        
+  brain (mean (SD))       0.001        
+  liver (mean (SD))       0.975        
   tlratio (median [IQR])  0.221 nonnorm
   logTL (median [IQR])    0.221 nonnorm</code></pre>
 <p>Or, we can get an Excel-readable version placed in a <code>data</code> subfolder, using</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bb.t1 &lt;-<span class="st"> </span><span class="kw">print</span>(bb.att1, <span class="dt">nonnormal =</span> <span class="kw">c</span>(<span class="st">&quot;tlratio&quot;</span>, <span class="st">&quot;logTL&quot;</span>), <span class="dt">quote =</span> <span class="ot">FALSE</span>,
+<pre class="sourceCode r"><code class="sourceCode r">bb.t1 &lt;-<span class="st"> </span><span class="kw">print</span>(bb.att1, <span class="dt">nonnormal =</span> <span class="kw">c</span>(<span class="st">&quot;tlratio&quot;</span>, <span class="st">&quot;logTL&quot;</span>), <span class="dt">quote =</span> <span class="ot">FALSE</span>,
                <span class="dt">noSpaces =</span> <span class="ot">TRUE</span>, <span class="dt">printToggle =</span> <span class="ot">FALSE</span>)
 
-<span class="kw">write.csv</span>(bb.t1, <span class="dt">file =</span> <span class="st">&quot;data/bb-table1.csv&quot;</span>)</code></pre></div>
+<span class="kw">write.csv</span>(bb.t1, <span class="dt">file =</span> <span class="st">&quot;data/bb-table1.csv&quot;</span>)</code></pre>
 <p>which, when dropped into Excel, will look like this:</p>
 <p><img src="images/bb-table1inExcel.png" width="90%" /></p>
 <p>One thing I would definitely clean up here, in practice, is to change the presentation of the <em>p</em> value for <code>sex</code> from 1 to &gt; 0.99, or just omit it altogether. I’d also drop the <code>computer-ese</code> where possible, add units for the measures, round <strong>a lot</strong>, identify the outcomes carefully, and use notes to indicate deviations from the main approach.</p>
@@ -1712,13 +1738,13 @@ sex     0.0000000</code></pre>
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-Tolaney2015">
-<p>Tolaney, Sara M, William T. Barry, T. Dang Chau, and others. 2015. “Adjuvant Paclitaxel and Trastuzumab for Node-Negative, Her2-Positive Breast Cancer.” <em>New England Journal of Medicine</em> 372: 134–41. <a href="http://www.nejm.org/doi/full/10.1056/NEJMoa1406281" class="uri">http://www.nejm.org/doi/full/10.1056/NEJMoa1406281</a>.</p>
+<p>Tolaney, Sara M, William T. Barry, T. Dang Chau, and others. 2015. “Adjuvant Paclitaxel and Trastuzumab for Node-Negative, Her2-Positive Breast Cancer.” <em>New England Journal of Medicine</em> 372: 134–41. <a href="http://www.nejm.org/doi/full/10.1056/NEJMoa1406281">http://www.nejm.org/doi/full/10.1056/NEJMoa1406281</a>.</p>
 </div>
 <div id="ref-Roy2008">
-<p>Roy, Denis, Mario Talajic, Stanley Nattel, and others. 2008. “Rhythm Control Versus Rate Control for Atrial Fibrillation and Heart Failure.” <em>New England Journal of Medicine</em> 358: 2667–77. <a href="http://www.nejm.org/doi/full/10.1056/NEJMoa0708789" class="uri">http://www.nejm.org/doi/full/10.1056/NEJMoa0708789</a>.</p>
+<p>Roy, Denis, Mario Talajic, Stanley Nattel, and others. 2008. “Rhythm Control Versus Rate Control for Atrial Fibrillation and Heart Failure.” <em>New England Journal of Medicine</em> 358: 2667–77. <a href="http://www.nejm.org/doi/full/10.1056/NEJMoa0708789">http://www.nejm.org/doi/full/10.1056/NEJMoa0708789</a>.</p>
 </div>
 <div id="ref-Berkhemer2015">
-<p>Berkhemer, Olvert A., Puck S. S. Fransen, Debbie Buemer, and others. 2015. “A Randomized Trial of Intraarterial Treatment for Acute Ischemic Stroke.” <em>New England Journal of Medicine</em> 372: 11–20. <a href="http://www.nejm.org/doi/full/10.1056/NEJMoa1411587" class="uri">http://www.nejm.org/doi/full/10.1056/NEJMoa1411587</a>.</p>
+<p>Berkhemer, Olvert A., Puck S. S. Fransen, Debbie Buemer, and others. 2015. “A Randomized Trial of Intraarterial Treatment for Acute Ischemic Stroke.” <em>New England Journal of Medicine</em> 372: 11–20. <a href="http://www.nejm.org/doi/full/10.1056/NEJMoa1411587">http://www.nejm.org/doi/full/10.1056/NEJMoa1411587</a>.</p>
 </div>
 <div id="ref-Rosenbaum2017">
 <p>Rosenbaum, Paul R. 2017. <em>Observation and Experiment: An Introduction to Causal Inference</em>. Cambridge, MA: Harvard University Press.</p>
@@ -1727,16 +1753,16 @@ sex     0.0000000</code></pre>
 <p>Ramsey, Fred L., and Daniel W. Schafer. 2002. <em>The Statistical Sleuth: A Course in Methods of Data Analysis</em>. Second Edition. Pacific Grove, CA: Duxbury.</p>
 </div>
 <div id="ref-Barnett1995">
-<p>Barnett, Peggy A., Simon Roman-Golstein, Fred Ramsey, and others. 1995. “Differential Permeability and Quantitative Mr Imaging of a Human Lung Carcinoma Brain Xenograft in the Nude Rat.” <em>American Journal of Pathology</em> 146(2): 436–49. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1869863/" class="uri">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1869863/</a>.</p>
+<p>Barnett, Peggy A., Simon Roman-Golstein, Fred Ramsey, and others. 1995. “Differential Permeability and Quantitative Mr Imaging of a Human Lung Carcinoma Brain Xenograft in the Nude Rat.” <em>American Journal of Pathology</em> 146(2): 436–49. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1869863/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1869863/</a>.</p>
 </div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>HER2 = human epidermal growth factor receptor type 2. Over-expression of this occurs in 15-20% of invasive breast cancers, and has been associated with poor outcomes.<a href="building-table-1.html#fnref1">↩</a></p></li>
-<li id="fn2"><p>The complete Table 1 appears on pages 2668-2669 of <span class="citation">Roy et al. (<a href="#ref-Roy2008">2008</a>)</span>, but I have only reproduced the first page and the footnote in this excerpt.<a href="building-table-1.html#fnref2">↩</a></p></li>
-<li id="fn3"><p>The five categories are Intracranial ICA, ICA with involvement of the M1 middle cerebral artery segment, M1 middle cerebral artery segment, M2 middle cerebral artery segment, A1 or A2 anterior cerebral artery segment<a href="building-table-1.html#fnref3">↩</a></p></li>
-<li id="fn4"><p>We might also have considered reordering the <code>ia.occlus</code> factor by its frequency, using the <code>fct_infreq</code> function<a href="building-table-1.html#fnref4">↩</a></p></li>
+<li id="fn1"><p>HER2 = human epidermal growth factor receptor type 2. Over-expression of this occurs in 15-20% of invasive breast cancers, and has been associated with poor outcomes.<a href="building-table-1.html#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>The complete Table 1 appears on pages 2668-2669 of <span class="citation">Roy et al. (<a href="#ref-Roy2008">2008</a>)</span>, but I have only reproduced the first page and the footnote in this excerpt.<a href="building-table-1.html#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>The five categories are Intracranial ICA, ICA with involvement of the M1 middle cerebral artery segment, M1 middle cerebral artery segment, M2 middle cerebral artery segment, A1 or A2 anterior cerebral artery segment<a href="building-table-1.html#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p>We might also have considered reordering the <code>ia.occlus</code> factor by its frequency, using the <code>fct_infreq</code> function<a href="building-table-1.html#fnref4" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -1795,7 +1821,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
